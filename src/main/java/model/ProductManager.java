@@ -1,6 +1,5 @@
 package model;
 
-import java.util.HashSet;
 import java.util.concurrent.ConcurrentHashMap;
 
 import dbModels.ProductDAO;
@@ -13,7 +12,6 @@ public class ProductManager {
 		products = new ConcurrentHashMap();
 
 		for (Product product : ProductDAO.getInstance().getAllProducts()) {
-			// add in collections
 			products.put(product.getName(), product);
 		}
 	}
@@ -23,5 +21,12 @@ public class ProductManager {
 			instance = new ProductManager();
 		}
 		return instance;
+	}
+
+	public void addProduct(Product p) {
+		if (ProductDAO.getInstance().insertProduct(p)) {
+			products.put(p.name, p);
+		}
+
 	}
 }

@@ -3,8 +3,8 @@ package model;
 public class Product {
 
 	int product_id;
-	int model_id;
-	int prodct_type_id;
+	String model;
+	String prodct_type;
 	String name;
 	String art_number;
 	String ean;
@@ -14,11 +14,11 @@ public class Product {
 	boolean inSale;
 	double price;
 
-	public Product(int product_id, int model_id, int prodct_type_id, String name, String art_number, String ean,
+	public Product(int product_id, String model, String prodct_type, String name, String art_number, String ean,
 			String info, String picture, int quantity, boolean inSale, double price) {
 		this.product_id = product_id;
-		this.model_id = model_id;
-		this.prodct_type_id = prodct_type_id;
+		this.model = model;
+		this.prodct_type = prodct_type;
 		this.name = name;
 		this.art_number = art_number;
 		this.ean = ean;
@@ -37,20 +37,22 @@ public class Product {
 		this.product_id = product_id;
 	}
 
-	public int getModel_id() {
-		return model_id;
+	
+
+	public String getModel() {
+		return model;
 	}
 
-	public void setModel_id(int model_id) {
-		this.model_id = model_id;
+	public void setModel(String model) {
+		this.model = model;
 	}
 
-	public int getProdct_type_id() {
-		return prodct_type_id;
+	public String getProdct_type() {
+		return prodct_type;
 	}
 
-	public void setProdct_type_id(int prodct_type_id) {
-		this.prodct_type_id = prodct_type_id;
+	public void setProdct_type(String prodct_type) {
+		this.prodct_type = prodct_type;
 	}
 
 	public String getName() {

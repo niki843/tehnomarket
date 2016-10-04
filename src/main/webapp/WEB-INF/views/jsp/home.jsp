@@ -8,8 +8,6 @@
 <title>Demo</title>
 </head>
 <body>
-	<h2> ${Text} </h2>
-	<p> ${product.name} </p>
-	<p> ${product.quantity} </p>
+	<a href="index.html">klick</a>
 </body>
 </html>

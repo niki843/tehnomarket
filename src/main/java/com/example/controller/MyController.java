@@ -1,8 +1,11 @@
 package com.example.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,12 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MyController {
 	
 	@RequestMapping(value="/index", method=RequestMethod.GET)
-	public String sayHi(Model viewModel) {
-		// talk with model
-		
-		viewModel.addAttribute("Text","Hello");
-		
-		return "home";
+	public String index(Model mod) {
+		return"index";
 	}
 	
 	@RequestMapping(value="/mindex", method=RequestMethod.GET)

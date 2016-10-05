@@ -152,6 +152,11 @@ public class MyController {
 	public String uniConditions(Model model){
 		return "uni-conditions";
 	}
+	
+	@RequestMapping(value= "/getProducts", method = RequestMethod.GET)
+	public String getProducts(Model model){
+		return "products";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

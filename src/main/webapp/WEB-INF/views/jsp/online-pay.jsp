@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:15 GMT -->
+<!-- Mirrored from www.technomarket.bg/online-razplashtane by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:18 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-        <title>Технoмаркет - онлайн магазин</title>
+                                            <title>Сигурно Online разплащане - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -117,7 +117,7 @@
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                 	<span itemprop="name" class="hidden">Техномаркет</span>
                     <a itemprop="url" href="/Technomarket/index">
-                         <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
+                          <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
                     </a>
                 </div><!-- /.logo -->
                 <div class="heading-collapse">
@@ -1637,53 +1637,52 @@
     </nav><!-- /.navbar -->
 </header>
                                         
-        <section>
-    <div class="container">
-        <div class="security">
-    <div class="row-split">
-        <div class="col-half">      
-            <h2>Вход в сайта</h2>
-                          
-            <form action="http://www.technomarket.bg/login_check" method="post" class="form-horizontal">
-                <input type="hidden" name="_csrf_token" value="LgCRkyGi6DMpJxmRzBaTeMmjNysNwoh9eXw2WzMCVxs" />
-                <div class="form-group">
-                    <label class="col-md-6 control-label" for="username">Е-мейл</label>
-                    <div class="col-md-10 control-bar">
-                        <input class="form-control" type="text" id="username" name="_username" value="" required  />
-                        <span class="bar"></span>
-                    </div>    
-                </div>
-                <div class="form-group">
-                    <label class="col-md-6 control-label" for="password">Парола</label>
-                     <div class="col-md-10 control-bar">
-                        <input class="form-control" type="password" id="password" name="_password" required />
-                        <span class="bar"></span>
-                    </div>        
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-6 col-md-10">
-                        <div class="checkbox">            
-                            <label for="remember_me"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Запомни ме</label>
-                            <a href="resetting/request.html" class="pull-right">Забравена парола?</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-6 col-md-10">
-                        <input class="btn btn-tm" type="submit" id="_submit" name="_submit" value="Вход" />
-                    </div>
-                </div>    
-            </form>
+            <div class="">
+    
+    
+
+                    
+                                	             
+        <section class=" section section-odd" >
+            <div class="container">
+            	                <div class="section-heading">
+                    <h2>Сигурно Online разплащане</h2>
+                                    </div><!-- /.section-heading -->
+                                <div class="row">
+                                                            <div class="col-auto" >
+
+	    	<div class="container-inner">
+        	<div class="container-cell">
+
+<p>Сигурността при въвеждане и пренос на картовите данни се осигурява чрез използване на SSL протокол за криптиране на връзката между нашия сървър и платежната страница на обслужващата ни банка<br />
+<br />
+-Автентичността на вашата карта се проверява чрез въвеждането на код за сигурност (CVV2)<br />
+-В допълнение, за идентифицирането ви като картодържател, платежният сървър за електронна търговия на обслужващата ни банка поддържа схемите за автентикация на международните картови организации - Veryfied by VISA и MasterCard SecureCode, в случай, че сте регистрирани да ги използвате.<br />
+<br />
+Банковите карти с които можете да направите on-lineразплащане са: MasterCard, MasterCard Electronic, Maestro, Visa, Visa Electron, V PAY<br />
+Моля, обърнете внимание, че вашата V PAY или MasterCard Electronic карта ще се приеме само, ако е регистрирана за участие в схемите Verified by Visa или MasterCard SecureCode.<br />
+Моля проверете също така, дали вашата карта е отворена от вашият издател за транзакции в Интернет&rdquo;.<br />
+Максималната сума за транзакция е 10 000 лева.<br />
+<br />
+Данните, които клиента трябва да попълни за плащане с карта са:<br />
+-Данни за картата (номер, дата на валидност, 3-цифрен код за сигурност, име на картодържателя, адрес)<br />
+-Данни за автентикация (За идентифицирането ви като картодържател, платежният ни сървър за електронна търговия на обслужващата ни банка поддържа схемите за автентикация на международните картови организации - Veryfied by VISA и MasterCard SecureCode.&nbsp; В случай, че сте регистрирани от вашата банка Издател в тези схеми за сигурност, на екрана ви ще се появи страница където трябва да въведете вашата автентикационна парола.<br />
+<br />
+<strong>ВАЖНО:</strong>Техномаркет <strong>НЕ </strong>събира картови данни и като търговец нямаме достъп до тях, а само обслужващата ни банка</p>
+
+<p>Транзакционната валута (тази която се въвежда в платежната страница при покупка) е Български лев.&nbsp;</p>
+
+<p><strong><em>Възможно е забавяне при обработката на Вашите поръчки платени с банкова карта издадена от банки регистрирани извън страната, поради проверки извършвани съвместно с банката картоиздател &nbsp;относно достоверността на плащанията и с цел по-висока Ваша сигурност. В такива случай Ви молим за малко търпение. Веднага щом получим положителен отговор , поръчката Ви ще бъде потвърдена за доставка и изпълнена от служителите на нашата компания.</em></strong></p>
+            </div>
         </div>
-        <div class="col-half">
-            <h2>Нямаш профил?</h2>
-            <a href="/Technomarket/register" class="btn btn-tm">Регистрирай се</a>
-            <hr>
-                                                        </div>
-    </div>    
-</div><!--/.security-->
     </div>
-</section>    
+
+
+                                                    </div>
+            </div>
+        </section>
+            
+    </div>
 
         <footer>
     <div class="inner">
@@ -1802,10 +1801,10 @@
             window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
         </script>
 
-        <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+        <script type="text/javascript" src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
         <!-- End Cookie Consent plugin -->
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:16 GMT -->
+<!-- Mirrored from www.technomarket.bg/online-razplashtane by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:18 GMT -->
 </html>

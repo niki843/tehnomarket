@@ -137,6 +137,11 @@ public class MyController {
 	public String delivery(Model model){
 		return "delivery";
 	}
+	
+	@RequestMapping(value= "/onlinePay", method = RequestMethod.GET)
+	public String onlinePay(Model model){
+		return "online-pay";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

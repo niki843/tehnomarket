@@ -1642,7 +1642,7 @@
     
 
                     
-                <section class="tabPanel  section" style="background:url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size:cover; background-attachment:fixed; color:#000;;">
+	<section class="tabPanel  section" style="background:url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size:cover; background-attachment:fixed; color:#000;;">
                         	<div class="tabPanel-item-container section-odd">
                                         <div class="tabPanel-item" style="">                        
                             <div class="col-md-16 text-center" >
@@ -1840,7 +1840,7 @@
                                                     </ul>
                     </div>
                 </div>
-                    </section>
+	</section>
             
     
 
@@ -1856,8 +1856,8 @@
         	<div class="figure-image">
                                                             <a href="technomarket-broshura-30-09-2016.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/October%202016/promo.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/October 2016/promo.jpg" alt="Промоционална брошура" title="Промоционална брошура">
+                            <source srcset="img/promo.jpg" media="(max-width: 990px)" />
+                            <img src="img/promo.jpg" alt="Промоционална брошура" title="Промоционална брошура">
                         </picture>
                         </a>
                                                 </div>
@@ -2767,7 +2767,7 @@
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <p><a href="garancia-plus.html"><img alt="" src="http://cdn.technomarket.bg/uploads/BG/slides/warranty-new.jpg" /></a></p>
+                <p><a href="garancia-plus.html"><img alt="" src="img/warranty.jpg" /></a></p>
             </div>
         </div>
     </div>
@@ -2791,8 +2791,8 @@
         	<div class="figure-image">
                                                             <a href="lg-tv-5years-warranty.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/October%202016/lg-5-460x300.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/October 2016/lg-5-460x300.jpg" alt="" title="">
+                            <source srcset="img/lg-5-460x300.jpg" media="(max-width: 990px)" />
+                            <img src="img/lg-5-460x300.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2806,8 +2806,8 @@
         	<div class="figure-image">
                                                             <a href="logitech-promo.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/logitech.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/Back to school/logitech.jpg" alt="" title="">
+                            <source srcset="img/logitech.jpg" media="(max-width: 990px)" />
+                            <img src="img/logitech.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2821,8 +2821,8 @@
         	<div class="figure-image">
                                                             <a href="local-promo.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/October%202016/local-promo.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/October 2016/local-promo.jpg" alt="" title="">
+                            <source srcset="img/local-promo.jpg" media="(max-width: 990px)" />
+                            <img src="img/local-promo.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2847,7 +2847,7 @@
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <p><a href="kupi-online-vzemi-ot-magazin.html"><img alt="" src="http://cdn.technomarket.bg/uploads/BG/April-banners-2016/banner_takefromshop_3.jpg" /></a></p>
+                <p><a href="kupi-online-vzemi-ot-magazin.html"><img alt="" src="img/banner_takefroms.jpg" /></a></p>
             </div>
         </div>
     </div>
@@ -2871,8 +2871,8 @@
         	<div class="figure-image">
                                                             <a href="canon-cash-back.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/September%202016/TM_ALEX_460x300.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/September 2016/TM_ALEX_460x300.jpg" alt="" title="">
+                            <source srcset="img/TM_ALEX_460x300.jpg" media="(max-width: 990px)" />
+                            <img src="img/TM_ALEX_460x300.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2886,8 +2886,8 @@
         	<div class="figure-image">
                                                             <a href="vaucher-technomarket.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/April-banners-2016/vauchers_460x300.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/April-banners-2016/vauchers_460x300.jpg" alt="" title="">
+                            <source srcset="img/vauchers_460x300.jpg" media="(max-width: 990px)" />
+                            <img src="img/vauchers_460x300.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2901,8 +2901,8 @@
         	<div class="figure-image">
                                                             <a href="ps4-fifa-17.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/October%202016/fifa-460x300-new.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/October 2016/fifa-460x300-new.jpg" alt="" title="">
+                            <source srcset="img/fifa-460x300-new.jpg" media="(max-width: 990px)" />
+                            <img src="img/fifa-460x300-new.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2927,7 +2927,7 @@
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <p><a href="home.html"><img alt="" src="http://cdn.technomarket.bg/uploads/BG/April-banners-2016/athome.jpg" /></a></p>
+                <p><a href="home.html"><img alt="" src="img/athome.jpg" /></a></p>
             </div>
         </div>
     </div>
@@ -2951,8 +2951,8 @@
         	<div class="figure-image">
                                                             <a href="home-promo-villeroyandboch-189.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/sale-home09.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/sale-home09.jpg" alt="" title="">
+                            <source srcset="img/sale-home09.jpg" media="(max-width: 990px)" />
+                            <img src="img/sale-home09.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2966,8 +2966,8 @@
         	<div class="figure-image">
                                                             <a href="home-store.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/700x300-Outlet-2.jpg" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/700x300-Outlet-2.jpg" alt="" title="">
+                            <source srcset="img/700x300-Outlet-2.jpg" media="(max-width: 990px)" />
+                            <img src="img/700x300-Outlet-2.jpg" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -2994,8 +2994,8 @@
         	<div class="figure-image">
                                                             <a href="lg-clima-5-godini-garancia.html">
                         <picture>                	
-                            <source srcset="//cdn.technomarket.bg/uploads/BG/slides/September%202016/1420x3005godini-garanciq-3.png" media="(max-width: 990px)" />
-                            <img src="http://cdn.technomarket.bg/uploads/BG/slides/September 2016/1420x3005godini-garanciq-3.png" alt="" title="">
+                            <source srcset="img/1420x3005godini-garanciq-3.png" media="(max-width: 990px)" />
+                            <img src="img/1420x3005godini-garanciq-3.png" alt="" title="">
                         </picture>
                         </a>
                                                 </div>
@@ -3148,7 +3148,7 @@
             window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
         </script>
 
-        <script type="text/javascript" src="../../../cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+        <script type="text/javascript" src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
         <!-- End Cookie Consent plugin -->
         
     </body>

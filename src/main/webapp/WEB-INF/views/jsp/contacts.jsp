@@ -81,7 +81,7 @@
         <div class="container">
             <a href="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#extranav" aria-expanded="false" aria-controls="extranav"><span class="icon-dot"></span> <span class="icon-dot"></span> <span class="icon-dot"></span></a>
             <div itemscope itemtype="http://schema.org/Organization" id="extranav" class="navbar-collapse collapse">
-            	<link itemprop="url" href="index.html">
+            	<link itemprop="url" href="/Technomarket/index">
                 <ul itemprop='contactPoint' itemscope itemtype='http://schema.org/ContactPoint' class="nav navbar-nav nav-left">                	
                     <meta itemprop="contactType" content="Customer service">
                     <li><a href="/Technomarket/contacts"><strong><i class="icon-phone"></i> <span itemprop='telephone' class="hidden">+359-02-9421-103</span> 0700 10 800</strong></a></li>
@@ -92,7 +92,7 @@
                         </a>
                     </li>
                     <li class="nav-apple-shop">
-                    	<a href="apple-shop.html">
+                    	<a href="/Technomarket/apple">
                             <img src="img/apple.jpg" alt="Apple Shop" class="hidden-xs" />
                             <span class="visible-xs">Apple Shop</span>
                         </a>
@@ -122,7 +122,7 @@
                 </div><!-- /.logo -->
                 <div class="heading-collapse">
                     <div itemscope itemtype="http://schema.org/WebSite" class="search">
-                    	<link itemprop="url" href="index.html"/>
+                    	<link itemprop="url" href="img/tehnomarket.png"/>
                         <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" action="http://www.technomarket.bg/search/" method="get" class="input-group">
                             <meta itemprop="target" content="http://www.technomarket.bg/search/?query={query}"/>	
                             <input itemprop="query-input" type="text" name="query" placeholder="Търси..." class="form-control">
@@ -1765,7 +1765,7 @@
                         <p><small>на цената на един градски разговор</small></p>
                         <br>
                         <ul itemscope itemtype="http://schema.org/Organization" class="social-icons">
-                        	<link itemprop="url" href="index.html">
+                        	<link itemprop="url" href="/Technomarket/index">
                             <li><a itemprop="sameAs" href="https://www.facebook.com/technomarket/" target="_blank" title="Facebook"><i class="icon-facebook"></i></a></li>
                             <li><a itemprop="sameAs" href="https://plus.google.com/+technomarket/" target="_blank" title="Google +"><i class="icon-google"></i></a></li>
                             <li><a itemprop="sameAs" href="https://twitter.com/technomarketbg/" target="_blank" title="Twitter"><i class="icon-twitter"></i></a></li>

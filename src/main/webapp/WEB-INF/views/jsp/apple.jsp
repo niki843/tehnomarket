@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:15 GMT -->
+<!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:26 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-        <title>Технoмаркет - онлайн магазин</title>
+                                            <title>Apple Shop - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -117,7 +117,7 @@
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                 	<span itemprop="name" class="hidden">Техномаркет</span>
                     <a itemprop="url" href="/Technomarket/index">
-                         <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
+                          <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
                     </a>
                 </div><!-- /.logo -->
                 <div class="heading-collapse">
@@ -133,7 +133,7 @@
                         </form><!-- /.input-group -->                        
                     </div><!-- /.search -->
                     <div class="user-bar">
-                                                <div class="user-account dropdown">
+                         <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
                             </button>
@@ -1637,53 +1637,314 @@
     </nav><!-- /.navbar -->
 </header>
                                         
-        <section>
-    <div class="container">
-        <div class="security">
-    <div class="row-split">
-        <div class="col-half">      
-            <h2>Вход в сайта</h2>
-                          
-            <form action="http://www.technomarket.bg/login_check" method="post" class="form-horizontal">
-                <input type="hidden" name="_csrf_token" value="LgCRkyGi6DMpJxmRzBaTeMmjNysNwoh9eXw2WzMCVxs" />
-                <div class="form-group">
-                    <label class="col-md-6 control-label" for="username">Е-мейл</label>
-                    <div class="col-md-10 control-bar">
-                        <input class="form-control" type="text" id="username" name="_username" value="" required  />
-                        <span class="bar"></span>
-                    </div>    
-                </div>
-                <div class="form-group">
-                    <label class="col-md-6 control-label" for="password">Парола</label>
-                     <div class="col-md-10 control-bar">
-                        <input class="form-control" type="password" id="password" name="_password" required />
-                        <span class="bar"></span>
-                    </div>        
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-6 col-md-10">
-                        <div class="checkbox">            
-                            <label for="remember_me"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Запомни ме</label>
-                            <a href="resetting/request.html" class="pull-right">Забравена парола?</a>
+            <div class="">
+    
+    
+
+                    
+                <section class="tabPanel  section" >
+                        	<div class="tabPanel-item-container section-even">
+                                        <div class="tabPanel-item" style="">                        
+                            <div class="col-md-16 text-center" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                   <a href="iphone-7.html">
+                        <picture>                	
+                            <source srcset="img/Banner_iPhone7_1420x500_2609.jpg" media="(max-width: 990px)" />
+                            <img src="img/Banner_iPhone7_1420x500_2609.jpg" alt="iPhone 7" title="iPhone 7">
+                        </picture>
+                   </a>
+            </div>
+        </figure>        
+    </div>
+
+
+                        <div class="tabPanel-mobile">
+                            <span class="title">iPhone 7</span>
+                            <span class="subtitle">Поръчай сега!</span>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-6 col-md-10">
-                        <input class="btn btn-tm" type="submit" id="_submit" name="_submit" value="Вход" />
-                    </div>
-                </div>    
-            </form>
-        </div>
-        <div class="col-half">
-            <h2>Нямаш профил?</h2>
-            <a href="/Technomarket/register" class="btn btn-tm">Регистрирай се</a>
-            <hr>
-                                                        </div>
-    </div>    
-</div><!--/.security-->
+          			<div class="tabPanel-item" style="display: none;">                        
+                            <div class="col-md-16 text-center" >
+
+        	    	<figure>
+        				<div class="figure-image">
+                               <a href="apple-macbook-all.html">
+		                        <picture>                	
+		                            <source srcset="img/Baner_AS_BTS_1420x500_0109_MacBook_Air.jpg" media="(max-width: 990px)" />
+		                            <img src="img/Baner_AS_BTS_1420x500_0109_MacBook_Air.jpg" alt="На училище с MacBook" title="На училище с MacBook">
+		                        </picture>
+		                       </a>
+                        </div>
+        </figure>        
     </div>
-</section>    
+
+
+                        <div class="tabPanel-mobile">
+                            <span class="title">На училище с MacBook</span>
+                            <span class="subtitle"></span>
+                        </div>
+                    </div>
+                                        <div class="tabPanel-item" style="display: none;">                        
+                            <div class="col-md-16 text-center" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-ipad-air-2-wifi-16gb-all.html">
+                        <picture>                	
+                            <source srcset="img/Baner_AS_BTS_1420x500_iPad_Air2.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baner_AS_BTS_1420x500_iPad_Air2.jpg" alt="НА училище с iPad Air 2" title="НА училище с iPad Air 2">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                        <div class="tabPanel-mobile">
+                            <span class="title">НА училище с iPad Air 2</span>
+                            <span class="subtitle"></span>
+                        </div>
+                    </div>
+                                        <div class="tabPanel-item" style="display: none;">                        
+                            <div class="col-md-16 text-center" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="ipad-mini-4.html">
+                        <picture>                	
+                            <source srcset="img/Baner_AS_BTS_1420x500_iPad_mini4.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baner_AS_BTS_1420x500_iPad_mini4.jpg 2016/Baner_AS_BTS_1420x500_iPad_mini4.jpg" alt="На училище с iPad mini 4" title="На училище с iPad mini 4">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                        <div class="tabPanel-mobile">
+                            <span class="title">На училище с iPad mini 4</span>
+                            <span class="subtitle"></span>
+                        </div>
+                    </div>
+                                        <div class="tabPanel-item" style="display: none;">                        
+                            <div class="col-md-16 text-center" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="macbook-pro.html">
+                        <picture>                	
+                            <source srcset="img/Baner_AS_BTS_1420x500_MacBook_Pro.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baner_AS_BTS_1420x500_MacBook_Pro.jpg" alt="На училище с MacBook Pro" title="На училище с MacBook Pro">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                        <div class="tabPanel-mobile">
+                            <span class="title">На училище с MacBook Pro</span>
+                            <span class="subtitle"></span>
+                        </div>
+                    </div>
+                                        <div class="tabPanel-item" style="display: none;">                        
+                            <div class="col-md-16 text-center" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="iphone-6s.html">
+                        <picture>                	
+                            <source srcset="img/Baner_AS_BTS_1420x500_iPhone6s.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baner_AS_BTS_1420x500_iPhone6s.jpg" alt="На училище с iPhone 6s" title="На училище с iPhone 6s">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                        <div class="tabPanel-mobile">
+                            <span class="title">На училище с iPhone 6s</span>
+                            <span class="subtitle"></span>
+                        </div>
+                    </div>
+                                    </div>                
+                <div class="tabPanel-nav-wrapp"> 
+                	<div class="container">                  
+                        <ul class="tabPanel-nav">
+                                                        <li class="active">
+                                <a>
+                                    <span class="title">iPhone 7</span>
+                                    <span class="subtitle">Поръчай сега!</span>
+                                </a>
+                            </li>
+                                                        <li class="">
+                                <a>
+                                    <span class="title">На училище с MacBook</span>
+                                    <span class="subtitle"></span>
+                                </a>
+                            </li>
+                                                        <li class="">
+                                <a>
+                                    <span class="title">НА училище с iPad Air 2</span>
+                                    <span class="subtitle"></span>
+                                </a>
+                            </li>
+                                                        <li class="">
+                                <a>
+                                    <span class="title">На училище с iPad mini 4</span>
+                                    <span class="subtitle"></span>
+                                </a>
+                            </li>
+                                                        <li class="">
+                                <a>
+                                    <span class="title">На училище с MacBook Pro</span>
+                                    <span class="subtitle"></span>
+                                </a>
+                            </li>
+                                                        <li class="">
+                                <a>
+                                    <span class="title">На училище с iPhone 6s</span>
+                                    <span class="subtitle"></span>
+                                </a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                    </section>
+            
+    
+
+                    
+                                	             
+        <section class=" section section-odd" >
+            <div class="container">
+            	                <div class="row">
+                                                            <div class="col-full" >
+
+	    	<div class="container-inner">
+        	<div class="container-cell">
+                <div class="as-tabs">
+<ul>
+	<li><a href="apple-shop-help.html">Консултация на място</a></li>
+	<li><a href="apple-shop-faq.html">Задай въпрос онлайн</a></li>
+	<li><a href="apple-shop-events.html">Календар на събитията</a></li>
+	<li><a href="apple-shop-info.html">Интересно</a></li>
+</ul>
+</div>
+            </div>
+        </div>
+    </div>
+
+
+                                                    </div>
+            </div>
+        </section>
+            
+    
+
+                    
+                                	                	                	                	                	                	             
+        <section class=" section section-even" >
+            <div class="container">
+            	                <div class="row">
+                                                                <div class="col-third" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-ipad.html">
+                        <picture>                	
+                            <source srcset="img/Baneri_460x300_iPad.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baneri_460x300_iPad.jpg" alt="" title="">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                                                <div class="col-third" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-iphone.html">
+                        <picture>                	
+                            <source srcset="img/Baneri_460x300_iPhone.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baneri_460x300_iPhone.jpg" alt="" title="">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                                                <div class="col-third" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-mac.html">
+                        <picture>                	
+                            <source srcset="img/Baneri_460x300_mac.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baneri_460x300_mac.jpg" alt="" title="">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                                                <div class="col-third" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-tv-i-ipod.html">
+                        <picture>                	
+                            <source srcset="img/Baneri_460x300_iPod_Tv.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baneri_460x300_iPod_Tv.jpg" alt="" title="">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                                                <div class="col-third" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-aksesoari-all.html">
+                        <picture>                	
+                            <source srcset="img/Baneri_460x300_accessories.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baneri_460x300_accessories.jpg" alt="" title="">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                                                <div class="col-third" >
+
+        	    	<figure>
+        	<div class="figure-image">
+                                                            <a href="apple-beats.html">
+                        <picture>                	
+                            <source srcset="img/Baneri_460x300_beats.jpg" media="(max-width: 990px)" />
+                            <img src="img/Baneri_460x300_beats.jpg" alt="" title="">
+                        </picture>
+                        </a>
+                                                </div>
+        </figure>        
+    </div>
+
+
+                                                    </div>
+            </div>
+        </section>
+            
+    </div>
 
         <footer>
     <div class="inner">
@@ -1708,7 +1969,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4><a aria-controls="contacts" aria-expanded="true" href="#contacts" data-toggle="collapse" role="button" class="tm-collapse">Контакти</a></h4>
+                    <h4><a aria-controls="contacts" aria-expanded="true" href="/Technomarket/contacts" data-toggle="collapse" role="button" class="tm-collapse">Контакти</a></h4>
                     <div id="contacts" class="footer-menu collapse in">
                         <p><strong>Национален телефон на клиента</strong></p>
                         <h3><strong>0700 10 800</strong></h3>
@@ -1803,10 +2064,10 @@
             window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
         </script>
 
-        <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+        <script type="text/javascript" src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
         <!-- End Cookie Consent plugin -->
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:16 GMT -->
+<!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:37 GMT -->
 </html>

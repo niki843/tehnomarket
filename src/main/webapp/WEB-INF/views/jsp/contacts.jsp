@@ -84,7 +84,7 @@
             	<link itemprop="url" href="index.html">
                 <ul itemprop='contactPoint' itemscope itemtype='http://schema.org/ContactPoint' class="nav navbar-nav nav-left">                	
                     <meta itemprop="contactType" content="Customer service">
-                    <li><a href="kontakti.html"><strong><i class="icon-phone"></i> <span itemprop='telephone' class="hidden">+359-02-9421-103</span> 0700 10 800</strong></a></li>
+                    <li><a href="/Technomarket/contacts"><strong><i class="icon-phone"></i> <span itemprop='telephone' class="hidden">+359-02-9421-103</span> 0700 10 800</strong></a></li>
                     <li class="nav-at-home">
                     	<a href="/Technomarket/home">
                             <img src="img/home.svg" alt="@Home" class="hidden-xs" />

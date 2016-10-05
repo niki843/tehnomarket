@@ -28,15 +28,19 @@ public class MyController {
 		return "login";
 	}
 
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String register(Model mod) {
+		return "register";
+	}
+
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model mod) {
 		return "home";
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String register(Model mod) {
-		System.out.println("regg");
-		return "register";
+	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
+	public String contacts(Model mod) {
+		return "contacts";
 	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)

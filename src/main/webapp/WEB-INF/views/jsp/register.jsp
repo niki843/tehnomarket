@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                 	<span itemprop="name" class="hidden">Техномаркет</span>
-                    <a itemprop="url" href="../index.html">
+                    <a itemprop="url" href="/Technomarket/index">
                                                 <img itemprop="logo" src="http://cdn.technomarket.bg/images/bcf9d0e.png" alt="Technomarket" />
                                             </a>
                 </div><!-- /.logo -->

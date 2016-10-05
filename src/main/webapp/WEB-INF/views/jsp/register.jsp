@@ -87,13 +87,13 @@
                     <li><a href="../kontakti.html"><strong><i class="icon-phone"></i> <span itemprop='telephone' class="hidden">+359-02-9421-103</span> 0700 10 800</strong></a></li>
                     <li class="nav-at-home">
                     	<a href="../home.html">
-                                                	<img src="http://cdn.technomarket.bg/images/9b3b7c5.svg" alt="@Home" class="hidden-xs" />
+                                                	<img src="img/home.svg" alt="@Home" class="hidden-xs" />
                             <span class="visible-xs">@Home</span>                        
                                             	</a>
                     </li>
                     <li class="nav-apple-shop">
                     	<a href="../apple-shop.html">
-                                                	<img src="http://cdn.technomarket.bg/images/f74f1ec.jpg" alt="Apple Shop" class="hidden-xs" />
+                                                	<img src="img/apple.jpg" alt="Apple Shop" class="hidden-xs" />
                             <span class="visible-xs">Apple Shop</span>
                                             	</a>
                     </li>
@@ -117,7 +117,7 @@
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                 	<span itemprop="name" class="hidden">Техномаркет</span>
                     <a itemprop="url" href="/Technomarket/index">
-                                                <img itemprop="logo" src="http://cdn.technomarket.bg/images/bcf9d0e.png" alt="Technomarket" />
+                                                <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
                                             </a>
                 </div><!-- /.logo -->
                 <div class="heading-collapse">
@@ -1725,7 +1725,7 @@
         <div class="container">
             <span class="copy">Copyright &reg; 2016 Техномаркет. Всички права запазени.</span>
             <span class="mc-logos">
-                            <img src="http://cdn.technomarket.bg/images/3e561a8.png" alt="Technomarket" />
+                            <img src="img/cards.png" alt="Technomarket" />
                         </span>
         </div>
     </div><!-- /.copyrights -->

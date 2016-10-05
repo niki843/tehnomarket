@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:26 GMT -->
+<!-- Mirrored from www.technomarket.bg/tbi-credit by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:18 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-                                            <title>Apple Shop - Технoмаркет - онлайн магазин</title>
+                                            <title>Условия за TBI Credit кредитиране - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -133,7 +133,7 @@
                         </form><!-- /.input-group -->                        
                     </div><!-- /.search -->
                     <div class="user-bar">
-                         <div class="user-account dropdown">
+                                                <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
                             </button>
@@ -1642,301 +1642,166 @@
     
 
                     
-                <section class="tabPanel  section" >
-                        	<div class="tabPanel-item-container section-even">
-                                        <div class="tabPanel-item" style="">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                   <a href="iphone-7.html">
-                        <picture>                	
-                            <source srcset="img/Banner_iPhone7_1420x500_2609.jpg" media="(max-width: 990px)" />
-                            <img src="img/Banner_iPhone7_1420x500_2609.jpg" alt="iPhone 7" title="iPhone 7">
-                        </picture>
-                   </a>
-            </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">iPhone 7</span>
-                            <span class="subtitle">Поръчай сега!</span>
-                        </div>
-                    </div>
-          			<div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        				<div class="figure-image">
-                               <a href="apple-macbook-all.html">
-		                        <picture>                	
-		                            <source srcset="img/Baner_AS_BTS_1420x500_0109_MacBook_Air.jpg" media="(max-width: 990px)" />
-		                            <img src="img/Baner_AS_BTS_1420x500_0109_MacBook_Air.jpg" alt="На училище с MacBook" title="На училище с MacBook">
-		                        </picture>
-		                       </a>
-                        </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с MacBook</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-ipad-air-2-wifi-16gb-all.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_iPad_Air2.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_iPad_Air2.jpg" alt="НА училище с iPad Air 2" title="НА училище с iPad Air 2">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">НА училище с iPad Air 2</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="ipad-mini-4.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_iPad_mini4.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_iPad_mini4.jpg 2016/Baner_AS_BTS_1420x500_iPad_mini4.jpg" alt="На училище с iPad mini 4" title="На училище с iPad mini 4">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с iPad mini 4</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="macbook-pro.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_MacBook_Pro.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_MacBook_Pro.jpg" alt="На училище с MacBook Pro" title="На училище с MacBook Pro">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с MacBook Pro</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="iphone-6s.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_iPhone6s.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_iPhone6s.jpg" alt="На училище с iPhone 6s" title="На училище с iPhone 6s">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с iPhone 6s</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                    </div>                
-                <div class="tabPanel-nav-wrapp"> 
-                	<div class="container">                  
-                        <ul class="tabPanel-nav">
-                                                        <li class="active">
-                                <a>
-                                    <span class="title">iPhone 7</span>
-                                    <span class="subtitle">Поръчай сега!</span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с MacBook</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">НА училище с iPad Air 2</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с iPad mini 4</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с MacBook Pro</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с iPhone 6s</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                    </ul>
-                    </div>
-                </div>
-                    </section>
-            
-    
-
-                    
                                 	             
         <section class=" section section-odd" >
             <div class="container">
-            	                <div class="row">
-                                                            <div class="col-full" >
+            	                <div class="section-heading">
+                    <h2>Условия за TBI Bank кредитиране</h2>
+                                    </div><!-- /.section-heading -->
+                                <div class="row">
+                                                            <div class="col-auto" >
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <div class="as-tabs">
+                <p align="center"><strong><u>За целеви кредит към Ти Би Ай Банк ЕАД могат да кандидатстват:</u></strong></p>
+
+<p>Физически лица, пълнолетни български граждани, или постоянно пребиваващи в България чуждестранни граждани, с регулярни доходи.<br />
+&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td>
+			<p><strong>ОДОБРЕНИЕ</strong></p>
+			</td>
+			<td>
+			<p>от 5 минути</p>
+			</td>
+			<td>
+			<p>до 15&nbsp;минути</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><strong>СРОК</strong></p>
+			</td>
+			<td>
+			<p>от 3 месеца&nbsp;</p>
+			</td>
+			<td>
+			<p>до&nbsp;36 месеца</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><strong>РАЗМЕР</strong></p>
+			</td>
+			<td>
+			<p>от 150 лева&nbsp;</p>
+			</td>
+			<td>
+			<p>до 7 500 лева</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+			<td>
+			<p>&nbsp;</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p align="center"><strong><em><u>Процедура - Онлайн кандидатстване</u></em></strong></p>
+
+<p>Основните стъпки в процеса на онлайн кредитиране са следните:</p>
+
+<p><strong>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Избирате стоката /стоките, която искате да закупите на изплащане и я /ги &nbsp;добавяте в кошницата. Избирате начин за плащане &bdquo; На кредит&quot;.</p>
+
+<p><strong>На кредитиране подлежат стока/и на обща стойност над 150 лв.</strong></p>
+
+<p><strong>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>С помощта на специално разработен &nbsp;Ти Би Ай Банк ЕАД калкулатор, лесно може да се ориентирате за сроковете и оскъпяването на предлаганите схеми за разсрочено плащане и да изберете най-удобния за Вас вариант на погасяване. Системата автоматично изчислява всички полета на калкулатора след избор на срок на кредита.</p>
+
+<p>След като изберете план на изплащане, за да продължите напред, трябва да дадете своето съгласие за обработка на личните данни. За целта се запознайте с документа &bdquo; Искане декларация за потребителски кредит&quot; и &nbsp;маркирайте&nbsp; полето за &laquo;<em>Съгласие за обработка на лични данни</em>&raquo;. По този начин извършвате електронно изявление, че сте запознати и приемате условията.</p>
+
+<p><strong>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Попълвате форма със следните данни - име, ЕГН, тел. за връзка, и-мейл, адрес.</p>
+
+<p><strong>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Трябва да сте запознати и да приемете Общите условия за онлайн покупка.</p>
+
+<p><strong>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>След потвърждаване на цялата информация по поръчката от Вас&nbsp; Техномаркет България АД&nbsp; изпраща всички въведени данни на Ти Би Ай Банк ЕАД.</p>
+
+<p><strong>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Вие се информирате (чрез сайта), че в рамките на един час ( в работно време на Ти Би Ай Банк ЕАД от 9:00 до 19:00 ч.) искането Ви ще бъде разгледано и ще бъдете осведомен, от&nbsp; Техномаркет България АД за становището.</p>
+
+<p><strong>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Служител на Ти Би Ай Банк ЕАД ще се свърже с Вас на посочените &nbsp;телефони и ще допълни необходимата информация в искането за финансиране.</p>
+
+<p><strong>8. </strong>Техномаркет България АД ще Ви информира за становището по искания кредит.</p>
+
+<p><strong>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>Инструкции - подписване и връщане на документи Ти Би Ай Банк ЕАД от клиента към търговеца</p>
+
+<p><em>a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Клиентът се идентифицира с лична карта, като това задължително трябва да бъде титуляра по договора.&nbsp;</em></p>
+
+<p><em>b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Клиентът предоставя на куриера копие на лична си карта от двете страни. &nbsp;Собственоръчно вписва &nbsp;&bdquo;Вярно с оригинала!&quot;, датата и се подписва<strong>.</strong>&nbsp;</em></p>
+
+<p><em>c)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Куриерът дава за подпис на клиента: Искане-декларация за потребителски кредит, 2 екземпляра на Договор за потребителски кредит, 2 екземпляра на Застрахователен сертификат и Общи условия на засрахователното покритие - ако кредита е защитен &nbsp;и фактура.&nbsp;</em></p>
+
 <ul>
-	<li><a href="apple-shop-help.html">Консултация на място</a></li>
-	<li><a href="apple-shop-faq.html">Задай въпрос онлайн</a></li>
-	<li><a href="apple-shop-events.html">Календар на събитията</a></li>
-	<li><a href="apple-shop-info.html">Интересно</a></li>
+	<li><em>Искане декларация за потребителски кредит - Клиентът вписва трите си имена, ЕГН, град, дата на обозначените места и се разписва на &bdquo;КАНДИДАТ&quot;. </em></li>
 </ul>
-</div>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><em>Договор за потребителски кредит:<br />
+	<br />
+	Страници от 1 до 7 - клиентът се разписва в долния десен ъгъл на &bdquo;ПОТРЕБИТЕЛ&quot;<br />
+	<br />
+	Страница 7 - вписва трите си имена и се подписва на &bdquo;ПОТРЕБИТЕЛ&quot;. Попълва декларацията, в долната част на страницата с град и дата и се подписва на &bdquo; потребител&quot;.</em><br />
+	<br />
+	ДЕКЛАРАЦИЯТА СЕ ПОПЪЛВА САМО В СЛУЧАИТЕ, КОГАТО СТОКАТА СЕ ПРЕДАВА ФИЗИЧЕСКИ НА КЛИЕНТА, В МОМЕНТА НА ПОДПИСВАНЕ НА ДОГОВОРА!</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><em>Застрахователен сертификат и общи условия на застрахователното покритие<br />
+	&bdquo;Възложител&quot; в договора за възлагане - подпис на клиента<br />
+	&bdquo;Застрахован кредитополучател&quot; на едно или две места, в зависимост от&nbsp;&nbsp;&nbsp; вида на защитата - подпис на клиента </em></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><em>Фактура </em><em>&ndash;</em><em> <strong>с плащане по банков път</strong>!<br />
+	Получател: подпис на клиента</em></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><em>d)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; След като попълните и се положат подписи на всички обозначени места в горните документи, куриерът прави проверка&nbsp; за пропуск или грешки.&nbsp;</em></p>
+
+<p><em>e)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; За клиента остава:&nbsp;</em></p>
+
+<ul>
+	<li><em>Екземпляр на договора за потребителски кредит </em></li>
+	<li><em>Застрахователнен сертификат и Общи условия на застрахователното покритие, ако кредита е защитен</em></li>
+	<li><em>Оригинална фактура </em></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><em>f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Куриерът трябва да върне към&nbsp; Техномаркет България АД следния набор от документи:&nbsp;</em></p>
+
+<ul>
+	<li><em>Искане - подписана декларация за потребителски кредит</em></li>
+	<li><em>Договор за потребителски кредит - подписан</em></li>
+	<li><em>Копие от личната карта на клиента - подписано ,вярно с оригинала</em></li>
+	<li><em>Екземпляр от Застрахователния сертификат, ако кредита е защитен - подписан.</em></li>
+	<li><em>Копие от фактура - подписана</em></li>
+	<li><em>Други документи, ако предварително са били изискани такива - подписани.</em></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>10.&nbsp; </strong>При връщане на стоката от Вас в законния 15 дневен срок за онлайн продажбите, Техномаркет България АД &nbsp;уведомява Ти Би Ай Банк ЕАД, за да бъде анулиран договора по надлежния ред.</p>
+
+<p>&nbsp;</p>
             </div>
         </div>
-    </div>
-
-
-                                                    </div>
-            </div>
-        </section>
-            
-    
-
-                    
-                                	                	                	                	                	                	             
-        <section class=" section section-even" >
-            <div class="container">
-            	                <div class="row">
-                                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-ipad.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_iPad.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_iPad.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-iphone.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_iPhone.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_iPhone.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-mac.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_mac.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_mac.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-tv-i-ipod.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_iPod_Tv.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_iPod_Tv.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-aksesoari-all.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_accessories.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_accessories.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-beats.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_beats.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_beats.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
     </div>
 
 
@@ -2068,5 +1933,5 @@
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:37 GMT -->
+<!-- Mirrored from www.technomarket.bg/tbi-credit by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:18 GMT -->
 </html>

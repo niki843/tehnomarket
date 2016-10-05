@@ -142,6 +142,16 @@ public class MyController {
 	public String onlinePay(Model model){
 		return "online-pay";
 	}
+	
+	@RequestMapping(value= "/tbiConditions", method = RequestMethod.GET)
+	public String tbiConditions(Model model){
+		return "tbi-conditions";
+	}
+	
+	@RequestMapping(value= "/uniConditions", method = RequestMethod.GET)
+	public String uniConditions(Model model){
+		return "uni-conditions";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

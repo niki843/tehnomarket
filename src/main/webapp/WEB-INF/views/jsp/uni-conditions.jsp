@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:26 GMT -->
+<!-- Mirrored from www.technomarket.bg/unicredit-izplashtane by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:18 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-                                            <title>Apple Shop - Технoмаркет - онлайн магазин</title>
+                                            <title>Условия за UniCredit кредитиране - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -133,7 +133,7 @@
                         </form><!-- /.input-group -->                        
                     </div><!-- /.search -->
                     <div class="user-bar">
-                         <div class="user-account dropdown">
+                                                <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
                             </button>
@@ -1642,301 +1642,64 @@
     
 
                     
-                <section class="tabPanel  section" >
-                        	<div class="tabPanel-item-container section-even">
-                                        <div class="tabPanel-item" style="">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                   <a href="iphone-7.html">
-                        <picture>                	
-                            <source srcset="img/Banner_iPhone7_1420x500_2609.jpg" media="(max-width: 990px)" />
-                            <img src="img/Banner_iPhone7_1420x500_2609.jpg" alt="iPhone 7" title="iPhone 7">
-                        </picture>
-                   </a>
-            </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">iPhone 7</span>
-                            <span class="subtitle">Поръчай сега!</span>
-                        </div>
-                    </div>
-          			<div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        				<div class="figure-image">
-                               <a href="apple-macbook-all.html">
-		                        <picture>                	
-		                            <source srcset="img/Baner_AS_BTS_1420x500_0109_MacBook_Air.jpg" media="(max-width: 990px)" />
-		                            <img src="img/Baner_AS_BTS_1420x500_0109_MacBook_Air.jpg" alt="На училище с MacBook" title="На училище с MacBook">
-		                        </picture>
-		                       </a>
-                        </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с MacBook</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-ipad-air-2-wifi-16gb-all.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_iPad_Air2.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_iPad_Air2.jpg" alt="НА училище с iPad Air 2" title="НА училище с iPad Air 2">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">НА училище с iPad Air 2</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="ipad-mini-4.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_iPad_mini4.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_iPad_mini4.jpg 2016/Baner_AS_BTS_1420x500_iPad_mini4.jpg" alt="На училище с iPad mini 4" title="На училище с iPad mini 4">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с iPad mini 4</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="macbook-pro.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_MacBook_Pro.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_MacBook_Pro.jpg" alt="На училище с MacBook Pro" title="На училище с MacBook Pro">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с MacBook Pro</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                        <div class="tabPanel-item" style="display: none;">                        
-                            <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="iphone-6s.html">
-                        <picture>                	
-                            <source srcset="img/Baner_AS_BTS_1420x500_iPhone6s.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baner_AS_BTS_1420x500_iPhone6s.jpg" alt="На училище с iPhone 6s" title="На училище с iPhone 6s">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                        <div class="tabPanel-mobile">
-                            <span class="title">На училище с iPhone 6s</span>
-                            <span class="subtitle"></span>
-                        </div>
-                    </div>
-                                    </div>                
-                <div class="tabPanel-nav-wrapp"> 
-                	<div class="container">                  
-                        <ul class="tabPanel-nav">
-                                                        <li class="active">
-                                <a>
-                                    <span class="title">iPhone 7</span>
-                                    <span class="subtitle">Поръчай сега!</span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с MacBook</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">НА училище с iPad Air 2</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с iPad mini 4</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с MacBook Pro</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                        <li class="">
-                                <a>
-                                    <span class="title">На училище с iPhone 6s</span>
-                                    <span class="subtitle"></span>
-                                </a>
-                            </li>
-                                                    </ul>
-                    </div>
-                </div>
-                    </section>
-            
-    
-
-                    
                                 	             
         <section class=" section section-odd" >
             <div class="container">
-            	                <div class="row">
-                                                            <div class="col-full" >
+            	                <div class="section-heading">
+                    <h2>Условия за UniCredit кредитиране</h2>
+                                    </div><!-- /.section-heading -->
+                                <div class="row">
+                                                            <div class="col-auto" >
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <div class="as-tabs">
-<ul>
-	<li><a href="apple-shop-help.html">Консултация на място</a></li>
-	<li><a href="apple-shop-faq.html">Задай въпрос онлайн</a></li>
-	<li><a href="apple-shop-events.html">Календар на събитията</a></li>
-	<li><a href="apple-shop-info.html">Интересно</a></li>
-</ul>
-</div>
+                <p><b><font face="tahoma">УСЛОВИЯ, НА КОИТО КЛИЕНТЪТТРЯБВА ДА ОТГОВАРЯ, ЗА ДА БЪДЕ ВЪЗМОЖНО РАЗГЛЕЖДАНЕТО И ОДОБРЕНИЕТО НА ДОГОВОРАЗА ОНЛАЙН КРЕДИТОТ УНИКРЕДИТ КЪНСЮМЪР ФАЙНЕНСИНГ АД:</font></b></p>
+
+<p><font face="tahoma">&middot; - Да е български гражданин, с постоянно местоживеенена територията на Република България;</font></p>
+
+<p><font face="tahoma">&middot; - Минималнавъзраст в момента на кандидатстване 18 навършени години;</font></p>
+
+<p><font face="tahoma">&middot; - Максимална възраст при изтичането на периода(срока) на кредита &ndash; 75 навършени години.</font></p>
+
+<p>Право да кандидатства за отпусканена кредит има само ползвател, чиято конкретна онлайн поръчка е с обща онлайнцена (без цената на доставка), равна или по &ndash; голяма от 150 (сто и петдесет)лева, независимо от броя и единичната онлайн продажна цена на стоките включенив поръчката.</p>
+
+<p><font face="tahoma">Минималната месечна вноска поодобрен кредит не може да бъде по малка от 20 (двадесет) лева.</font></p>
+
+<p><font face="tahoma">При закупуване чрез онлайн магазина на мобилни телефони, максималната продължителност на кредите е до 24 (двадесет и четири) месеца, а на всички останали стоки до 72 месеца. Максималната финансирана сума за закупуване на мобилен телефон е 1500 лева без застраховка.</font></p>
+
+<p><font face="tahoma">Ползвателят се уведомява потелефона от УниКредит Кънсюмър Файненсинг в случай, че се налага промяна наброя вноски, различен от желания брой посочен от ползвателя.</font></p>
+
+<p><br />
+<br />
+<font face="tahoma, arial, helvetica, sans-serif">​</font><b>ИНСТРУКЦИЯ &ndash; ПОКУПКА НА ИЗПЛАЩАНЕ СУНИКРЕДИТ КЪНСЮМЪР ФАЙНЕНСИНГ ОТ ОНЛАЙН МАГАЗИНА НА ТЕХНОМАРКЕТ</b></p>
+
+<p>&nbsp;</p>
+
+<p>1. След като сте избрали желаната стока, моля изберете най-удобната за Вас месечна вноска с помощта наУниКредит калкулатора.</p>
+
+<p>2. За да продължите напред, моля, дайте своето съгласие за обработка на лични данни. Моля запознайте се с документа и маркирайте полето &bdquo;Съгласие за обработка на личните данни&rdquo;. По този начин Вие потвърждавате, че сте съгласен личните Ви данни да бъдат обработвани от Уникредит Кънсюмър Файненсинг, по описания в документа начин и за целите посочени в него.</p>
+
+<p>3. Очаквайте обаждане от сътрудник на УниКредит в работно време (от 09:00 до 21:00 часа в делнични дни иот 10:00 до 20:00 часа в почивни дни), със съдействието на когото ще финализирате процеса на кандидатстване за потребителски кредит.</p>
+
+<p>4. След като искането Ви за финансиране бъде разгледано , служител на УниКредит ще се свърже с Вас, за да Ви съобщи кредитното решение.</p>
+
+<p>5. Ако искането Ви за кредит е одобрено, преди да получите стоката си е нужно да подпишете документите свързани с договора за кредит.</p>
+
+<p>6. Служителна УниКредит ще се свърже с Вас по телефона в работен ден, за да уточните детайлите относно изпращането на документите свързани с кредита, които трябва да подпишете.</p>
+
+<p>7. Документите ще получите на следващия работен ден с куриер.</p>
+
+<p>8. ВАЖНО! Необходимо е предварително да подготвите фотокопие на двете страни на лична Ви карта. Собсвеноръчно трябва да напишете &bdquo;Вярно с оригинала!&ldquo;, датата и да се подпишете.</p>
+
+<p>9. Куриерът ще ви даде за подпис документи в два идентични екземпляра &ndash; единият остава за Вас, а другият трябва да подпишете и да върнете на куриера. Заедно с единия екземпляр от документите за кредита трябва да върнете на куриера и фотокопието на личната Ви карта.</p>
+
+<p>Документите, които ще получите са: Договор за отпускане на стоков кредит (2 екземпляра), Общи условия за отпускане на стоков кредит (2 екземпляра), Погасителен план (2 екземпляра), 2 екземпляра от Сертификат за застраховка (ако кредитът е защитен) Общи условия за застрахователна програма.</p>
+
+<p>10. Моля,внимателно разгледайте и подпишете документите на обозначените места, след което добавете копието на личната Ви карта и върнете документите на куриера.</p>
+
+<p>11. След катоУниКредит получи коректно подписаните документи, служител на Техномаркет ще се свърже с Вас, за да уточните доставката на стоката.</p>
             </div>
         </div>
-    </div>
-
-
-                                                    </div>
-            </div>
-        </section>
-            
-    
-
-                    
-                                	                	                	                	                	                	             
-        <section class=" section section-even" >
-            <div class="container">
-            	                <div class="row">
-                                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-ipad.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_iPad.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_iPad.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-iphone.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_iPhone.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_iPhone.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-mac.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_mac.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_mac.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-tv-i-ipod.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_iPod_Tv.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_iPod_Tv.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-aksesoari-all.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_accessories.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_accessories.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
-    </div>
-
-
-                                                <div class="col-third" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                                            <a href="apple-beats.html">
-                        <picture>                	
-                            <source srcset="img/Baneri_460x300_beats.jpg" media="(max-width: 990px)" />
-                            <img src="img/Baneri_460x300_beats.jpg" alt="" title="">
-                        </picture>
-                        </a>
-                                                </div>
-        </figure>        
     </div>
 
 
@@ -2068,5 +1831,5 @@
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:37 GMT -->
+<!-- Mirrored from www.technomarket.bg/unicredit-izplashtane by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:18 GMT -->
 </html>

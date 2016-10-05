@@ -1749,8 +1749,8 @@
                         <li><a href="/Technomarket/conditionsForMarketing">Условия за Online пазаруване</a></li>
                         <li><a href="/Technomarket/delivery">Бърза и безплатна доставка до дома Ви</a></li>
                         <li><a href="/Technomarket/onlinePay">Сигурно Online разплащане</a></li>
-                        <li><a href="tbi-credit.html">Условия за TBI Credit кредитиране</a></li>
-                        <li><a href="unicredit-izplashtane.html">Условия за UniCredit кредитиране</a></li>
+                        <li><a href="/Technomarket/tbiConditions">Условия за TBI Credit кредитиране</a></li>
+                        <li><a href="/Technomarket/uniConditions">Условия за UniCredit кредитиране</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">

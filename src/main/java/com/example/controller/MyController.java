@@ -107,6 +107,11 @@ public class MyController {
 	public String lgClimaWarranty(Model mod) {
 		return "lg-clima-warranty";
 	}
+	
+	@RequestMapping(value = "/iphone7", method = RequestMethod.GET)
+	public String iphone7(Model mod) {
+		return "iphone7";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

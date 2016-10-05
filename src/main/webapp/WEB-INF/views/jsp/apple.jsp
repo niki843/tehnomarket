@@ -98,10 +98,10 @@
                         </a>
                     </li>
                     <li class="nav-promo"><a href="promocii.html"><i class="icon-gift"></i> Промоции</a></li>
-                    <li><a href="magazini.html"><i class="icon-location"></i> Магазини</a></li>
+                    <li><a href="/Technomarket/stores"><i class="icon-location"></i> Магазини</a></li>
                 </ul>
                 <ul itemscope itemtype="http://schema.org/Organization" class="nav navbar-nav nav-right">
-                	<link itemprop="url" href="index.html"> 
+                	<link itemprop="url" href="/Technomarket/index"> 
                     <li class="icon-social"><a itemprop="sameAs" href="https://www.facebook.com/technomarket/" target="_blank"><i class="icon-facebook"></i> <span class="visible-xs">Facebook</span></a></li>
                     <li class="icon-social"><a itemprop="sameAs" href="https://plus.google.com/+technomarket/" target="_blank"><i class="icon-google"></i> <span class="visible-xs">Google +</span></a></li>
                     <li class="icon-social"><a itemprop="sameAs" href="https://twitter.com/technomarketbg/" target="_blank"><i class="icon-twitter"></i> <span class="visible-xs">Twitter</span></a></li>
@@ -122,7 +122,7 @@
                 </div><!-- /.logo -->
                 <div class="heading-collapse">
                     <div itemscope itemtype="http://schema.org/WebSite" class="search">
-                    	<link itemprop="url" href="img/tehnomarket.png"/>
+                    	<link itemprop="url" href="/Technomarket/index"/>
                         <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" action="http://www.technomarket.bg/search/" method="get" class="input-group">
                             <meta itemprop="target" content="http://www.technomarket.bg/search/?query={query}"/>	
                             <input itemprop="query-input" type="text" name="query" placeholder="Търси..." class="form-control">
@@ -1954,7 +1954,7 @@
                     <h4><a aria-controls="technomarket" aria-expanded="true" href="#technomarket" data-toggle="collapse" role="button" class="tm-collapse">Техномаркет</a></h4>
                     <ul id="technomarket" class="footer-menu collapse in">
                         <li><a href="loyalni-klienti.html">Лоялни клиенти</a></li>
-                        <li><a href="magazini.html">Магазини</a></li>
+                        <li><a href="/Technomarket/stores">Магазини</a></li>
                         <li><a href="/Technomarket/contacts">Контакти</a></li>
                     </ul>
                 </div>

@@ -138,8 +138,8 @@
                             	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="login.jsp">Вход</a></li>
-                                <li><a href="register.jsp">Регистрация</a></li>
+                                <li><a href="/Technomarket/login">Вход</a></li>
+                                <li><a href="/Technomarket/register">Регистрация</a></li>
                             </ul>
                         </div><!-- /.user-account -->
                                                 <div class="basket">

@@ -17,17 +17,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MyController {
-	
-	@RequestMapping(value="/index", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model mod) {
-		return"index";
+		System.out.println("tuk e");
+		return "index";
 	}
-	
-	@RequestMapping(value="/mindex", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model mod) {
+		System.out.println("dammm");
+		return "login";
+	}
+
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String register(Model mod) {
+		System.out.println("regg");
+		return "register";
+	}
+
+	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {
 		// talk with model
 		Product product = new Product("Kiselo zele", 50);
-		
+
 		List<Product> products = new ArrayList<Product>();
 		products.add(product);
 		products.add(new Product("Kisela krastavica", 13));
@@ -36,21 +49,21 @@ public class MyController {
 		products.add(new Product("Kisel greipfrut", 13));
 		products.add(new Product("Kisel banan", 43));
 		products.add(new Product("Kiselo mlqko", 33));
-		
-		viewModel.addAttribute("Text","Bye");
+
+		viewModel.addAttribute("Text", "Bye");
 		viewModel.addAttribute("products", products);
-		
+
 		viewModel.addAttribute(new Product("", 0));
-		
+
 		return "listproducts";
 	}
-	
-	@RequestMapping(value="/mindex", method=RequestMethod.POST)
+
+	@RequestMapping(value = "/mindex", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute Product product) {
 		// add to DAO
 		System.out.println(product);
-		
+
 		return "listproducts";
 	}
-	
+
 }

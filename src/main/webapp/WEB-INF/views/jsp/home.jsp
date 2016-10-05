@@ -139,7 +139,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a href="/Technomarket/login">Вход</a></li>
-                                <li><a href=/Technomarket/register">Регистрация</a></li>
+                                <li><a href="/Technomarket/register">Регистрация</a></li>
                             </ul>
                         </div><!-- /.user-account -->
                                                 <div class="basket">

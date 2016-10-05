@@ -143,7 +143,7 @@
                             </ul>
                         </div><!-- /.user-account -->
                                                 <div class="basket">
-                            <a href="cart/index.html" class="btn btn-tm">
+                            <a href="/Technomarket/cart" class="btn btn-tm">
                                 <i class="icon-basket"></i> -
                             </a>
                         </div><!-- /.basket -->

@@ -138,8 +138,8 @@
                             	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="../login.html">Вход</a></li>
-                                <li><a href="index.html">Регистрация</a></li>
+                                <li><a href="/Technomarket/login">Вход</a></li>
+                                <li><a href="/Technomarket/register">Регистрация</a></li>
                             </ul>
                         </div><!-- /.user-account -->
                                                 <div class="basket">
@@ -1668,7 +1668,7 @@
         </div>
         <div class="col-half">
             <h2>Имаш профил?</h2>
-            <a href="../login.html" class="btn btn-tm">Вход в сайта</a>
+            <a href="/Technomarket/login" class="btn btn-tm">Вход в сайта</a>
             <hr>
                                                         </div>
     </div>

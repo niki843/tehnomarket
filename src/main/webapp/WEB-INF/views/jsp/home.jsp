@@ -95,7 +95,7 @@
                     	<a href="/Technomarket/apple">
                             <img src="img/apple.jpg" alt="Apple Shop" class="hidden-xs" />
                             <span class="visible-xs">Apple Shop</span>
-                        /a>
+                        </a>
                     </li>
                     <li class="nav-promo"><a href="promocii.html"><i class="icon-gift"></i> Промоции</a></li>
                     <li><a href="magazini.html"><i class="icon-location"></i> Магазини</a></li>

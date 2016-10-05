@@ -42,6 +42,11 @@ public class MyController {
 	public String contacts(Model mod) {
 		return "contacts";
 	}
+	
+	@RequestMapping(value = "/apple", method = RequestMethod.GET)
+	public String apple(Model mod) {
+		return "apple";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

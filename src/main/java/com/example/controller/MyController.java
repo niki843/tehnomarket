@@ -117,6 +117,11 @@ public class MyController {
 	public String vaucher(Model mod) {
 		return "vaucher";
 	}
+	
+	@RequestMapping(value = "/logitechPromo", method = RequestMethod.GET)
+	public String logitechPromo(Model mod) {
+		return "logitech-promo";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

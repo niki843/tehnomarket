@@ -51,6 +51,11 @@ public class MyController {
 	@RequestMapping(value = "/stores", method = RequestMethod.GET)
 	public String stores(Model mod) {
 		return "stores";
+	}	
+	
+	@RequestMapping(value = "/sales", method = RequestMethod.GET)
+	public String sales(Model mod) {
+		return "sales";
 	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)

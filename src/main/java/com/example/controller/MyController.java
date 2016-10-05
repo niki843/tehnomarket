@@ -62,6 +62,11 @@ public class MyController {
 	public String cart(Model mod) {
 		return "cart";
 	}
+	
+	@RequestMapping(value = "/brochure", method = RequestMethod.GET)
+	public String brochure(Model mod) {
+		return "brochure";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

@@ -1854,7 +1854,7 @@
 
         	    	<figure>
         	<div class="figure-image">
-                        <a href="technomarket-broshura-30-09-2016.html">
+                        <a href="/Technomarket/brochure">
                         <picture>                	
                             <source srcset="img/promo.jpg" media="(max-width: 990px)" />
                             <img src="img/promo.jpg" alt="Промоционална брошура" title="Промоционална брошура">

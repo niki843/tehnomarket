@@ -122,6 +122,11 @@ public class MyController {
 	public String logitechPromo(Model mod) {
 		return "logitech-promo";
 	}
+	
+	@RequestMapping(value = "/hotpointPromo", method = RequestMethod.GET)
+	public String hotpointPromo(Model mod) {
+		return "hotpoint-promo";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

@@ -87,6 +87,11 @@ public class MyController {
 	public String OnlineToShop(Model mod) {
 		return "online-to-shop";
 	}
+	
+	@RequestMapping(value = "/canonCashBack", method = RequestMethod.GET)
+	public String canonCashBack(Model mod) {
+		return "canon-cash-back";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

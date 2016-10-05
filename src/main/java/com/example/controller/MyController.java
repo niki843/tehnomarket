@@ -92,6 +92,21 @@ public class MyController {
 	public String canonCashBack(Model mod) {
 		return "canon-cash-back";
 	}
+	
+	@RequestMapping(value = "/lgClima", method = RequestMethod.GET)
+	public String lgClima(Model mod) {
+		return "lg-clima";
+	}
+	
+	@RequestMapping(value = "/lgClimaCertificate", method = RequestMethod.GET)
+	public String lgClimaCertificate(Model mod) {
+		return "lg-clima-certificate";
+	}
+	
+	@RequestMapping(value = "/lgClimaWarranty", method = RequestMethod.GET)
+	public String lgClimaWarranty(Model mod) {
+		return "lg-clima-warranty";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

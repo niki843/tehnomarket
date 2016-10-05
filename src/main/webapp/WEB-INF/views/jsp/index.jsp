@@ -2847,7 +2847,7 @@
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <p><a href="kupi-online-vzemi-ot-magazin.html"><img alt="" src="img/banner_takefroms.jpg" /></a></p>
+                <p><a href="/Technomarket/OnlineToShop"><img alt="" src="img/banner_takefroms.jpg" /></a></p>
             </div>
         </div>
     </div>

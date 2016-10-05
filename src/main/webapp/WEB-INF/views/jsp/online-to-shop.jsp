@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/lg-tv-5years-warranty-pravila by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 14:07:05 GMT -->
+<!-- Mirrored from www.technomarket.bg/kupi-online-vzemi-ot-magazin by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:10 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-                                            <title>Условия на програма 5 години грижа за клиента - телевизори - Технoмаркет - онлайн магазин</title>
+                                            <title>Купи онлайн, Вземи от магазин Техномаркет! - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -1642,87 +1642,170 @@
     
 
                     
-                                	                	             
-        <section class=" section section-even" >
+                                	             
+        <section class=" section section-odd" >
             <div class="container">
-            	                <div class="row">
-                                                            <div class="col-half pull-left" >
+            	                <div class="section-heading">
+                    <h2>Вземи от магазин</h2>
+                                        <span class="subtitle">Поръчай онлайн, вземи от магазин</span>
+                                    </div><!-- /.section-heading -->
+                                <div class="row">
+                                                                <div class="col-md-16 text-center" >
 
-	    	<div class="container-inner">
-        	<div class="container-cell">
-                <p><a href="televizor/lg.html"><img alt="" src="img/lg-logo.jpg" /></a></p>
-            </div>
-        </div>
+        	    	<figure>
+        	<div class="figure-image">
+                                <picture>                	
+                    <source srcset="img/header_takefromshop_3.jpg" media="(max-width: 990px)" />
+                    <img src="img/header_takefromshop_3.jpg" alt="" title="">
+                </picture>
+                            </div>
+        </figure>        
     </div>
 
 
-                                            <div class="col-auto" >
-
-	    	<div class="container-inner">
-        	<div class="container-cell">
-                <h2 style="text-align: center;"><strong>Условия на програма&nbsp;&ldquo;5 години грижа за клиента</strong><strong>&rdquo;</strong></h2>
-
-<p>&nbsp;</p>
-
-<p>Настоящите условия на промоцията &bdquo;5 години грижа за клиента&rdquo; (наричани: Условия) са в сила за Клиенти, закупили Продукт, описан според Условията, в периода 1-октомври, 2016 и 15-януари, 2017 и разпространявани в търговската мрежа от LG Electronics Magyar Kft в България чрез търговски партньори, участващи в промоцията. Чрез свалянето на сертификата за промоцията, Вие давате Вашето съгласие с Условията на програмата &bdquo;5 години грижа за клиента&rdquo;, както и потвърждавате пълното разбиране правата на потребителя според описаните Условия.</p>
-
-<p>&nbsp;</p>
-
-<ol>
-	<li>На база настоящите Условия (могат да бъдат намерени на сайта на LG Electronics България), програмата &bdquo;5 години грижа за клиента&rdquo; е валидна при представяне на документи, които верифицират Вашата покупка (касова бележка, фактура), както и коректно попълнена гаранционна карта и Сертификат.<br />
-	&nbsp;</li>
-	<li value="2">Описаните Условия са валидни само и единствено за посочената промоция и правата на потребителя според местните законови разпоредби остават в сила.<br />
-	&nbsp;</li>
-	<li value="3">С програмата &bdquo;5 години грижа за клиента&rdquo; получавате следните права и ползи :</li>
-</ol>
-
-<p>&nbsp;</p>
-
-<ul>
-	<li value="3.1">През първите две години от датата на покупка на Продукта, Вие получавате пълно гаранционно обслужване за всички дефекти, които са следствие от производствена грешка, което включва безплатна поправка, безплатна замяна на повредени части, безплатно сервизиране на място (с изключение на телевизори 32&rdquo; или с по-малък екран), в случай на необходимост. В допълнение, безплатна напълна замяна на продукта, в случай че сервизирането на Продукта не е достатъчно решение за отсраняване на дефект. В случай, че се налага замяна на Продукта (дори повече от веднъж) в периода на &bdquo;5 години грижа за клиента&rdquo;, ще Ви бъде дадено правото на законова гаранция в момента на замяна или нови гаранционни условия според Условията на периода за посочената промоционална програма според датата на първоначалната покупка. В правото си на клиент, можете да изберете предпочитания от Вас вариант.</li>
-	<li value="3.2">През третата, четвъртата и петата година от датата на покупка на Продукта, Вие получавате ограничено гаранционно обслужване на дефекти, които са следствие от производствена грешка, което включва безплатна поправка, безплатна замяна на повредени части. В допълнение, безплатна напълна замяна на продукта, в случай че сервизирането на Продукта не е достатъчно решение за отсраняване на дефект. В случай, че се налага замяна на Продукта (дори повече от веднъж) в периода на &bdquo;5 години грижа за клиента&rdquo;, ще Ви бъде дадено правото на законова гаранция в момента на замяна или нови гаранционни условия според Условията на периода за посочената промоционална програма според датата на първоначалната покупка. В правото си на клиент, можете да изберете предпочитания от Вас вариант.</li>
-</ul>
-
-<p>&nbsp;</p>
-
-<ol>
-	<li value="4">Програмата &bdquo;5 години грижа за клиента&rdquo; е валидна за период от 5 години от датата на закупуване на продукта и ще бъде удължена според времето, през което Продуктът е бил сервизиран, ако се е наложило сервизиране.<br />
-	&nbsp;</li>
-	<li value="5">Всяка поправка или замяна ще бъде коректно отразена в гаранционната карта от LGEMK през периода от 5 години.<br />
-	&nbsp;</li>
-	<li value="6">Продуктите, за които са валидни Условията на промоцията:</li>
-</ol>
-
-<p>40UH630V, 43UH610V, 43UH6107, 43UH6207, 43UH6507, 43UH661V, 43UH664V,&nbsp;<br />
-43UH668V, 43UH7507, 49UH6107, 49UH610V, 49UH6207, 49UH6507, 49UH661V,&nbsp;<br />
-49UH664V, 49UH668V, 49UH7507, 49UH7707, 49UH8507, 50UH635V, 55UH600,&nbsp;<br />
-55UH6157, 55UH615V, 55UH6257, 55UH6507, 55UH661V, 55UH664V, 55UH668V,&nbsp;<br />
-55UH7507, 55UH7707, 55UH8507, 55UH950V, 60UH6257, 60UH6507, 60UH7707,&nbsp;<br />
-60UH8507, 65UH600, 65UH6257, 65UH661V, 65UH664V, 65UH668V, 65UH8507,&nbsp;<br />
-65UH950V, 70UH700V, 75UH855V, 86UH955V, 43UH603V, 49UH603V, 55UH605V,&nbsp;<br />
-60UH605V</p>
-
-<p>&nbsp;</p>
-
-<ol>
-	<li value="7">Моля, обърнете внимание, че за участие в промоционалната програма &bdquo;5 години грижа за клиента&rdquo;, трябва да представите Сертификат и документи, които верифицират направената покупка като (касова бележка, фактура) и коректно попълнена гаранционна карта.<br />
-	&nbsp;</li>
-	<li value="8">Промоцията &bdquo;5 години грижа за клиента&rdquo; е валидна спрямо описаните Условия в документа.</li>
-</ol>
-
-<p style="margin-left:18.0pt;">&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p>Благодарим Ви, че избрахте LG!</p>
-
-<p>&nbsp;</p>
-
-<p>Дата: 1/10/2016</p>
-
-<p>LG Electronics България</p>
+                                                    </div>
             </div>
-        </div>
+        </section>
+            
+    
+
+                    
+                                	             
+        <section class=" section section-odd" >
+            <div class="container">
+            	                <div class="section-heading">
+                    <h2>Магазини Техномаркет</h2>
+                                    </div><!-- /.section-heading -->
+                                <div class="row">
+                                                            	<div class="col-full" >
+
+    <div class="container-inner">
+        <div class="container-cell">
+                                    <ul class="tm-list tm-cols-x4">
+        <li>
+        <a href="asenovgrad/tehnomarket-asenovgrad.html"><strong>АСЕНОВГРАД</strong></a>
+    </li>
+        <li>
+        <a href="bansko/tehnomarket-bansko.html"><strong>БАНСКО</strong></a>
+    </li>
+        <li>
+        <a href="blagoevgrad/tehnomarket-blagoevgrad.html"><strong>БЛАГОЕВГРАД</strong></a>
+    </li>
+        <li>
+        <a href="botevgrad/tehnomarket-botevgrad.html"><strong>БОТЕВГРАД</strong></a>
+    </li>
+        <li>
+        <a href="burgas.html"><strong>БУРГАС</strong></a>
+    </li>
+        <li>
+        <a href="varna.html"><strong>ВАРНА</strong></a>
+    </li>
+        <li>
+        <a href="veliko-tyrnovo/tehnomarket-veliko-tyrnovo.html"><strong>ВЕЛИКО ТЪРНОВО</strong></a>
+    </li>
+        <li>
+        <a href="vidin/tehnomarket-vidin.html"><strong>ВИДИН</strong></a>
+    </li>
+        <li>
+        <a href="vraca/tehnomarket-vraca.html"><strong>ВРАЦА</strong></a>
+    </li>
+        <li>
+        <a href="gabrovo/tehnomarket-gabrovo.html"><strong>ГАБРОВО</strong></a>
+    </li>
+        <li>
+        <a href="goce-delchev/tehnomarket-goce-delchev.html"><strong>ГОЦЕ ДЕЛЧЕВ</strong></a>
+    </li>
+        <li>
+        <a href="dimitrovgrad/tehnomarket-dimitrovgrad.html"><strong>ДИМИТРОВГРАД</strong></a>
+    </li>
+        <li>
+        <a href="dobrich/tehnomarket-dobrich.html"><strong>ДОБРИЧ</strong></a>
+    </li>
+        <li>
+        <a href="dupnica/tehnomarket-dupnica.html"><strong>ДУПНИЦА</strong></a>
+    </li>
+        <li>
+        <a href="ihtiman/tehnomarket-ihtiman.html"><strong>ИХТИМАН</strong></a>
+    </li>
+        <li>
+        <a href="kazanlyk/tehnomarket-kazanlyk.html"><strong>КАЗАНЛЪК</strong></a>
+    </li>
+        <li>
+        <a href="karlovo/tehnomarket-karlovo.html"><strong>КАРЛОВО</strong></a>
+    </li>
+        <li>
+        <a href="kyrdzhali/tehnomarket-kyrdzhali.html"><strong>КЪРДЖАЛИ</strong></a>
+    </li>
+        <li>
+        <a href="lovech/tehnomarket-lovech.html"><strong>ЛОВЕЧ</strong></a>
+    </li>
+        <li>
+        <a href="montana/tehnomarket-montana.html"><strong>МОНТАНА</strong></a>
+    </li>
+        <li>
+        <a href="pazardzhik/tehnomarket-pazardzhik-2.html"><strong>ПАЗАРДЖИК</strong></a>
+    </li>
+        <li>
+        <a href="pernik/tehnomarket-pernik.html"><strong>ПЕРНИК</strong></a>
+    </li>
+        <li>
+        <a href="pleven/tehnomarket-pleven.html"><strong>ПЛЕВЕН</strong></a>
+    </li>
+        <li>
+        <a href="plovdiv.html"><strong>ПЛОВДИВ</strong></a>
+    </li>
+        <li>
+        <a href="pyrvomaj/tehnomarket-pyrvomaj.html"><strong>ПЪРВОМАЙ</strong></a>
+    </li>
+        <li>
+        <a href="ruse.html"><strong>РУСЕ</strong></a>
+    </li>
+        <li>
+        <a href="samokov/tehnomarket-samokov.html"><strong>САМОКОВ</strong></a>
+    </li>
+        <li>
+        <a href="sandanski/tehnomarket-sandanski.html"><strong>САНДАНСКИ</strong></a>
+    </li>
+        <li>
+        <a href="svilengrad/tehnomarket-svilengrad.html"><strong>СВИЛЕНГРАД</strong></a>
+    </li>
+        <li>
+        <a href="svishtov/tehnomarket-svishtov.html"><strong>СВИЩОВ</strong></a>
+    </li>
+        <li>
+        <a href="sevlievo/tehnomarket-sevlievo.html"><strong>СЕВЛИЕВО</strong></a>
+    </li>
+        <li>
+        <a href="silistra/tehnomarket-silistra.html"><strong>СИЛИСТРА</strong></a>
+    </li>
+        <li>
+        <a href="sliven/tehnomarket-sliven.html"><strong>СЛИВЕН</strong></a>
+    </li>
+        <li>
+        <a href="smolqn/tehnomarket-smolqn.html"><strong>СМОЛЯН</strong></a>
+    </li>
+        <li>
+        <a href="sofiq.html"><strong>СОФИЯ</strong></a>
+    </li>
+        <li>
+        <a href="stara-zagora.html"><strong>СТАРА ЗАГОРА</strong></a>
+    </li>
+        <li>
+        <a href="tyrgovishte/tehnomarket-tyrgovishte.html"><strong>ТЪРГОВИЩЕ</strong></a>
+    </li>
+        <li>
+        <a href="haskovo/tehnomarket-haskovo.html"><strong>ХАСКОВО</strong></a>
+    </li>
+        <li>
+        <a href="shumen/tehnomarket-shumen.html"><strong>ШУМЕН</strong></a>
+    </li>
+        <li>
+        <a href="qmbol/tehnomarket-qmbol.html"><strong>ЯМБОЛ</strong></a>
+    </li>
+    </ul>
+
+                    </div>
+    </div>
     </div>
 
 
@@ -1854,5 +1937,5 @@
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/lg-tv-5years-warranty-pravila by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 14:07:05 GMT -->
+<!-- Mirrored from www.technomarket.bg/kupi-online-vzemi-ot-magazin by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:10 GMT -->
 </html>

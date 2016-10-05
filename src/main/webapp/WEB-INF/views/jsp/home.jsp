@@ -1864,7 +1864,7 @@
                 <div class="col-md-5">
                     <h4><a aria-controls="easy-shopping" aria-expanded="true" href="#easy-shopping" data-toggle="collapse" role="button" class="tm-collapse">Лесно пазаруване</a></h4>
                     <ul id="easy-shopping" class="footer-menu collapse in">
-                        <li><a href="uslovia-za-online-pazaruvane.html">Условия за Online пазаруване</a></li>
+                        <li><a href="/Technomarket/conditionsForMarketing">Условия за Online пазаруване</a></li>
                         <li><a href="byrza-i-bezplatna-dostavka.html">Бърза и безплатна доставка до дома Ви</a></li>
                         <li><a href="online-razplashtane.html">Сигурно Online разплащане</a></li>
                         <li><a href="tbi-credit.html">Условия за TBI Credit кредитиране</a></li>

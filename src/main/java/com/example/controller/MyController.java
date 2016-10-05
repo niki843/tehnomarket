@@ -127,6 +127,11 @@ public class MyController {
 	public String hotpointPromo(Model mod) {
 		return "hotpoint-promo";
 	}
+	
+	@RequestMapping(value = "/conditionsForMarketing", method = RequestMethod.GET)
+	public String conditionsForMarketing(Model mod) {
+		return "conditions-for-online-marketing";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

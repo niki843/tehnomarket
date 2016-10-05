@@ -9,7 +9,7 @@
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="http://cdn.technomarket.bg/images/favicon.ico">
+        <link rel="icon" href="img/favicon.ico">
                                 <link rel="stylesheet" href="css/cdn.technomarket.bg/css/f38a55a.css" />
                             <script type="text/javascript" src="css/cdn.technomarket.bg/assets/vendor/requirejs/require.js"></script>
 
@@ -86,10 +86,10 @@
                     <meta itemprop="contactType" content="Customer service">
                     <li><a href="kontakti.html"><strong><i class="icon-phone"></i> <span itemprop='telephone' class="hidden">+359-02-9421-103</span> 0700 10 800</strong></a></li>
                     <li class="nav-at-home">
-                    	<a href="home.html">
-                                                	<img src="img/home.svg" alt="@Home" class="hidden-xs" />
+                    	<a href="/Technomarket/home">
+                            <img src="img/home.svg" alt="@Home" class="hidden-xs" />
                             <span class="visible-xs">@Home</span>                        
-                                            	</a>
+                        </a>
                     </li>
                     <li class="nav-apple-shop">
                     	<a href="apple-shop.html">

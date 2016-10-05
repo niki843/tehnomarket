@@ -20,14 +20,17 @@ public class MyController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model mod) {
-		System.out.println("tuk e");
 		return "index";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model mod) {
-		System.out.println("dammm");
 		return "login";
+	}
+
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home(Model mod) {
+		return "home";
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)

@@ -97,7 +97,7 @@
                             <span class="visible-xs">Apple Shop</span>
                         </a>
                     </li>
-                    <li class="nav-promo"><a href="promocii.html"><i class="icon-gift"></i> Промоции</a></li>
+                    <li class="nav-promo"><a href="/Technomarket/sales"><i class="icon-gift"></i> Промоции</a></li>
                     <li><a href="/Technomarket/stores"><i class="icon-location"></i> Магазини</a></li>
                 </ul>
                 <ul itemscope itemtype="http://schema.org/Organization" class="nav navbar-nav nav-right">
@@ -3037,7 +3037,6 @@
                 <div class="col-md-2">
                     <h4><a aria-controls="technomarket" aria-expanded="true" href="#technomarket" data-toggle="collapse" role="button" class="tm-collapse">Техномаркет</a></h4>
                     <ul id="technomarket" class="footer-menu collapse in">
-                        <li><a href="loyalni-klienti.html">Лоялни клиенти</a></li>
                         <li><a href="/Technomarket/stores">Магазини</a></li>
                         <li><a href="/Technomarket/contacts">Контакти</a></li>
                     </ul>

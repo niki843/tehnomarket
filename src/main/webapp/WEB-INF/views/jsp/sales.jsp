@@ -1,10 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/magazini by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:48 GMT -->
+<!-- Mirrored from www.technomarket.bg/promocii by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:37 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-                                            <title>Магазини Техномаркет - Технoмаркет - онлайн магазин</title>
+                                            <title>Промоции - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -117,7 +117,7 @@
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                 	<span itemprop="name" class="hidden">Техномаркет</span>
                     <a itemprop="url" href="/Technomarket/index">
-                        <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
+                          <img itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
                     </a>
                 </div><!-- /.logo -->
                 <div class="heading-collapse">
@@ -133,7 +133,7 @@
                         </form><!-- /.input-group -->                        
                     </div><!-- /.search -->
                     <div class="user-bar">
-                                                <div class="user-account dropdown">
+                       <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
                             </button>
@@ -1643,1179 +1643,847 @@
 
                     
                                 	             
-        <section class=" section-brp section-odd" >
-            <div class="container">
-            	                <div class="row">
-                                                                <div class="col-md-16" >
-
-    <div class="tm-map">
-        <div class="" id="bf_map_wrapper_j1_4">
-            <div class="tm-map-frame" id="bf_map_j1_4"></div>
-        </div>
-    </div>
-    </div>
-
-    <script type="text/javascript">
-
-
-
-        require(['jquery'], function($){
-
-            var map;
-            function initBFMapj1_4()
-            {
-
-
-                var info = new google.maps.InfoWindow({
-                    content: 'hello'
-                });
-
-
-                var bounds = new google.maps.LatLngBounds();
-
-                info.addListener("closeclick", function () {
-                    map.fitBounds(bounds);
-                });
-
-                map = new google.maps.Map(document.getElementById('bf_map_j1_4'), {
-                    center: { lat: 42.72, lng: 25.48},
-                    zoom: 12,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    navigationControl: false
-                });
-
-                                var mp1 = new google.maps.LatLng(43.615262, 25.343721);
-                var marker1 = new google.maps.Marker({
-                    position: mp1,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СВИЩОВ'
-                });
-                marker1.addListener('click', function() {
-                    //  infowindow.open(map, marker1);
-                    map.setZoom(17);
-                    map.panTo(marker1.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СВИЩОВ</h3><p>ул. Петър Ангелов 28, СВИЩОВ</p><p>тел: 063/164003</p>');
-                    info.open(map, marker1);
-                });
-
-                bounds.extend(mp1);
-                marker1.setMap(map);
-                                var mp2 = new google.maps.LatLng(41.5550821,23.2766425);
-                var marker2 = new google.maps.Marker({
-                    position: mp2,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ САНДАНСКИ'
-                });
-                marker2.addListener('click', function() {
-                    //  infowindow.open(map, marker2);
-                    map.setZoom(17);
-                    map.panTo(marker2.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ САНДАНСКИ</h3><p>ул.Тодор Каблешков 7, САНДАНСКИ</p><p>тел: 0746/34600</p>');
-                    info.open(map, marker2);
-                });
-
-                bounds.extend(mp2);
-                marker2.setMap(map);
-                                var mp3 = new google.maps.LatLng(42.675983, 26.320583);
-                var marker3 = new google.maps.Marker({
-                    position: mp3,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СЛИВЕН'
-                });
-                marker3.addListener('click', function() {
-                    //  infowindow.open(map, marker3);
-                    map.setZoom(17);
-                    map.panTo(marker3.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СЛИВЕН</h3><p>ул. Братя Миладинови 25, СЛИВЕН</p><p>тел: 044/610777</p>');
-                    info.open(map, marker3);
-                });
-
-                bounds.extend(mp3);
-                marker3.setMap(map);
-                                var mp4 = new google.maps.LatLng(42.519503, 27.461695);
-                var marker4 = new google.maps.Marker({
-                    position: mp4,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ БУРГАС'
-                });
-                marker4.addListener('click', function() {
-                    //  infowindow.open(map, marker4);
-                    map.setZoom(17);
-                    map.panTo(marker4.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ БУРГАС</h3><p>ж.к. Изгрев 147, БУРГАС</p><p>тел: 056/861068</p>');
-                    info.open(map, marker4);
-                });
-
-                bounds.extend(mp4);
-                marker4.setMap(map);
-                                var mp5 = new google.maps.LatLng(41.997450, 23.087867);
-                var marker5 = new google.maps.Marker({
-                    position: mp5,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ БЛАГОЕВГРАД'
-                });
-                marker5.addListener('click', function() {
-                    //  infowindow.open(map, marker5);
-                    map.setZoom(17);
-                    map.panTo(marker5.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ БЛАГОЕВГРАД</h3><p>ж.к “Струмско”, бул. Яне Сандански, БЛАГОЕВГРАД</p><p>тел: 073/829444</p>');
-                    info.open(map, marker5);
-                });
-
-                bounds.extend(mp5);
-                marker5.setMap(map);
-                                var mp6 = new google.maps.LatLng(43.247396, 26.559423);
-                var marker6 = new google.maps.Marker({
-                    position: mp6,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ТЪРГОВИЩЕ'
-                });
-                marker6.addListener('click', function() {
-                    //  infowindow.open(map, marker6);
-                    map.setZoom(17);
-                    map.panTo(marker6.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ТЪРГОВИЩЕ</h3><p>бул. Ал. Стамболийски 42, ТЪРГОВИЩЕ</p><p>тел: 0601/65554</p>');
-                    info.open(map, marker6);
-                });
-
-                bounds.extend(mp6);
-                marker6.setMap(map);
-                                var mp7 = new google.maps.LatLng(42.717694,23.317633);
-                var marker7 = new google.maps.Marker({
-                    position: mp7,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ РЕТЕЙЛ ПАРК СРЕДЕЦ'
-                });
-                marker7.addListener('click', function() {
-                    //  infowindow.open(map, marker7);
-                    map.setZoom(17);
-                    map.panTo(marker7.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ РЕТЕЙЛ ПАРК СРЕДЕЦ</h3><p>ул.История Славянобългарска 21, СОФИЯ</p><p>тел: 02/9024814</p>');
-                    info.open(map, marker7);
-                });
-
-                bounds.extend(mp7);
-                marker7.setMap(map);
-                                var mp8 = new google.maps.LatLng(42.698267, 23.308605);
-                var marker8 = new google.maps.Marker({
-                    position: mp8,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СОФИЯ MALL OF SOFIA'
-                });
-                marker8.addListener('click', function() {
-                    //  infowindow.open(map, marker8);
-                    map.setZoom(17);
-                    map.panTo(marker8.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СОФИЯ MALL OF SOFIA</h3><p>бул. Ал.Стамболийски 101, етаж -2, СОФИЯ</p><p>тел: 02/9209580</p>');
-                    info.open(map, marker8);
-                });
-
-                bounds.extend(mp8);
-                marker8.setMap(map);
-                                var mp9 = new google.maps.LatLng(42.711365, 23.272336);
-                var marker9 = new google.maps.Marker({
-                    position: mp9,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ЛАБИРИНТ'
-                });
-                marker9.addListener('click', function() {
-                    //  infowindow.open(map, marker9);
-                    map.setZoom(17);
-                    map.panTo(marker9.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ЛАБИРИНТ</h3><p>Люлин 10,бул. д-р Петър Дертлиев 25, СОФИЯ</p><p>тел: 028271104</p>');
-                    info.open(map, marker9);
-                });
-
-                bounds.extend(mp9);
-                marker9.setMap(map);
-                                var mp10 = new google.maps.LatLng(42.678533, 23.321100);
-                var marker10 = new google.maps.Marker({
-                    position: mp10,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПАРК ЦЕНТЪР СОФИЯ'
-                });
-                marker10.addListener('click', function() {
-                    //  infowindow.open(map, marker10);
-                    map.setZoom(17);
-                    map.panTo(marker10.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПАРК ЦЕНТЪР СОФИЯ</h3><p>ъгъла на бул.Черни връх и бул. Арсеналски, СОФИЯ</p><p>тел: 02/9642490</p>');
-                    info.open(map, marker10);
-                });
-
-                bounds.extend(mp10);
-                marker10.setMap(map);
-                                var mp11 = new google.maps.LatLng(42.645153, 23.394451);
-                var marker11 = new google.maps.Marker({
-                    position: mp11,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СОФИЯ ЦАРИГРАДСКО ШОСЕ'
-                });
-                marker11.addListener('click', function() {
-                    //  infowindow.open(map, marker11);
-                    map.setZoom(17);
-                    map.panTo(marker11.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СОФИЯ ЦАРИГРАДСКО ШОСЕ</h3><p>бул. Цариградско шосе 92, СОФИЯ</p><p>тел: 02/9704888</p>');
-                    info.open(map, marker11);
-                });
-
-                bounds.extend(mp11);
-                marker11.setMap(map);
-                                var mp12 = new google.maps.LatLng(42.710150, 23.394267);
-                var marker12 = new google.maps.Marker({
-                    position: mp12,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СОФИЯ ВЛАДИМИР ВАЗОВ'
-                });
-                marker12.addListener('click', function() {
-                    //  infowindow.open(map, marker12);
-                    map.setZoom(17);
-                    map.panTo(marker12.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СОФИЯ ВЛАДИМИР ВАЗОВ</h3><p>бул. В. Вазов, СОФИЯ</p><p>тел: 02/8062810</p>');
-                    info.open(map, marker12);
-                });
-
-                bounds.extend(mp12);
-                marker12.setMap(map);
-                                var mp13 = new google.maps.LatLng(42.018458, 24.863881);
-                var marker13 = new google.maps.Marker({
-                    position: mp13,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ АСЕНОВГРАД'
-                });
-                marker13.addListener('click', function() {
-                    //  infowindow.open(map, marker13);
-                    map.setZoom(17);
-                    map.panTo(marker13.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ АСЕНОВГРАД</h3><p>бул. България 68, АСЕНОВГРАД</p><p>тел: 033/162785</p>');
-                    info.open(map, marker13);
-                });
-
-                bounds.extend(mp13);
-                marker13.setMap(map);
-                                var mp14 = new google.maps.LatLng(42.908680, 23.801949);
-                var marker14 = new google.maps.Marker({
-                    position: mp14,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ БОТЕВГРАД'
-                });
-                marker14.addListener('click', function() {
-                    //  infowindow.open(map, marker14);
-                    map.setZoom(17);
-                    map.panTo(marker14.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ БОТЕВГРАД</h3><p>бул. Цар Освободител 24А, БОТЕВГРАД</p><p>тел: 0723/69266</p>');
-                    info.open(map, marker14);
-                });
-
-                bounds.extend(mp14);
-                marker14.setMap(map);
-                                var mp15 = new google.maps.LatLng(42.513611, 27.453889);
-                var marker15 = new google.maps.Marker({
-                    position: mp15,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ БУРГАС ГАЛЕРИЯ МОЛ'
-                });
-                marker15.addListener('click', function() {
-                    //  infowindow.open(map, marker15);
-                    map.setZoom(17);
-                    map.panTo(marker15.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ БУРГАС ГАЛЕРИЯ МОЛ</h3><p>ГАЛЕРИЯ МОЛ, ул.Янко Комитов 6, БУРГАС</p><p>тел: 056/598210</p>');
-                    info.open(map, marker15);
-                });
-
-                bounds.extend(mp15);
-                marker15.setMap(map);
-                                var mp16 = new google.maps.LatLng(42.47228,27.432354);
-                var marker16 = new google.maps.Marker({
-                    position: mp16,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ БУРГАС 3'
-                });
-                marker16.addListener('click', function() {
-                    //  infowindow.open(map, marker16);
-                    map.setZoom(17);
-                    map.panTo(marker16.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ БУРГАС 3</h3><p>бул.Захари Стоянов 1, БУРГАС</p><p>тел: 056/598 200</p>');
-                    info.open(map, marker16);
-                });
-
-                bounds.extend(mp16);
-                marker16.setMap(map);
-                                var mp17 = new google.maps.LatLng(42.530395, 27.457907);
-                var marker17 = new google.maps.Marker({
-                    position: mp17,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: '@ХОУМ МОЛ БУРГАС ПЛАЗА'
-                });
-                marker17.addListener('click', function() {
-                    //  infowindow.open(map, marker17);
-                    map.setZoom(17);
-                    map.panTo(marker17.position);
-                    info.setContent('<h3>@ХОУМ МОЛ БУРГАС ПЛАЗА</h3><p>ул. Транспортна, БУРГАС</p><p>тел: 056/522186</p>');
-                    info.open(map, marker17);
-                });
-
-                bounds.extend(mp17);
-                marker17.setMap(map);
-                                var mp18 = new google.maps.LatLng(43.217998, 27.898016);
-                var marker18 = new google.maps.Marker({
-                    position: mp18,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ @ХОУМ ВАРНА'
-                });
-                marker18.addListener('click', function() {
-                    //  infowindow.open(map, marker18);
-                    map.setZoom(17);
-                    map.panTo(marker18.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ @ХОУМ ВАРНА</h3><p>ул.Андрей Сахаров 2 ет.+2, ВАРНА</p><p>тел: 052/702 400</p>');
-                    info.open(map, marker18);
-                });
-
-                bounds.extend(mp18);
-                marker18.setMap(map);
-                                var mp19 = new google.maps.LatLng(43.073250, 25.614917);
-                var marker19 = new google.maps.Marker({
-                    position: mp19,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ВЕЛИКО ТЪРНОВО'
-                });
-                marker19.addListener('click', function() {
-                    //  infowindow.open(map, marker19);
-                    map.setZoom(17);
-                    map.panTo(marker19.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ВЕЛИКО ТЪРНОВО</h3><p>ул. Магистрална 17, ВЕЛИКО ТЪРНОВО</p><p>тел: 062/614242</p>');
-                    info.open(map, marker19);
-                });
-
-                bounds.extend(mp19);
-                marker19.setMap(map);
-                                var mp20 = new google.maps.LatLng(44.0039991,22.8758428);
-                var marker20 = new google.maps.Marker({
-                    position: mp20,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ВИДИН'
-                });
-                marker20.addListener('click', function() {
-                    //  infowindow.open(map, marker20);
-                    map.setZoom(17);
-                    map.panTo(marker20.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ВИДИН</h3><p>ЖК. Крум Бъчваров 28 - А, ВИДИН</p><p>тел: 094/691410</p>');
-                    info.open(map, marker20);
-                });
-
-                bounds.extend(mp20);
-                marker20.setMap(map);
-                                var mp21 = new google.maps.LatLng(43.222743, 23.544130);
-                var marker21 = new google.maps.Marker({
-                    position: mp21,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ВРАЦА'
-                });
-                marker21.addListener('click', function() {
-                    //  infowindow.open(map, marker21);
-                    map.setZoom(17);
-                    map.panTo(marker21.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ВРАЦА</h3><p>жк.Дъбника, до Пощата, ВРАЦА</p><p>тел: 092/669010</p>');
-                    info.open(map, marker21);
-                });
-
-                bounds.extend(mp21);
-                marker21.setMap(map);
-                                var mp22 = new google.maps.LatLng(42.889317, 25.294217);
-                var marker22 = new google.maps.Marker({
-                    position: mp22,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ГАБРОВО'
-                });
-                marker22.addListener('click', function() {
-                    //  infowindow.open(map, marker22);
-                    map.setZoom(17);
-                    map.panTo(marker22.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ГАБРОВО</h3><p>кв. Войново (на входа от София), ГАБРОВО</p><p>тел: 066/803132</p>');
-                    info.open(map, marker22);
-                });
-
-                bounds.extend(mp22);
-                marker22.setMap(map);
-                                var mp23 = new google.maps.LatLng(42.05894,25.585501);
-                var marker23 = new google.maps.Marker({
-                    position: mp23,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ДИМИТРОВГРАД'
-                });
-                marker23.addListener('click', function() {
-                    //  infowindow.open(map, marker23);
-                    map.setZoom(17);
-                    map.panTo(marker23.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ДИМИТРОВГРАД</h3><p>бул.Стефан Стамболов 4А, ДИМИТРОВГРАД</p><p>тел: 039129700</p>');
-                    info.open(map, marker23);
-                });
-
-                bounds.extend(mp23);
-                marker23.setMap(map);
-                                var mp24 = new google.maps.LatLng(43.579293, 27.832293);
-                var marker24 = new google.maps.Marker({
-                    position: mp24,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ДОБРИЧ'
-                });
-                marker24.addListener('click', function() {
-                    //  infowindow.open(map, marker24);
-                    map.setZoom(17);
-                    map.panTo(marker24.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ДОБРИЧ</h3><p>Бул.25. Септември № 70, ДОБРИЧ</p><p>тел: 058/690586</p>');
-                    info.open(map, marker24);
-                });
-
-                bounds.extend(mp24);
-                marker24.setMap(map);
-                                var mp25 = new google.maps.LatLng(41.633983, 25.380267);
-                var marker25 = new google.maps.Marker({
-                    position: mp25,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ КЪРДЖАЛИ'
-                });
-                marker25.addListener('click', function() {
-                    //  infowindow.open(map, marker25);
-                    map.setZoom(17);
-                    map.panTo(marker25.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ КЪРДЖАЛИ</h3><p>бул. България 115, КЪРДЖАЛИ</p><p>тел: 0361/21160</p>');
-                    info.open(map, marker25);
-                });
-
-                bounds.extend(mp25);
-                marker25.setMap(map);
-                                var mp26 = new google.maps.LatLng(43.135582,24.716942);
-                var marker26 = new google.maps.Marker({
-                    position: mp26,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ЛОВЕЧ'
-                });
-                marker26.addListener('click', function() {
-                    //  infowindow.open(map, marker26);
-                    map.setZoom(17);
-                    map.panTo(marker26.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ЛОВЕЧ</h3><p>ул. Търговска 45, ЛОВЕЧ</p><p>тел: 068/689810</p>');
-                    info.open(map, marker26);
-                });
-
-                bounds.extend(mp26);
-                marker26.setMap(map);
-                                var mp27 = new google.maps.LatLng(43.402324, 23.241273);
-                var marker27 = new google.maps.Marker({
-                    position: mp27,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ МОНТАНА'
-                });
-                marker27.addListener('click', function() {
-                    //  infowindow.open(map, marker27);
-                    map.setZoom(17);
-                    map.panTo(marker27.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ МОНТАНА</h3><p>Местност Лъката, МОНТАНА</p><p>тел: 096/390510</p>');
-                    info.open(map, marker27);
-                });
-
-                bounds.extend(mp27);
-                marker27.setMap(map);
-                                var mp28 = new google.maps.LatLng(42.187944,24.357553);
-                var marker28 = new google.maps.Marker({
-                    position: mp28,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПАЗАРДЖИК 2'
-                });
-                marker28.addListener('click', function() {
-                    //  infowindow.open(map, marker28);
-                    map.setZoom(17);
-                    map.panTo(marker28.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПАЗАРДЖИК 2</h3><p>бул. Пловдивско шосе 115, ПАЗАРДЖИК</p><p>тел: 034/405840</p>');
-                    info.open(map, marker28);
-                });
-
-                bounds.extend(mp28);
-                marker28.setMap(map);
-                                var mp29 = new google.maps.LatLng(42.607379,23.0436649,17);
-                var marker29 = new google.maps.Marker({
-                    position: mp29,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПЕРНИК'
-                });
-                marker29.addListener('click', function() {
-                    //  infowindow.open(map, marker29);
-                    map.setZoom(17);
-                    map.panTo(marker29.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПЕРНИК</h3><p>Св.Св Кирил и Методий 39, ПЕРНИК</p><p>тел: 076/686388</p>');
-                    info.open(map, marker29);
-                });
-
-                bounds.extend(mp29);
-                marker29.setMap(map);
-                                var mp30 = new google.maps.LatLng(43.407877,24.636347);
-                var marker30 = new google.maps.Marker({
-                    position: mp30,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПЛЕВЕН'
-                });
-                marker30.addListener('click', function() {
-                    //  infowindow.open(map, marker30);
-                    map.setZoom(17);
-                    map.panTo(marker30.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПЛЕВЕН</h3><p>бул. Европа 6, ПЛЕВЕН</p><p>тел: 064/892360</p>');
-                    info.open(map, marker30);
-                });
-
-                bounds.extend(mp30);
-                marker30.setMap(map);
-                                var mp31 = new google.maps.LatLng(43.851923, 25.987681);
-                var marker31 = new google.maps.Marker({
-                    position: mp31,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ РУСЕ'
-                });
-                marker31.addListener('click', function() {
-                    //  infowindow.open(map, marker31);
-                    map.setZoom(17);
-                    map.panTo(marker31.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ РУСЕ</h3><p>бул. Липник 113A, РУСЕ</p><p>тел: 082/815660</p>');
-                    info.open(map, marker31);
-                });
-
-                bounds.extend(mp31);
-                marker31.setMap(map);
-                                var mp32 = new google.maps.LatLng(43.853144,25.991485);
-                var marker32 = new google.maps.Marker({
-                    position: mp32,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ @ХОУМ РУСЕ'
-                });
-                marker32.addListener('click', function() {
-                    //  infowindow.open(map, marker32);
-                    map.setZoom(17);
-                    map.panTo(marker32.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ @ХОУМ РУСЕ</h3><p>бул. Липник 121 в Мол Русе, РУСЕ</p><p>тел: 082/298 440</p>');
-                    info.open(map, marker32);
-                });
-
-                bounds.extend(mp32);
-                marker32.setMap(map);
-                                var mp33 = new google.maps.LatLng(42.344898,23.552257);
-                var marker33 = new google.maps.Marker({
-                    position: mp33,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ САМОКОВ'
-                });
-                marker33.addListener('click', function() {
-                    //  infowindow.open(map, marker33);
-                    map.setZoom(17);
-                    map.panTo(marker33.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ САМОКОВ</h3><p>ул. Софийско шосе 30А, САМОКОВ</p><p>тел: 072/260578</p>');
-                    info.open(map, marker33);
-                });
-
-                bounds.extend(mp33);
-                marker33.setMap(map);
-                                var mp34 = new google.maps.LatLng(44.1135092,27.2525336);
-                var marker34 = new google.maps.Marker({
-                    position: mp34,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СИЛИСТРА'
-                });
-                marker34.addListener('click', function() {
-                    //  infowindow.open(map, marker34);
-                    map.setZoom(17);
-                    map.panTo(marker34.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СИЛИСТРА</h3><p>ул. Тутракан 1, СИЛИСТРА</p><p>тел: 086/878800</p>');
-                    info.open(map, marker34);
-                });
-
-                bounds.extend(mp34);
-                marker34.setMap(map);
-                                var mp35 = new google.maps.LatLng(42.437594 ,25.632981);
-                var marker35 = new google.maps.Marker({
-                    position: mp35,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СТАРА ЗАГОРА 2'
-                });
-                marker35.addListener('click', function() {
-                    //  infowindow.open(map, marker35);
-                    map.setZoom(17);
-                    map.panTo(marker35.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СТАРА ЗАГОРА 2</h3><p>ул. Хан Аспарух 30 Mall Galleria, СТАРА ЗАГОРА</p><p>тел: 042/298102</p>');
-                    info.open(map, marker35);
-                });
-
-                bounds.extend(mp35);
-                marker35.setMap(map);
-                                var mp36 = new google.maps.LatLng(42.42785 , 25.651024);
-                var marker36 = new google.maps.Marker({
-                    position: mp36,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СТАРА ЗАГОРА 3'
-                });
-                marker36.addListener('click', function() {
-                    //  infowindow.open(map, marker36);
-                    map.setZoom(17);
-                    map.panTo(marker36.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СТАРА ЗАГОРА 3</h3><p>бул.Никола Петков 10 Сити Мол Карфур, СТАРА ЗАГОРА</p><p>тел: 042/298105</p>');
-                    info.open(map, marker36);
-                });
-
-                bounds.extend(mp36);
-                marker36.setMap(map);
-                                var mp37 = new google.maps.LatLng(42.411283, 25.593950);
-                var marker37 = new google.maps.Marker({
-                    position: mp37,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СТАРА ЗАГОРА'
-                });
-                marker37.addListener('click', function() {
-                    //  infowindow.open(map, marker37);
-                    map.setZoom(17);
-                    map.panTo(marker37.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СТАРА ЗАГОРА</h3><p>кв. Железник, СТАРА ЗАГОРА</p><p>тел: 042/277012</p>');
-                    info.open(map, marker37);
-                });
-
-                bounds.extend(mp37);
-                marker37.setMap(map);
-                                var mp38 = new google.maps.LatLng(43.275000, 26.936267);
-                var marker38 = new google.maps.Marker({
-                    position: mp38,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ШУМЕН'
-                });
-                marker38.addListener('click', function() {
-                    //  infowindow.open(map, marker38);
-                    map.setZoom(17);
-                    map.panTo(marker38.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ШУМЕН</h3><p>бул. Симеон Велики 34, ШУМЕН</p><p>тел: 054/850810</p>');
-                    info.open(map, marker38);
-                });
-
-                bounds.extend(mp38);
-                marker38.setMap(map);
-                                var mp39 = new google.maps.LatLng(42.487083, 26.502150);
-                var marker39 = new google.maps.Marker({
-                    position: mp39,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ЯМБОЛ'
-                });
-                marker39.addListener('click', function() {
-                    //  infowindow.open(map, marker39);
-                    map.setZoom(17);
-                    map.panTo(marker39.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ЯМБОЛ</h3><p>ул. Арда 7, ЯМБОЛ</p><p>тел: 046/68218</p>');
-                    info.open(map, marker39);
-                });
-
-                bounds.extend(mp39);
-                marker39.setMap(map);
-                                var mp40 = new google.maps.LatLng(41.571027, 23.722805);
-                var marker40 = new google.maps.Marker({
-                    position: mp40,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ГОЦЕ ДЕЛЧЕВ'
-                });
-                marker40.addListener('click', function() {
-                    //  infowindow.open(map, marker40);
-                    map.setZoom(17);
-                    map.panTo(marker40.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ГОЦЕ ДЕЛЧЕВ</h3><p>ул. Пейо Яворов №9, ГОЦЕ ДЕЛЧЕВ</p><p>тел: 075/160845</p>');
-                    info.open(map, marker40);
-                });
-
-                bounds.extend(mp40);
-                marker40.setMap(map);
-                                var mp41 = new google.maps.LatLng(42.616754, 25.370239);
-                var marker41 = new google.maps.Marker({
-                    position: mp41,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ КАЗАНЛЪК'
-                });
-                marker41.addListener('click', function() {
-                    //  infowindow.open(map, marker41);
-                    map.setZoom(17);
-                    map.panTo(marker41.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ КАЗАНЛЪК</h3><p>бул. 23-ти пехотен шипченски полк 80, КАЗАНЛЪК</p><p>тел: 043/170130</p>');
-                    info.open(map, marker41);
-                });
-
-                bounds.extend(mp41);
-                marker41.setMap(map);
-                                var mp42 = new google.maps.LatLng(42.090484, 25.210853);
-                var marker42 = new google.maps.Marker({
-                    position: mp42,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПЪРВОМАЙ'
-                });
-                marker42.addListener('click', function() {
-                    //  infowindow.open(map, marker42);
-                    map.setZoom(17);
-                    map.panTo(marker42.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПЪРВОМАЙ</h3><p>ул. &quot;Княз Борис I-ви&quot; 43, ПЪРВОМАЙ</p><p>тел: 0336/62419</p>');
-                    info.open(map, marker42);
-                });
-
-                bounds.extend(mp42);
-                marker42.setMap(map);
-                                var mp43 = new google.maps.LatLng(41.567505,24.737041);
-                var marker43 = new google.maps.Marker({
-                    position: mp43,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СМОЛЯН'
-                });
-                marker43.addListener('click', function() {
-                    //  infowindow.open(map, marker43);
-                    map.setZoom(17);
-                    map.panTo(marker43.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СМОЛЯН</h3><p>ул. &quot;Коста Аврамиков&quot;, До Лукойл, СМОЛЯН</p><p>тел: 030/181337</p>');
-                    info.open(map, marker43);
-                });
-
-                bounds.extend(mp43);
-                marker43.setMap(map);
-                                var mp44 = new google.maps.LatLng(42.631848, 24.813627);
-                var marker44 = new google.maps.Marker({
-                    position: mp44,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ КАРЛОВО'
-                });
-                marker44.addListener('click', function() {
-                    //  infowindow.open(map, marker44);
-                    map.setZoom(17);
-                    map.panTo(marker44.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ КАРЛОВО</h3><p>ул. Теофан Райнов, КАРЛОВО</p><p>тел: 033/598088</p>');
-                    info.open(map, marker44);
-                });
-
-                bounds.extend(mp44);
-                marker44.setMap(map);
-                                var mp45 = new google.maps.LatLng(41.931616, 25.604517);
-                var marker45 = new google.maps.Marker({
-                    position: mp45,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ХАСКОВО'
-                });
-                marker45.addListener('click', function() {
-                    //  infowindow.open(map, marker45);
-                    map.setZoom(17);
-                    map.panTo(marker45.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ХАСКОВО</h3><p>бул. Съединение 77, ХАСКОВО</p><p>тел: 038/609000</p>');
-                    info.open(map, marker45);
-                });
-
-                bounds.extend(mp45);
-                marker45.setMap(map);
-                                var mp46 = new google.maps.LatLng(42.155367, 24.707133);
-                var marker46 = new google.maps.Marker({
-                    position: mp46,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПЛОВДИВ'
-                });
-                marker46.addListener('click', function() {
-                    //  infowindow.open(map, marker46);
-                    map.setZoom(17);
-                    map.panTo(marker46.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПЛОВДИВ</h3><p>бул. България (4-ти километър), ПЛОВДИВ</p><p>тел: 032/905060</p>');
-                    info.open(map, marker46);
-                });
-
-                bounds.extend(mp46);
-                marker46.setMap(map);
-                                var mp47 = new google.maps.LatLng(42.624141, 23.352072);
-                var marker47 = new google.maps.Marker({
-                    position: mp47,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ @ХОУМ РИНГ МОЛ'
-                });
-                marker47.addListener('click', function() {
-                    //  infowindow.open(map, marker47);
-                    map.setZoom(17);
-                    map.panTo(marker47.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ @ХОУМ РИНГ МОЛ</h3><p>RING MALL ОКОЛОВРЪСТЕН ПЪТ 216, СОФИЯ</p><p>тел: 02/8621039</p>');
-                    info.open(map, marker47);
-                });
-
-                bounds.extend(mp47);
-                marker47.setMap(map);
-                                var mp48 = new google.maps.LatLng(42.624141, 23.352072);
-                var marker48 = new google.maps.Marker({
-                    position: mp48,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СОФИЯ РИНГ МОЛ'
-                });
-                marker48.addListener('click', function() {
-                    //  infowindow.open(map, marker48);
-                    map.setZoom(17);
-                    map.panTo(marker48.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СОФИЯ РИНГ МОЛ</h3><p>RING MALL ОКОЛОВРЪСТЕН ПЪТ 216, СОФИЯ</p><p>тел: 02/9024900</p>');
-                    info.open(map, marker48);
-                });
-
-                bounds.extend(mp48);
-                marker48.setMap(map);
-                                var mp49 = new google.maps.LatLng(42.435224, 23.817458);
-                var marker49 = new google.maps.Marker({
-                    position: mp49,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ИХТИМАН'
-                });
-                marker49.addListener('click', function() {
-                    //  infowindow.open(map, marker49);
-                    map.setZoom(17);
-                    map.panTo(marker49.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ИХТИМАН</h3><p>ул.Цар Освободител 128, ИХТИМАН</p><p>тел: 0724/82228</p>');
-                    info.open(map, marker49);
-                });
-
-                bounds.extend(mp49);
-                marker49.setMap(map);
-                                var mp50 = new google.maps.LatLng(43.232355, 27.866251);
-                var marker50 = new google.maps.Marker({
-                    position: mp50,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ВАРНА'
-                });
-                marker50.addListener('click', function() {
-                    //  infowindow.open(map, marker50);
-                    map.setZoom(17);
-                    map.panTo(marker50.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ВАРНА</h3><p>ул.Коево 2, ВАРНА</p><p>тел: 052/ 574191</p>');
-                    info.open(map, marker50);
-                });
-
-                bounds.extend(mp50);
-                marker50.setMap(map);
-                                var mp51 = new google.maps.LatLng(42.144937, 24.780397);
-                var marker51 = new google.maps.Marker({
-                    position: mp51,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ПЛОВДИВ 2'
-                });
-                marker51.addListener('click', function() {
-                    //  infowindow.open(map, marker51);
-                    map.setZoom(17);
-                    map.panTo(marker51.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ПЛОВДИВ 2</h3><p>Ул.Георги Странски 3, ПЛОВДИВ</p><p>тел: 032/654560</p>');
-                    info.open(map, marker51);
-                });
-
-                bounds.extend(mp51);
-                marker51.setMap(map);
-                                var mp52 = new google.maps.LatLng(43.029479, 25.092194);
-                var marker52 = new google.maps.Marker({
-                    position: mp52,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СЕВЛИЕВО'
-                });
-                marker52.addListener('click', function() {
-                    //  infowindow.open(map, marker52);
-                    map.setZoom(17);
-                    map.panTo(marker52.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СЕВЛИЕВО</h3><p>ул. Стефан Пешев 90 А, СЕВЛИЕВО</p><p>тел: 0675/85080</p>');
-                    info.open(map, marker52);
-                });
-
-                bounds.extend(mp52);
-                marker52.setMap(map);
-                                var mp53 = new google.maps.LatLng(42.2670743,23.113473);
-                var marker53 = new google.maps.Marker({
-                    position: mp53,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ ДУПНИЦА'
-                });
-                marker53.addListener('click', function() {
-                    //  infowindow.open(map, marker53);
-                    map.setZoom(17);
-                    map.panTo(marker53.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ ДУПНИЦА</h3><p>ул. Иван Вазов  30, ДУПНИЦА</p><p>тел: +35970155200</p>');
-                    info.open(map, marker53);
-                });
-
-                bounds.extend(mp53);
-                marker53.setMap(map);
-                                var mp54 = new google.maps.LatLng(42.513611, 27.453889);
-                var marker54 = new google.maps.Marker({
-                    position: mp54,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: '@ХОУМ ГАЛЕРИЯ МОЛ'
-                });
-                marker54.addListener('click', function() {
-                    //  infowindow.open(map, marker54);
-                    map.setZoom(17);
-                    map.panTo(marker54.position);
-                    info.setContent('<h3>@ХОУМ ГАЛЕРИЯ МОЛ</h3><p>ГАЛЕРИЯ МОЛ,ул.Янко Комитов 6 етаж 1, БУРГАС</p><p>тел: 056/861310</p>');
-                    info.open(map, marker54);
-                });
-
-                bounds.extend(mp54);
-                marker54.setMap(map);
-                                var mp55 = new google.maps.LatLng(41.770994, 26.198982);
-                var marker55 = new google.maps.Marker({
-                    position: mp55,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ СВИЛЕНГРАД'
-                });
-                marker55.addListener('click', function() {
-                    //  infowindow.open(map, marker55);
-                    map.setZoom(17);
-                    map.panTo(marker55.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ СВИЛЕНГРАД</h3><p>ул. Гео Милев № 2, Търговски парк &quot;Сити, СВИЛЕНГРАД</p><p>тел: 037963444</p>');
-                    info.open(map, marker55);
-                });
-
-                bounds.extend(mp55);
-                marker55.setMap(map);
-                                var mp56 = new google.maps.LatLng(41.843614, 23.485874);
-                var marker56 = new google.maps.Marker({
-                    position: mp56,
-                    map: map,
-                    icon: "//cdn.technomarket.bg/uploads/BG/black-friday/tm-marker.png",
-                    title: 'ТЕХНОМАРКЕТ БАНСКО'
-                });
-                marker56.addListener('click', function() {
-                    //  infowindow.open(map, marker56);
-                    map.setZoom(17);
-                    map.panTo(marker56.position);
-                    info.setContent('<h3>ТЕХНОМАРКЕТ БАНСКО</h3><p>ул.Васил Кънчов 10-16, БАНСКО</p><p>тел: 0749/87780</p>');
-                    info.open(map, marker56);
-                });
-
-                bounds.extend(mp56);
-                marker56.setMap(map);
-                
-                map.fitBounds(bounds);
-
-                $('#bf_map_j1_4').addClass('scrolloff'); // set the pointer events to none on doc ready
-                $('#bf_map_wrapper_j1_4').on('click', function () {
-                    $('#bf_map_j1_4').removeClass('scrolloff'); // set the pointer events true on click
-                });
-
-                // you want to disable pointer events when the mouse leave the canvas area;
-
-                $("#bf_map_j1_4").mouseleave(function () {
-                    $('#bf_map_j1_4').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
-                });
-
-                google.maps.event.addDomListener(window, "resize", function() {
-                    var center = map.getCenter();
-                    google.maps.event.trigger(map, "resize");
-                    map.setCenter(center);
-                    map.fitBounds(bounds);
-                });
-            }
-
-            window.initBFMapj1_4 = initBFMapj1_4;
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.src  = "https://maps.googleapis.com/maps/api/js?callback=initBFMapj1_4";
-
-            $("head").append(s);
-        });
-
-
-
-    </script>
-
-
-
-                                                    </div>
-            </div>
-        </section>
-            
-    
-
-                    
-                                	             
         <section class=" section section-odd" >
             <div class="container">
-            	                <div class="section-heading">
-                    <h2>Магазини Техномаркет</h2>
-                                    </div><!-- /.section-heading -->
-                                <div class="row">
-                                                            	<div class="col-full" >
+            	                <div class="row">
+                                                            	    <div class="col-full" >
 
-    <div class="container-inner">
-        <div class="container-cell">
-                                    <ul class="tm-list tm-cols-x4">
-        <li>
-        <a href="asenovgrad/tehnomarket-asenovgrad.html"><strong>АСЕНОВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="bansko/tehnomarket-bansko.html"><strong>БАНСКО</strong></a>
-    </li>
-        <li>
-        <a href="blagoevgrad/tehnomarket-blagoevgrad.html"><strong>БЛАГОЕВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="botevgrad/tehnomarket-botevgrad.html"><strong>БОТЕВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="burgas.html"><strong>БУРГАС</strong></a>
-    </li>
-        <li>
-        <a href="varna.html"><strong>ВАРНА</strong></a>
-    </li>
-        <li>
-        <a href="veliko-tyrnovo/tehnomarket-veliko-tyrnovo.html"><strong>ВЕЛИКО ТЪРНОВО</strong></a>
-    </li>
-        <li>
-        <a href="vidin/tehnomarket-vidin.html"><strong>ВИДИН</strong></a>
-    </li>
-        <li>
-        <a href="vraca/tehnomarket-vraca.html"><strong>ВРАЦА</strong></a>
-    </li>
-        <li>
-        <a href="gabrovo/tehnomarket-gabrovo.html"><strong>ГАБРОВО</strong></a>
-    </li>
-        <li>
-        <a href="goce-delchev/tehnomarket-goce-delchev.html"><strong>ГОЦЕ ДЕЛЧЕВ</strong></a>
-    </li>
-        <li>
-        <a href="dimitrovgrad/tehnomarket-dimitrovgrad.html"><strong>ДИМИТРОВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="dobrich/tehnomarket-dobrich.html"><strong>ДОБРИЧ</strong></a>
-    </li>
-        <li>
-        <a href="dupnica/tehnomarket-dupnica.html"><strong>ДУПНИЦА</strong></a>
-    </li>
-        <li>
-        <a href="ihtiman/tehnomarket-ihtiman.html"><strong>ИХТИМАН</strong></a>
-    </li>
-        <li>
-        <a href="kazanlyk/tehnomarket-kazanlyk.html"><strong>КАЗАНЛЪК</strong></a>
-    </li>
-        <li>
-        <a href="karlovo/tehnomarket-karlovo.html"><strong>КАРЛОВО</strong></a>
-    </li>
-        <li>
-        <a href="kyrdzhali/tehnomarket-kyrdzhali.html"><strong>КЪРДЖАЛИ</strong></a>
-    </li>
-        <li>
-        <a href="lovech/tehnomarket-lovech.html"><strong>ЛОВЕЧ</strong></a>
-    </li>
-        <li>
-        <a href="montana/tehnomarket-montana.html"><strong>МОНТАНА</strong></a>
-    </li>
-        <li>
-        <a href="pazardzhik/tehnomarket-pazardzhik-2.html"><strong>ПАЗАРДЖИК</strong></a>
-    </li>
-        <li>
-        <a href="pernik/tehnomarket-pernik.html"><strong>ПЕРНИК</strong></a>
-    </li>
-        <li>
-        <a href="pleven/tehnomarket-pleven.html"><strong>ПЛЕВЕН</strong></a>
-    </li>
-        <li>
-        <a href="plovdiv.html"><strong>ПЛОВДИВ</strong></a>
-    </li>
-        <li>
-        <a href="pyrvomaj/tehnomarket-pyrvomaj.html"><strong>ПЪРВОМАЙ</strong></a>
-    </li>
-        <li>
-        <a href="ruse.html"><strong>РУСЕ</strong></a>
-    </li>
-        <li>
-        <a href="samokov/tehnomarket-samokov.html"><strong>САМОКОВ</strong></a>
-    </li>
-        <li>
-        <a href="sandanski/tehnomarket-sandanski.html"><strong>САНДАНСКИ</strong></a>
-    </li>
-        <li>
-        <a href="svilengrad/tehnomarket-svilengrad.html"><strong>СВИЛЕНГРАД</strong></a>
-    </li>
-        <li>
-        <a href="svishtov/tehnomarket-svishtov.html"><strong>СВИЩОВ</strong></a>
-    </li>
-        <li>
-        <a href="sevlievo/tehnomarket-sevlievo.html"><strong>СЕВЛИЕВО</strong></a>
-    </li>
-        <li>
-        <a href="silistra/tehnomarket-silistra.html"><strong>СИЛИСТРА</strong></a>
-    </li>
-        <li>
-        <a href="sliven/tehnomarket-sliven.html"><strong>СЛИВЕН</strong></a>
-    </li>
-        <li>
-        <a href="smolqn/tehnomarket-smolqn.html"><strong>СМОЛЯН</strong></a>
-    </li>
-        <li>
-        <a href="sofiq.html"><strong>СОФИЯ</strong></a>
-    </li>
-        <li>
-        <a href="stara-zagora.html"><strong>СТАРА ЗАГОРА</strong></a>
-    </li>
-        <li>
-        <a href="tyrgovishte/tehnomarket-tyrgovishte.html"><strong>ТЪРГОВИЩЕ</strong></a>
-    </li>
-        <li>
-        <a href="haskovo/tehnomarket-haskovo.html"><strong>ХАСКОВО</strong></a>
-    </li>
-        <li>
-        <a href="shumen/tehnomarket-shumen.html"><strong>ШУМЕН</strong></a>
-    </li>
-        <li>
-        <a href="qmbol/tehnomarket-qmbol.html"><strong>ЯМБОЛ</strong></a>
-    </li>
-    </ul>
+    <aside class="col-md-3 sidebar">
+	<h3 class="aside-filter-title"><a aria-controls="aside-filter" aria-expanded="true" href="#aside-filter-57f39bc8b5542" data-toggle="collapse" role="button" class="tm-collapse">Филтър</a></h3>
+    <div id="aside-filter-57f39bc8b5542" class="aside-filter collapse in">
+        <form name="filter_form" method="get" action="#" class="form-horizontal"><div id="filter_form"><fieldset class="filter-box"><header><h3><a  class="required" for="filter_form_sort">Подреди по</a></h3></header><div class="filter-content"><select id="filter_form_sort" name="filter_form[sort]" class="form-control"><option value="default">по подразбиране</option><option value="type">по тип</option><option value="price">по цена</option><option value="brand">по марка</option></select></div></fieldset><fieldset class="filter-box"><header><h3><a  class="required">Категории</a></h3></header><div class="filter-content"><div id="filter_form_main_categories"><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_0" name="filter_form[main_categories][]" value="@Home" /><span>@Home</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_1" name="filter_form[main_categories][]" value="Електроуреди" /><span>Електроуреди</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_2" name="filter_form[main_categories][]" value="Забавления" /><span>Забавления</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_3" name="filter_form[main_categories][]" value="Компютри и Периферия" /><span>Компютри и Периферия</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_4" name="filter_form[main_categories][]" value="Малки електроуреди" /><span>Малки електроуреди</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_5" name="filter_form[main_categories][]" value="Телевизори и Аудио" /><span>Телевизори и Аудио</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_6" name="filter_form[main_categories][]" value="Телефони и Таблети" /><span>Телефони и Таблети</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_main_categories_7" name="filter_form[main_categories][]" value="Фото и Видео" /><span>Фото и Видео</span></label></div></div></div></fieldset><fieldset class="filter-box"><header><h3><a  class="required">Тип</a></h3></header><div class="filter-content"><div id="filter_form_types"><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_0" name="filter_form[types][]" value="CD Плейъри" /><span>CD Плейъри</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_1" name="filter_form[types][]" value="DSLR Фотоапарати" /><span>DSLR Фотоапарати</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_2" name="filter_form[types][]" value="DVD плейъри" /><span>DVD плейъри</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_3" name="filter_form[types][]" value="Kутии за съхранение" /><span>Kутии за съхранение</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_4" name="filter_form[types][]" value="MP3 плейъри" /><span>MP3 плейъри</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_5" name="filter_form[types][]" value="Multi Cooker" /><span>Multi Cooker</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_6" name="filter_form[types][]" value="Oхладители за лаптопи" /><span>Oхладители за лаптопи</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_7" name="filter_form[types][]" value="PC колонки" /><span>PC колонки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_8" name="filter_form[types][]" value="PC слушалки" /><span>PC слушалки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_9" name="filter_form[types][]" value="Side by Side хладилници" /><span>Side by Side хладилници</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_10" name="filter_form[types][]" value="Абсорбатори за вграждане" /><span>Абсорбатори за вграждане</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_11" name="filter_form[types][]" value="Аксесоари за мобилни телефони" /><span>Аксесоари за мобилни телефони</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_12" name="filter_form[types][]" value="Антени" /><span>Антени</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_13" name="filter_form[types][]" value="Аудио аксесоари за мобилни телефони" /><span>Аудио аксесоари за мобилни телефони</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_14" name="filter_form[types][]" value="Блендери" /><span>Блендери</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_15" name="filter_form[types][]" value="Бойлери" /><span>Бойлери</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_16" name="filter_form[types][]" value="Вази" /><span>Вази</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_17" name="filter_form[types][]" value="Великден" /><span>Великден</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_18" name="filter_form[types][]" value="Готварски печки" /><span>Готварски печки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_19" name="filter_form[types][]" value="Декоративни съдове" /><span>Декоративни съдове</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_20" name="filter_form[types][]" value="Декорация" /><span>Декорация</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_21" name="filter_form[types][]" value="Домашно кино" /><span>Домашно кино</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_22" name="filter_form[types][]" value="Други аксесоари" /><span>Други аксесоари</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_23" name="filter_form[types][]" value="Дъски за рязане" /><span>Дъски за рязане</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_24" name="filter_form[types][]" value="Ел.Четки за зъби" /><span>Ел.Четки за зъби</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_25" name="filter_form[types][]" value="Електрически кани" /><span>Електрически кани</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_26" name="filter_form[types][]" value="Епилатори" /><span>Епилатори</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_27" name="filter_form[types][]" value="Зарядни за мобилни телефони" /><span>Зарядни за мобилни телефони</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_28" name="filter_form[types][]" value="Игри за PLAYSTATION 3" /><span>Игри за PLAYSTATION 3</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_29" name="filter_form[types][]" value="Игри за PLAYSTATION 4" /><span>Игри за PLAYSTATION 4</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_30" name="filter_form[types][]" value="Камери" /><span>Камери</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_31" name="filter_form[types][]" value="Канички за мляко" /><span>Канички за мляко</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_32" name="filter_form[types][]" value="Кафе и чай" /><span>Кафе и чай</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_33" name="filter_form[types][]" value="Кафемашини" /><span>Кафемашини</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_34" name="filter_form[types][]" value="Клавиатури" /><span>Клавиатури</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_35" name="filter_form[types][]" value="Климатици" /><span>Климатици</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_36" name="filter_form[types][]" value="Компютри" /><span>Компютри</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_37" name="filter_form[types][]" value="Компютърни кабели" /><span>Компютърни кабели</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_38" name="filter_form[types][]" value="Кутии и кошници за хляб" /><span>Кутии и кошници за хляб</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_39" name="filter_form[types][]" value="Лаптопи" /><span>Лаптопи</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_40" name="filter_form[types][]" value="Машинки за подстригване" /><span>Машинки за подстригване</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_41" name="filter_form[types][]" value="Месомелачки" /><span>Месомелачки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_42" name="filter_form[types][]" value="Микро системи" /><span>Микро системи</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_43" name="filter_form[types][]" value="Микровълнови фурни" /><span>Микровълнови фурни</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_44" name="filter_form[types][]" value="Мини системи" /><span>Мини системи</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_45" name="filter_form[types][]" value="Мишки" /><span>Мишки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_46" name="filter_form[types][]" value="Миялни машини" /><span>Миялни машини</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_47" name="filter_form[types][]" value="Мобилни Телефони" /><span>Мобилни Телефони</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_48" name="filter_form[types][]" value="Монитори" /><span>Монитори</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_49" name="filter_form[types][]" value="Отоплителни уреди" /><span>Отоплителни уреди</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_50" name="filter_form[types][]" value="Пасатори" /><span>Пасатори</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_51" name="filter_form[types][]" value="Перални машини" /><span>Перални машини</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_52" name="filter_form[types][]" value="Плата" /><span>Плата</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_53" name="filter_form[types][]" value="Плотове" /><span>Плотове</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_54" name="filter_form[types][]" value="Подложки" /><span>Подложки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_55" name="filter_form[types][]" value="Поставки и подложки" /><span>Поставки и подложки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_56" name="filter_form[types][]" value="Прахосмукачки" /><span>Прахосмукачки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_57" name="filter_form[types][]" value="Преси и маши" /><span>Преси и маши</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_58" name="filter_form[types][]" value="Проектори" /><span>Проектори</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_59" name="filter_form[types][]" value="Радиокасетофони с CD" /><span>Радиокасетофони с CD</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_60" name="filter_form[types][]" value="Радиочасовници" /><span>Радиочасовници</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_61" name="filter_form[types][]" value="Рамки" /><span>Рамки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_62" name="filter_form[types][]" value="Самобръсначки" /><span>Самобръсначки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_63" name="filter_form[types][]" value="Свещници" /><span>Свещници</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_64" name="filter_form[types][]" value="Сервизи" /><span>Сервизи</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_65" name="filter_form[types][]" value="Сешоари" /><span>Сешоари</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_66" name="filter_form[types][]" value="Слушалки" /><span>Слушалки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_67" name="filter_form[types][]" value="Сокоизтисквачки" /><span>Сокоизтисквачки</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_68" name="filter_form[types][]" value="Сосиери" /><span>Сосиери</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_69" name="filter_form[types][]" value="Стойки за стена" /><span>Стойки за стена</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_70" name="filter_form[types][]" value="Сушилни машини" /><span>Сушилни машини</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_71" name="filter_form[types][]" value="Съдомиялни машини" /><span>Съдомиялни машини</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_72" name="filter_form[types][]" value="Таблети" /><span>Таблети</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_73" name="filter_form[types][]" value="Тави" /><span>Тави</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_74" name="filter_form[types][]" value="Телевизори" /><span>Телевизори</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_75" name="filter_form[types][]" value="Фотоапарати - компактни" /><span>Фотоапарати - компактни</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_76" name="filter_form[types][]" value="Фотоепилатори" /><span>Фотоепилатори</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_77" name="filter_form[types][]" value="Фризери и ракли" /><span>Фризери и ракли</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_78" name="filter_form[types][]" value="Фурни за вграждане" /><span>Фурни за вграждане</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_79" name="filter_form[types][]" value="Хладилници" /><span>Хладилници</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_80" name="filter_form[types][]" value="Хлебопекарни" /><span>Хлебопекарни</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_81" name="filter_form[types][]" value="Чанти за лаптопи" /><span>Чанти за лаптопи</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_82" name="filter_form[types][]" value="Чаши" /><span>Чаши</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_83" name="filter_form[types][]" value="Чинии" /><span>Чинии</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_types_84" name="filter_form[types][]" value="Ютии" /><span>Ютии</span></label></div></div></div></fieldset><fieldset class="filter-box"><header><h3><a  class="required">Марки</a></h3></header><div class="filter-content"><div id="filter_form_brands"><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_0" name="filter_form[brands][]" value="ACER" /><span>ACER</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_1" name="filter_form[brands][]" value="AMICA" /><span>AMICA</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_2" name="filter_form[brands][]" value="APPLE" /><span>APPLE</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_3" name="filter_form[brands][]" value="BABYLISS" /><span>BABYLISS</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_4" name="filter_form[brands][]" value="BELKIN" /><span>BELKIN</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_5" name="filter_form[brands][]" value="BLAUPUNKT" /><span>BLAUPUNKT</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_6" name="filter_form[brands][]" value="BOSCH" /><span>BOSCH</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_7" name="filter_form[brands][]" value="BRACKETS" /><span>BRACKETS</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_8" name="filter_form[brands][]" value="BRAUN" /><span>BRAUN</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_9" name="filter_form[brands][]" value="CELLULAR" /><span>CELLULAR</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_10" name="filter_form[brands][]" value="DIVA" /><span>DIVA</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_11" name="filter_form[brands][]" value="ELDOM INVEST" /><span>ELDOM INVEST</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_12" name="filter_form[brands][]" value="ELECTROLUX" /><span>ELECTROLUX</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_13" name="filter_form[brands][]" value="ELIKOR" /><span>ELIKOR</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_14" name="filter_form[brands][]" value="GEMBIRD" /><span>GEMBIRD</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_15" name="filter_form[brands][]" value="GORENJE" /><span>GORENJE</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_16" name="filter_form[brands][]" value="HOTPOINT-ARISTON" /><span>HOTPOINT-ARISTON</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_17" name="filter_form[brands][]" value="HP" /><span>HP</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_18" name="filter_form[brands][]" value="HUAWEI" /><span>HUAWEI</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_19" name="filter_form[brands][]" value="INDESIT" /><span>INDESIT</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_20" name="filter_form[brands][]" value="LENOVO" /><span>LENOVO</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_21" name="filter_form[brands][]" value="LG" /><span>LG</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_22" name="filter_form[brands][]" value="LIEBHERR" /><span>LIEBHERR</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_23" name="filter_form[brands][]" value="LOGITECH" /><span>LOGITECH</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_24" name="filter_form[brands][]" value="MICROSOFT" /><span>MICROSOFT</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_25" name="filter_form[brands][]" value="MIELE" /><span>MIELE</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_26" name="filter_form[brands][]" value="NEO" /><span>NEO</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_27" name="filter_form[brands][]" value="PHILIPS" /><span>PHILIPS</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_28" name="filter_form[brands][]" value="REMINGTON" /><span>REMINGTON</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_29" name="filter_form[brands][]" value="ROWENTA" /><span>ROWENTA</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_30" name="filter_form[brands][]" value="SAMSUNG" /><span>SAMSUNG</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_31" name="filter_form[brands][]" value="SONOROUS" /><span>SONOROUS</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_32" name="filter_form[brands][]" value="SONY" /><span>SONY</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_33" name="filter_form[brands][]" value="SONY PLAYSTATION" /><span>SONY PLAYSTATION</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_34" name="filter_form[brands][]" value="SPEEDLINK" /><span>SPEEDLINK</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_35" name="filter_form[brands][]" value="TARGUS" /><span>TARGUS</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_36" name="filter_form[brands][]" value="TEFAL" /><span>TEFAL</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_37" name="filter_form[brands][]" value="TEFAL ЕЛЕКТРОУРЕДИ" /><span>TEFAL ЕЛЕКТРОУРЕДИ</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_38" name="filter_form[brands][]" value="TESY" /><span>TESY</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_39" name="filter_form[brands][]" value="TRUST" /><span>TRUST</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_40" name="filter_form[brands][]" value="TURBOAIR" /><span>TURBOAIR</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_41" name="filter_form[brands][]" value="VILLEROY&amp;BOCH" /><span>VILLEROY&amp;BOCH</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_42" name="filter_form[brands][]" value="WHIRLPOOL" /><span>WHIRLPOOL</span></label></div><div class="checkbox"><label class=""><input type="checkbox" id="filter_form_brands_43" name="filter_form[brands][]" value="ZANUSSI" /><span>ZANUSSI</span></label></div></div></div></fieldset><fieldset class="filter-box"><header><h3><a  class="required">Цена</a></h3></header><div class="filter-content"><div class="range-widget"><input type="text" id="filter_form_price_min" name="filter_form[price][min]" required="required" placeholder="" class="form-control" value="3" /><input type="text" id="filter_form_price_max" name="filter_form[price][max]" required="required" placeholder="" class="form-control" value="9499" /></div></div></fieldset></div></form>
+    </div>	
+</aside>
+<main class="col-md-13 filter-container">
+    <div class="row">
+		<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
 
-                    </div>
+    
+                </div>
+        <a itemprop="url" href="car-audio/sony-dsx-a200ui-09149223.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09149223/56e27bfa19676.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="car-audio/sony-dsx-a200ui-09149223.html"><span itemprop="name">SONY DSX-A200UI</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09149223</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>MP3 АВТОМОБИЛЕН ПЛЕЙЪР</li>
+                            <li>4 X 55W ОБЩА ИЗХОДНА ЗВУКОВА МОЩНОСТ</li>
+                            <li>ПРЕДЕН USB / АУДИО ВХОД</li>
+                            <li>ВЪЗПРОИЗВЕЖДАНЕ НА МУЗИКА </li>
+                            <li>ОТ ANDROID™ СМАРТФОН </li>
+                            <li>ЦИФРОВ RDS FM ТУНЕР</li>
+                            <li>2V ПРЕДИЗХОД ЗА УСИЛВАТЕЛ</li>
+                            <li>MEGA BASS</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">99.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">115.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09149223" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="kutiq-za-syhranenie/villeroy-boch-petite-fleur-charm-4477-50011229.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/50011229/560b5127b3ebd.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="kutiq-za-syhranenie/villeroy-boch-petite-fleur-charm-4477-50011229.html"><span itemprop="name">VILLEROY&amp;BOCH PETITE FLEUR CHARM 4477</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">50011229</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>Буркан за съхранение малък</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">37.<sup>79</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">62.<sup>99</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="50011229" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="kutiq-za-syhranenie/villeroy-boch-french-garden-charm-4474-50011084.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/50011084/560b511f6aa5d.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="kutiq-za-syhranenie/villeroy-boch-french-garden-charm-4474-50011084.html"><span itemprop="name">VILLEROY&amp;BOCH FRENCH GARDEN CHARM 4474</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">50011084</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>Буркан за съхранение среден</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">50.<sup>39</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">83.<sup>99</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="50011084" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="mp3/philips-sa4rga04rf-12-mp3-player-09122976.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09122976/560a7c5b36b74.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="mp3/philips-sa4rga04rf-12-mp3-player-09122976.html"><span itemprop="name">PHILIPS SA4RGA04RF/12 MP3 PLAYER</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09122976</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>МОДЕЛ SA4RGA04RF/12</li>
+                            <li>MP3 ПЛЕЙЪРЪТ GOGEAR RAGA</li>
+                            <li>ВГРАДЕНА ПАМЕТ (RAM): 4 GB </li>
+                            <li>ФОРМАТ НА КОМПРЕСИРАНЕ: MP3, WAV, WMA </li>
+                            <li>РАЗМЕР НА ЕКРАНА ПО ДИАГОНАЛ (ИНЧОВЕ): 1,1  ИНЧ</li>
+                            <li>РАЗДЕЛИТЕЛНА СПОСОБНОСТ: 128 X 64</li>
+                            <li>СЪОТНОШЕНИЕ СИГНАЛ/ШУМ: &gt; 84 DB </li>
+                            <li>ИЗХОДНА МОЩНОСТ (RMS): 2 X 2,5 MW</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">75.<sup>90</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">85.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09122976" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="mp3/sony-nw-ws413g-09150357.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09150357/57557a8e820ae.png" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="mp3/sony-nw-ws413g-09150357.html"><span itemprop="name">SONY NW-WS413G</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09150357</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>ВОДОУСТОЙЧИВОСТ (ДОРИ И В СОЛЕНА ВОДА), ПРАХОУСТОЙЧИВ (IP65/IP68)</li>
+                            <li>РАБОТИ ПРИ ТЕМПЕРАТУРИ ОТ -5°C ДО 45°C</li>
+                            <li>ДО 12 ЧАСА ЖИВОТ НА БАТЕРИЯТА</li>
+                            <li>РАЗМЕР НА ПАМЕТТА: 4 GB, 8 GB</li>
+                            <li>USB 2.0</li>
+                            <li>БЪРЗО ЗАРЕЖДАНЕ-3 МИНУТИ = 60 МИН.УПОТРЕБА</li>
+                            <li>ЦВЯТ:  ЛАЙМ</li>
+                            <li>ТЕГЛО: 32 Г.</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">199.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">219.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09150357" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="komputerni-kolonki/trust-20419-stdixxo-led-09149184.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09149184/5702496cdf15c.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="komputerni-kolonki/trust-20419-stdixxo-led-09149184.html"><span itemprop="name">TRUST 20419 STDIXXO LED</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09149184</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>ПОРТАТИВНА КОЛОНКА</li>
+                            <li>BLUETOOTH ТЕХНОЛОГИЯ, ОБХВАТ ДО 10М</li>
+                            <li>LED СВЕТЛИНИ С РАЗЛИЧНИ ЕФЕКТИ</li>
+                            <li>МОЩНОСТ 10W</li>
+                            <li>ВГРАДЕН МP3 ПЛЕЪР ЗА СЛУШАНЕ НА МУЗИКА ОТ USB mSD КАРТА</li>
+                            <li>ПРЕЗАРЕЖДАЩА БАТЕРИЯ, ДО 15 ЧАСА РАБОТА</li>
+                            <li>ХЕНДСФРИ РЕЖИМ</li>
+                            <li>БУТОНИ ЗА УПРАВЛЕНИЕ НА ЗВУКА И ПЛЕЪРА</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">99.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09149184" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="komputerni-kolonki/philips-bt6000b-12-wifi-speaker-09146508.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09146508/563a3354e1964.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="komputerni-kolonki/philips-bt6000b-12-wifi-speaker-09146508.html"><span itemprop="name">PHILIPS BT6000B/12 WIFI SPEAKER</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09146508</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>МОДЕЛ BT6000B/12</li>
+                            <li>ИЗХОДНА МОЩНОСТ (RMS) 2 X 6W</li>
+                            <li>BLUETOOTH, NFC</li>
+                            <li>ОБХВАТ НА BLUETOOTH ПРЯКА ВИДИМОСТ, 10 М (30 ФУТА)</li>
+                            <li>АУДИО ВХОД (3.5 ММ), СТЕРЕО ЗВУК 2 X 1.5&quot;</li>
+                            <li>ВОДОУСТОЙЧИВОСТ IPX4</li>
+                            <li>ВГРАДЕН МИКРОФОН - ЗА КОНФЕРЕНТНИ РАЗГОВОРИ ЧРЕЗ ГОВОРИТЕЛЯ</li>
+                            <li>ЗАРЕЖДАНЕ ОТ USB</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">179.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">219.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09146508" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="komputerni-kolonki/logitech-ue-boom-2-orange-984-000559-09151918.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09151918/57c6dd5547217.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="komputerni-kolonki/logitech-ue-boom-2-orange-984-000559-09151918.html"><span itemprop="name">LOGITECH UE BOOM 2 ORANGE 984-000559</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09151918</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>ПРЕНОСИМА КОЛОНКА</li>
+                            <li>ЦВЯТ ОРАНЖЕВ</li>
+                            <li>BLUETOOTH ТЕХНОЛОГИЯ, ОБХВАТ ДО 30М</li>
+                            <li>ВОДОУСТОЙЧИВА</li>
+                            <li>ДО 15 ЧАСА РАБОТА  С ЕДНО ЗАРЕЖДАНЕ</li>
+                            <li>ТЕГЛО - 548 ГР.</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">319.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">349.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09151918" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="komputerni-kolonki/logitech-ue-megaboom-black-984-000438-09151925.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09151925/57c6dee5cc632.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="komputerni-kolonki/logitech-ue-megaboom-black-984-000438-09151925.html"><span itemprop="name">LOGITECH UE MEGABOOM BLACK 984-000438</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09151925</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>ПРЕНОСИМА КОЛОНКА</li>
+                            <li>ЦВЯТ ЧЕРЕН</li>
+                            <li>BLUETOOTH ТЕХНОЛОГИЯ, ОБХВАТ ДО 30М</li>
+                            <li>ВОДОУСТОЙЧИВА</li>
+                            <li>ДО 20 ЧАСА РАБОТА  С ЕДНО ЗАРЕЖДАНЕ</li>
+                            <li>ТЕГЛО - 877 ГР.</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">499.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">549.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09151925" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="komputerni-slushalki/speedlink-sl-8783-bk-coniux-headset-09136422.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09136422/560ac3fb648d5.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="komputerni-slushalki/speedlink-sl-8783-bk-coniux-headset-09136422.html"><span itemprop="name">SPEEDLINK SL-8783-BK CONIUX HEADSET</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09136422</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>ГЕЙМЪРСКИ СЛУШАЛКИ С МИКРОФОН</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">39.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09136422" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="absorbatori/elikor-integra-wood-60-white-oak-09147683.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09147683/56715fb1a70ef.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="absorbatori/elikor-integra-wood-60-white-oak-09147683.html"><span itemprop="name">ELIKOR INTEGRA WOOD 60 WHITE/OAK</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09147683</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>- АБСОРБАТОР</li>
+                            <li>- ТЕЛЕСКОПИЧЕН ТИП</li>
+                            <li>- 3 СТЕПЕНИ НА МОЩНОСТ</li>
+                            <li>- ОСВЕТЛЕНИЕ</li>
+                            <li>- АЛУМИНИЕВ, МИЕЩ СЕ ФИЛТЪР</li>
+                            <li>- ВСМУКАТЕЛНА МОЩНОСТ - 301 куб.м./час</li>
+                            <li>- МАКСИМАЛНО НИВО НА ШУМ - 63 dB</li>
+                            <li>- ПРЕДЕН ПАНЕЛ - ЕСТЕСТВЕН ДЪБ</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">99.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">119.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09147683" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="absorbatori/amica-okc624s-09149829.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09149829/570247ea87312.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="absorbatori/amica-okc624s-09149829.html"><span itemprop="name">AMICA OKC624S</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09149829</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>АСПИРАТОР</li>
+                            <li>ЕДИН МОТОР</li>
+                            <li> 3 СТЕПЕНИ НА МОЩНОСТ</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">199.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">239.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09149829" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="cellular-clearbook-iphone-7-gold-09152315.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09152315/57f2352c4bee0.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="cellular-clearbook-iphone-7-gold-09152315.html"><span itemprop="name">CELLULAR CLEARBOOK IPHONE 7 GOLD</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09152315</span></small>
+            <ul itemprop="description" class="product-description">
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">26.<sup>90</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">29.<sup>90</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09152315" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="audio-za-telefoni/sony-srs-x11r-09142400.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09142400/560ad83c7d4e0.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="audio-za-telefoni/sony-srs-x11r-09142400.html"><span itemprop="name">SONY SRS-X11R</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09142400</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>Преносим безжичен високоговорител</li>
+                            <li>Изходна мощност: 10 W</li>
+                            <li>Честотна характеристика: 20 – 20 000 Hz </li>
+                            <li>Безжични връзки: Bluetooth/NFC</li>
+                            <li>Hands-Free функция</li>
+                            <li>Батерия: Вътрешна акумулаторна батерия</li>
+                            <li>Живот на батерията: 12 часа</li>
+                            <li>Цвят: Червен</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">99.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">129.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09142400" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="blenderi/tefal-bl142a38-09146801.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09146801/563a5b399fe12.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="blenderi/tefal-bl142a38-09146801.html"><span itemprop="name">TEFAL BL142A38</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09146801</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>- БЛЕНДЕР</li>
+                            <li>- МОЩНОСТ 300 W </li>
+                            <li>- 2 СКОРОСТИ</li>
+                            <li>- ФУНКЦИЯ ЗА ТРОШЕНЕ НА ЛЕД</li>
+                            <li>- 0,6 Л СТЪКЛЕНА КАНА </li>
+                            <li>- БРОЙ ОСТРИЕТА: 2 </li>
+                            <li>- ПОДВИЖНИ ОСТРИЕТА</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">99.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">125.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09146801" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="boiler/tesy-gcu-0615-m01-rc-09110344.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09110344/560b0914b7c0e.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="boiler/tesy-gcu-0615-m01-rc-09110344.html"><span itemprop="name">TESY GCU-0615 M01 RC</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09110344</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>-ОБЕМ: 6 Л</li>
+                            <li>-МОНТАЖ: ПОД МИВКА</li>
+                            <li>-МОЩНОСТ НАГРЕВАТЕЛЕН ЕЛЕМЕНТ: 1.5 KW</li>
+                            <li>-ПОКРИТИЕ:  СТЪКЛОКЕРАМИЧНО</li>
+                            <li>-ТЕГЛО :  7.1 КГ</li>
+                            <li>-ВЪНШЕН ТЕРМОРЕГУЛАТОР С ИНДИКАЦИЯ ЗА 4 ТЕМПЕРАТУРНИ РЕЖИМА:</li>
+                            <li>-ПОЗИЦИЯ &quot;ПРОТИВ ЗАМРЪЗВАНЕ&quot;</li>
+                            <li>-ЛЕТЕН РЕЖИМ</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">109.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">119.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09110344" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="boiler/tesy-gcv-80-47-30-c21-tsr-09151677.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09151677/579b1258e5b81.jpg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="boiler/tesy-gcv-80-47-30-c21-tsr-09151677.html"><span itemprop="name">TESY GCV 80 47 30 C21 TSR</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">09151677</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>-БОЙЛЕР</li>
+                            <li>-ВЕРТИКАЛЕН ТИП</li>
+                            <li>-ОБЕМ: 82 Л.</li>
+                            <li>-ДИАМЕТЪР: 47 СМ</li>
+                            <li>-BILIGHT НДИКАТОР</li>
+                            <li>-ПРЕКЪСНАТ ТЕРМОСТАТ - ДО 16 % ПО-НИСКИ ЕНЕРГИЙНИ ЗАГУБИ</li>
+                            <li>-PISTON ЕФЕКТ - ОСИГУРЯВА ДО 15 % ПОВЕЧЕ ТОПЛА ВОДА</li>
+                            <li>--5 ГОДИНИ ПЪЛНА ГАРАНЦИЯ</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">199.<sup>00</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">219.<sup>00</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="09151677" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="velikden/villeroy-boch-14-8604-4863-50039649.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/50039649/560b37d48d546.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="velikden/villeroy-boch-14-8604-4863-50039649.html"><span itemprop="name">VILLEROY&amp;BOCH 14-8604-4863</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">50039649</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>FARMERS SPRING МЪГ &quot;ПЕТЕЛ И КОКОШКА&#039;&#039;; ЦВЯТ: БЯЛ С ФЛОРАЛНИ МОТИВИ; СЪСТАВ: ПОРЦЕЛАН</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">22.<sup>19</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">36.<sup>99</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="50039649" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="velikden/villeroy-boch-14-8604-2641-50039651.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/50039651/560b37d4b7f91.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="velikden/villeroy-boch-14-8604-2641-50039651.html"><span itemprop="name">VILLEROY&amp;BOCH 14-8604-2641</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">50039651</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>FARMERS SPRING &quot;ПЕТЕЛ И КОКОШКА&#039;&#039;ЧИНИЯ ЗА САЛАТА; РАЗМЕР: 23 СМ; ЦВЯТ БЯЛ С ФЛОРАЛНИ МОТИВИ; СЪСТАВ: ПОРЦЕЛАН</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">25.<sup>79</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">42.<sup>99</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="50039651" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+	<div class="col-md-4">
+	
+<figure itemscope itemtype="http://schema.org/Product" class="product">
+	        	<div class="badges">
+                                        <div class="badge-label badge-red badge-promo" title="Промо цена">Промо цена</div>
+
+    
+                </div>
+        <a itemprop="url" href="velikden/villeroy-boch-14-8619-2906-50039637.html" class="product-thumb">
+                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/50039637/560b37d3a0bf1.jpeg" alt="Technomarket" />
+            </a>
+    <figcaption>
+        <div class="product-name">
+            <h3><a itemprop="url" href="velikden/villeroy-boch-14-8619-2906-50039637.html"><span itemprop="name">VILLEROY&amp;BOCH 14-8619-2906</span></a></h3>
+            <small class="product-model">Арт.№: <span itemprop="productID">50039637</span></small>
+            <ul itemprop="description" class="product-description">
+                            <li>EASTER DELIGHT ПЛАТО; РАЗМЕР: 29Х22 СМ; ЦВЯТ: БЯЛ С ФЛОРАЛНИ МОТИВИ; СЪСТАВ: ПОРЦЕЛАН</li>
+                        </ul>            
+        </div>
+        <div class="product-price">
+            <var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+            	<meta itemprop="priceCurrency" content="BGN" />
+                <span itemprop="price" class="new">37.<sup>79</sup>  <small>лв.</small></span>
+                                <span itemprop="price" class="old">62.<sup>99</sup>  <small>лв.</small></span>
+                                <div><link itemprop="itemCondition" href="http://schema.org/NewCondition" /> <span class="hidden">New</span></div>
+            </var>
+            <form action="http://www.technomarket.bg/cart/add">
+                <input type="hidden" value="50039637" name="product">
+                <button type="submit" class="btn btn-tm">
+                	<i class="icon-basket"></i> Купи онлайн
+                </button>
+            </form>            
+        </div>
+    </figcaption>
+</figure><!--.product-->
+
+	</div>
+ 
+<div class="clear filter_load_more" data-from="20" data-size="20"></div>
     </div>
+</main>
+<hr class="clear">
+<script type="text/javascript">
+    require(['app', 'jquery'], function(app, $){
+        app.facets($('#aside-filter-57f39bc8b5542'), "/promocii|j1_1|j1_2");
+    });
+</script>
     </div>
 
 
@@ -2874,7 +2542,7 @@
         <div class="container">
             <span class="copy">Copyright &reg; 2016 Техномаркет. Всички права запазени.</span>
             <span class="mc-logos">
-                            <img src="http://cdn.technomarket.bg/images/3e561a8.png" alt="Technomarket" />
+                            <img src="img/cards.png" alt="Technomarket" />
                         </span>
         </div>
     </div><!-- /.copyrights -->
@@ -2947,5 +2615,5 @@
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/magazini by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:15 GMT -->
+<!-- Mirrored from www.technomarket.bg/promocii by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:48 GMT -->
 </html>

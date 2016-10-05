@@ -112,6 +112,11 @@ public class MyController {
 	public String iphone7(Model mod) {
 		return "iphone7";
 	}
+	
+	@RequestMapping(value = "/vaucher", method = RequestMethod.GET)
+	public String vaucher(Model mod) {
+		return "vaucher";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

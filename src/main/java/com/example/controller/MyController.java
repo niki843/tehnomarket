@@ -72,6 +72,11 @@ public class MyController {
 	public String warranty(Model mod) {
 		return "warranty";
 	}
+	
+	@RequestMapping(value = "/lgWarranty", method = RequestMethod.GET)
+	public String lgWarranty(Model mod) {
+		return "lg-warranty";
+	}
 
 	@RequestMapping(value = "/mindex", method = RequestMethod.GET)
 	public String sayBye(Model viewModel) {

@@ -3,6 +3,7 @@
     
 <!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:15 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
         <title>Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
@@ -1643,7 +1644,10 @@
     <div class="row-split">
         <div class="col-half">      
             <h2>Вход в сайта</h2>
-                          
+            <c:if test="${ registered }">
+            	<font color="red">Бяхте успешно регистриран!</font>
+            	<% session.removeAttribute("registered"); %>
+            </c:if>
             <form action="/Technomarket/loginUser" method="post" class="form-horizontal">
                 <input type="hidden" name="_csrf_token" value="LgCRkyGi6DMpJxmRzBaTeMmjNysNwoh9eXw2WzMCVxs" />
                 <div class="form-group">

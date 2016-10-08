@@ -25,26 +25,26 @@ public class UserController {
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST, consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
 	public String addUser(Model model, HttpServletRequest request) {
 		String name = request.getParameter("fos_user_registration_form[first_name]");
-		String lastName = request.getParameter("fos_user_registration_form_last_name");
-		String email = request.getParameter("fos_user_registration_form_email");
-		String pass = request.getParameter("fos_user_registration_form_plainPassword_first");
-		String pass2 = request.getParameter("fos_user_registration_form_plainPassword_second");
-		String myRadio = request.getParameter("fos_user_registration_form_sex_0");
+		String lastName = request.getParameter("fos_user_registration_form[last_name]");
+		String email = request.getParameter("fos_user_registration_form[email]");
+		String pass = request.getParameter("fos_user_registration_form[plainPassword][first]");
+		String pass2 = request.getParameter("fos_user_registration_form[plainPassword][second]");
+		String sex = request.getParameter("fos_user_registration_form[sex]");
+		String day = request.getParameter("fos_user_registration_form[birthday][day]");
+		String month = request.getParameter("fos_user_registration_form[birthday][month]");
+		String year = request.getParameter("fos_user_registration_form[birthday][year]");
 		boolean isMale;
-		if ("1".equals(myRadio)) {
+		
+		if (sex.equals("1")) {
 			isMale = true;
 		} else {
 			isMale = false;
 		}
-
-		System.out.println(isMale);
-		System.out.println(request.getParameter("fos_user_registration_form[birthday][day]"));
-		String[] params = request.getParameterMap().get("fos_user_registration_form[birthday]");
-	
-		System.out.println(params);
+		
+		request.getSession().setAttribute("registered", true);
 		
 		
-		return "register";
+		return "login";
 
 	}
 

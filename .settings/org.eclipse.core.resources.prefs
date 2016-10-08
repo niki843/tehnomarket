@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/java/com/tm/controller/UserController.java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/apple.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/brochure.jsp=UTF-8
@@ -29,5 +30,6 @@ encoding//src/main/webapp/WEB-INF/views/jsp/tbi-conditions.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/uni-conditions.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/vaucher.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/warranty.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/web.xml=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

@@ -35,7 +35,7 @@ public class UserDAO {
 		try {
 			DBManager.getInstance();
 			ps = DBManager.getConnection().prepareStatement(
-					"INSERT INTO sql7137913.users (first_name, last_name, email, password,male,birth_date,is_admin ,subscribed) VALUES (?,?,?,?,?,?,?,?);",
+					"INSERT INTO users (first_name, last_name, email, password,male,birth_date,is_admin ,subscribed) VALUES (?,?,?,?,?,?,?,?);",
 					Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, user.getFirstName());
 			ps.setString(2, user.getLastName());
@@ -80,7 +80,7 @@ public class UserDAO {
 			st = DBManager.getConnection().createStatement();
 
 			resultSet = st.executeQuery(
-					"SELECT first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM sql7137913.users;");
+					"SELECT first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM technomarket.users;");
 
 			while (resultSet.next()) {
 				boolean isAdmin = resultSet.getBoolean("is_admin");
@@ -128,7 +128,7 @@ public class UserDAO {
 			st = DBManager.getConnection().createStatement();
 
 			resultSet = st.executeQuery(
-					"SELECT order_id, client_id, price, date,status FROM sql7137913.users where client_id = "
+					"SELECT order_id, client_id, price, date,status FROM users where client_id = "
 							+ user.getUserId() + " ;");
 			while (resultSet.next()) {
 				orders.add(new Order(resultSet.getInt("order_id"), resultSet.getInt("client_id"),
@@ -157,7 +157,7 @@ public class UserDAO {
 	public void updateUser(User user) {
 		try {
 			PreparedStatement st = DBManager.getInstance().getConnection().prepareStatement(
-					"UPDATE sql7137913.users SET first_name = ?, last_name = ?, email = ?, password = ?, male = ?, birth_date = ? subscribed = ?  WHERE username = ?;");
+					"UPDATE users SET first_name = ?, last_name = ?, email = ?, password = ?, male = ?, birth_date = ? subscribed = ?  WHERE username = ?;");
 			st.setString(1, user.getFirstName());
 			st.setString(2, user.getLastName());
 			st.setString(3, user.getEmail());

@@ -1644,19 +1644,19 @@
         <div class="col-half">      
             <h2>Вход в сайта</h2>
                           
-            <form action="http://www.technomarket.bg/login_check" method="post" class="form-horizontal">
+            <form action="/Technomarket/loginUser" method="post" class="form-horizontal">
                 <input type="hidden" name="_csrf_token" value="LgCRkyGi6DMpJxmRzBaTeMmjNysNwoh9eXw2WzMCVxs" />
                 <div class="form-group">
                     <label class="col-md-6 control-label" for="username">Е-мейл</label>
                     <div class="col-md-10 control-bar">
-                        <input class="form-control" type="text" id="username" name="_username" value="" required  />
+                        <input class="form-control" type="text" id="email" name="email" value="" required  />
                         <span class="bar"></span>
                     </div>    
                 </div>
                 <div class="form-group">
                     <label class="col-md-6 control-label" for="password">Парола</label>
                      <div class="col-md-10 control-bar">
-                        <input class="form-control" type="password" id="password" name="_password" required />
+                        <input class="form-control" type="password" id="password" name="password" required />
                         <span class="bar"></span>
                     </div>        
                 </div>

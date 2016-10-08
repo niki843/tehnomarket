@@ -20,9 +20,9 @@ public abstract class User {
 	private boolean subscribed;
 
 	// TODO validations
-	public User( String firstName, String lastName, String email, String password, boolean isMale,
-			Date birthDate, boolean isAdmin, boolean subscribed) {
-		this.userId = userId;
+	public User(){};
+	public User(String firstName, String lastName, String email, String password, boolean isMale, Date birthDate,
+			boolean isAdmin, boolean subscribed) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -65,6 +65,8 @@ public abstract class User {
 
 	}
 
+	
+
 	public int getUserId() {
 		return userId;
 	}
@@ -101,7 +103,6 @@ public abstract class User {
 		this.subscribed = subscribed;
 	}
 
-	
 	void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

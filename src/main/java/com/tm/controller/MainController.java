@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -156,6 +157,6 @@ public class MainController {
 	@RequestMapping(value= "/getProducts", method = RequestMethod.GET)
 	public String getProducts(Model model){
 		return "products";
-	}
+	}	
 
 }

@@ -63,7 +63,7 @@ public class ProductDAO {
 		try {
 			DBManager.getInstance();
 			st = DBManager.getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT type_id from sql7137913.product_type where type_name=" + type);
+			resultSet = st.executeQuery("SELECT type_id from product_type where type_name=" + type);
 			return resultSet.getInt("type_id");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -78,7 +78,7 @@ public class ProductDAO {
 		try {
 			DBManager.getInstance();
 			st = DBManager.getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT model_id from sql7137913.product_type where model_name=" + model);
+			resultSet = st.executeQuery("SELECT model_id from product_type where model_name=" + model);
 			return resultSet.getInt("model_id");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -93,7 +93,7 @@ public class ProductDAO {
 		try {
 			DBManager.getInstance();
 			st = DBManager.getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT model_name from sql7137913.product_type where model_id=" + id);
+			resultSet = st.executeQuery("SELECT model_name from product_type where model_id=" + id);
 			return resultSet.getString("model_name");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -141,7 +141,7 @@ public class ProductDAO {
 		try {
 			DBManager.getInstance();
 			st = DBManager.getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT type_name from sql7137913.product_type where type_id=" + id);
+			resultSet = st.executeQuery("SELECT type_name from product_type where type_id=" + id);
 			return resultSet.getString("type_name");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

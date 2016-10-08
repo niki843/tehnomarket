@@ -3,6 +3,7 @@ package com.tm.model;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
+import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,11 +16,15 @@ public class UserManager {
 
 	private UserManager() {
 		registerredUsers = new ConcurrentHashMap<String, User>();
-
-		if (!UserDAO.getInstance().getAllUsers().isEmpty()) {
-			for (User acc : UserDAO.getInstance().getAllUsers()) {
+		
+		HashSet<User> users = UserDAO.getInstance().getAllUsers();
+		
+		if (!users.isEmpty()) {
+			for (User acc : users) {
 				registerredUsers.put(acc.getEmail(), acc);
-				System.out.println(acc.getEmail() + "pass");
+				System.out.println("----------------------");
+				System.out.println(acc.getEmail());
+			
 			}
 		}
 
@@ -28,6 +33,7 @@ public class UserManager {
 	public static synchronized UserManager getInstance() {
 		if (instance == null) {
 			instance = new UserManager();
+			System.out.println("Created UserManager");
 		}
 		return instance;
 
@@ -48,7 +54,6 @@ public class UserManager {
 	}
 
 	public boolean loginValidation(String email, String password) {
-		System.out.println(registerredUsers);
 		if (!registerredUsers.containsKey(email)) {
 			return false;
 		}
@@ -128,6 +133,20 @@ public class UserManager {
 		}
 
 		return "register";
+	}
+
+	public User getUser(String email) {
+		return registerredUsers.get(email);
+	}
+
+	public HashSet getUsersWhitSubscribed() {
+		HashSet<User> users = new HashSet<>();
+		for (User user : registerredUsers.values()) {
+			if (user.isSubscribed()) {
+				users.add(user);
+			}
+		}
+		return users;
 	}
 
 }

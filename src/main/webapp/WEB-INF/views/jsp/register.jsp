@@ -1,5 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="msg" uri="http://www.springframework.org/tags" %>
 <!doctype html>
 <html class="no-js" lang="">
+
     
 <!-- Mirrored from www.technomarket.bg/register/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
@@ -1643,7 +1648,7 @@
     <div class="row-split">
         <div class="col-half">
             <h2>Регистрация</h2>
-            <form action="http://www.technomarket.bg/register/"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
+            <form action="/Technomarket/addUser"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                     Име
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_first_name" name="fos_user_registration_form[first_name]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>
                 <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_last_name">

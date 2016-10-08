@@ -8,10 +8,14 @@ public class DBConnect {
 
 	// static reference to itself
 	private static DBConnect instance = new DBConnect();
-	public static final String URL = "jdbc:mysql://sql7.freemysqlhosting.net/jdbcdb";
-	public static final String USER = "sql7137913";
-	public static final String PASSWORD = "6ZfkjKlVZb";
+	Connection connection = null;
+	private static final String DB_IP = "localhost";
+	private static final String DB_PORT = "3306";
+	private static final String DB_NAME = "sql7137913";
+	public static final String USER = "...";//TODO Promenq se za vseki
+	public static final String PASSWORD = "...";//TODO Promenq se za vseki
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
+	private static final String URL = "jdbc:mysql://" + DB_IP + ":" + DB_PORT + "/" + DB_NAME;
 
 	// private constructor
 	private DBConnect() {
@@ -23,19 +27,32 @@ public class DBConnect {
 		}
 	}
 
-	private Connection createConnection() {
 
-		Connection connection = null;
+	public Connection getConnection() {
+		// Step 3: Establish Java MySQL connection
 		try {
-			// Step 3: Establish Java MySQL connection
-			connection = DriverManager.getConnection(URL, USER, PASSWORD);
+			if(connection.isClosed()){
+				try {
+					return connection = DriverManager.getConnection(URL, USER, PASSWORD);
+				} catch (SQLException e) {
+					System.out.println("ERROR WITH CREATING CONNECTION");
+					e.printStackTrace();
+				}
+			}
 		} catch (SQLException e) {
-			System.out.println("ERROR: Unable to Connect to Database.");
+			System.out.println("ERROR WITH CHECKING CONNECTION");
+			e.printStackTrace();
 		}
 		return connection;
 	}
-
-	public static Connection getConnection() {
-		return instance.createConnection();
+	
+	public void closeConnection(){
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			System.out.println("ERROR WITH CLOSING CONNECTION");
+			e.printStackTrace();
+		}
 	}
+	
 }

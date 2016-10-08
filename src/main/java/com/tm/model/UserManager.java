@@ -40,11 +40,16 @@ public class UserManager {
 	}
 
 	public void registerUser(String firstName, String lastName, String email, String password, boolean isMale,
-			Date birthDate, boolean isSubscribed) {
-
-		User user = new Customer(firstName, lastName, email, MD5Convert(password).toString(), isMale, birthDate,
-				isSubscribed);
-
+			Date birthDate, boolean isSubscribed,boolean isAdmin) {
+		
+		User user = null;
+		
+		if(isAdmin){
+			user = new Administrator(firstName, lastName, email, password, isMale, birthDate, isSubscribed);
+		}else{
+			user = new Customer(firstName, lastName, email, MD5Convert(password).toString(), isMale, birthDate,
+					isSubscribed);
+		}
 		// any issue with database will remove last user from cache
 		registerredUsers.put(email, user);
 		if (!UserDAO.getInstance().insertUser(user)) {
@@ -74,7 +79,7 @@ public class UserManager {
 				sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
 			}
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Can't convert password");
 			e.printStackTrace();
 		}
 		return sb;

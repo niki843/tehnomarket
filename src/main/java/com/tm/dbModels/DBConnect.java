@@ -8,14 +8,14 @@ public class DBConnect {
 
 	// static reference to itself
 	private static DBConnect instance = new DBConnect();
-	Connection connection = null;
-	private static final String DB_IP = "localhost";
+	private static Connection connection = null;
+	private static final String DB_IP = "192.168.0.26";
 	private static final String DB_PORT = "3306";
 	private static final String DB_NAME = "sql7137913";
 	public static final String USER = "niki-admin";//TODO Promenq se za vseki
 	public static final String PASSWORD = "213465Nikimininam999*";//TODO Promenq se za vseki
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://" + DB_IP + ":" + DB_PORT + "/" + DB_NAME;
+	private static final String URL = "jdbc:mysql://"+DB_IP+":"+DB_PORT+"/"+DB_NAME;
 
 	// private constructor
 	private DBConnect() {
@@ -26,9 +26,16 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 	}
+	
 
+	public synchronized static DBConnect getInstance() {
+		if (instance == null) {
+			instance = new DBConnect();
+		}
+		return instance;
+	}
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		// Step 3: Establish Java MySQL connection
 		try {
 			if(connection.isClosed()){

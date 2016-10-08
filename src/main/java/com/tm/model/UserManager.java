@@ -16,7 +16,7 @@ public class UserManager {
 
 	private UserManager() {
 		registerredUsers = new ConcurrentHashMap<String, User>();
-		
+		System.out.println("WE ARE CREATING THE USER !!!!!!!!!!!!!");
 		HashSet<User> users = UserDAO.getInstance().getAllUsers();
 		
 		if (!users.isEmpty()) {
@@ -32,8 +32,8 @@ public class UserManager {
 
 	public static synchronized UserManager getInstance() {
 		if (instance == null) {
+			System.out.println("WE HAVE ENTERED THE MANAGER FOR USERS");
 			instance = new UserManager();
-			System.out.println("Created UserManager");
 		}
 		return instance;
 

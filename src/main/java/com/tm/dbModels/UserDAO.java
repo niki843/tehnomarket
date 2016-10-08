@@ -6,9 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
-
-import org.springframework.beans.propertyeditors.CurrencyEditor;
 
 import com.tm.model.Administrator;
 import com.tm.model.Customer;
@@ -24,6 +21,7 @@ public class UserDAO {
 	}
 
 	public static synchronized UserDAO getInstance() {
+		System.out.println("GETING USER DAO INSTANCE");
 		if (instance == null) {
 			instance = new UserDAO();
 		}
@@ -34,7 +32,7 @@ public class UserDAO {
 		PreparedStatement ps = null;
 		try {
 			DBManager.getInstance();
-			ps = DBManager.getConnection().prepareStatement(
+			ps = DBManager.getInstance().getConnection().prepareStatement(
 					"INSERT INTO users (first_name, last_name, email, password,male,birth_date,is_admin ,subscribed) VALUES (?,?,?,?,?,?,?,?);",
 					Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, user.getFirstName());
@@ -75,9 +73,10 @@ public class UserDAO {
 		ArrayList<Order> orders = new ArrayList<>();
 		Statement st = null;
 		ResultSet resultSet = null;
+		System.out.println("GETING THE USERS WITH THE DAO NOW");
 		try {
 			DBManager.getInstance();
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 
 			resultSet = st.executeQuery(
 					"SELECT first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM technomarket.users;");
@@ -125,7 +124,7 @@ public class UserDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 
 			resultSet = st.executeQuery(
 					"SELECT order_id, client_id, price, date,status FROM users where client_id = "

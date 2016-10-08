@@ -36,7 +36,7 @@ public abstract class User {
 		Statement st = null;
 		ResultSet resultSet = null;
 		try {
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery(
 					"SELECT AUTO_INCREMENT FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'laptop' AND   TABLE_NAME   = 'accounts';");
 			while (resultSet.next()) {

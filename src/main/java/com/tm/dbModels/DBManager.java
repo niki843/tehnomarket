@@ -7,38 +7,63 @@ import java.sql.SQLException;
 public class DBManager {
 
 	private static DBManager instance = new DBManager();
-	public static final String URL = "jdbc:mysql://localhost:3306/technomarket";
-	public static final String USER = "root";
-	public static final String PASSWORD = "root";
+	private static Connection connection;
+	private static final String DB_IP = "192.168.0.26";
+	private static final String DB_PORT = "3306";
+	private static final String DB_NAME = "sql7137913";
+	public static final String DB_USERNAME = "niki-admin";
+	public static final String DB_PASSWORD = "213465Nikimininam999*";
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
+	private static final String URL = "jdbc:mysql://"+DB_IP+":"+DB_PORT+"/"+DB_NAME+"?autoReconnect=true&useSSL=false";
 
 	private DBManager() {
-		try {
 
-			Class.forName(DRIVER_CLASS);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
+			System.out.println("ERROR:with jdbc driver");
+			e.printStackTrace();
+		}
+		try {
+			connection = DriverManager.getConnection(URL, DB_USERNAME, DB_PASSWORD);
+			System.out.println("connected to db");
+		} catch (SQLException e) {
+			System.out.println("ERROR:with making connection");
 			e.printStackTrace();
 		}
 	}
 
-	private Connection createConnection() {
+	public synchronized static DBManager getInstance() {
+		if (instance == null) {
+			instance = new DBManager();
+		}
+		return instance;
+	}
 
-		Connection connection = null;
+	public Connection getConnection() {
 		try {
-
-			connection = DriverManager.getConnection(URL, USER, PASSWORD);
+			if(connection.isClosed()){
+				try {
+					return connection = DriverManager.getConnection(URL, DB_USERNAME, DB_PASSWORD);
+				} catch (SQLException e) {
+					System.out.println("ERROR:with making connection");
+					e.printStackTrace();
+				}
+			}
 		} catch (SQLException e) {
-			System.out.println("ERROR: Unable to Connect to Database.");
+			System.out.println("ERROR: with creating connection");
+			e.printStackTrace();
 		}
 		return connection;
 	}
-
-	public static Connection getConnection() {
-		return instance.createConnection();
+	
+	public void closeConnection(){
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			System.out.println("ERROR:with closing the connection");
+			e.printStackTrace();
+		}
 	}
-
-	public synchronized static DBManager getInstance() {
-
-		return instance;
-	}
+	
 }

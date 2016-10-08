@@ -30,13 +30,13 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 
 		try {
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
-			pst = DBManager.getConnection().prepareStatement(
+			pst = DBManager.getInstance().getConnection().prepareStatement(
 					"INSERT INTO products (model_id,product_type_type_id, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?);");
 			pst.setInt(1, getIdFromModel(product.getModel()));
 			pst.setInt(2, getIdFromType(product.getProdct_type()));
@@ -62,7 +62,7 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery("SELECT type_id from product_type where type_name=" + type);
 			return resultSet.getInt("type_id");
 		} catch (SQLException e) {
@@ -77,7 +77,7 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery("SELECT model_id from product_type where model_name=" + model);
 			return resultSet.getInt("model_id");
 		} catch (SQLException e) {
@@ -92,7 +92,7 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery("SELECT model_name from product_type where model_id=" + id);
 			return resultSet.getString("model_name");
 		} catch (SQLException e) {
@@ -106,7 +106,7 @@ public class ProductDAO {
 		HashSet<Product> products = new HashSet<Product>();
 		try {
 			DBManager.getInstance();
-			Statement st = DBManager.getConnection().createStatement();
+			Statement st = DBManager.getInstance().getConnection().createStatement();
 			ResultSet resultSet = st.executeQuery(
 					"SELECT product_id,model_id,product_type_type_id, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price FROM products;");
 
@@ -140,7 +140,7 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getConnection().createStatement();
+			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery("SELECT type_name from product_type where type_id=" + id);
 			return resultSet.getString("type_name");
 		} catch (SQLException e) {

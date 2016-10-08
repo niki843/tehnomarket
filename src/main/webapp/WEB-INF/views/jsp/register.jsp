@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="msg" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -1648,7 +1649,51 @@
     <div class="row-split">
         <div class="col-half">
             <h2>Регистрация</h2>
-            
+            <c:if test="${ acceptedTerms }">
+            	<font color="red">Трябва да приемете условията за да се регистрирате!</font>
+            	<% session.removeAttribute("acceptedTerms"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ passwordMissmatch }">
+            	<font color="red">Паролите не съвпадат!</font>
+            	<% session.removeAttribute("passwordMissmatch"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invalidEmail }">
+            	<font color="red">Невалиден email!</font>
+            	<% session.removeAttribute("invalidEmail"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ dayUnselected }">
+            	<font color="red">Не сте избрали ден на раждане!</font>
+            	<% session.removeAttribute("dayUnselected"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ monthUnselected }">
+            	<font color="red">Не сте избрали месец на раждане!</font>
+            	<% session.removeAttribute("monthUnselected"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ yearUnselected }">
+            	<font color="red">Не сте избрали година на раждане!</font>
+            	<% session.removeAttribute("yearUnselected"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ unchosenSex }">
+            	<font color="red">Не сте избрали пол!</font>
+            	<% session.removeAttribute("unchosenSex"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ passwordEmpty }">
+            	<font color="red">Полетата с парола и повтори парола са задължителни!</font>
+            	<% session.removeAttribute("passwordEmpty"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ nameEmpty }">
+            	<font color="red">Полетата с име и фамилия са задължителни!</font>
+            	<% session.removeAttribute("nameEmpty"); %>
+            	</br>
+            </c:if>
             <form action="/Technomarket/addUser"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                     Име
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_first_name" name="fos_user_registration_form[first_name]" pattern=".{2,}" class="form-control" required="required" /><span class="bar"></span></div></div>

@@ -2,6 +2,7 @@
 <html class="no-js" lang="">
 <!-- Mirrored from www.technomarket.bg/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:08:36 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
                                             <title>Technomarket - Технoмаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
@@ -135,12 +136,30 @@
                     <div class="user-bar">
                                                 <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="/Technomarket/login">Вход</a></li>
-                                <li><a href="/Technomarket/register">Регистрация</a></li>
-                            </ul>
+                            	<i class="icon-profile"></i> <span class="hidden-xs">
+	                            								<c:choose>
+																	<c:when test="${ name == null }">
+																		Вход
+																	</c:when>    
+																	<c:otherwise>
+																		<c:out value="${ name }"/>
+																	</c:otherwise>
+																</c:choose>
+															 </span>
+                            </button>	
+                            								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">	
+                                								<c:choose>
+																	<c:when test="${ name == null }">																		
+                                											<li><a href="/Technomarket/login">Вход</a></li>
+                                											<li><a href="/Technomarket/register">Регистрация</a></li>
+																	</c:when>    
+																	<c:otherwise>													
+                                											<li><a href="/Technomarket/profile">Профил</a></li>
+                                											<li><a href="/Technomarket/">Поръчки</a></li>
+                                											<li><a href="/Technomarket/">Изход</a></li>
+																	</c:otherwise>
+																</c:choose>
+                            								</ul>
                         </div><!-- /.user-account -->
                                                 <div class="basket">
                             <a href="/Technomarket/cart" class="btn btn-tm">

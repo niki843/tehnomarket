@@ -158,5 +158,10 @@ public class MainController {
 	public String getProducts(Model model){
 		return "products";
 	}	
+	
+	@RequestMapping(value= "/profile", method = RequestMethod.GET)
+	public String getProfile(Model model){
+		return "profile";
+	}
 
 }

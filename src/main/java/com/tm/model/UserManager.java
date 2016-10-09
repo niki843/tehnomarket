@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -16,14 +17,14 @@ public class UserManager {
 
 	private UserManager() {
 		registerredUsers = new ConcurrentHashMap<String, User>();
-		System.out.println("WE ARE CREATING THE USER MANAGER !!!!!!!!!!!!!");
+		System.out.println("WE ARE CREATING THE USERS IN USER MANAGER 2.");
 		HashSet<User> users = UserDAO.getInstance().getAllUsers();
 		
 		if (!users.isEmpty()) {
 			for (User acc : users) {
 				registerredUsers.put(acc.getEmail(), acc);
 				System.out.println("----------------------");
-				System.out.println(acc.getEmail());
+				System.out.println("ADDING USERS IN USER MANAGER" + acc.getEmail());
 			
 			}
 		}
@@ -32,7 +33,7 @@ public class UserManager {
 
 	public static synchronized UserManager getInstance() {
 		if (instance == null) {
-			System.out.println("WE HAVE ENTERED THE MANAGER FOR USERS");
+			System.out.println("GETING INSTANCE INT USER MANAGER 1.");
 			instance = new UserManager();
 		}
 		return instance;
@@ -45,7 +46,7 @@ public class UserManager {
 		User user = null;
 		
 		if(isAdmin){
-			user = new Administrator(firstName, lastName, email, password, isMale, birthDate, isSubscribed);
+			user = new Administrator(firstName, lastName, email, MD5Convert(password).toString(), isMale, birthDate, isSubscribed);
 		}else{
 			user = new Customer(firstName, lastName, email, MD5Convert(password).toString(), isMale, birthDate,
 					isSubscribed);
@@ -59,10 +60,13 @@ public class UserManager {
 	}
 
 	public boolean loginValidation(String email, String password) {
+		System.out.println("TRYING TO VALIDATE LOG IN");
 		if (!registerredUsers.containsKey(email)) {
+			System.out.println("INVALID EMAIL NOT FOUND IN USER MANAGER");
 			return false;
 		}
-		return registerredUsers.get(email).getPassword().toString().equals(password);
+		System.out.println("FOUND USER WITH THIS EMAIL NOW CHECKING PASSWORD");
+		return registerredUsers.get(email).getPassword().toString().equals(MD5Convert(password).toString());
 
 	}
 

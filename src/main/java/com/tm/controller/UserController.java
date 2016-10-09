@@ -3,6 +3,7 @@ package com.tm.controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -58,6 +59,11 @@ public class UserController {
 		System.out.println("---------------"+year+"------------------------");
 		System.out.println("---------------"+subscribed+"------------------------");
 		System.out.println("---------------"+acceptedTerms+"------------------------");
+		
+		if(pass.length() > 20 || pass2.length() > 20){
+			request.getSession().setAttribute("passwordTooLong", true);
+			shouldReturn = true;
+		}
 		
 		if(day.isEmpty()){
 			request.getSession().setAttribute("dayUnselected", true);
@@ -149,6 +155,7 @@ public class UserController {
 			request.getSession().setAttribute("failedLog", true);
 			return"login";
 		} else {
+			System.out.println("USER HAS BEEN FOUND AND VALIDATED");
 			User user = UserManager.getInstance().getUser(email);
 			if (user.isAdmin()) {
 				System.out.println("MESSAGE:User is admin");

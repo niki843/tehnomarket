@@ -21,7 +21,7 @@ public class UserDAO {
 	}
 
 	public static synchronized UserDAO getInstance() {
-		System.out.println("GETING USER DAO INSTANCE");
+		System.out.println("GETING USER DAO INSTANCE 3.");
 		if (instance == null) {
 			instance = new UserDAO();
 		}
@@ -31,6 +31,7 @@ public class UserDAO {
 	public boolean insertUser(User user) {
 		PreparedStatement ps = null;
 		try {
+			System.out.println("INSERTING USER WITH USER DAO ");
 			DBManager.getInstance();
 			ps = DBManager.getInstance().getConnection().prepareStatement(
 					"INSERT INTO users (first_name, last_name, email, password,male,birth_date,is_admin ,subscribed) VALUES (?,?,?,?,?,?,?,?);",
@@ -50,10 +51,10 @@ public class UserDAO {
 				System.out.println("Auto Generated Primary Key " + user.getUserId());
 			}
 
-			System.out.println("User added successfully");
+			System.out.println("USERS ADDED SUCCESSFULY IN USER DAO ");
 			return true;
 		} catch (SQLException e) {
-			System.out.println("error cannot add this user");
+			System.out.println("ERROR: CAN'T ADD USER");
 			e.printStackTrace();
 			return false;
 		} finally {
@@ -73,7 +74,7 @@ public class UserDAO {
 		ArrayList<Order> orders = new ArrayList<>();
 		Statement st = null;
 		ResultSet resultSet = null;
-		System.out.println("GETING THE USERS WITH THE DAO NOW");
+		System.out.println("GETING THE USERS WITH THE USER DAO NOW 4.");
 		try {
 			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
@@ -113,7 +114,7 @@ public class UserDAO {
 			}
 
 		}
-		System.out.println("Users loaded successfully");
+		System.out.println("USERS LOADED SUCCESSFULY 5.");
 		return users;
 	}
 

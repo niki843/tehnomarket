@@ -159,7 +159,7 @@
 																	<c:otherwise>													
                                 											<li><a href="/Technomarket/profile">Профил</a></li>
                                 											<li><a href="/Technomarket/">Поръчки</a></li>
-                                											<li><a href="/Technomarket/">Изход</a></li>
+                                											<li><a href="/Technomarket/logOut">Изход</a></li>
 																	</c:otherwise>
 																</c:choose>
                             								</ul>

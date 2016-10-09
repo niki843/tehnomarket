@@ -4,7 +4,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -57,6 +56,14 @@ public class UserManager {
 			registerredUsers.remove(email);
 		}
 
+	}
+	
+	public boolean validateEmail(String email){
+		if(registerredUsers.containsKey(email)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public boolean loginValidation(String email, String password) {
@@ -146,7 +153,7 @@ public class UserManager {
 		return registerredUsers.get(email);
 	}
 
-	public HashSet getUsersWhitSubscribed() {
+	public HashSet<User> getUsersWhitSubscribed() {
 		HashSet<User> users = new HashSet<>();
 		for (User user : registerredUsers.values()) {
 			if (user.isSubscribed()) {

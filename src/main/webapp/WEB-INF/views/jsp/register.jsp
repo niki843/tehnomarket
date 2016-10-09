@@ -78,7 +78,15 @@
         <link href="/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
         <link href="//cdn.technomarket.bg/assets/vendor/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
         <script src="//cdn.technomarket.bg/assets/vendor/respond/cross-domain/respond.proxy.js"></script>
-        <![endif]-->
+        <![endif]-->        
+        <%
+			String username = (String) request.getSession().getAttribute("email");
+			RequestDispatcher rd = null;
+			if (username != null) {
+				rd = request.getRequestDispatcher("index.jsp");
+				rd.forward(request, response);
+			}
+		%>
     </head>
     <body itemscope itemtype="http://schema.org/WebPage" id="top" class="">
     <div id="fb-root"></div>
@@ -161,7 +169,7 @@
 																	<c:otherwise>													
                                 											<li><a href="/Technomarket/profile">Профил</a></li>
                                 											<li><a href="/Technomarket/">Поръчки</a></li>
-                                											<li><a href="/Technomarket/">Изход</a></li>
+                                											<li><a href="/Technomarket/logOut">Изход</a></li>
 																	</c:otherwise>
 																</c:choose>
                             								</ul>
@@ -1715,6 +1723,11 @@
             <c:if test="${ passwordTooLong }">
             	<font color="red">Паролата не може да бъде по-голяма от 20 цифри!</font>
             	<% session.removeAttribute("passwordTooLong"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emailExists }">
+            	<font color="red">Съществува потребител с такъв емайл!</font>
+            	<% session.removeAttribute("emailExists"); %>
             	</br>
             </c:if>
             <form action="/Technomarket/addUser"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">

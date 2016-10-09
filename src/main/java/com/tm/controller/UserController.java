@@ -2,8 +2,6 @@
 package com.tm.controller;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +43,6 @@ public class UserController {
 		sb.append(year+"-"+month+"-"+day);
 		boolean isMale = false;
 		boolean isSubscribed;
-		boolean hasAcceptedTerms;
 		boolean shouldReturn = false;
 		
 		System.out.println("---------------"+name+"------------------------");
@@ -62,6 +59,11 @@ public class UserController {
 		
 		if(pass.length() > 20 || pass2.length() > 20){
 			request.getSession().setAttribute("passwordTooLong", true);
+			shouldReturn = true;
+		}
+		
+		if(UserManager.getInstance().validateEmail(email)){
+			request.getSession().setAttribute("emailExists", true);
 			shouldReturn = true;
 		}
 		
@@ -96,10 +98,7 @@ public class UserController {
 			isSubscribed = false;
 		}		
 		
-		if (acceptedTerms != null) {
-			hasAcceptedTerms = true;
-		} else {
-			hasAcceptedTerms = false;
+		if (acceptedTerms == null) {
 			request.getSession().setAttribute("acceptedTerms", true);
 			shouldReturn = true;
 		}
@@ -171,4 +170,11 @@ public class UserController {
 		}
 
 	}
+	
+	@RequestMapping(value = "/logOut", method = RequestMethod.GET)
+	public String logOut(HttpServletRequest request){
+		request.getSession().invalidate();
+		return "index"; 
+	}
+	
 }

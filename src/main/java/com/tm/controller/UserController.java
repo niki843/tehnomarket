@@ -82,7 +82,7 @@ public class UserController {
 			shouldReturn = true;
 		}
 		if(sex != null){
-			if (sex == "1") {
+			if (sex.equals("1")) {
 				isMale = true;
 			} else {
 				isMale = false;
@@ -160,7 +160,7 @@ public class UserController {
 				System.out.println("MESSAGE:User is admin");
 				request.getSession().setAttribute("email", user.getEmail());
 				request.getSession().setAttribute("name", user.getFirstName());
-				return "profile";
+				return "admin-profile";
 			}else{
 				System.out.println("MESSAGE:User is customer");
 				request.getSession().setAttribute("email", user.getEmail());

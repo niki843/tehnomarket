@@ -162,6 +162,11 @@ public class MainController {
 	@RequestMapping(value= "/profile", method = RequestMethod.GET)
 	public String getProfile(Model model){
 		return "profile";
+	}		
+	
+	@RequestMapping(value= "/orders", method = RequestMethod.GET)
+	public String orderList(Model model){
+		return "profile-my-orders";
 	}	
 
 }

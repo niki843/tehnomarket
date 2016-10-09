@@ -1659,36 +1659,39 @@
         <section>
     <div class="container">
         <div class="page-title sh-heading">
-     <h2>Профил</h2>
-</div>
-<div class="row">
-    <div class="col-md-3">
-       <div class="filter-box page-menu">
-            <header>
-                <h3><i class="icon-profile"></i> Профил</h3>
-            </header>         
-            <ul>
-                <li><a href="/Technomarket/profile">Моят профил</a></li>
-                <li><a href="/Technomarket/orders">Моите поръчки</a></li>
-                <li><a href="/Technomarket/logOut">Изход</a></li>
-            </ul>
-        </div> 
+             <h2>Профил</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+               <div class="filter-box page-menu">
+                    <header>
+                        <h3><i class="icon-profile"></i> Профил</h3>
+                    </header>               
+			            <ul>
+			                <li><a href="/Technomarket/profile">Моят профил</a></li>
+			                <li><a href="/Technomarket/orders">Моите поръчки</a></li>
+			                <li><a href="/Technomarket/logOut">Изход</a></li>
+			            </ul>
+                </div> 
+            </div>
+            <div class="col-md-13">
+                    <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                        <th>Сума</th>
+                        <th align="right" class="text-right"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                                    </tbody>
+            </table>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <div class="fos_user_user_show form-horizontal">
-	<div class="form-group">
-    	
-    </div>
-	<div class="form-group">
-        <dl class="dl-horizontal">
-            <dt>Е-мейл:</dt><dd><c:out value="${ email }"/></dd>
-        </dl>    
-    </div>
-</div>
-    </div>
-</div>
-    </div>
-</section>    
+</section>
 
         <footer>
     <div class="inner">

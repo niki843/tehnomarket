@@ -144,7 +144,7 @@
                     <div class="user-bar">
                                                 <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
+                            	<i class="icon-profile"></i> <span class="hidden-xs"><c:out value="${ name }"/></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a href="/Technomarket/login">Вход</a></li>
@@ -1672,8 +1672,7 @@
     </div>
 	<div class="form-group">
         <dl class="dl-horizontal">
-            <dt>Е-мейл:</dt><dd><p>niki.tornev96@gmail.com</p></dd>
-            <dt>Е-мейл:</dt><dd><p>niki.tornev96@gmail.com</p></dd>
+            <dt>Е-мейл:</dt><dd><c:out value="${ email }"/></dd>
         </dl>    
     </div>
 </div>

@@ -136,7 +136,15 @@
                     <div class="user-bar">
                                                 <div class="user-account dropdown">
                             <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            	<i class="icon-profile"></i> <span class="hidden-xs">Вход</span>
+                            	<i class="icon-profile"></i> <span class="hidden-xs">
+	                            								<c:choose>
+																	<c:when test="${ name == null }">
+																		Вход
+																	</c:when>    
+																	<c:otherwise>
+																		<c:out value="${ name }"/>  
+																	</c:otherwise>
+																</c:choose></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a href="/Technomarket/login">Вход</a></li>

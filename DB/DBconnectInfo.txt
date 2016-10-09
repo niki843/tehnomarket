@@ -1,8 +1,0 @@
-Foreign database.
-Connect with:
-
-Server: sql7.freemysqlhosting.net
-Name: sql7137913
-Username: sql7137913
-Password: 6ZfkjKlVZb
-Port number: 3306

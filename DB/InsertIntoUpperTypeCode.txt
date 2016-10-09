@@ -1,0 +1,8 @@
+INSERT INTO product_upper_type(upper_type_name) VALUES ('рекебхгхъ х юсдхн');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('йнлочрпх х оепхтепхъ');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('рекетнмх х рюакерх');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('екейрпнспедх');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('люкйх екейрпнспедх');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('тнрн х бхден');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('гюаюбкемхъ');
+INSERT INTO product_upper_type(upper_type_name) VALUES ('@HOME');

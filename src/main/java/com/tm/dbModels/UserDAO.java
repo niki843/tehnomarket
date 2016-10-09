@@ -77,9 +77,8 @@ public class UserDAO {
 		try {
 			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
-
 			resultSet = st.executeQuery(
-					"SELECT first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM technomarket.users;");
+					"SELECT first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM users;");
 
 			while (resultSet.next()) {
 				boolean isAdmin = resultSet.getBoolean("is_admin");

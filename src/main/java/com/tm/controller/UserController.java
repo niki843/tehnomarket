@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
 
@@ -137,21 +138,30 @@ public class UserController {
 
 	@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
 	public String loginUser(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-//		String email = request.getParameter("email");
-//		String pass = request.getParameter("password");
-//		logger.debug("email {}", email);
-//
-//		if (!UserManager.getInstance().loginValidation(email, pass)) {
-//			System.out.println("ne sushtestvuva");
-//			response.getWriter().append("ERROR");
-//		} else {
-//			if (UserManager.getInstance().getUser(email).isAdmin()) {
-//				System.out.println("Admin");
-//				return "administrator";
-//			}
-//		}
-
-		return "profile";
+		String email = request.getParameter("email");
+		String pass = request.getParameter("password");
+		
+		logger.debug("email {}", email);
+		System.out.println("----------------------"+email+"--------------------------");
+		System.out.println("----------------------"+pass+"---------------------------");
+		if (!UserManager.getInstance().loginValidation(email, pass)) {
+			System.out.println("ERROR: invalid user");
+			request.getSession().setAttribute("failedLog", true);
+			return"login";
+		} else {
+			User user = UserManager.getInstance().getUser(email);
+			if (user.isAdmin()) {
+				System.out.println("MESSAGE:User is admin");
+				request.getSession().setAttribute("email", user.getEmail());
+				request.getSession().setAttribute("name", user.getFirstName());
+				return "profile";
+			}else{
+				System.out.println("MESSAGE:User is customer");
+				request.getSession().setAttribute("email", user.getEmail());
+				request.getSession().setAttribute("name", user.getFirstName());
+				return "profile";
+			}
+		}
 
 	}
 }

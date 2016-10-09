@@ -1644,6 +1644,10 @@
     <div class="row-split">
         <div class="col-half">      
             <h2>Вход в сайта</h2>
+            <c:if test="${ failedLog }">
+            	<font color="red">Невалиден емайл или парола!</font>
+            	<% session.removeAttribute("failedLog"); %>
+            </c:if>
             <c:if test="${ registered }">
             	<font color="red">Бяхте успешно регистриран!</font>
             	<% session.removeAttribute("registered"); %>

@@ -16,7 +16,7 @@ public class UserManager {
 
 	private UserManager() {
 		registerredUsers = new ConcurrentHashMap<String, User>();
-		System.out.println("WE ARE CREATING THE USER !!!!!!!!!!!!!");
+		System.out.println("WE ARE CREATING THE USER MANAGER !!!!!!!!!!!!!");
 		HashSet<User> users = UserDAO.getInstance().getAllUsers();
 		
 		if (!users.isEmpty()) {
@@ -62,8 +62,7 @@ public class UserManager {
 		if (!registerredUsers.containsKey(email)) {
 			return false;
 		}
-
-		return registerredUsers.get(email).getPassword().toString().equals(MD5Convert(password).toString());
+		return registerredUsers.get(email).getPassword().toString().equals(password);
 
 	}
 
@@ -83,7 +82,6 @@ public class UserManager {
 			e.printStackTrace();
 		}
 		return sb;
-
 	}
 
 	public void updateSettings(String first_name, String last_name, String email, String password, boolean isMale,

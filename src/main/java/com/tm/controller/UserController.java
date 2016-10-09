@@ -160,11 +160,13 @@ public class UserController {
 				System.out.println("MESSAGE:User is admin");
 				request.getSession().setAttribute("email", user.getEmail());
 				request.getSession().setAttribute("name", user.getFirstName());
+				request.getSession().setAttribute("isAdmin", true);
 				return "admin-profile";
 			}else{
 				System.out.println("MESSAGE:User is customer");
 				request.getSession().setAttribute("email", user.getEmail());
 				request.getSession().setAttribute("name", user.getFirstName());
+				request.getSession().setAttribute("isAdmin", false);
 				return "profile";
 			}
 		}

@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="com.tm.model.UserManager"%>
 <html class="no-js" lang="">
     
 <!-- Mirrored from www.technomarket.bg/apple-shop by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:26 GMT -->
@@ -153,10 +154,20 @@
                                 											<li><a href="/Technomarket/login">Вход</a></li>
                                 											<li><a href="/Technomarket/register">Регистрация</a></li>
 																	</c:when>    
-																	<c:otherwise>													
-                                											<li><a href="/Technomarket/profile">Профил</a></li>
-                                											<li><a href="/Technomarket/">Поръчки</a></li>
-                                											<li><a href="/Technomarket/logOut">Изход</a></li>
+																	<c:otherwise>	
+																		<c:choose>			
+																			<c:when test="${ isAdmin }">								
+	                                											<li><a href="/Technomarket/profile">Профил</a></li>
+	                															<li><a href="/Technomarket/addProduct">Добави продук</a></li>
+	                															<li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+	                                											<li><a href="/Technomarket/logOut">Изход</a></li>
+																			</c:when>    
+																			<c:otherwise>									
+	                                											<li><a href="/Technomarket/profile">Профил</a></li>
+	                                											<li><a href="/Technomarket/">Поръчки</a></li>
+	                                											<li><a href="/Technomarket/logOut">Изход</a></li>
+																			</c:otherwise>
+																		</c:choose>		
 																	</c:otherwise>
 																</c:choose>
                             								</ul>

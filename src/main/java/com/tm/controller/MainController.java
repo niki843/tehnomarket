@@ -162,6 +162,6 @@ public class MainController {
 	@RequestMapping(value= "/profile", method = RequestMethod.GET)
 	public String getProfile(Model model){
 		return "profile";
-	}
+	}	
 
 }

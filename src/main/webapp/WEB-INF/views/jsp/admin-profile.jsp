@@ -187,7 +187,7 @@
         <div class="dropdown-menu">
             <div class="container">
                 <div class="row">
-                                            <ul>
+                                    <ul>
                                                                                                                         <li class="has-children">
 
                                                                                                                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Телевизори</a>
@@ -408,7 +408,7 @@
 
                                                                                                                                 
                                                                     </li>
-                                                                                    </ul>
+                                    </ul>
                                     </div>
             </div>
         </div>

@@ -2,6 +2,9 @@
 package com.tm.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
@@ -56,6 +60,7 @@ public class UserController {
 		System.out.println("---------------"+year+"------------------------");
 		System.out.println("---------------"+subscribed+"------------------------");
 		System.out.println("---------------"+acceptedTerms+"------------------------");
+		
 		
 		if(pass.length() > 20 || pass2.length() > 20){
 			request.getSession().setAttribute("passwordTooLong", true);
@@ -149,6 +154,14 @@ public class UserController {
 		logger.debug("email {}", email);
 		System.out.println("----------------------"+email+"--------------------------");
 		System.out.println("----------------------"+pass+"---------------------------");
+		Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
+		
+		for(String s : map.keySet()) {
+			for(String ss : map.get(s).keySet()){
+				System.out.println("=======================" + s + "======================");
+				System.out.println("=======================" + ss + "======================");
+			}
+		}
 		if (!UserManager.getInstance().loginValidation(email, pass)) {
 			System.out.println("ERROR: invalid user");
 			request.getSession().setAttribute("failedLog", true);

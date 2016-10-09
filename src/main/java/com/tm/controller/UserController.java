@@ -137,21 +137,21 @@ public class UserController {
 
 	@RequestMapping(value = "/loginUser", method = RequestMethod.POST)
 	public String loginUser(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String email = request.getParameter("email");
-		String pass = request.getParameter("password");
-		logger.debug("email {}", email);
+//		String email = request.getParameter("email");
+//		String pass = request.getParameter("password");
+//		logger.debug("email {}", email);
+//
+//		if (!UserManager.getInstance().loginValidation(email, pass)) {
+//			System.out.println("ne sushtestvuva");
+//			response.getWriter().append("ERROR");
+//		} else {
+//			if (UserManager.getInstance().getUser(email).isAdmin()) {
+//				System.out.println("Admin");
+//				return "administrator";
+//			}
+//		}
 
-		if (!UserManager.getInstance().loginValidation(email, pass)) {
-			System.out.println("ne sushtestvuva");
-			response.getWriter().append("ERROR");
-		} else {
-			if (UserManager.getInstance().getUser(email).isAdmin()) {
-				System.out.println("Admin");
-				return "administrator";
-			}
-		}
-
-		return "login";
+		return "profile";
 
 	}
 }

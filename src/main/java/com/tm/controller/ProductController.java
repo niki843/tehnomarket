@@ -9,6 +9,7 @@ import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.collections.SynchronizedStack;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -120,7 +121,7 @@ public class ProductController {
 		Integer quantity1 = Integer.parseInt(quantity);
 		System.out.println("CREATING PRODUCT");
 		Product product = new Product(1, model, type, upperType, name, artNumb, ean, info, picture, 3, false, price1);
-		
+		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
 		
 		return "admin-add-product";

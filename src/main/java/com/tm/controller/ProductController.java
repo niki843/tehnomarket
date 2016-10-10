@@ -126,5 +126,13 @@ public class ProductController {
 		
 		return "admin-add-product";
 	}
+	
+	@RequestMapping(value = "/showProduct", method = RequestMethod.GET)
+	public String showProduct(Model model, HttpServletRequest request) {
+		int id =  (int) request.getAttribute("id");
+		model.addAttribute("product",ProductManager.getInstance().getProduct(id));
+		
+		return "ProductInf";
+		}
 
 }

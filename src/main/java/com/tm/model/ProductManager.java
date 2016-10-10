@@ -38,4 +38,6 @@ public class ProductManager {
 	public Product getProduct(int id) {
 		return products.get(id);
 	}
+	
+	
 }

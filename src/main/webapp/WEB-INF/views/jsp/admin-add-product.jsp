@@ -1737,6 +1737,21 @@
             	<% session.removeAttribute("invaliModelForType"); %>
             	</br>
             </c:if>
+            <c:if test="${ emptyUpperType }">
+            	<font color="red">Надтипът не може да е празен!</font>
+            	<% session.removeAttribute("emptyUpperType"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyType }">
+            	<font color="red">Типът не може да е празен!</font>
+            	<% session.removeAttribute("emptyType"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyModel }">
+            	<font color="red">Моделът не може да е празен!</font>
+            	<% session.removeAttribute("emptyModel"); %>
+            	</br>
+            </c:if>
             <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                                        Име на продукта
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_name" name="fos_user_registration_form[art_name]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>

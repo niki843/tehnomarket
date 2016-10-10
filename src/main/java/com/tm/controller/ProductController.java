@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -52,15 +53,34 @@ public class ProductController {
 		
 		Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
 		
-		if(!map.get(upperType).containsKey(type)){
-			request.getSession().setAttribute("invalidTypeForUpper", true);
+		if(map.containsKey(upperType)){
+			if(!map.get(upperType).containsKey(type)){
+				request.getSession().setAttribute("invalidTypeForUpper", true);
+				shouldReturn = true;
+			}
+		}
+		
+		if(upperType.isEmpty()){
+			request.getSession().setAttribute("emptyUpperType", true);
+			shouldReturn = true;
+		}	
+		
+		if(type.isEmpty()){
+			request.getSession().setAttribute("emptyType", true);
 			shouldReturn = true;
 		}
 		
-		if(map.get(upperType).containsKey(type)){
-			if(!map.get(upperType).get(type).contains(model)){
-				request.getSession().setAttribute("invaliModelForType", true);
-				shouldReturn = true;
+		if(model.isEmpty()){
+			request.getSession().setAttribute("emptyModel", true);
+			shouldReturn = true;
+		}
+
+		if(map.containsKey(upperType)){
+			if(map.get(upperType).containsKey(type)){
+				if(!map.get(upperType).get(type).contains(model)){
+					request.getSession().setAttribute("invaliModelForType", true);
+					shouldReturn = true;
+				}
 			}
 		}
 		

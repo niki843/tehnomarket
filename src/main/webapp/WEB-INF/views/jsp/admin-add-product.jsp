@@ -1716,7 +1716,7 @@
 											<select id="fos_user_registration_form_upper_type" name="fos_user_registration_form[upper_type]" required="required" class="form-control">
 											<option value="" selected="selected">надтип</option>
                                             <% for(String s : map.keySet()){%>
-                                            	<option value="${ s }"><%= s %></option>
+                                            	<option value="<%= s %>"><%= s %></option>
                                             <%} %>
 											</select></div><span class="bar">
 											</span></div></div><div class="form-group"><label  class="col-sm-6 control-label required">
@@ -1728,7 +1728,7 @@
 											<option value="" selected="selected">тип</option>
                                             <% for(String s : map.keySet()){%>
                                             	<% for(String ss : map.get(s).keySet()){%>
-                                            		<option value="${ ss }"><%= ss %></option>
+                                            			<option value="<%= ss %>"><%= ss %></option>
                                             	<%} %>
                                             <%} %>
 											</select></div><span class="bar">
@@ -1742,7 +1742,7 @@
                                             <% for(String s : map.keySet()){%>
                                             	<% for(String ss : map.get(s).keySet()){%>
                                             		<% for(int i = 0; i < map.get(s).get(ss).size(); i++){%>
-                                            	<option value="${ i }"><%= map.get(s).get(ss).get(i) %></option>
+                                            			<option value="<%= map.get(s).get(ss).get(i) %>"><%= map.get(s).get(ss).get(i) %></option>
                                             		<%} %>
                                             	<%} %>
                                             <%} %>

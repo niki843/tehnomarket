@@ -21,6 +21,7 @@ import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
+import com.tm.tools.SendMail;
 
 
 @Controller
@@ -142,6 +143,11 @@ public class UserController {
 		}
 		
 		request.getSession().setAttribute("registered", true);
+		
+//		SendMail mailSender = new SendMail();
+//		String message = new String(name + "You have been successfully registered in our site! \n "
+//				+ "If you want to enter our site you can do it on " + request.getRequestURL());
+//		mailSender.sendMail("", "", "You have been successfully registered in our site! \n ");
 		
 		return "login";
 	}

@@ -10,6 +10,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SendMail {
+	
 	public static boolean sendMail(String to,String sub ,String msg){
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
@@ -22,14 +23,14 @@ public class SendMail {
 		Session session = Session.getDefaultInstance(props,
 			new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("DentInfo.Mail","1234rfvbnm");
+					return new PasswordAuthentication("Tehnomarket.Mail","1234rfvbnm");
 				}
 			});
 
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("DentInfo.Mail@gmail.com"));
+			message.setFrom(new InternetAddress("Tehnomarket.Mail@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(to));
 			message.setSubject(sub);

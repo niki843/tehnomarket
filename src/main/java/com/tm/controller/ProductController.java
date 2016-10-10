@@ -21,6 +21,7 @@ import com.tm.model.ProductManager;
 
 @Controller
 public class ProductController {
+	
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
 	public String addNewProduct(HttpServletRequest request, HttpServletResponse response) {
 		String name = request.getParameter("fos_user_registration_form[art_name]");

@@ -1676,7 +1676,7 @@
             <ul>
                 <li><a href="/Technomarket/adminProfile">Моят профил</a></li>
                 <li><a href="/Technomarket/addProduct">Добави продук</a></li>
-                <li><a href="/Technomarket/orders">Добави промоция за продукт</a></li>
+                <li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
                 <li><a href="/Technomarket/logOut">Изход</a></li>
             </ul>
         </div> 

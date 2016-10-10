@@ -24,22 +24,32 @@ public class ProductDAO {
 	}
 
 	public boolean insertProduct(Product product) {
+		Integer modelId = getIdFromModel(product.getModel());
+		Integer typeId = getIdFromType(product.getProdct_type());
+		Integer upperTypeId = getIdFromUpperType(product.getUpperType());
+		String name = product.getName();
+		String artNumb = product.getArt_number();
+		String ean = product.getEan();
+		String picture = product.getPicture();
+		Integer quantity = product.getQuantity();
+		Boolean inSale = product.isInSale();
+		Double price = product.getPrice();
+		String info = product.getInfo();
 		try {
 			PreparedStatement st = DBManager.getInstance().getConnection().prepareStatement(
 					"INSERT INTO products (model_id,product_type_type_id, id_upper_type, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
-			System.out.println("WE ARE HERE HERE -------------------------");
-			st.setInt(1, getIdFromModel(product.getModel()));
-			st.setInt(2, getIdFromType(product.getProdct_type()));
-			st.setInt(3, getIdFromUpperType(product.getUpperType()));
-			st.setString(4, product.getName());
-			st.setString(5, product.getArt_number());
-			st.setString(6, product.getEan());
-			st.setString(7, product.getInfo());
-			st.setString(8, product.getPicture());
-			st.setInt(9, product.getQuantity());
-			st.setBoolean(10, product.isInSale());
-			st.setDouble(11, product.getPrice());
-			st.executeQuery();
+			st.setInt(1, modelId);
+			st.setInt(2, typeId);
+			st.setInt(3, upperTypeId);
+			st.setString(4, name);
+			st.setString(5, artNumb);
+			st.setString(6, info);
+			st.setString(7, ean);
+			st.setString(8, picture);
+			st.setInt(9, quantity);
+			st.setBoolean(10, inSale);
+			st.setDouble(11, price);
+			st.executeUpdate();
 			return true;
 		} catch (SQLException e) {
 			System.out.println("ERROR: cannot add this product in product DAO");
@@ -71,7 +81,7 @@ public class ProductDAO {
 		return -1;
 	}
 
-	private int getIdFromModel(String model) {
+	private Integer getIdFromModel(String model) {
 		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
@@ -123,22 +133,47 @@ public class ProductDAO {
 					"SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,quantity_in_stock,in_sale,price FROM products;");
 
 			while (resultSet.next()) {
+				Integer model = resultSet.getInt("model_id");
+				Integer type = resultSet.getInt("product_type_type_id");
+				Integer upperType = resultSet.getInt("id_upper_type");
+				Integer productId = resultSet.getInt("product_id");
+				String name = resultSet.getString("name");
+				String artNum = resultSet.getString("art_num");
+				String ean = resultSet.getString("ean");
+				String info = resultSet.getString("info");
+				String pic = resultSet.getString("pic_url");
+				Integer quantity = resultSet.getInt("quantity_in_stock");
+				Boolean inSale = resultSet.getBoolean("in_sale");
+				Double price = resultSet.getDouble("price");
+				System.out.println("----------------" +model+ "--------------------");
+				System.out.println("----------------" +type+ "--------------------");
+				System.out.println("----------------" +upperType+ "--------------------");
+				System.out.println("----------------" +productId+ "--------------------");
+				System.out.println("----------------" +name+ "--------------------");
+				System.out.println("----------------" +artNum+ "--------------------");
+				System.out.println("----------------" +ean+ "--------------------");
+				System.out.println("----------------" +info+ "--------------------");
+				System.out.println("----------------" +pic+ "--------------------");
+				System.out.println("----------------" +quantity+ "--------------------");
+				System.out.println("----------------" +inSale+ "--------------------");
+				System.out.println("----------------" +price+ "--------------------");
 				products.add(new Product(
 
-						resultSet.getInt("product_id"), 
-						getModelFromId(resultSet.getInt("model_id")),
-						getTypeFromId(resultSet.getInt("product_type_type_id")),
-						getUperTypeFromId(resultSet.getInt("id_upper_type")),
-						resultSet.getString("name"),
-						resultSet.getString("art_num"),
-						resultSet.getString("ean"),
-						resultSet.getString("info"),
-						resultSet.getString("pic_url"), 
-						resultSet.getInt("connections"),
-						resultSet.getBoolean("interfaces"),
-						resultSet.getDouble("operation_system")));
+						productId, 
+						getModelFromId(model),
+						getTypeFromId(type),
+						getUperTypeFromId(upperType),
+						name,
+						artNum,
+						ean,
+						info,
+						pic, 
+						quantity,
+						inSale,
+						price));
 
 			}
+			
 		} catch (SQLException e) {
 			System.out.println("ERROR: Cannot create statement in product DAO 4");
 			e.printStackTrace();
@@ -180,7 +215,7 @@ public class ProductDAO {
 			st.setInt(1, id);
 			resultSet = st.executeQuery();
 			while(resultSet.next()){
-				return resultSet.getString("type_name");
+				return resultSet.getString("upper_type_name");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:Couldn't get uper type from id in productDAO 6");
@@ -196,11 +231,11 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT id_upper_type from product_upper_type WHERE upper_type_name LIKE (?);");
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT id_upper_type FROM product_upper_type WHERE upper_type_name LIKE (?);");
 			st.setString(1, type);
 			resultSet = st.executeQuery();
 			while(resultSet.next()){
-				return resultSet.getInt("type_name");
+				return resultSet.getInt("id_upper_type");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:Couldn't get uper type from id in productDAO 7");

@@ -35,6 +35,7 @@ public class ProductManager {
 	public Map<Integer, Product> getAllProducts(){
 		return Collections.unmodifiableMap(products);
 	}
+	
 	public Product getProduct(int id) {
 		return products.get(id);
 	}

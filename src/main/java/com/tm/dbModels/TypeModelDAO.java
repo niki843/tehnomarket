@@ -37,18 +37,19 @@ public class TypeModelDAO {
 		} 
 		
 		try {
+			
 			set = st.executeQuery("SELECT type_id,type_name,id_upper_type FROM product_type;");
 			while(set.next()){
 				String type = set.getString("type_name");
 				Integer upperTypeId = set.getInt("id_upper_type");
-				String upperTypeName;
+				String upperTypeName = null;
 				prep = DBManager.getInstance().getConnection().prepareStatement("SELECT id_upper_type,upper_type_name FROM product_upper_type WHERE id_upper_type LIKE (?);");
 				prep.setInt(1, upperTypeId);
 				set2 = prep.executeQuery();
 				while(set2.next()){
 					upperTypeName = set2.getString("upper_type_name");
 				}
-				upperTypeTypeModel.get("upperTypeName").put(type, new ArrayList<String>());
+				upperTypeTypeModel.get(upperTypeName).put(type, new ArrayList<String>());
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR: could not create statement in TypeModel DAO");
@@ -70,7 +71,7 @@ public class TypeModelDAO {
 					upperTypeName = set2.getString("upper_type_name");
 				}
 				prep = DBManager.getInstance().getConnection().prepareStatement("SELECT type_id,type_name,id_upper_type FROM product_type WHERE type_id LIKE (?);");
-				prep.setInt(1, upperId);
+				prep.setInt(1, typeId);
 				set2 = prep.executeQuery();
 				while(set2.next()){
 					typeName = set2.getString("type_name");

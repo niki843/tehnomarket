@@ -23,7 +23,7 @@ public class TypeModelDAO {
 		PreparedStatement prep = null;
 		try {
 			 st = DBManager.getInstance().getConnection().createStatement();
-			 set = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type;");
+			 set = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type ORDER BY id_upper_type;");
 			 while (set.next()) {
 				 
 				String upperType = set.getString("upper_type_name");
@@ -37,7 +37,7 @@ public class TypeModelDAO {
 		
 		try {
 			
-			set = st.executeQuery("SELECT type_id,type_name,id_upper_type FROM product_type;");
+			set = st.executeQuery("SELECT type_id,type_name,id_upper_type FROM product_type ORDER BY type_id;");
 			while(set.next()){
 				String type = set.getString("type_name");
 				Integer upperTypeId = set.getInt("id_upper_type");
@@ -56,7 +56,7 @@ public class TypeModelDAO {
 		}
 		
 		try {
-			set = st.executeQuery("SELECT model_id,type_id,id_upper_type,model_name FROM product_models;");
+			set = st.executeQuery("SELECT model_id,type_id,id_upper_type,model_name FROM product_models ORDER BY model_id;");
 			while(set.next()){
 				String model = set.getString("model_name");
 				Integer typeId = set.getInt("type_id");

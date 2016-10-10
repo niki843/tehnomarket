@@ -172,6 +172,11 @@ public class MainController {
 	@RequestMapping(value= "/adminProfile", method = RequestMethod.GET)
 	public String getAdminProfile(Model model){
 		return "admin-profile";
+	}				
+	
+	@RequestMapping(value= "/addProduct", method = RequestMethod.GET)
+	public String addProduct(Model model){
+		return "admin-add-product";
 	}	
 
 }

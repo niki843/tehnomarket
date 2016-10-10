@@ -27,7 +27,6 @@ public class TypeModelDAO {
 			 while (set.next()) {
 				 
 				String upperType = set.getString("upper_type_name");
-				System.out.println("GLEDAI TUK WEEEEEEEEEEEEEEEEE" + upperType);
 				upperTypeTypeModel.put(upperType, new HashMap<String,ArrayList<String>>());
 
 			 }

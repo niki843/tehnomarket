@@ -156,12 +156,6 @@ public class UserController {
 		System.out.println("----------------------"+pass+"---------------------------");
 		Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
 		
-		for(String s : map.keySet()) {
-			for(String ss : map.get(s).keySet()){
-				System.out.println("=======================" + s + "======================");
-				System.out.println("=======================" + ss + "======================");
-			}
-		}
 		if (!UserManager.getInstance().loginValidation(email, pass)) {
 			System.out.println("ERROR: invalid user");
 			request.getSession().setAttribute("failedLog", true);

@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
-<html class="no-js" lang="">
+<html class="no-js" lang=""><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Mirrored from www.technomarket.bg/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:08:36 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -190,40 +190,40 @@
         <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav nav-main">             
-        <% Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();%>
-        <% for(String s : map.keySet()){ %>        
+        <% Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType(); %>
+        <%for(String s : map.keySet()){ %>
         <li class=" dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= s %></a>
         	<div class="dropdown-menu">
             	<div class="container">
                 	<div class="row">
-        				<% for(String ss : map.get(s).keySet()){ %>                                            
+        				<%for(String ss : map.get(s).keySet()){ %>                                    
         					<ul>
-        					<% if(map.get(s).get(ss) != null){ %>
+							<% if(map.get(s).get(ss) != null){ %>
 							<li class="has-children">
-							<%}%>
+							<%} %>
 							<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= ss %></a>
-        					<% if(map.get(s).get(ss) != null){ %>
+							<% if(map.get(s).get(ss) != null){ %>
 								<ul>
-							<%}%>
-        					<% for(int i = 0; i < map.get(s).get(ss).size();i++){ %>
+							<%} %>
+							<% for(int i=0 ; i < map.get(s).get(ss).size(); i++){ %>
                                 	<li>
                                     	<a href="/Technomarket/getProducts" class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
                                     </li>
-            				<%} %> 
-            				<% if(map.get(s).get(ss) != null){ %>
-								</ul> 
-							<%}%>
-        					<% if(map.get(s).get(ss) != null){ %>
-            					</li>          
-							<%}%>                                                                           
+							<%} %>
+							<% if(map.get(s).get(ss) != null){ %>
+								</ul>
+							<%} %>
+							<% if(map.get(s).get(ss) != null){ %>
+            					</li>  
+							<%} %>                                                                  
             				</ul>
-            			<%} %>                
+						<%} %>        
             		</div>
         		</div>
      		</div>
         </li>
-        <%} %>
+		<%} %>
         		</ul>
         	</div>
         </div>

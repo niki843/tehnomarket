@@ -10,11 +10,12 @@ public class Product {
 	String ean;
 	String info;
 	String picture;
+	String upperType;
 	int quantity;
 	boolean inSale;
 	double price;
 
-	public Product(int product_id, String model, String prodct_type, String name, String art_number, String ean,
+	public Product(int product_id, String model, String prodct_type, String upperType, String name, String art_number, String ean,
 			String info, String picture, int quantity, boolean inSale, double price) {
 		this.product_id = product_id;
 		this.model = model;
@@ -27,6 +28,15 @@ public class Product {
 		this.quantity = quantity;
 		this.inSale = inSale;
 		this.price = price;
+		this.upperType = upperType;
+	}
+	
+	public String getUpperType(){
+		return upperType;
+	}
+	
+	public void setUpperType(String upperType){
+		this.upperType = upperType;
 	}
 
 	public int getProduct_id() {

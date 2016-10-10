@@ -1,18 +1,20 @@
 package com.tm.model;
 
+import java.util.Collections;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.tm.dbModels.ProductDAO;
 
 public class ProductManager {
 	public static ProductManager instance = null;
-	private ConcurrentHashMap<String, Product> products;
+	private ConcurrentHashMap<Integer, Product> products;
 
 	private ProductManager() {
 		products = new ConcurrentHashMap();
 
 		for (Product product : ProductDAO.getInstance().getAllProducts()) {
-			products.put(product.getName(), product);
+			products.put(product.getProduct_id(), product);
 		}
 	}
 
@@ -25,8 +27,13 @@ public class ProductManager {
 
 	public void addProduct(Product p) {
 		if (ProductDAO.getInstance().insertProduct(p)) {
-			products.put(p.name, p);
+			products.put(p.getProduct_id(), p);
 		}
 
 	}
+	
+	public Map<Integer, Product> getAllProducts(){
+		return Collections.unmodifiableMap(products);
+	}
+	
 }

@@ -32,83 +32,126 @@ public class ProductDAO {
 		try {
 			st = DBManager.getInstance().getConnection().createStatement();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR: with st in product DAO");
 			e.printStackTrace();
 		}
 		try {
 			pst = DBManager.getInstance().getConnection().prepareStatement(
-					"INSERT INTO products (model_id,product_type_type_id, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?);");
+					"INSERT INTO products (model_id,product_type_type_id, id_upper_type, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
 			pst.setInt(1, getIdFromModel(product.getModel()));
 			pst.setInt(2, getIdFromType(product.getProdct_type()));
-			pst.setString(3, product.getName());
-			pst.setString(4, product.getArt_number());
-			pst.setString(5, product.getEan());
-			pst.setString(6, product.getInfo());
-			pst.setString(7, product.getPicture());
-			pst.setInt(8, product.getQuantity());
-			pst.setBoolean(9, product.isInSale());
-			pst.setDouble(10, product.getPrice());
+			pst.setInt(3, getIdFromUpperType(product.getUpperType()));
+			pst.setString(4, product.getName());
+			pst.setString(5, product.getArt_number());
+			pst.setString(6, product.getEan());
+			pst.setString(7, product.getInfo());
+			pst.setString(8, product.getPicture());
+			pst.setInt(9, product.getQuantity());
+			pst.setBoolean(10, product.isInSale());
+			pst.setDouble(11, product.getPrice());
 			return true;
 		} catch (SQLException e) {
-			System.out.println("error cannot add this product");
+			System.out.println("ERROR: cannot add this product in product DAO");
 			e.printStackTrace();
 			return false;
+		}finally {
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				pst.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing statement in product DAO 1");
+				e.printStackTrace();
+			}
 		}
 
 	}
 
 	private int getIdFromType(String type) {
-		Statement st = null;
+		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT type_id from product_type where type_name=" + type);
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT type_id FROM product_type WHERE type_name LIKE (?)");
+			st.setString(1, type);
+			resultSet = st.executeQuery();
 			return resultSet.getInt("type_id");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR:with executing query in product DAO 1");
 			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing prepared statement in product DAO 2");
+				e.printStackTrace();
+			}
 		}
 		return -1;
 	}
 
 	private int getIdFromModel(String model) {
-		Statement st = null;
+		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT model_id from product_type where model_name=" + model);
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT model_id FROM product_type WHERE model_name LIKE (?)");
+			st.setString(1, model);
+			resultSet = st.executeQuery();
 			return resultSet.getInt("model_id");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR:with executing query in product DAO 2");
 			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing prepared statement in product DAO 3");
+				e.printStackTrace();
+			}
 		}
 		return -1;
 	}
 
 	private String getModelFromId(int id) {
-		Statement st = null;
+		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT model_name from product_type where model_id=" + id);
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT model_name FROM product_type WHERE model_id LIKE (?)");
+			st.setInt(1, id);
+			resultSet = st.executeQuery();
 			return resultSet.getString("model_name");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR:with executing query in product DAO 3");
 			e.printStackTrace();
+		}finally{
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing prepared statement in product DAO 4");
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}
 
 	public Set<Product> getAllProducts() {
 		HashSet<Product> products = new HashSet<Product>();
+		Statement st = null;
+		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			Statement st = DBManager.getInstance().getConnection().createStatement();
-			ResultSet resultSet = st.executeQuery(
-					"SELECT product_id,model_id,product_type_type_id, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price FROM products;");
+			st = DBManager.getInstance().getConnection().createStatement();
+			resultSet = st.executeQuery(
+					"SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,quantity_in_stock,in_sale,price FROM products;");
 
 			while (resultSet.next()) {
 				products.add(new Product(
@@ -116,6 +159,7 @@ public class ProductDAO {
 						resultSet.getInt("product_id"), 
 						getModelFromId(resultSet.getInt("model_id")),
 						getTypeFromId(resultSet.getInt("product_type_type_id")),
+						getUperTypeFromId(resultSet.getInt("id_upper_type")),
 						resultSet.getString("name"),
 						resultSet.getString("art_num"),
 						resultSet.getString("ean"),
@@ -127,25 +171,95 @@ public class ProductDAO {
 
 			}
 		} catch (SQLException e) {
-			System.out.println("Cannot create statement");
+			System.out.println("ERROR: Cannot create statement in product DAO 4");
 			e.printStackTrace();
 
 			return products;
+		}finally{
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing statement in product DAO 5");
+				e.printStackTrace();
+			}
+			
 		}
 		return products;
 	}
 
 	private String getTypeFromId(int id) {
-		Statement st = null;
+		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().createStatement();
-			resultSet = st.executeQuery("SELECT type_name from product_type where type_id=" + id);
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT type_name FROM product_type WHERE type_id LIKE (?)");
+			st.setInt(1, id);
+			resultSet = st.executeQuery();
 			return resultSet.getString("type_name");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR:couldn't get type from id in product dao 5");
 			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing prepared statement in product DAO 6");
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
+	private String getUperTypeFromId(int id){
+		PreparedStatement st = null;
+		ResultSet resultSet = null;
+		try {
+			DBManager.getInstance();
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT type_name from product_type WHERE type_id LIKE (?)");
+			st.setInt(1, id);
+			resultSet = st.executeQuery();
+			return resultSet.getString("type_name");
+		} catch (SQLException e) {
+			System.out.println("ERROR:Couldn't get uper type from id in productDAO 6");
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing prepared statement in product DAO 7");
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}	
+	
+	private Integer getIdFromUpperType(String type){
+		PreparedStatement st = null;
+		ResultSet resultSet = null;
+		try {
+			DBManager.getInstance();
+			st = DBManager.getInstance().getConnection().prepareStatement("SELECT id_upper_type from product_upper_type WHERE upper_type_name LIKE (?)");
+			st.setString(1, type);
+			resultSet = st.executeQuery();
+			return resultSet.getInt("type_name");
+		} catch (SQLException e) {
+			System.out.println("ERROR:Couldn't get uper type from id in productDAO 7");
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstance().closeConnection();
+			try {
+				st.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				System.out.println("ERROR:closing prepared statement in product DAO 8");
+				e.printStackTrace();
+			}
 		}
 		return null;
 	}

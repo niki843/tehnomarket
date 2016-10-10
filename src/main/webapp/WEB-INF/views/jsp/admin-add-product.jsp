@@ -1691,6 +1691,52 @@
     	
     </div>
         <% Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType(); %>
+        	<h2>Добави продукт</h2>
+        	<c:if test="${ emptyName }">
+            	<font color="red">Името на продукта е празно!</font>
+            	<% session.removeAttribute("emptyName"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyArt }">
+            	<font color="red">Артикулният номер е празен!</font>
+            	<% session.removeAttribute("emptyArt"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyEan }">
+            	<font color="red">EАН е празен!</font>
+            	<% session.removeAttribute("emptyEan"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyQuantity }">
+            	<font color="red">Не е въведено количеството на продукта!</font>
+            	<% session.removeAttribute("emptyQuantity"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invalidQuantity }">
+            	<font color="red">Количеството трябва да бъде цифра!</font>
+            	<% session.removeAttribute("invalidQuantity"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invalidPrice }">
+            	<font color="red">Цената не може да е празна!</font>
+            	<% session.removeAttribute("invalidPrice"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyPrice }">
+            	<font color="red">Цената трябва да бъде цифра!</font>
+            	<% session.removeAttribute("emptyPrice"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invalidTypeForUpper }">
+            	<font color="red">Типът не отговоря на надтипа!</font>
+            	<% session.removeAttribute("invalidTypeForUpper"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invaliModelForType }">
+            	<font color="red">Меделът не отговаря на типа!</font>
+            	<% session.removeAttribute("invaliModelForType"); %>
+            	</br>
+            </c:if>
             <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                                        Име на продукта
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_name" name="fos_user_registration_form[art_name]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>

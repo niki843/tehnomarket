@@ -1,6 +1,7 @@
 package com.tm.model;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -46,6 +47,10 @@ public class ProductManager {
 				return products.get(i);
 			}
 		}
+		return null;
+	}
+	
+	public HashSet<Product> getProductsByModel(String nadtype,String type,String model){
 		return null;
 	}
 	

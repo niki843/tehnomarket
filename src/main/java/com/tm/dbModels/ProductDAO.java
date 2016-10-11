@@ -59,7 +59,7 @@ public class ProductDAO {
 			st.setString(5, artNumb);
 			st.setString(6, info);
 			st.setString(7, ean);
-			st.setBinaryStream(8, fis,(int) filePicture.length());
+			st.setBinaryStream(8, fis, (int) filePicture.length());
 			st.setString(9, filePicture.getAbsolutePath());
 			st.setInt(10, quantity);
 			st.setBoolean(11, inSale);
@@ -71,7 +71,7 @@ public class ProductDAO {
 			System.out.println("ERROR: cannot add this product in product DAO");
 			e.printStackTrace();
 			return false;
-		}finally {
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 
@@ -98,16 +98,17 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT type_id FROM product_type WHERE type_name LIKE (?);");
+			st = DBManager.getInstance().getConnection()
+					.prepareStatement("SELECT type_id FROM product_type WHERE type_name LIKE (?);");
 			st.setString(1, type);
 			resultSet = st.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				return resultSet.getInt("type_id");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:with executing query in product DAO 1");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 		return -1;
@@ -117,10 +118,11 @@ public class ProductDAO {
 		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT model_id FROM product_models WHERE model_name LIKE (?);");
+			st = DBManager.getInstance().getConnection()
+					.prepareStatement("SELECT model_id FROM product_models WHERE model_name LIKE (?);");
 			st.setString(1, model);
 			resultSet = st.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				int x = resultSet.getInt("model_id");
 				System.out.println("WE ARE MAKING THE PREPARED STATEMENT NOW" + x);
 				return x;
@@ -128,7 +130,7 @@ public class ProductDAO {
 		} catch (SQLException e) {
 			System.out.println("ERROR:with executing query in product DAO 2");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 		return -1;
@@ -139,16 +141,17 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT model_name FROM product_models WHERE model_id LIKE (?);");
+			st = DBManager.getInstance().getConnection()
+					.prepareStatement("SELECT model_name FROM product_models WHERE model_id LIKE (?);");
 			st.setInt(1, id);
 			resultSet = st.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				return resultSet.getString("model_name");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:with executing query in product DAO 3");
 			e.printStackTrace();
-		}finally{
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 		return null;
@@ -163,7 +166,7 @@ public class ProductDAO {
 			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery(
 					"SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
-			
+
 			while (resultSet.next()) {
 				Integer model = resultSet.getInt("model_id");
 				Integer type = resultSet.getInt("product_type_type_id");
@@ -177,15 +180,16 @@ public class ProductDAO {
 				Integer quantity = resultSet.getInt("quantity_in_stock");
 				Boolean inSale = resultSet.getBoolean("in_sale");
 				Double price = resultSet.getDouble("price");
+
 				File image = new File(resultSet.getString(pic));
-			    FileOutputStream fos;
+			    FileOutputStream fos = null;
 				try {
-					fos = new FileOutputStream(image);			    
+					fos = new FileOutputStream(image);
 					byte[] buffer = new byte[1];
-				    InputStream is = resultSet.getBinaryStream("pic_url");
-				    while (is.read(buffer) > 0) {
-				    	fos.write(buffer);
-				    }
+					InputStream is = resultSet.getBinaryStream("pic_url");
+					while (is.read(buffer) > 0) {
+						fos.write(buffer);
+					}
 				} catch (FileNotFoundException e) {
 					System.out.println("ERROR: file wasn't found when geting");
 					e.printStackTrace();
@@ -194,42 +198,34 @@ public class ProductDAO {
 					e.printStackTrace();
 				}
 
-				System.out.println("----------------" +model+ "--------------------");
-				System.out.println("----------------" +type+ "--------------------");
-				System.out.println("----------------" +upperType+ "--------------------");
-				System.out.println("----------------" +productId+ "--------------------");
-				System.out.println("----------------" +name+ "--------------------");
-				System.out.println("----------------" +artNum+ "--------------------");
-				System.out.println("----------------" +ean+ "--------------------");
-				System.out.println("----------------" +info+ "--------------------");
-				System.out.println("----------------" +pic+ "--------------------");
-				System.out.println("----------------" +quantity+ "--------------------");
-				System.out.println("----------------" +inSale+ "--------------------");
-				System.out.println("----------------" +price+ "--------------------");
-				products.add(new Product(
+				System.out.println("----------------" + model + "--------------------");
+				System.out.println("----------------" + type + "--------------------");
+				System.out.println("----------------" + upperType + "--------------------");
+				System.out.println("----------------" + name + "--------------------");
+				System.out.println("----------------" + artNum + "--------------------");
+				System.out.println("----------------" + ean + "--------------------");
+				System.out.println("----------------" + info + "--------------------");
+				System.out.println("----------------" + pic + "--------------------");
+				System.out.println("----------------" + quantity + "--------------------");
+				System.out.println("----------------" + inSale + "--------------------");
+				System.out.println("----------------" + price + "--------------------");
+				Product product = new Product(
 
-						getModelFromId(model),
-						getTypeFromId(type),
-						getUperTypeFromId(upperType),
-						name,
-						artNum,
-						ean,
-						info,
-						image, 
-						quantity,
-						inSale,
-						price));
-
+						getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,
+						artNum, ean, info, image, quantity, inSale, price);
+				products.add(product);
+				product.setProduct_id(productId);
+				
 			}
-			
+
 		} catch (SQLException e) {
 			System.out.println("ERROR: Cannot create statement in product DAO 4");
 			e.printStackTrace();
 
 			return products;
-		}finally{
+		} finally {
 			DBManager.getInstance().closeConnection();
-			
+
 		}
 		return products;
 	}
@@ -239,56 +235,59 @@ public class ProductDAO {
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT type_name FROM product_type WHERE type_id LIKE (?);");
+			st = DBManager.getInstance().getConnection()
+					.prepareStatement("SELECT type_name FROM product_type WHERE type_id LIKE (?);");
 			st.setInt(1, id);
 			resultSet = st.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				return resultSet.getString("type_name");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:couldn't get type from id in product dao 5");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 		return null;
 	}
-	
-	private String getUperTypeFromId(int id){
+
+	private String getUperTypeFromId(int id) {
 		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT upper_type_name FROM product_upper_type WHERE id_upper_type LIKE (?);");
+			st = DBManager.getInstance().getConnection()
+					.prepareStatement("SELECT upper_type_name FROM product_upper_type WHERE id_upper_type LIKE (?);");
 			st.setInt(1, id);
 			resultSet = st.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				return resultSet.getString("upper_type_name");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:Couldn't get uper type from id in productDAO 6");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 		return null;
-	}	
-	
-	private Integer getIdFromUpperType(String type){
+	}
+
+	private Integer getIdFromUpperType(String type) {
 		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
 			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().prepareStatement("SELECT id_upper_type FROM product_upper_type WHERE upper_type_name LIKE (?);");
+			st = DBManager.getInstance().getConnection()
+					.prepareStatement("SELECT id_upper_type FROM product_upper_type WHERE upper_type_name LIKE (?);");
 			st.setString(1, type);
 			resultSet = st.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				return resultSet.getInt("id_upper_type");
 			}
 		} catch (SQLException e) {
 			System.out.println("ERROR:Couldn't get uper type from id in productDAO 7");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.getInstance().closeConnection();
 		}
 		return null;

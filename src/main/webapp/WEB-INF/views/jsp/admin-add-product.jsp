@@ -271,7 +271,7 @@
             	<% session.removeAttribute("infoTooLong"); %>
             	</br>
             </c:if>
-            <c:if test="${ invalidTypeForUpper }">
+			<c:if test="${ invalidTypeForUpper }">
             	<font color="red">Типът не отговоря на надтипа!</font>
             	<% session.removeAttribute("invalidTypeForUpper"); %>
             	</br>

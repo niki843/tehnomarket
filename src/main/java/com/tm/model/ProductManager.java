@@ -36,8 +36,17 @@ public class ProductManager {
 		return Collections.unmodifiableMap(products);
 	}
 	
-	public Product getProduct(int id) {
+	public Product getProductById(int id) {
 		return products.get(id);
+	}
+	
+	public Product getProductByName(String name){
+		for (Integer i : products.keySet()) {
+			if(products.get(i).getName().equals(name)){
+				return products.get(i);
+			}
+		}
+		return null;
 	}
 	
 	

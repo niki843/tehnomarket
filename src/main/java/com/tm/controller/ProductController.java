@@ -33,19 +33,6 @@ public class ProductController {
 	
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
 	public String addNewProduct(@RequestParam("fos_user_registration_form[pricture]") MultipartFile multiPartFile ,HttpServletRequest request, HttpServletResponse response,Model mod) {
-		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());		
-		try {
-			picture.createNewFile();
-		} catch (IOException e) {
-			System.out.println("PICTURE CANNOT BE CREATED");
-			e.printStackTrace();
-		}
-		try {
-			Files.copy(multiPartFile.getInputStream(), picture.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		} catch (IOException e) {
-			System.out.println("ERROR: with geting file");
-			e.printStackTrace();
-		}
 		String name = request.getParameter("fos_user_registration_form[art_name]");
 		String artNumb = request.getParameter("fos_user_registration_form[art_num]");
 		String ean = request.getParameter("fos_user_registration_form[art_ean]");
@@ -66,14 +53,27 @@ public class ProductController {
 		System.out.println("----------------------"+upperType+"---------------------------");
 		System.out.println("----------------------"+type+"---------------------------");
 		System.out.println("----------------------"+model+"---------------------------");
+		System.out.println("----------------------"+multiPartFile.getOriginalFilename()+"--------------------");
 		boolean shouldReturn = false;
-		boolean correctTypes = true;
-		
-		
 		
 		if(name.isEmpty()){
 			request.getSession().setAttribute("emptyName", true);
 			shouldReturn = true;
+		}else{
+			if(name.length() > 45){
+				request.getSession().setAttribute("tooLongName", true);
+				shouldReturn = true;
+			}
+		}
+		
+		if(info.isEmpty()){
+			request.getSession().setAttribute("infoEmpty", true);
+			shouldReturn = true;
+		}else{
+			if(info.length() > 100){
+				request.getSession().setAttribute("infoTooLong", true);
+				shouldReturn = true;
+			}
 		}
 		
 		Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
@@ -82,6 +82,15 @@ public class ProductController {
 			if(!map.get(upperType).containsKey(type)){
 				request.getSession().setAttribute("invalidTypeForUpper", true);
 				shouldReturn = true;
+			}
+		}
+		
+		if(map.containsKey(upperType)){
+			if(map.get(upperType).containsKey(type)){
+				if(!map.get(upperType).get(type).contains(model)){
+					request.getSession().setAttribute("invaliModelForType", true);
+					shouldReturn = true;
+				}
 			}
 		}
 		
@@ -99,15 +108,6 @@ public class ProductController {
 			request.getSession().setAttribute("emptyModel", true);
 			shouldReturn = true;
 		}
-
-		if(map.containsKey(upperType)){
-			if(map.get(upperType).containsKey(type)){
-				if(!map.get(upperType).get(type).contains(model)){
-					request.getSession().setAttribute("invaliModelForType", true);
-					shouldReturn = true;
-				}
-			}
-		}
 		
 		if(artNumb.isEmpty()){
 			request.getSession().setAttribute("emptyArt", true);
@@ -122,33 +122,68 @@ public class ProductController {
 		if(quantity.isEmpty()){
 			request.getSession().setAttribute("emptyQuantity", true);
 			shouldReturn = true;
-		}else{
-			
 		}
 		
 		if(!quantity.matches("[0-9]+")){
 			request.getSession().setAttribute("invalidQuantity", true);
+		}else{
+			quantity1 = Integer.parseInt(quantity);
+			if(quantity1 <= 0){
+				request.getSession().setAttribute("negativeQuantity", true);
+			}
 		}
 		
 		if(price.isEmpty()){
 			request.getSession().setAttribute("emptyPrice", true);
 			shouldReturn = true;
-		}else{
-			price1 = Double.parseDouble(price);
-			if(price1 <= 0){
-				request.getSession().setAttribute("negativePrice", true);
-			}
 		}
 		
-		if(!price.matches("[0-9]+")){
-			request.getSession().setAttribute("invalidPrice", true);
+		if(price.matches("[0-9]+")){
+			price1 = Double.parseDouble(price);
+		}else{
+			if(price.matches("/^[0-9]+(\\.[0-9]+)?$")){
+				price1 = Double.parseDouble(price);			
+				if(price1 <= 0){
+					request.getSession().setAttribute("negativePrice", true);
+					shouldReturn = true;
+				}
+			}else{
+				request.getSession().setAttribute("invalidPrice", true);
+				shouldReturn = true;
+			}
+
+		}
+		
+		if(multiPartFile.getOriginalFilename().isEmpty()){
+			request.getSession().setAttribute("pictureMissing", true);
+			shouldReturn = true;
+		}
+		
+		if(ProductManager.getInstance().getProductByName(name) != null){
+			request.getSession().setAttribute("productWithNameExists", true);
 			shouldReturn = true;
 		}
 		
 		if(shouldReturn){
 			return"admin-add-product";
 		}
-		quantity1 = Integer.parseInt(quantity);
+		
+		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());	
+		
+		try {
+			picture.createNewFile();
+		} catch (IOException e) {
+			System.out.println("PICTURE CANNOT BE CREATED");
+			e.printStackTrace();
+		}
+		
+		try {
+			Files.copy(multiPartFile.getInputStream(), picture.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			System.out.println("ERROR: with geting file");
+			e.printStackTrace();
+		}
+		
 		System.out.println("CREATING PRODUCT");
 		Product product = new Product( model, type, upperType, name, artNumb, ean, info, picture, quantity1, false, price1);
 		System.out.println("PRODUCT CREATED");
@@ -160,7 +195,7 @@ public class ProductController {
 	@RequestMapping(value = "/showProduct", method = RequestMethod.GET)
 	public String showProduct(Model model, HttpServletRequest request) {
 		int id =  (int) request.getAttribute("id");
-		model.addAttribute("product",ProductManager.getInstance().getProduct(id));
+		model.addAttribute("product",ProductManager.getInstance().getProductById(id));
 		
 		return "ProductInf";
 		}

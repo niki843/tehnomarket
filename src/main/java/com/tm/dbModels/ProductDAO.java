@@ -177,7 +177,7 @@ public class ProductDAO {
 				Integer quantity = resultSet.getInt("quantity_in_stock");
 				Boolean inSale = resultSet.getBoolean("in_sale");
 				Double price = resultSet.getDouble("price");
-				File image = new File(resultSet.getString("file_name"));
+				File image = new File(resultSet.getString(pic));
 			    FileOutputStream fos;
 				try {
 					fos = new FileOutputStream(image);			    

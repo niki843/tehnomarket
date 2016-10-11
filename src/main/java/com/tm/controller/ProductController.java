@@ -29,18 +29,23 @@ import com.tm.model.ProductManager;
 @MultipartConfig
 public class ProductController {
 
-	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img";
+	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
 	
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
 	public String addNewProduct(@RequestParam("fos_user_registration_form[pricture]") MultipartFile multiPartFile ,HttpServletRequest request, HttpServletResponse response,Model mod) {
-		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());
+		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());		
+		try {
+			picture.createNewFile();
+		} catch (IOException e) {
+			System.out.println("PICTURE CANNOT BE CREATED");
+			e.printStackTrace();
+		}
 		try {
 			Files.copy(multiPartFile.getInputStream(), picture.toPath(), StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException e) {
 			System.out.println("ERROR: with geting file");
 			e.printStackTrace();
 		}
-		System.out.println("ADDING FILE WITH NAME " + picture.getName());
 		String name = request.getParameter("fos_user_registration_form[art_name]");
 		String artNumb = request.getParameter("fos_user_registration_form[art_num]");
 		String ean = request.getParameter("fos_user_registration_form[art_ean]");
@@ -138,7 +143,7 @@ public class ProductController {
 		Product product = new Product(1, model, type, upperType, name, artNumb, ean, info, picture, 3, false, price1);
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
-		
+
 		return "admin-add-product";
 	}
 	

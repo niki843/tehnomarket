@@ -283,14 +283,49 @@
 	</header>
 
 	<div class="">
-		
-		<c:forEach items="${products}" var="product">
-			Product name:  ${product.getName()}
-			Product model: ${product.getModel()}
-			Product info : ${product.getInfo()}
+	<section class=" section"
+		style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
+		<c:forEach items="${products}" var="products">
+			<div class="col-md-3">
+				<figure itemscope itemtype="http://schema.org/Product" class="product">
+					<a itemprop="url" href="/Technomarket/productInfo" class="product-thumb"> 
+						<img itemprop="image" src="${ products.getPicture().getAbsolutePath() }" alt="Technomarket" />
+					</a>
+					<figcaption>
+						<div class="product-name">
+							<h3>
+								<a itemprop="url" href="/Technomarket/productInfo">
+								<span itemprop="name">${ products.getName() }</span></a>
+							</h3>
+							<small class="product-model">Арт.№: <span itemprop="productID">${ products.getArt_number() }</span></small>
+							<ul itemprop="description" class="product-description">
+								<li>- ${ products.getInfo() }</li>
+							</ul>
+						</div>
+						<div class="product-price">
+							<var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
+								<meta itemprop="priceCurrency" content="BGN" />
+								<span itemprop="price" class="new">${ products.getPrice() } лв.</span>
+								<div>
+									<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
+									<span class="hidden">New</span>
+								</div>
+							</var>
+							<form action="/Technomarket/addToCart">
+								<input type="hidden" value="${ product.getProduct_id() }" name="product">
+								<button type="submit" class="btn btn-tm">
+									<i class="icon-basket"></i> Купи онлайн
+								</button>
+							</form>
+						</div>
+					</figcaption>
+				</figure>
+				<!--.product-->
+
+			</div>
 		</c:forEach>
+		</section>
 	</div>
-	>
 	<footer>
 		<div class="inner">
 			<div class="container">

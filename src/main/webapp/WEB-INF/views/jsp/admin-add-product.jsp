@@ -311,7 +311,7 @@
             	<% session.removeAttribute("emptyModel"); %>
             	</br>
             </c:if>
-            <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
+            <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                                        Име на продукта
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_name" name="fos_user_registration_form[art_name]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>
                 <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_art_num">
@@ -327,7 +327,7 @@
                     Цена
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_price" name="fos_user_registration_form[price]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_pricture">
                     Снимка
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_pricture" name="fos_user_registration_form[pricture]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_price">
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="file" id="fos_user_registration_form_pricture" name="fos_user_registration_form[pricture]" required="required" class="form-control" accept="image/*"/><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_price">
 											</label><div class="col-sm-10 control-bar"><div class="control-group"></div><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required">
                     Надтип на продукта
                                             <span class="required" title="This field is required">*</span>

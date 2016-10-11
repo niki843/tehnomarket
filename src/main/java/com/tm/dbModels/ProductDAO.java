@@ -5,6 +5,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.PreparedStatement;
 
 import com.tm.model.Product;
@@ -30,14 +36,22 @@ public class ProductDAO {
 		String name = product.getName();
 		String artNumb = product.getArt_number();
 		String ean = product.getEan();
-		String picture = product.getPicture();
+		File filePicture = product.getPicture();
 		Integer quantity = product.getQuantity();
 		Boolean inSale = product.isInSale();
 		Double price = product.getPrice();
 		String info = product.getInfo();
+		FileInputStream fis = null;
+		System.out.println("inserting picture with path: " + filePicture.getAbsolutePath());
+		try {
+			fis = new FileInputStream(filePicture);
+		} catch (FileNotFoundException e1) {
+			System.out.println("ERROR: DIDN'T FIND FILE!!");
+			e1.printStackTrace();
+		}
 		try {
 			PreparedStatement st = DBManager.getInstance().getConnection().prepareStatement(
-					"INSERT INTO products (model_id,product_type_type_id, id_upper_type, name, art_num,ean, info,pic_url, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?,?);");
+					"INSERT INTO products (model_id,product_type_type_id, id_upper_type, name, art_num,ean, info,pic_url, pic_name, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);");
 			st.setInt(1, modelId);
 			st.setInt(2, typeId);
 			st.setInt(3, upperTypeId);
@@ -45,10 +59,11 @@ public class ProductDAO {
 			st.setString(5, artNumb);
 			st.setString(6, info);
 			st.setString(7, ean);
-			st.setString(8, picture);
-			st.setInt(9, quantity);
-			st.setBoolean(10, inSale);
-			st.setDouble(11, price);
+			st.setBinaryStream(8, fis,(int) filePicture.length());
+			st.setString(9, filePicture.getAbsolutePath());
+			st.setInt(10, quantity);
+			st.setBoolean(11, inSale);
+			st.setDouble(12, price);
 			st.executeUpdate();
 			return true;
 		} catch (SQLException e) {
@@ -130,8 +145,8 @@ public class ProductDAO {
 			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
 			resultSet = st.executeQuery(
-					"SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,quantity_in_stock,in_sale,price FROM products;");
-
+					"SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
+			
 			while (resultSet.next()) {
 				Integer model = resultSet.getInt("model_id");
 				Integer type = resultSet.getInt("product_type_type_id");
@@ -141,10 +156,27 @@ public class ProductDAO {
 				String artNum = resultSet.getString("art_num");
 				String ean = resultSet.getString("ean");
 				String info = resultSet.getString("info");
-				String pic = resultSet.getString("pic_url");
+				String pic = resultSet.getString("pic_name");
 				Integer quantity = resultSet.getInt("quantity_in_stock");
 				Boolean inSale = resultSet.getBoolean("in_sale");
 				Double price = resultSet.getDouble("price");
+				File image = new File(resultSet.getString("file_name"));
+			    FileOutputStream fos;
+				try {
+					fos = new FileOutputStream(image);			    
+					byte[] buffer = new byte[1];
+				    InputStream is = resultSet.getBinaryStream("pic_url");
+				    while (is.read(buffer) > 0) {
+				    	fos.write(buffer);
+				    }
+				} catch (FileNotFoundException e) {
+					System.out.println("ERROR: file wasn't found when geting");
+					e.printStackTrace();
+				} catch (IOException e) {
+					System.out.println("ERROR: io in geting image for product");
+					e.printStackTrace();
+				}
+
 				System.out.println("----------------" +model+ "--------------------");
 				System.out.println("----------------" +type+ "--------------------");
 				System.out.println("----------------" +upperType+ "--------------------");
@@ -167,7 +199,7 @@ public class ProductDAO {
 						artNum,
 						ean,
 						info,
-						pic, 
+						image, 
 						quantity,
 						inSale,
 						price));

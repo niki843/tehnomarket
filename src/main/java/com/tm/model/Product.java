@@ -1,5 +1,7 @@
 package com.tm.model;
 
+import java.io.File;
+
 public class Product {
 
 	int product_id;
@@ -9,14 +11,14 @@ public class Product {
 	String art_number;
 	String ean;
 	String info;
-	String picture;
+	File picture;
 	String upperType;
 	int quantity;
 	boolean inSale;
 	double price;
 
 	public Product(int product_id, String model, String prodct_type, String upperType, String name, String art_number, String ean,
-			String info, String picture, int quantity, boolean inSale, double price) {
+			String info, File picture, int quantity, boolean inSale, double price) {
 		this.product_id = product_id;
 		this.model = model;
 		this.prodct_type = prodct_type;
@@ -97,11 +99,11 @@ public class Product {
 		this.info = info;
 	}
 
-	public String getPicture() {
+	public File getPicture() {
 		return picture;
 	}
 
-	public void setPicture(String picture) {
+	public void setPicture(File picture) {
 		this.picture = picture;
 	}
 

@@ -256,19 +256,34 @@
             	<% session.removeAttribute("emptyName"); %>
             	</br>
             </c:if>
-            <c:if test="${ tooLongName }">
-            	<font color="red">Името на продуктът може да е до 45 символа!</font>
-            	<% session.removeAttribute("tooLongName"); %>
+            <c:if test="${ emptyArt }">
+            	<font color="red">Артикулният номер е празен!</font>
+            	<% session.removeAttribute("emptyArt"); %>
             	</br>
             </c:if>
-            <c:if test="${ infoEmpty }">
-            	<font color="red">Информацията е празна!</font>
-            	<% session.removeAttribute("infoEmpty"); %>
+            <c:if test="${ emptyEan }">
+            	<font color="red">EАН е празен!</font>
+            	<% session.removeAttribute("emptyEan"); %>
             	</br>
             </c:if>
-            <c:if test="${ infoTooLong }">
-            	<font color="red">Информацията е не може да бъде по голяма от 100 символа!</font>
-            	<% session.removeAttribute("infoTooLong"); %>
+            <c:if test="${ emptyQuantity }">
+            	<font color="red">Не е въведено количеството на продукта!</font>
+            	<% session.removeAttribute("emptyQuantity"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invalidQuantity }">
+            	<font color="red">Количеството трябва да бъде цифра!</font>
+            	<% session.removeAttribute("invalidQuantity"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ invalidPrice }">
+            	<font color="red">Цената не може да е празна!</font>
+            	<% session.removeAttribute("invalidPrice"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emptyPrice }">
+            	<font color="red">Цената трябва да бъде цифра!</font>
+            	<% session.removeAttribute("emptyPrice"); %>
             	</br>
             </c:if>
             <c:if test="${ invalidTypeForUpper }">
@@ -294,56 +309,6 @@
             <c:if test="${ emptyModel }">
             	<font color="red">Моделът не може да е празен!</font>
             	<% session.removeAttribute("emptyModel"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyArt }">
-            	<font color="red">Артикулният номер е празен!</font>
-            	<% session.removeAttribute("emptyArt"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyEan }">
-            	<font color="red">EАН е празен!</font>
-            	<% session.removeAttribute("emptyEan"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyQuantity }">
-            	<font color="red">Не е въведено количеството на продукта!</font>
-            	<% session.removeAttribute("emptyQuantity"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ invalidQuantity }">
-            	<font color="red">Количеството трябва да бъде цифра!</font>
-            	<% session.removeAttribute("invalidQuantity"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ negativeQuantity }">
-            	<font color="red">Количеството не може да е отрицателно!</font>
-            	<% session.removeAttribute("negativeQuantity"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyPrice }">
-            	<font color="red">Цената трябва да бъде цифра!</font>
-            	<% session.removeAttribute("emptyPrice"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ negativePrice }">
-            	<font color="red">Цената не може да бъде негативно число!</font>
-            	<% session.removeAttribute("negativePrice"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ invalidPrice }">
-            	<font color="red">Цената не може да е празна!</font>
-            	<% session.removeAttribute("invalidPrice"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ pictureMissing }">
-            	<font color="red">Липсва снимка!</font>
-            	<% session.removeAttribute("pictureMissing"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ productWithNameExists }">
-            	<font color="red">Вече съществува продукт с това име!</font>
-            	<% session.removeAttribute("productWithNameExists"); %>
             	</br>
             </c:if>
             <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">

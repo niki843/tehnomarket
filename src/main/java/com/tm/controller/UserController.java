@@ -63,6 +63,21 @@ public class UserController {
 		System.out.println("---------------"+acceptedTerms+"------------------------");
 		
 		
+		if(name.length() > 45){
+			request.getSession().setAttribute("nameTooLong", true);
+			shouldReturn = true;
+		}
+		
+		if(lastName.length() > 45){
+			request.getSession().setAttribute("familyTooLong", true);
+			shouldReturn = true;
+		}
+		
+		if(email.length() > 45){
+			request.getSession().setAttribute("emailTooLong", true);
+			shouldReturn = true;
+		}
+		
 		if(pass.length() > 20 || pass2.length() > 20){
 			request.getSession().setAttribute("passwordTooLong", true);
 			shouldReturn = true;

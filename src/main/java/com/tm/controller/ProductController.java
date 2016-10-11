@@ -55,6 +55,8 @@ public class ProductController {
 		String upperType = request.getParameter("fos_user_registration_form[upper_type]");
 		String type = request.getParameter("fos_user_registration_form[type]");
 		String model = request.getParameter("fos_user_registration_form[model]");
+		Double price1 = null;
+		Integer quantity1 = null;
 		System.out.println("----------------------"+name+"---------------------------");
 		System.out.println("----------------------"+artNumb+"---------------------------");
 		System.out.println("----------------------"+ean+"---------------------------");
@@ -66,6 +68,8 @@ public class ProductController {
 		System.out.println("----------------------"+model+"---------------------------");
 		boolean shouldReturn = false;
 		boolean correctTypes = true;
+		
+		
 		
 		if(name.isEmpty()){
 			request.getSession().setAttribute("emptyName", true);
@@ -118,6 +122,8 @@ public class ProductController {
 		if(quantity.isEmpty()){
 			request.getSession().setAttribute("emptyQuantity", true);
 			shouldReturn = true;
+		}else{
+			
 		}
 		
 		if(!quantity.matches("[0-9]+")){
@@ -127,6 +133,11 @@ public class ProductController {
 		if(price.isEmpty()){
 			request.getSession().setAttribute("emptyPrice", true);
 			shouldReturn = true;
+		}else{
+			price1 = Double.parseDouble(price);
+			if(price1 <= 0){
+				request.getSession().setAttribute("negativePrice", true);
+			}
 		}
 		
 		if(!price.matches("[0-9]+")){
@@ -137,13 +148,12 @@ public class ProductController {
 		if(shouldReturn){
 			return"admin-add-product";
 		}
-		Double price1 = Double.parseDouble(price);
-		Integer quantity1 = Integer.parseInt(quantity);
+		quantity1 = Integer.parseInt(quantity);
 		System.out.println("CREATING PRODUCT");
-		Product product = new Product(1, model, type, upperType, name, artNumb, ean, info, picture, 3, false, price1);
+		Product product = new Product( model, type, upperType, name, artNumb, ean, info, picture, quantity1, false, price1);
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
-
+		System.out.println(product.getProduct_id());
 		return "admin-add-product";
 	}
 	

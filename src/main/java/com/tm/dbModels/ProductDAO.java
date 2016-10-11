@@ -65,6 +65,7 @@ public class ProductDAO {
 			st.setBoolean(11, inSale);
 			st.setDouble(12, price);
 			st.executeUpdate();
+			setProductId(product);
 			return true;
 		} catch (SQLException e) {
 			System.out.println("ERROR: cannot add this product in product DAO");
@@ -74,6 +75,22 @@ public class ProductDAO {
 			DBManager.getInstance().closeConnection();
 		}
 
+	}
+	
+	private void setProductId(Product product){
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			ps = DBManager.getInstance().getConnection().prepareStatement("SELECT product_id FROM products WHERE name LIKE (?) ");
+			ps.setString(1, product.getName());
+			rs = ps.executeQuery();
+			while(rs.next()){
+				product.setProduct_id(rs.getInt("product_id"));
+			}
+		} catch (SQLException e) {
+			System.out.println("ERROR: WHILE ADJUSTING THE ID FOR THE PRODUCT!");
+			e.printStackTrace();
+		}
 	}
 
 	private int getIdFromType(String type) {
@@ -191,7 +208,6 @@ public class ProductDAO {
 				System.out.println("----------------" +price+ "--------------------");
 				products.add(new Product(
 
-						productId, 
 						getModelFromId(model),
 						getTypeFromId(type),
 						getUperTypeFromId(upperType),

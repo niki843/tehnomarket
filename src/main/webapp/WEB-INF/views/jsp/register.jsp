@@ -294,6 +294,21 @@
             	<% session.removeAttribute("emailExists"); %>
             	</br>
             </c:if>
+            <c:if test="${ nameTooLong }">
+            	<font color="red">Името не може да бъде по-голямо от 45 знака!</font>
+            	<% session.removeAttribute("nameTooLong"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ familyTooLong }">
+            	<font color="red">Фамилията не може да бъде по-голямо от 45 знака!</font>
+            	<% session.removeAttribute("familyTooLong"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ emailTooLong }">
+            	<font color="red">Емайлът не може да бъде по-голямо от 45 знака!</font>
+            	<% session.removeAttribute("emailTooLong"); %>
+            	</br>
+            </c:if>
             <form action="/Technomarket/addUser"  method="POST" class="fos_user_registration_register form-horizontal"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                     Име
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_first_name" name="fos_user_registration_form[first_name]" pattern=".{2,}" class="form-control" required="required" /><span class="bar"></span></div></div>

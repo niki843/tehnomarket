@@ -311,6 +311,11 @@
             	<% session.removeAttribute("emptyModel"); %>
             	</br>
             </c:if>
+            <c:if test="${ negativePrice }">
+            	<font color="red">Цената не може да бъде негативно число!</font>
+            	<% session.removeAttribute("negativePrice"); %>
+            	</br>
+            </c:if>
             <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
                                        Име на продукта
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_name" name="fos_user_registration_form[art_name]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>

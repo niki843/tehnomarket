@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 
 import javax.mail.Session;
@@ -198,6 +200,24 @@ public class ProductController {
 		model.addAttribute("product",ProductManager.getInstance().getProductById(id));
 		
 		return "ProductInf";
+	}
+	
+
+
+	@RequestMapping(value = "/getProducts", method = RequestMethod.GET)
+	public String getProducts(Model mod, HttpServletRequest request) {
+		String nadtype=request.getParameter("nadtype");
+		String type=request.getParameter("type");
+		String model=request.getParameter("model");
+		
+		HashSet<Product> products= ProductManager.getInstance().getProductsByModel(nadtype,type,model);
+		Iterator<Product> i = products.iterator();
+		while(i.hasNext()){
+			Product p = i.next();
+			System.out.println("---------"+p.getName()+"----------");
 		}
+		mod.addAttribute("products",products);
+		return "products";
+	}
 	
 }

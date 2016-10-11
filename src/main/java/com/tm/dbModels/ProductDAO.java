@@ -1,6 +1,5 @@
 package com.tm.dbModels;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
@@ -12,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.tm.model.Product;
 
@@ -160,44 +160,77 @@ public class ProductDAO {
 	public Set<Product> getAllProducts() {
 		HashSet<Product> products = new HashSet<Product>();
 		Statement st = null;
-		ResultSet resultSet = null;
+		ResultSet set = null;
+		Integer model;
+		Integer type;
+		Integer upperType;
+		Integer productId;
+		String name;
+		String artNum;
+		String ean;
+		String info;
+		String pic;
+		Integer quantity;
+		Boolean inSale;
+		Double price;
+		InputStream is;
 		try {
 			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
-			resultSet = st.executeQuery(
-					"SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
-
-			while (resultSet.next()) {
-				Integer model = resultSet.getInt("model_id");
-				Integer type = resultSet.getInt("product_type_type_id");
-				Integer upperType = resultSet.getInt("id_upper_type");
-				Integer productId = resultSet.getInt("product_id");
-				String name = resultSet.getString("name");
-				String artNum = resultSet.getString("art_num");
-				String ean = resultSet.getString("ean");
-				String info = resultSet.getString("info");
-				String pic = resultSet.getString("pic_name");
-				Integer quantity = resultSet.getInt("quantity_in_stock");
-				Boolean inSale = resultSet.getBoolean("in_sale");
-				Double price = resultSet.getDouble("price");
-
-				File image = new File(resultSet.getString(pic));
-			    FileOutputStream fos = null;
-				try {
-					fos = new FileOutputStream(image);
-					byte[] buffer = new byte[1];
-					InputStream is = resultSet.getBinaryStream("pic_url");
-					while (is.read(buffer) > 0) {
-						fos.write(buffer);
-					}
-				} catch (FileNotFoundException e) {
-					System.out.println("ERROR: file wasn't found when geting");
-					e.printStackTrace();
-				} catch (IOException e) {
-					System.out.println("ERROR: io in geting image for product");
-					e.printStackTrace();
+			set = st.executeQuery("SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
+			while(true){
+				if(set.isClosed()){
+					break;
 				}
-
+				if(!set.next()){
+					break;
+				}
+				model = set.getInt("model_id");
+				type = set.getInt("product_type_type_id");
+				upperType = set.getInt("id_upper_type");
+				productId = set.getInt("product_id");
+				name = set.getString("name");
+				artNum = set.getString("art_num");
+				ean = set.getString("ean");
+				info = set.getString("info");
+				pic = set.getString("pic_name");
+				quantity = set.getInt("quantity_in_stock");
+				inSale = set.getBoolean("in_sale");
+				price = set.getDouble("price");
+				is = set.getBinaryStream("pic_url");
+				File image = new File(pic);
+			    FileOutputStream fos = null;
+			    if(image.exists()){
+			    	System.out.println("PICTURE IS FOUND IN THE DIRECTORY");
+					Product product = new Product(
+							getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,
+							artNum, ean, info, image, quantity, inSale, price);
+					products.add(product);
+					product.setProduct_id(productId);
+			    }else{
+				    System.out.println("DIDN'T FIND IMAGE TAKING IT FROM DB");
+					try {
+						fos = new FileOutputStream(image);
+						byte[] buffer = new byte[1];
+						while (is.read(buffer) > 0) {
+							fos.write(buffer);
+						}
+						System.out.println("FINISHED WRITING PICTURE");
+					} catch (FileNotFoundException e) {
+						System.out.println("ERROR: file wasn't found when geting");
+						e.printStackTrace();
+					} catch (IOException e) {
+						System.out.println("ERROR: io in geting image for product");
+						e.printStackTrace();
+					}
+					
+					try {
+						image.createNewFile();
+					} catch (IOException e) {
+						System.out.println("ERROR CREATING FILE IN PRODUCT DAO!!");
+						e.printStackTrace();
+					}
+			    }
 				System.out.println("----------------" + model + "--------------------");
 				System.out.println("----------------" + type + "--------------------");
 				System.out.println("----------------" + upperType + "--------------------");
@@ -209,13 +242,13 @@ public class ProductDAO {
 				System.out.println("----------------" + quantity + "--------------------");
 				System.out.println("----------------" + inSale + "--------------------");
 				System.out.println("----------------" + price + "--------------------");
+				System.out.println("----------------" + productId + "----------------");
 				Product product = new Product(
 
 						getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,
 						artNum, ean, info, image, quantity, inSale, price);
 				products.add(product);
 				product.setProduct_id(productId);
-				
 			}
 
 		} catch (SQLException e) {
@@ -225,7 +258,6 @@ public class ProductDAO {
 			return products;
 		} finally {
 			DBManager.getInstance().closeConnection();
-
 		}
 		return products;
 	}

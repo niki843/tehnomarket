@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tm.dbModels.TypeModelDAO;
+import com.tm.model.Product;
+import com.tm.model.ProductManager;
 import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
@@ -164,6 +166,7 @@ public class UserController {
 //				+ "If you want to enter our site you can do it on " + request.getRequestURL());
 //		mailSender.sendMail("", "", "You have been successfully registered in our site! \n ");
 		
+		
 		return "login";
 	}
 
@@ -175,7 +178,6 @@ public class UserController {
 		logger.debug("email {}", email);
 		System.out.println("----------------------"+email+"--------------------------");
 		System.out.println("----------------------"+pass+"---------------------------");
-		Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
 		
 		if (!UserManager.getInstance().loginValidation(email, pass)) {
 			System.out.println("ERROR: invalid user");

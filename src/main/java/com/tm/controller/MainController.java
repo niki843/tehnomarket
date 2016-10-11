@@ -158,18 +158,6 @@ public class MainController {
 		return "uni-conditions";
 	}
 
-	@RequestMapping(value = "/getProducts", method = RequestMethod.GET)
-	public String getProducts(Model mod, HttpServletRequest request) {
-		String nadtype=request.getParameter("nadtype");
-		String type=request.getParameter("type");
-		String model=request.getParameter("model");
-		
-		HashSet products=(HashSet) ProductManager.getInstance().getProductsByModel(nadtype,type,model);
-		System.out.println(products);
-		mod.addAttribute("products",products);
-		return "products";
-	}
-
 	@RequestMapping(value = "/profile", method = RequestMethod.GET)
 	public String getProfile(Model model) {
 		return "profile";

@@ -51,7 +51,17 @@ public class ProductManager {
 	}
 	
 	public HashSet<Product> getProductsByModel(String nadtype,String type,String model){
-		return null;
+		HashSet<Product> prodByModel = new HashSet<Product>();
+		for(Product product : products.values()){
+			if(product.getUpperType().equals(nadtype)){
+				if(product.getProdct_type().equals(type)){
+					if(product.getModel().equals(model)){
+						prodByModel.add(product);
+					}
+				}
+			}
+		}
+		return prodByModel;
 	}
 	
 	

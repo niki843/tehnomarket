@@ -261,7 +261,8 @@
 												<ul>
 													<%} %>
 													<% for(int i=0 ; i < map.get(s).get(ss).size(); i++){ %>
-													<li><a href="/Technomarket/getProducts"
+													<li><a
+														href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
 														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
 													</li>
 													<%} %>

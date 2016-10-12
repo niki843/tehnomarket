@@ -224,4 +224,17 @@ public class ProductController {
 		return "products";
 	}
 	
+	@RequestMapping(value = "/productInfo", method = RequestMethod.GET)
+	public String productInfo(Model model, HttpServletRequest request){
+		System.out.println("GETING TO REDIRECT PART");
+//		String id = request.getParameter("product");
+//		if(!(id.matches("[0-9]+"))){
+//			return "index";
+//		}
+//		Integer productId = Integer.parseInt(id);
+//		model.addAttribute(ProductManager.getInstance().getProductById(productId));
+		
+		return "productInfo";
+	}
+	
 }

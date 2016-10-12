@@ -14,6 +14,7 @@ import javax.mail.Session;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.collections.SynchronizedStack;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.tm.dbModels.ProductDAO;
 import com.tm.dbModels.TypeModelDAO;
+import com.tm.model.Cart;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
 import com.tm.model.User;
@@ -283,5 +285,17 @@ public class ProductController {
 			SendMail.sendMail(s, "Sale", saleMessage);
 		}
 		return "addSale";
+	}
+	
+
+	@RequestMapping(value = "/addProductInCart", method = RequestMethod.GET)
+	public String addProductInCart(Model mod, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		Cart shoppingCart = (Cart) session.getAttribute("cart");
+		int id = Integer.parseInt(request.getParameter("id").trim());
+		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
+		session.setAttribute("cart", shoppingCart);
+
+		return "index";
 	}
 }

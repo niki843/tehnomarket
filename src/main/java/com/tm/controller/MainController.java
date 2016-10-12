@@ -32,17 +32,6 @@ public class MainController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/addProductInCart", method = RequestMethod.GET)
-	public String addProductInCart(Model mod, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		Cart shoppingCart = (Cart) session.getAttribute("cart");
-		int id = Integer.parseInt(request.getParameter("id").trim());
-		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
-		session.setAttribute("cart", shoppingCart);
-
-		return "index";
-	}
-
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model mod) {
 		return "login";

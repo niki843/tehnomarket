@@ -64,10 +64,14 @@ public class ProductManager {
 		return prodByModel;
 	}
 	
-	public void setProductInSale(Product product, Double newPrice){
+	public void setProductInSale(Integer product_id, Double newPrice){
+		Product product = products.get(product_id);
+		if(product == null){
+			System.out.println("ERROR: DIDN'T FIND PRODUCT");
+		}
 		product.setInSale(true);
 		product.setPrice(newPrice);
-		ProductDAO.getInstance();
+		ProductDAO.getInstance().setInSale(product);
 	}
 	
 	

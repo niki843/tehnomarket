@@ -270,7 +270,7 @@ public class ProductController {
 			return "addSale";
 		}
 		
-		prodMan.setProductInSale(product, productSalePriceDouble);
+		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
 		return "addSale";
 	}

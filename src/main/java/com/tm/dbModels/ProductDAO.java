@@ -5,6 +5,9 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.nullValue;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -101,7 +104,6 @@ public class ProductDAO {
 		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
-			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection()
 					.prepareStatement("SELECT type_id FROM product_type WHERE type_name LIKE (?);");
 			st.setString(1, type);
@@ -146,7 +148,6 @@ public class ProductDAO {
 		if(modelsNames == null){
 			modelsNames = new HashMap<>();
 			try {
-				DBManager.getInstance();
 				st = DBManager.getInstance().getConnection().createStatement();
 				resultSet = st.executeQuery("SELECT model_id ,model_name FROM product_models;");
 				while (resultSet.next()) {
@@ -194,7 +195,6 @@ public class ProductDAO {
 		Double price;
 		InputStream is;
 		try {
-			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
 			set = st.executeQuery("SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
 			while(set.next()){
@@ -282,7 +282,6 @@ public class ProductDAO {
 		if(typesNames == null){
 			typesNames = new HashMap<>();
 			try {
-				DBManager.getInstance();
 				st = DBManager.getInstance().getConnection().createStatement();
 				resultSet = st.executeQuery("SELECT type_id,type_name FROM product_type");
 				while (resultSet.next()) {
@@ -318,7 +317,6 @@ public class ProductDAO {
 		if(uppertypesNames == null){
 			uppertypesNames = new HashMap<>();
 			try {
-				DBManager.getInstance();
 				st = DBManager.getInstance().getConnection().createStatement();
 				resultSet = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type");
 				while (resultSet.next()) {
@@ -352,7 +350,6 @@ public class ProductDAO {
 		PreparedStatement st = null;
 		ResultSet resultSet = null;
 		try {
-			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection()
 					.prepareStatement("SELECT id_upper_type FROM product_upper_type WHERE upper_type_name LIKE (?);");
 			st.setString(1, type);
@@ -367,5 +364,22 @@ public class ProductDAO {
 			DBManager.getInstance().closeConnection();
 		}
 		return null;
+	}
+	
+	public void setInSale(Product product){
+		PreparedStatement ps = null;
+		try {
+			ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products SET in_sale=? WHERE product_id LIKE (?)");
+			ps.setBoolean(1, true);
+			ps.setInt(2, product.getProduct_id());
+			ps.executeUpdate();
+			ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO  VALUES (?,?,?)");
+			System.out.println("UPDATE SUCCESSFULL FOR SALE");
+			
+		} catch (SQLException e) {
+			System.out.println("ERROR: WITH PREPARED STATEMENT IN PRODUCT DAO 8");
+			e.printStackTrace();
+		}
+		
 	}
 }

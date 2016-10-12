@@ -16,7 +16,7 @@
 	content="Телевизори - Технoмаркет - онлайн магазин" />
 <meta property="og:image"
 	content="http://cdn.technomarket.bg/bundles/taumediatechnomarketcms/img/product-thumb.svg" />
-<title>Телевизори - Технoмаркет - онлайн магазин</title>
+<title>Продукти - Технoмаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Най-добрите цени на телевизори! Купи бързо и лесно онлайн или от магазин на Техномаркет. LG, SAMSUNG, PHILIPS, SONY, TOSHIBA и много други на страхотни цени. Купи бързо и лесно онлайн с безплатна доставака!">
 <meta name="google-site-verification"
@@ -295,11 +295,11 @@
                 <div class="product-thumb photoswipe">
                     <div class="product-heading">
                                                 <div class="product-category"><a href="../laptopi.html"><i class="icon-arrow-long-left"></i> Лаптопи</a></div>
-                                                <h1><a href="acer-aspire-e5-571g-35e2-09141527.html"><span itemprop="name">Лаптоп ACER ASPIRE E5-571G-35E2</span></a></h1>
-                        <div class="product-model">Арт.№: <span itemprop="productID">09141527</span>, EAN: <span itemprop="gtin13">4713147793686</span></div>
+                                                <h1><a href="acer-aspire-e5-571g-35e2-09141527.html"><span itemprop="name">${ productP.getName() }</span></a></h1>
+                        <div class="product-model">Арт.№: <span itemprop="productID">${ productP.getArt_number() }</span>, EAN: <span itemprop="gtin13">${ productP.getEan() }</span></div>
                     </div>                                
                     <a href="#" class="product-image"  data-photoswipe="//cdn.technomarket.bg/uploads/library/product/09141527/563a2030654cf.png">
-                    	                        <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09141527/563a2030654cf.png" alt="Technomarket" />
+                    	                        <img itemprop="image" src="${ productP.getRealtivePath() }" alt="Technomarket" />
                     	                    </a>  
                     <div class="product-gallery">
                                         </div><!--/.product-gallery-->
@@ -640,8 +640,8 @@
                             <div class="row">
                                 <div class="col-fifth">
 <figure itemscope itemtype="http://schema.org/Product" class="product">
-	        <a itemprop="url" href="../softuer/office365-university-eng-4yr-r4t-00039-09128056.html" class="product-thumb">
-                <img itemprop="image" src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09128056/560aa570b991d.jpeg" alt="Technomarket" />
+	        <a itemprop="url" href="" class="product-thumb">
+                <img itemprop="image" src="${ product.getRealtivePath() }" alt="Technomarket" />
             </a>
     <figcaption>
         <div class="product-name">

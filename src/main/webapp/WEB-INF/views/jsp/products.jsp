@@ -16,7 +16,7 @@
 	content="Телевизори - Технoмаркет - онлайн магазин" />
 <meta property="og:image"
 	content="http://cdn.technomarket.bg/bundles/taumediatechnomarketcms/img/product-thumb.svg" />
-<title>Телевизори - Технoмаркет - онлайн магазин</title>
+<title>Продукти - Технoмаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Най-добрите цени на телевизори! Купи бързо и лесно онлайн или от магазин на Техномаркет. LG, SAMSUNG, PHILIPS, SONY, TOSHIBA и много други на страхотни цени. Купи бързо и лесно онлайн с безплатна доставака!">
 <meta name="google-site-verification"
@@ -244,69 +244,40 @@
 			<div class="container">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav nav-main">
-						<%
-							Map<String, HashMap<String, ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
-						%>
-						<%
-							for (String s : map.keySet()) {
-						%>
+						<%Map<String, HashMap<String, ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType(); %>
+						<% for (String s : map.keySet()) { %>
 						<li class=" dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
 							aria-expanded="false"><%=s%></a>
 							<div class="dropdown-menu">
 								<div class="container">
 									<div class="row">
-										<%
-											for (String ss : map.get(s).keySet()) {
-										%>
+										<% for (String ss : map.get(s).keySet()) { %>
 										<ul>
-											<%
-												if (map.get(s).get(ss) != null) {
-											%>
+											<% if (map.get(s).get(ss) != null) { %>
 											<li class="has-children">
-												<%
-													}
-												%> <a class="dropdown-toggle" data-toggle="dropdown"
+												<% } %> <a class="dropdown-toggle" data-toggle="dropdown"
 												role="button" aria-haspopup="true" aria-expanded="false"><%=ss%></a>
-												<%
-													if (map.get(s).get(ss) != null) {
-												%>
+												<% if (map.get(s).get(ss) != null) { %>
 												<ul>
-													<%
-														}
-													%>
-													<%
-														for (int i = 0; i < map.get(s).get(ss).size(); i++) {
-													%>
+													<% } %>
+													<% for (int i = 0; i < map.get(s).get(ss).size(); i++) { %>
 													<li><a
  													href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
  														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
  													</li>
-													<%
-														}
-													%>
-													<%
-														if (map.get(s).get(ss) != null) {
-													%>
-												</ul> <%
- 	}
- %> <%
- 	if (map.get(s).get(ss) != null) {
- %>
-											</li>
-											<%
-												}
-											%>
+													<% } %>
+													<% if (map.get(s).get(ss) != null) { %>
+												</ul> <%} %> 										
+												<%if (map.get(s).get(ss) != null) {%>
+												</li>
+											<% } %>
 										</ul>
-										<%
-											}
-										%>
+										<% } %>
 									</div>
 								</div>
 							</div></li>
-						<%
-							}
-						%>
+						<% } %>
 					</ul>
 				</div>
 			</div>
@@ -321,19 +292,19 @@
 				<div class="col-md-3">
 					<figure itemscope itemtype="http://schema.org/Product"
 						class="product">
-						<a itemprop="url"
-							href="/Technomarket/showProduct?id=${products.getProduct_id()}"
-							class="product-thumb"> <img itemprop="image"
-							src="${ products.getRealtivePath()}" alt="Technomarket" />
+						<a itemprop="url" href="/Technomarket/productInfo?product=${ products.getProduct_id() }" class="product-thumb"> 
+						<img itemprop="image" src="${ products.getRealtivePath()}" alt="Technomarket" />
 						</a>
 						<figcaption>
 							<div class="product-name">
 								<h3>
-									<a itemprop="url" href="/Technomarket/productInfo"> <span
-										itemprop="name">${ products.getName() }</span></a>
+									<a itemprop="url" href="/Technomarket/productInfo?product=${ products.getProduct_id() }"> 
+										<span itemprop="name">${ products.getName() }</span>
+									</a>
 								</h3>
-								<small class="product-model">Арт.№: <span
-									itemprop="productID">${ products.getArt_number() }</span></small>
+								<small class="product-model">Арт.№: 
+									<span itemprop="productID">${ products.getArt_number() }</span>
+								</small>
 								<ul itemprop="description" class="product-description">
 									<li>- ${ products.getInfo() }</li>
 								</ul>

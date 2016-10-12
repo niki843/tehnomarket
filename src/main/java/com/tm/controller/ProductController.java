@@ -196,8 +196,7 @@ public class ProductController {
 		}
 
 		System.out.println("CREATING PRODUCT");
-		Product product = new Product(model, type, upperType, name, artNumb, ean, info, picture, quantity1, false,
-				price1);
+		Product product = new Product(model, type, upperType, name, artNumb, ean, info, picture, quantity1, false,price1);
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
 		System.out.println(product.getProduct_id());
@@ -231,12 +230,12 @@ public class ProductController {
 	@RequestMapping(value = "/productInfo", method = RequestMethod.GET)
 	public String productInfo(Model model, HttpServletRequest request){
 		System.out.println("GETING TO REDIRECT PART");
-//		String id = request.getParameter("product");
-//		if(!(id.matches("[0-9]+"))){
-//			return "index";
-//		}
-//		Integer productId = Integer.parseInt(id);
-//		model.addAttribute(ProductManager.getInstance().getProductById(productId));
+		String id = request.getParameter("product");
+		if(!(id.matches("[0-9]+"))){
+			return "index";
+		}
+		Integer productId = Integer.parseInt(id);
+		model.addAttribute("productP", ProductManager.getInstance().getProductById(productId));
 		
 		return "productInfo";
 	}

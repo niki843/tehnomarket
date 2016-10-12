@@ -65,8 +65,8 @@ public class ProductDAO {
 			st.setInt(3, upperTypeId);
 			st.setString(4, name);
 			st.setString(5, artNumb);
-			st.setString(6, info);
-			st.setString(7, ean);
+			st.setString(6, ean);
+			st.setString(7, info);
 			st.setBinaryStream(8, fis, (int) filePicture.length());
 			st.setString(9, filePicture.getAbsolutePath());
 			st.setInt(10, quantity);

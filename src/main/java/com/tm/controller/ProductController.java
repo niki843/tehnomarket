@@ -246,10 +246,26 @@ public class ProductController {
 		
 		String productSalePrice = request.getParameter("fos_user_registration_form[new_price]");
 		String productId = request.getParameter("fos_user_registration_form[product]");
-		
+		boolean shouldReturn = false;
 		Integer productIdInt = Integer.parseInt(productId);
-		
-		Product product = ProductManager.getInstance().getProductById(productIdInt);
+		Integer productSalePriceInt = null;
+		ProductManager prodMan = ProductManager.getInstance();
+		Product product = prodMan.getProductById(productIdInt);
+		if(!(productSalePrice.matches("[0-9]+"))){
+			request.getSession().setAttribute("newPriceInvalid", true);
+			shouldReturn = true;
+		}else{
+			productSalePriceInt = Integer.parseInt(productSalePrice);
+			if(product.getPrice() < productSalePriceInt){
+				request.getSession().setAttribute("priceTooLarge", true);
+				shouldReturn = true;
+			}
+				
+		}
+		if(shouldReturn){
+			return "addSale";
+		}
+		prodMan.setProductInSale(product, productSalePriceInt);
 		
 		return "addSale";
 	}

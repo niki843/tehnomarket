@@ -255,6 +255,16 @@
     </div>
     		
         	<h2>Добави промоция</h2>
+        	<c:if test="${ newPriceInvalid }">
+            	<font color="red">Цената трябва да е съставена само от цифри!</font>
+            	<% session.removeAttribute("newPriceInvalid"); %>
+            	</br>
+            </c:if>
+        	<c:if test="${ priceTooLarge }">
+            	<font color="red">Цената на промоцията не може да бъде по голяма от предишната!</font>
+            	<% session.removeAttribute("priceTooLarge"); %>
+            	</br>
+            </c:if>
         	
         	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
         	
@@ -270,7 +280,7 @@
 											<select id="fos_user_registration_form_product" name="fos_user_registration_form[product]" required="required" class="form-control">
 											<option value="" selected="selected">продукт</option>
                                             <% for(Integer i : products.keySet()){%>
-                                            	<option value="<%= i %>"><%= products.get(i).getName() %></option>
+                                            	<option value="<%= i %>"><%= products.get(i).getName() + " цена:" + products.get(i).getPrice() %></option>
                                             <%} %>
 											</select></div><span class="bar">
 											</span></div></div>

@@ -1,30 +1,41 @@
 package com.tm.controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.HashMap;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.http.HttpRequest;
-import org.springframework.http.MediaType;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tm.model.Cart;
+import com.tm.model.Product;
 import com.tm.model.ProductManager;
 
 @Controller
 public class MainController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(Model mod) {
+	public String index(Model mod, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		Cart shoppingCart = (Cart) session.getAttribute("cart");
+		if (shoppingCart == null) {
+			System.out.println("Adding Cart");
+			shoppingCart = new Cart();
+			session.setAttribute("cart", shoppingCart);
+		}
+		return "index";
+	}
+
+	@RequestMapping(value = "/addProductInCart", method = RequestMethod.GET)
+	public String addProductInCart(Model mod, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		Cart shoppingCart = (Cart) session.getAttribute("cart");
+		int id = Integer.parseInt(request.getParameter("id").trim());
+		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
+		session.setAttribute("cart", shoppingCart);
+
 		return "index";
 	}
 
@@ -64,7 +75,11 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
-	public String cart(Model mod) {
+	public String cart(Model mod, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		Cart shoppingCart = (Cart) session.getAttribute("cart");
+		HashMap<Product,Integer > cart= shoppingCart.getCartItems();
+		mod.addAttribute("cart", cart);
 		return "cart";
 	}
 

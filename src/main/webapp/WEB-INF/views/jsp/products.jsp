@@ -30,56 +30,57 @@
 	src="css/cdn.technomarket.bg/assets/vendor/requirejs/require.js"></script>
 
 <script type="text/javascript">
-    require.config({
-        map: {
-            '*': {
-                'css': 'css' // or whatever the path to require-css is
-            }
-        },
-        paths: {
-            'facebook': '//connect.facebook.net/en_US/all.js#xfbml=1',
-            'google': "//apis.google.com/js/platform",
-            'admin': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/admin',
-            'app': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/app',
-            'bootstrap': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/bootstrap',
-            'framework': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/framework',
-            'jquery.jstree': '//cdn.technomarket.bg/assets/vendor/jstree/dist/jstree',
-            'jquery.plugin': '//cdn.technomarket.bg/assets/vendor/countdown/jquery.plugin.min',
-            'jquery.countdown': '//cdn.technomarket.bg/assets/vendor/countdown/jquery.countdown.min',
-            'jquery.jstree-css': '//cdn.technomarket.bg/assets/vendor/jstree/dist/themes/default/style',
-            'jquery': '//cdn.technomarket.bg/assets/vendor/jquery/dist/jquery',
-            'jquery.ui': '//cdn.technomarket.bg/assets/vendor/jquery-ui/jquery-ui.min',
-            'typeahead': '//cdn.technomarket.bg/assets/vendor/jquery-typeahead/dist/jquery.typeahead.min',
-            'css': '//cdn.technomarket.bg/assets/vendor/require-css/css',
-            'routing': '//cdn.technomarket.bg/bundles/fosjsrouting/js/router',
-            'routes': '/js/routing?callback=fos.Router.setData',
-            'slick': '//cdn.technomarket.bg/assets/vendor/slick-carousel/slick/slick.min'
+	require
+			.config({
+				map : {
+					'*' : {
+						'css' : 'css' // or whatever the path to require-css is
+					}
+				},
+				paths : {
+					'facebook' : '//connect.facebook.net/en_US/all.js#xfbml=1',
+					'google' : "//apis.google.com/js/platform",
+					'admin' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/admin',
+					'app' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/app',
+					'bootstrap' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/bootstrap',
+					'framework' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/framework',
+					'jquery.jstree' : '//cdn.technomarket.bg/assets/vendor/jstree/dist/jstree',
+					'jquery.plugin' : '//cdn.technomarket.bg/assets/vendor/countdown/jquery.plugin.min',
+					'jquery.countdown' : '//cdn.technomarket.bg/assets/vendor/countdown/jquery.countdown.min',
+					'jquery.jstree-css' : '//cdn.technomarket.bg/assets/vendor/jstree/dist/themes/default/style',
+					'jquery' : '//cdn.technomarket.bg/assets/vendor/jquery/dist/jquery',
+					'jquery.ui' : '//cdn.technomarket.bg/assets/vendor/jquery-ui/jquery-ui.min',
+					'typeahead' : '//cdn.technomarket.bg/assets/vendor/jquery-typeahead/dist/jquery.typeahead.min',
+					'css' : '//cdn.technomarket.bg/assets/vendor/require-css/css',
+					'routing' : '//cdn.technomarket.bg/bundles/fosjsrouting/js/router',
+					'routes' : '/js/routing?callback=fos.Router.setData',
+					'slick' : '//cdn.technomarket.bg/assets/vendor/slick-carousel/slick/slick.min'
 
-        },
-        shim: {
-            'jquery.jstree': ['jquery', 'css!jquery.jstree-css'],
-            'routing': {
-                'exports': 'Routing'
-            },
-            'jquery': {
-                'exports': '$'
-            },
-            'jquery.countdown': {
-                'deps': ['jquery', 'jquery.plugin']
-            },
-            'slick': {
-                deps: ['jquery'],
-                exports: 'jQuery.fn.slick'
-            },
-            'routes': ['routing'],
-            'admin': ['framework'],
-            'framework': ['jquery'],
-            'bootstrap': ['jquery'],
-            'facebook' : {
-                exports: 'FB'
-            }
-        }
-    });
+				},
+				shim : {
+					'jquery.jstree' : [ 'jquery', 'css!jquery.jstree-css' ],
+					'routing' : {
+						'exports' : 'Routing'
+					},
+					'jquery' : {
+						'exports' : '$'
+					},
+					'jquery.countdown' : {
+						'deps' : [ 'jquery', 'jquery.plugin' ]
+					},
+					'slick' : {
+						deps : [ 'jquery' ],
+						exports : 'jQuery.fn.slick'
+					},
+					'routes' : [ 'routing' ],
+					'admin' : [ 'framework' ],
+					'framework' : [ 'jquery' ],
+					'bootstrap' : [ 'jquery' ],
+					'facebook' : {
+						exports : 'FB'
+					}
+				}
+			});
 </script>
 <!--[if lt IE 9]>
         <script src="//cdn.technomarket.bg/assets/vendor/html5shiv/dist/html5shiv.min.js"></script>
@@ -243,39 +244,69 @@
 			<div class="container">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav nav-main">
-						<% Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType(); %>
-						<%for(String s : map.keySet()){ %>
+						<%
+							Map<String, HashMap<String, ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
+						%>
+						<%
+							for (String s : map.keySet()) {
+						%>
 						<li class=" dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false"><%= s %></a>
+							aria-expanded="false"><%=s%></a>
 							<div class="dropdown-menu">
 								<div class="container">
 									<div class="row">
-										<%for(String ss : map.get(s).keySet()){ %>
+										<%
+											for (String ss : map.get(s).keySet()) {
+										%>
 										<ul>
-											<% if(map.get(s).get(ss) != null){ %>
+											<%
+												if (map.get(s).get(ss) != null) {
+											%>
 											<li class="has-children">
-												<%} %> <a class="dropdown-toggle" data-toggle="dropdown"
-												role="button" aria-haspopup="true" aria-expanded="false"><%= ss %></a>
-												<% if(map.get(s).get(ss) != null){ %>
+												<%
+													}
+												%> <a class="dropdown-toggle" data-toggle="dropdown"
+												role="button" aria-haspopup="true" aria-expanded="false"><%=ss%></a>
+												<%
+													if (map.get(s).get(ss) != null) {
+												%>
 												<ul>
-													<%} %>
-													<% for(int i=0 ; i < map.get(s).get(ss).size(); i++){ %>
+													<%
+														}
+													%>
+													<%
+														for (int i = 0; i < map.get(s).get(ss).size(); i++) {
+													%>
 													<li><a
-														href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
-														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
-													</li>
-													<%} %>
-													<% if(map.get(s).get(ss) != null){ %>
-												</ul> <%} %> <% if(map.get(s).get(ss) != null){ %>
+ 													href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
+ 														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
+ 													</li>
+													<%
+														}
+													%>
+													<%
+														if (map.get(s).get(ss) != null) {
+													%>
+												</ul> <%
+ 	}
+ %> <%
+ 	if (map.get(s).get(ss) != null) {
+ %>
 											</li>
-											<%} %>
+											<%
+												}
+											%>
 										</ul>
-										<%} %>
+										<%
+											}
+										%>
 									</div>
 								</div>
 							</div></li>
-						<%} %>
+						<%
+							}
+						%>
 					</ul>
 				</div>
 			</div>
@@ -284,47 +315,55 @@
 	</header>
 
 	<div class="">
-	<section class=" section"
-		style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-		<c:forEach items="${products}" var="products">
-			<div class="col-md-3">
-				<figure itemscope itemtype="http://schema.org/Product" class="product">
-					<a itemprop="url" href="/Technomarket/productInfo" class="product-thumb"> 
-						<img itemprop="image" src="${ products.getRealtivePath() }" alt="Technomarket" />
-					</a>
-					<figcaption>
-						<div class="product-name">
-							<h3>
-								<a itemprop="url" href="/Technomarket/productInfo">
-								<span itemprop="name">${ products.getName() }</span></a>
-							</h3>
-							<small class="product-model">Арт.№: <span itemprop="productID">${ products.getArt_number() }</span></small>
-							<ul itemprop="description" class="product-description">
-								<li>- ${ products.getInfo() }</li>
-							</ul>
-						</div>
-						<div class="product-price">
-							<var itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price">
-								<meta itemprop="priceCurrency" content="BGN" />
-								<span itemprop="price" class="new">${ products.getPrice() } лв.</span>
-								<div>
-									<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-									<span class="hidden">New</span>
-								</div>
-							</var>
-							<form action="/Technomarket/addToCart">
-								<input type="hidden" value="${ product.getProduct_id() }" name="product">
-								<button type="submit" class="btn btn-tm">
-									<i class="icon-basket"></i> Купи онлайн
-								</button>
-							</form>
-						</div>
-					</figcaption>
-				</figure>
-				<!--.product-->
+		<section class=" section"
+			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
+			<c:forEach items="${products}" var="products">
+				<div class="col-md-3">
+					<figure itemscope itemtype="http://schema.org/Product"
+						class="product">
+						<a itemprop="url"
+							href="/Technomarket/showProduct?id=${products.getProduct_id()}"
+							class="product-thumb"> <img itemprop="image"
+							src="${ products.getRealtivePath()}" alt="Technomarket" />
+						</a>
+						<figcaption>
+							<div class="product-name">
+								<h3>
+									<a itemprop="url" href="/Technomarket/productInfo"> <span
+										itemprop="name">${ products.getName() }</span></a>
+								</h3>
+								<small class="product-model">Арт.№: <span
+									itemprop="productID">${ products.getArt_number() }</span></small>
+								<ul itemprop="description" class="product-description">
+									<li>- ${ products.getInfo() }</li>
+								</ul>
+							</div>
+							<div class="product-price">
+								<var itemprop="offers" itemscope
+									itemtype="http://schema.org/Offer" class="price">
+									<meta itemprop="priceCurrency" content="BGN" />
+									<span itemprop="price" class="new">${ products.getPrice() }
+										лв.</span>
+									<div>
+										<link itemprop="itemCondition"
+											href="http://schema.org/NewCondition" />
+										<span class="hidden">New</span>
+									</div>
+								</var>
+								<form action="/Technomarket/addToCart">
+									<input type="hidden" value="${ product.getProduct_id() }"
+										name="product">
+									<button type="submit" class="btn btn-tm">
+										<i class="icon-basket"></i> Купи онлайн
+									</button>
+								</form>
+							</div>
+						</figcaption>
+					</figure>
+					<!--.product-->
 
-			</div>
-		</c:forEach>
+				</div>
+			</c:forEach>
 		</section>
 	</div>
 	<footer>
@@ -421,60 +460,97 @@
 		<!-- /.copyrights -->
 	</footer>
 	<script type="text/javascript">
-            require(['app', 'jquery'], function(app, $){
+		require([ 'app', 'jquery' ], function(app, $) {
 
-                $('div.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    $(this).parent().siblings().removeClass('open');
-                    $(this).parent().toggleClass('open');
-                });
+			$('div.dropdown-menu [data-toggle=dropdown]').on('click',
+					function(event) {
+						event.preventDefault();
+						event.stopPropagation();
+						$(this).parent().siblings().removeClass('open');
+						$(this).parent().toggleClass('open');
+					});
 
-                var $countDowns = $('div.countdown-widget');
+			var $countDowns = $('div.countdown-widget');
 
-                if ($countDowns.length)
-                {
-                    require(['jquery', 'jquery.countdown'], function ($) {
-                        $.countdown.regionalOptions.bg={labels:["Години","Месеца","Седмица","Дни","Часа","Минути","Секунди"],labels1:["Година","Месец","Седмица","Ден","Час","Минута","Секунда"],compactLabels:["l","m","n","d"],compactLabels1:["g","m","n","d"],whichLabels:null,digits:["0","1","2","3","4","5","6","7","8","9"],timeSeparator:":",isRTL:false};
-                        $.countdown.setDefaults($.countdown.regionalOptions.bg)
-                        $countDowns.each(function () {
+			if ($countDowns.length) {
+				require([ 'jquery', 'jquery.countdown' ], function($) {
+					$.countdown.regionalOptions.bg = {
+						labels : [ "Години", "Месеца", "Седмица", "Дни",
+								"Часа", "Минути", "Секунди" ],
+						labels1 : [ "Година", "Месец", "Седмица", "Ден", "Час",
+								"Минута", "Секунда" ],
+						compactLabels : [ "l", "m", "n", "d" ],
+						compactLabels1 : [ "g", "m", "n", "d" ],
+						whichLabels : null,
+						digits : [ "0", "1", "2", "3", "4", "5", "6", "7", "8",
+								"9" ],
+						timeSeparator : ":",
+						isRTL : false
+					};
+					$.countdown.setDefaults($.countdown.regionalOptions.bg)
+					$countDowns.each(function() {
 
-                            $(this).countdown({until: new Date($(this).attr('data-date'))});
-                        });
+						$(this).countdown({
+							until : new Date($(this).attr('data-date'))
+						});
+					});
 
-                    });
-                }
+				});
+			}
 
-                $('.update-widget').each(function () {
-                    $(this).load($(this).attr('data-url'));
+			$('.update-widget').each(function() {
+				$(this).load($(this).attr('data-url'));
 
-                });
-            });
-			for(var f=document.forms,i=f.length;i--;)f[i].setAttribute("novalidate",i)
-        </script>
+			});
+		});
+		for (var f = document.forms, i = f.length; i--;)
+			f[i].setAttribute("novalidate", i)
+	</script>
 
 	<a href="#top" class="scroll-top"><i class="icon-arrow-long-up"></i></a>
 
 	<script>
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+		(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script',
+					'../www.google-analytics.com/analytics.js', 'ga');
 
-                ga('create', 'UA-8418537-1', 'auto');
-                ga('send', 'pageview');
-
-            </script>
+		ga('create', 'UA-8418537-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 	<!-- Facebook Pixel Code -->
 	<script>
-                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-                                document,'script','../connect.facebook.net/en_US/fbevents.js');
+		!function(f, b, e, v, n, t, s) {
+			if (f.fbq)
+				return;
+			n = f.fbq = function() {
+				n.callMethod ? n.callMethod.apply(n, arguments) : n.queue
+						.push(arguments)
+			};
+			if (!f._fbq)
+				f._fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+				'../connect.facebook.net/en_US/fbevents.js');
 
-                fbq('init', '376584362536011');
-                fbq('track', "PageView");</script>
+		fbq('init', '376584362536011');
+		fbq('track', "PageView");
+	</script>
 	<noscript>
 		<img height="1" width="1" style="display: none"
 			src="https://www.facebook.com/tr?id=376584362536011&amp;ev=PageView&amp;noscript=1" />
@@ -483,8 +559,14 @@
 
 	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
 	<script type="text/javascript">
-            window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
-        </script>
+		window.cookieconsent_options = {
+			"message" : 'Technomarket.bg използва &quot;бисквитки&quot;.',
+			"dismiss" : 'Ок',
+			"learnMore" : 'Виж повече',
+			"link" : '/cookie',
+			"theme" : false
+		};
+	</script>
 
 	<script type="text/javascript"
 		src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>

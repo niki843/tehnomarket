@@ -166,8 +166,7 @@
 								itemtype="http://schema.org/SearchAction"
 								action="http://www.technomarket.bg/search/" method="get"
 								class="input-group">
-								<meta itemprop="target"
-									content="http://www.technomarket.bg/search/?query={query}" />
+								<meta itemprop="target" content="http://www.technomarket.bg/search/?query={query}" />
 								<input itemprop="query-input" type="text" name="query"
 									placeholder="Търси..." class="form-control"> <span
 									class="search-bar"></span> <span class="input-group-btn">
@@ -212,7 +211,7 @@
 												</c:when>
 												<c:otherwise>
 													<li><a href="/Technomarket/profile">Профил</a></li>
-													<li><a href="/Technomarket/">Поръчки</a></li>
+													<li><a href="/Technomarket/orders">Поръчки</a></li>
 													<li><a href="/Technomarket/logOut">Изход</a></li>
 												</c:otherwise>
 											</c:choose>

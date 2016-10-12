@@ -168,7 +168,7 @@
 																			</c:when>    
 																			<c:otherwise>									
 	                                											<li><a href="/Technomarket/profile">Профил</a></li>
-	                                											<li><a href="/Technomarket/">Поръчки</a></li>
+	                                											<li><a href="/Technomarket/orders">Поръчки</a></li>
 	                                											<li><a href="/Technomarket/logOut">Изход</a></li>
 																			</c:otherwise>
 																		</c:choose>		

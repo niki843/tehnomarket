@@ -71,6 +71,7 @@ public class ProductManager {
 		}
 		product.setInSale(true);
 		product.setPrice(newPrice);
+		System.out.println("PRODUCT SET !!!!");
 		ProductDAO.getInstance().setInSale(product);
 	}
 	

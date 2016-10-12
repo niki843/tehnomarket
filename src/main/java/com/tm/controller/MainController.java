@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.tm.dbModels.ProductDAO;
 import com.tm.model.Cart;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
@@ -18,6 +19,9 @@ public class MainController {
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model mod, HttpServletRequest request) {
+		ProductDAO.getInstance().getModelFromId(-1);
+		ProductDAO.getInstance().getTypeFromId(-1);
+		ProductDAO.getInstance().getUperTypeFromId(-1);
 		HttpSession session = request.getSession();
 		Cart shoppingCart = (Cart) session.getAttribute("cart");
 		if (shoppingCart == null) {

@@ -270,7 +270,12 @@
             	<% session.removeAttribute("saleComplete"); %>
             	</br>
             </c:if>
-        	
+        	<c:if test="${ productEmpty }">
+            	<font color="red">Трябва да изберете продукт!</font>
+            	<% session.removeAttribute("productEmpty"); %>
+            	</br>
+            </c:if>
+            
         	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
         	
             <form action="/Technomarket/addNewSale"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">

@@ -24,6 +24,7 @@ public class ProductDAO {
 	private HashMap<Integer, String> uppertypesNames = null;
 	private HashMap<Integer, String> typesNames = null;
 	private HashMap<Integer, String> modelsNames = null;
+	private HashMap<Integer, Product> productsInSale = new HashMap();
 
 	private ProductDAO() {
 
@@ -213,6 +214,7 @@ public class ProductDAO {
 				is = set.getBinaryStream("pic_url");
 				File image = new File(pic);
 			    FileOutputStream fos = null;
+			    
 			    if(image.exists()){
 			    	System.out.println("PICTURE IS FOUND IN THE DIRECTORY");
 					Product product = new Product(
@@ -256,26 +258,48 @@ public class ProductDAO {
 				System.out.println("----------------" + inSale + "--------------------");
 				System.out.println("----------------" + price + "--------------------");
 				System.out.println("----------------" + productId + "----------------");
-				Product product = new Product(
-
-						getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,
-						artNum, ean, info, image, quantity, inSale, price);
+				Product product = new Product(getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,artNum, ean, info, image, quantity, inSale, price);
+			    if(inSale){
+			    	productsInSale.put(productId, product);
+			    }
 				products.add(product);
 				product.setProduct_id(productId);
+
 			}
 
 		} catch (SQLException e) {
 			System.out.println("ERROR: Cannot create statement in product DAO 4");
 			e.printStackTrace();
-
-			return products;
 		} finally {
 			DBManager.getInstance().closeConnection();
+			setProductsInSale();
 		}
+		
+		
 		return products;
 		
 	}
+	
+	private void setProductsInSale(){
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		for(Integer i : productsInSale.keySet()){
+			try {
+				st = DBManager.getInstance().getConnection().prepareStatement("SELECT sale_price FROM products_sales WHERE product_id  LIKE (?);");
+				st.setInt(1, i);	
+				rs = st.executeQuery();
+				while(rs.next()){
+					productsInSale.get(i).setPrice(rs.getDouble("sale_price"));
+					System.out.println("SETING NEW PRICE TO: " + productsInSale.get(i).getName());
+				}
+			} catch (SQLException e) {
+				System.out.println("ERROR: GETING SALE PRICE IN PRODUCT DAO");
+				e.printStackTrace();
+			}
 
+		}
+	}
+	
 	public String getTypeFromId(int id) {
 		Statement st = null;
 		ResultSet resultSet = null;
@@ -368,12 +392,29 @@ public class ProductDAO {
 	
 	public void setInSale(Product product){
 		PreparedStatement ps = null;
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream(product.getPicture());
+		} catch (FileNotFoundException e1) {
+			System.out.println("ERROR: GETTING PICTURE FOR SALE IN PRODUCT DAO!");
+			e1.printStackTrace();
+		}
 		try {
 			ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products SET in_sale=? WHERE product_id LIKE (?)");
 			ps.setBoolean(1, true);
 			ps.setInt(2, product.getProduct_id());
 			ps.executeUpdate();
-			ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO  VALUES (?,?,?)");
+			ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO products_sales(sale_price, name, art_num, ean, info,pic_url, pic_name, quantity_in_stock, product_id)  VALUES (?,?,?,?,?,?,?,?,?)");
+			ps.setDouble(1, product.getPrice());
+			ps.setString(2, product.getName());
+			ps.setString(3, product.getArt_number());
+			ps.setString(4, product.getEan());
+			ps.setString(5, product.getInfo());
+			ps.setBinaryStream(6, fis,(int) product.getPicture().length());
+			ps.setString(7, product.getPicture().getAbsolutePath());
+			ps.setInt(8, product.getQuantity());
+			ps.setInt(9, product.getProduct_id());
+			ps.executeUpdate();
 			System.out.println("UPDATE SUCCESSFULL FOR SALE");
 			
 		} catch (SQLException e) {

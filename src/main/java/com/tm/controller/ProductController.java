@@ -173,7 +173,7 @@ public class ProductController {
 			return "admin-add-product";
 		}
 
-		File picture = new File(FILE_LOCATIONIVAN + multiPartFile.getOriginalFilename());
+		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());
 
 		try {
 			picture.createNewFile();
@@ -211,9 +211,6 @@ public class ProductController {
 
 	@RequestMapping(value = "/getProducts", method = RequestMethod.GET)
 	public String getProducts(Model mod, HttpServletRequest request) {
-		ProductDAO.getInstance().getModelFromId(-1);
-		ProductDAO.getInstance().getTypeFromId(-1);
-		ProductDAO.getInstance().getUperTypeFromId(-1);
 		String nadtype = request.getParameter("nadtype");
 		String type = request.getParameter("type");
 		String model = request.getParameter("model");
@@ -241,35 +238,41 @@ public class ProductController {
 		return "productInfo";
 	}
 	
-	@RequestMapping(value = "/addNewSale", method = RequestMethod.GET)
+	@RequestMapping(value = "/addNewSale", method = RequestMethod.POST)
 	public String addNewSale(Model model, HttpServletRequest request){
-		
 		String productSalePrice = request.getParameter("fos_user_registration_form[new_price]");
 		String productId = request.getParameter("fos_user_registration_form[product]");
 		boolean shouldReturn = false;
-		Integer productIdInt = Integer.parseInt(productId);
+		Integer productIdInt = null;
 		Double productSalePriceDouble = null;
 		ProductManager prodMan = ProductManager.getInstance();
-		Product product = prodMan.getProductById(productIdInt);
-		if(productSalePrice.matches("[0-9]+")){
-			productSalePriceDouble = Double.parseDouble(productSalePrice);
+		Product product = null;
+		if(productId.isEmpty()){
+			request.getSession().setAttribute("productEmpty", true);
+			shouldReturn = true;
 		}else{
-			if(productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")){
+			productIdInt = Integer.parseInt(productId);
+			product = prodMan.getProductById(productIdInt);
+			if(productSalePrice.matches("[0-9]+")){
 				productSalePriceDouble = Double.parseDouble(productSalePrice);
-				if(productSalePriceDouble <= product.getPrice()){
-					request.getSession().setAttribute("priceTooLarge", true);
+			}else{
+				if(productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")){
+					productSalePriceDouble = Double.parseDouble(productSalePrice);
+					if(productSalePriceDouble <= product.getPrice()){
+						request.getSession().setAttribute("priceTooLarge", true);
+						shouldReturn = true;
+					}
+				}else{
+					request.getSession().setAttribute("newPriceInvalid", true);
 					shouldReturn = true;
 				}
-			}else{
-				request.getSession().setAttribute("newPriceInvalid", true);
-				shouldReturn = true;
+					
 			}
-				
 		}
+
 		if(shouldReturn){
 			return "addSale";
 		}
-		
 		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
 		return "addSale";

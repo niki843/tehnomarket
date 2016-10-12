@@ -289,7 +289,7 @@
 			<div class="col-md-3">
 				<figure itemscope itemtype="http://schema.org/Product" class="product">
 					<a itemprop="url" href="/Technomarket/productInfo" class="product-thumb"> 
-						<img itemprop="image" src="${ products.getPicture().getAbsolutePath() }" alt="Technomarket" />
+						<img itemprop="image" src="${ products.getRealtivePath() }" alt="Technomarket" />
 					</a>
 					<figcaption>
 						<div class="product-name">

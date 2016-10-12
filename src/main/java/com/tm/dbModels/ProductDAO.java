@@ -2,6 +2,7 @@ package com.tm.dbModels;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.io.File;
@@ -17,6 +18,9 @@ import com.tm.model.Product;
 
 public class ProductDAO {
 	private static ProductDAO instance = null;
+	private HashMap<Integer, String> uppertypesNames = null;
+	private HashMap<Integer, String> typesNames = null;
+	private HashMap<Integer, String> modelsNames = null;
 
 	private ProductDAO() {
 
@@ -136,23 +140,38 @@ public class ProductDAO {
 		return -1;
 	}
 
-	private String getModelFromId(int id) {
-		PreparedStatement st = null;
+	public String getModelFromId(int id) {
+		Statement st = null;
 		ResultSet resultSet = null;
-		try {
-			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection()
-					.prepareStatement("SELECT model_name FROM product_models WHERE model_id LIKE (?);");
-			st.setInt(1, id);
-			resultSet = st.executeQuery();
-			while (resultSet.next()) {
-				return resultSet.getString("model_name");
+		if(modelsNames == null){
+			modelsNames = new HashMap<>();
+			try {
+				DBManager.getInstance();
+				st = DBManager.getInstance().getConnection().createStatement();
+				resultSet = st.executeQuery("SELECT model_id ,model_name FROM product_models;");
+				while (resultSet.next()) {
+					modelsNames.put(resultSet.getInt("model_id"), resultSet.getString("model_name"));
+				}
+			} catch (SQLException e) {
+				System.out.println("ERROR:with executing query in product DAO 3");
+				e.printStackTrace();
+			} finally {
+				DBManager.getInstance().closeConnection();
 			}
-		} catch (SQLException e) {
-			System.out.println("ERROR:with executing query in product DAO 3");
-			e.printStackTrace();
-		} finally {
-			DBManager.getInstance().closeConnection();
+			if(id == -1){
+				return null;
+			}
+			for(Integer i : modelsNames.keySet()){
+				if(i == id){
+					return modelsNames.get(i);
+				}
+			}
+		}else{
+			for(Integer i : modelsNames.keySet()){
+				if(i == id){
+					return modelsNames.get(i);
+				}
+			}
 		}
 		return null;
 	}
@@ -178,13 +197,7 @@ public class ProductDAO {
 			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
 			set = st.executeQuery("SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
-			while(true){
-				if(set.isClosed()){
-					break;
-				}
-				if(!set.next()){
-					break;
-				}
+			while(set.next()){
 				model = set.getInt("model_id");
 				type = set.getInt("product_type_type_id");
 				upperType = set.getInt("id_upper_type");
@@ -260,46 +273,77 @@ public class ProductDAO {
 			DBManager.getInstance().closeConnection();
 		}
 		return products;
+		
 	}
 
-	private String getTypeFromId(int id) {
-		PreparedStatement st = null;
+	public String getTypeFromId(int id) {
+		Statement st = null;
 		ResultSet resultSet = null;
-		try {
-			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection()
-					.prepareStatement("SELECT type_name FROM product_type WHERE type_id LIKE (?);");
-			st.setInt(1, id);
-			resultSet = st.executeQuery();
-			while (resultSet.next()) {
-				return resultSet.getString("type_name");
+		if(typesNames == null){
+			typesNames = new HashMap<>();
+			try {
+				DBManager.getInstance();
+				st = DBManager.getInstance().getConnection().createStatement();
+				resultSet = st.executeQuery("SELECT type_id,type_name FROM product_type");
+				while (resultSet.next()) {
+					typesNames.put(resultSet.getInt("type_id"), resultSet.getString("type_name"));
+				}
+			} catch (SQLException e) {
+				System.out.println("ERROR:couldn't get type from id in product dao 5");
+				e.printStackTrace();
+			} finally {
+				DBManager.getInstance().closeConnection();
 			}
-		} catch (SQLException e) {
-			System.out.println("ERROR:couldn't get type from id in product dao 5");
-			e.printStackTrace();
-		} finally {
-			DBManager.getInstance().closeConnection();
+			if(id == -1){
+				return null;
+			}
+			for(Integer i : typesNames.keySet()){
+				if(i == id){
+					return typesNames.get(i);
+				}
+			}
+		}else{
+			for(Integer i : typesNames.keySet()){
+				if(i == id){
+					return typesNames.get(i);
+				}
+			}
 		}
 		return null;
 	}
 
-	private String getUperTypeFromId(int id) {
-		PreparedStatement st = null;
+	public String getUperTypeFromId(int id) {
+		Statement st = null;
 		ResultSet resultSet = null;
-		try {
-			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection()
-					.prepareStatement("SELECT upper_type_name FROM product_upper_type WHERE id_upper_type LIKE (?);");
-			st.setInt(1, id);
-			resultSet = st.executeQuery();
-			while (resultSet.next()) {
-				return resultSet.getString("upper_type_name");
+		if(uppertypesNames == null){
+			uppertypesNames = new HashMap<>();
+			try {
+				DBManager.getInstance();
+				st = DBManager.getInstance().getConnection().createStatement();
+				resultSet = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type");
+				while (resultSet.next()) {
+					uppertypesNames.put(resultSet.getInt("id_upper_type"), resultSet.getString("upper_type_name"));
+				}
+			} catch (SQLException e) {
+				System.out.println("ERROR:Couldn't get uper type from id in productDAO 6");
+				e.printStackTrace();
+			} finally {
+				DBManager.getInstance().closeConnection();
 			}
-		} catch (SQLException e) {
-			System.out.println("ERROR:Couldn't get uper type from id in productDAO 6");
-			e.printStackTrace();
-		} finally {
-			DBManager.getInstance().closeConnection();
+			if(id == -1){
+				return null;
+			}
+			for(Integer i : uppertypesNames.keySet()){
+				if(i == id){
+					return uppertypesNames.get(i);
+				}
+			}
+		}else{
+			for(Integer i : uppertypesNames.keySet()){
+				if(i == id){
+					return uppertypesNames.get(i);
+				}
+			}
 		}
 		return null;
 	}

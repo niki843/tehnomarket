@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.tm.dbModels.ProductDAO;
 import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
@@ -206,6 +207,9 @@ public class ProductController {
 
 	@RequestMapping(value = "/getProducts", method = RequestMethod.GET)
 	public String getProducts(Model mod, HttpServletRequest request) {
+		ProductDAO.getInstance().getModelFromId(-1);
+		ProductDAO.getInstance().getTypeFromId(-1);
+		ProductDAO.getInstance().getUperTypeFromId(-1);
 		String nadtype=request.getParameter("nadtype");
 		String type=request.getParameter("type");
 		String model=request.getParameter("model");

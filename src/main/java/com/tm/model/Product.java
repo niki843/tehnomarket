@@ -13,6 +13,7 @@ public class Product {
 	String info;
 	File picture;
 	String upperType;
+	String relativePath;
 	int quantity;
 	boolean inSale;
 	double price;
@@ -31,6 +32,11 @@ public class Product {
 		this.inSale = inSale;
 		this.price = price;
 		this.upperType = upperType;
+		this.relativePath = "img/"+picture.getName();
+	}
+	
+	public String getRealtivePath(){
+		return this.relativePath;
 	}
 
 	public String getUpperType() {

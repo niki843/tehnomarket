@@ -193,4 +193,9 @@ public class MainController {
 		return "admin-add-product";
 	}
 
+	@RequestMapping(value = "/addSale", method = RequestMethod.GET)
+	public String addSale(Model model) {
+		return "addSale";
+	}
+
 }

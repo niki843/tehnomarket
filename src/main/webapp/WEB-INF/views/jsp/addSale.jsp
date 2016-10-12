@@ -249,123 +249,16 @@
     <div class="col-md-6">
         <div class="fos_user_user_show form-horizontal">
 	<div class="form-group">
-    	
+	    	
     </div>
-        	<h2>Добави продукт</h2>
-        	<c:if test="${ emptyName }">
-            	<font color="red">Името на продукта е празно!</font>
-            	<% session.removeAttribute("emptyName"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ tooLongName }">
-            	<font color="red">Името на продуктът може да е до 45 символа!</font>
-            	<% session.removeAttribute("tooLongName"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ infoEmpty }">
-            	<font color="red">Информацията е празна!</font>
-            	<% session.removeAttribute("infoEmpty"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ infoTooLong }">
-            	<font color="red">Информацията е не може да бъде по голяма от 100 символа!</font>
-            	<% session.removeAttribute("infoTooLong"); %>
-            	</br>
-            </c:if>
-			<c:if test="${ invalidTypeForUpper }">
-            	<font color="red">Типът не отговоря на надтипа!</font>
-            	<% session.removeAttribute("invalidTypeForUpper"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ invaliModelForType }">
-            	<font color="red">Меделът не отговаря на типа!</font>
-            	<% session.removeAttribute("invaliModelForType"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyUpperType }">
-            	<font color="red">Надтипът не може да е празен!</font>
-            	<% session.removeAttribute("emptyUpperType"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyType }">
-            	<font color="red">Типът не може да е празен!</font>
-            	<% session.removeAttribute("emptyType"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyModel }">
-            	<font color="red">Моделът не може да е празен!</font>
-            	<% session.removeAttribute("emptyModel"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyArt }">
-            	<font color="red">Артикулният номер е празен!</font>
-            	<% session.removeAttribute("emptyArt"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyEan }">
-            	<font color="red">EАН е празен!</font>
-            	<% session.removeAttribute("emptyEan"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyQuantity }">
-            	<font color="red">Не е въведено количеството на продукта!</font>
-            	<% session.removeAttribute("emptyQuantity"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ invalidQuantity }">
-            	<font color="red">Количеството трябва да бъде цифра!</font>
-            	<% session.removeAttribute("invalidQuantity"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ negativeQuantity }">
-            	<font color="red">Количеството не може да е отрицателно!</font>
-            	<% session.removeAttribute("negativeQuantity"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ emptyPrice }">
-            	<font color="red">Цената трябва да бъде цифра!</font>
-            	<% session.removeAttribute("emptyPrice"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ negativePrice }">
-            	<font color="red">Цената не може да бъде негативно число!</font>
-            	<% session.removeAttribute("negativePrice"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ invalidPrice }">
-            	<font color="red">Цената не може да е празна!</font>
-            	<% session.removeAttribute("invalidPrice"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ pictureMissing }">
-            	<font color="red">Липсва снимка!</font>
-            	<% session.removeAttribute("pictureMissing"); %>
-            	</br>
-            </c:if>
-            <c:if test="${ productWithNameExists }">
-            	<font color="red">Вече съществува продукт с това име!</font>
-            	<% session.removeAttribute("productWithNameExists"); %>
-            	</br>
-            </c:if>
-            <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data"><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_first_name">
-                                       Име на продукта
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_name" name="fos_user_registration_form[art_name]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>
-                <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_art_num">
-                    Артикулен номер
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_num" name="fos_user_registration_form[art_num]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>
-                <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_art_ean">
-                    ЕАН
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_art_ean" name="fos_user_registration_form[art_ean]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_info">
-                    Информация за продукта
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_info" name="fos_user_registration_form[info]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_in_stock">
-                    Налично количество
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_in_stock" name="fos_user_registration_form[in_stock]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_price">
-                    Цена
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_price" name="fos_user_registration_form[price]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_pricture">
-                    Снимка
+        	<h2>Добави промоция</h2>
+        	
+            <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
+                                       <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_pricture">
+                    Нова цена
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="file" id="fos_user_registration_form_pricture" name="fos_user_registration_form[pricture]" required="required" class="form-control" accept="image/*"/><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_price">
 											</label><div class="col-sm-10 control-bar"><div class="control-group"></div><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required">
-                    Надтип на продукта
+                    Продукт
                                             <span class="required" title="This field is required">*</span>
 											</label><div class="col-sm-10 control-bar">
 											<div id="fos_user_registration_form_birthday" class="form-inline">
@@ -375,39 +268,11 @@
                                             	<option value="<%= s %>"><%= s %></option>
                                             <%} %>
 											</select></div><span class="bar">
-											</span></div></div><div class="form-group"><label  class="col-sm-6 control-label required">
-                    Тип на продукта
-                                            <span class="required" title="This field is required">*</span>
-											</label><div class="col-sm-10 control-bar">
-											<div id="fos_user_registration_form_birthday" class="form-inline">
-											<select id="fos_user_registration_form_type" name="fos_user_registration_form[type]" required="required" class="form-control">
-											<option value="" selected="selected">тип</option>
-                                            <% for(String s : map.keySet()){%>
-                                            	<% for(String ss : map.get(s).keySet()){%>
-                                            			<option value="<%= ss %>"><%= ss %></option>
-                                            	<%} %>
-                                            <%} %>
-											</select></div><span class="bar">
-											</span></div></div><div class="form-group"><label  class="col-sm-6 control-label required">
-                    Модел
-                                            <span class="required" title="This field is required">*</span>
-											</label><div class="col-sm-10 control-bar">
-											<div id="fos_user_registration_form_birthday" class="form-inline">
-											<select id="fos_user_registration_form_model" name="fos_user_registration_form[model]" required="required" class="form-control">
-											<option value="" selected="selected">модел</option>
-                                            <% for(String s : map.keySet()){%>
-                                            	<% for(String ss : map.get(s).keySet()){%>
-                                            		<% for(int i = 0; i < map.get(s).get(ss).size(); i++){%>
-                                            			<option value="<%= map.get(s).get(ss).get(i) %>"><%= map.get(s).get(ss).get(i) %></option>
-                                            		<%} %>
-                                            	<%} %>
-                                            <%} %>
-											</select></div><span class="bar">
 											</span></div></div>
 											<input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" class="form-control" value="Krjne80piNBsqAJqOJMu6HN5W9V7cPDmBpDmv2Am1k8" />
 				<div class="form-group">
                     <div class="col-sm-offset-6 col-sm-10">
-                         <input class="btn btn-tm" type="submit" value="Регистрация" />
+                         <input class="btn btn-tm" type="submit" value="Пусни промоция" />
                     </div>
                </div>   
             </form>
@@ -534,7 +399,7 @@
             window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
         </script>
 
-        <script type="text/javascript" src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+        <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
         <!-- End Cookie Consent plugin -->
         
     </body>

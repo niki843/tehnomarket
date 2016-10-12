@@ -64,5 +64,9 @@ public class ProductManager {
 		return prodByModel;
 	}
 	
+	public void setProductInSale(Product product, Integer newPrice){
+		
+	}
+	
 	
 }

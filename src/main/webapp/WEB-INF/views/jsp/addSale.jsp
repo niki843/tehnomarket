@@ -89,7 +89,7 @@
 				rd.forward(request, response);
 			}
 			if(!(UserManager.getInstance().getUser(username).isAdmin())){
-				rd = request.getRequestDispatcher("login.jsp");
+				rd = request.getRequestDispatcher("profile.jsp");
 				rd.forward(request, response);
 			}
 		%>
@@ -258,7 +258,7 @@
         	
         	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
         	
-            <form action="/Technomarket/addNewPromotion"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
+            <form action="/Technomarket/addNewSale"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
                                        <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_new_price">
                     Нова цена
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_new_price" name="fos_user_registration_form[new_price]" required="required" class="form-control" /><span class="bar"></span></div></div>

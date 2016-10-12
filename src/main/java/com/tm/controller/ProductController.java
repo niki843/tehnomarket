@@ -240,4 +240,17 @@ public class ProductController {
 		
 		return "productInfo";
 	}
+	
+	@RequestMapping(value = "/addNewSale", method = RequestMethod.GET)
+	public String addNewSale(Model model, HttpServletRequest request){
+		
+		String productSalePrice = request.getParameter("fos_user_registration_form[new_price]");
+		String productId = request.getParameter("fos_user_registration_form[product]");
+		
+		Integer productIdInt = Integer.parseInt(productId);
+		
+		Product product = ProductManager.getInstance().getProductById(productIdInt);
+		
+		return "addSale";
+	}
 }

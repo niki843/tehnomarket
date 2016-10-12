@@ -87,7 +87,7 @@
 				rd.forward(request, response);
 			}
 			if(!(UserManager.getInstance().getUser(username).isAdmin())){
-				rd = request.getRequestDispatcher("login.jsp");
+				rd = request.getRequestDispatcher("profile.jsp");
 				rd.forward(request, response);
 			}
 		%>

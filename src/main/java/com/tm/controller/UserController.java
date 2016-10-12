@@ -161,10 +161,10 @@ public class UserController {
 		
 		request.getSession().setAttribute("registered", true);
 		
-//		SendMail mailSender = new SendMail();
-//		String message = new String(name + "You have been successfully registered in our site! \n "
-//				+ "If you want to enter our site you can do it on " + request.getRequestURL());
-//		mailSender.sendMail("", "", "You have been successfully registered in our site! \n ");
+		SendMail mailSender = new SendMail();
+		String message = new String(name + "You have been successfully registered in our site! \n "
+				+ "If you want to enter our site you can do it on " + request.getRequestURL());
+		mailSender.sendMail(email, "Registration", "You have been successfully registered in our site! \n ");
 		
 		
 		return "login";

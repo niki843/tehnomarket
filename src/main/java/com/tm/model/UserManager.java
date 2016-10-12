@@ -3,7 +3,10 @@ package com.tm.model;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -37,6 +40,20 @@ public class UserManager {
 		}
 		return instance;
 
+	}
+	
+	public Map<String, User> getAllUsers(){
+		return Collections.unmodifiableMap(registerredUsers);
+	}
+	
+	public Map<String, User> getAllSubscribedUsers(){
+		Map<String, User> users = new HashMap();
+		for(String s : registerredUsers.keySet()){
+			if(registerredUsers.get(s).isSubscribed()){
+				users.put(s, registerredUsers.get(s));
+			}
+		}
+		return users;
 	}
 
 	public void registerUser(String firstName, String lastName, String email, String password, boolean isMale,

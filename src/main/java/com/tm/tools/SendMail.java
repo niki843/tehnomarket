@@ -48,51 +48,8 @@ public class SendMail {
 		     msg.setSentDate(new Date());
 		     Transport.send(msg);
 		     System.out.println("Message sent.");
-		  }catch (MessagingException e){ System.out.println("Erreur d'envoi, cause: " + e);}
+		  }catch (MessagingException e){ System.out.println("ERROR: couse : " + e);}
 		  }
-//		Properties props = System.getProperties();
-//		String host = "localhost";
-//		String from = "Tehnomarket.Mail@gmail.com";
-//		props.setProperty("mail.smtp.host", host);
-//	    Session session = Session.getDefaultInstance(props);
-//	    try {
-//		    MimeMessage message = new MimeMessage(session);
-//		    
-//		    message.setFrom(new InternetAddress(from));
-//		    message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-//	        message.setSubject(sub);
-//	        message.setText(msg);
-//	        Transport.send(message);
-//	        System.out.println("MESSAGE SEND SUCCESSFULY");
-//	        return true;
-//	    }catch(MessagingException mex){
-//	    	System.out.println("ERROR: SENDING MESSAGE");
-//	    	mex.printStackTrace();
-//	    	return false;
-//	    }
-//		Session session = Session.getDefaultInstance(props,
-//			new javax.mail.Authenticator() {
-//				protected PasswordAuthentication getPasswordAuthentication() {
-//					return new PasswordAuthentication("Tehnomarket.Mail","1234rfvbnm");
-//				}
-//			});
-//
-//		try {
-//
-//			Message message = new MimeMessage(session);
-//			message.setFrom(new InternetAddress("Tehnomarket.Mail@gmail.com"));
-//			message.setRecipients(Message.RecipientType.TO,
-//					InternetAddress.parse(to));
-//			message.setSubject(sub);
-//			message.setContent(msg, "text/html" );
-//			//message.setText(msg);
-//
-//			Transport.send(message);
-//
-//			return true;
-//
-//		} catch (MessagingException e) {
-//			throw new RuntimeException(e);
-//		}
+
 }
 		

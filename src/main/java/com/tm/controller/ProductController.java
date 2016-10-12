@@ -27,6 +27,9 @@ import com.tm.dbModels.ProductDAO;
 import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
+import com.tm.model.User;
+import com.tm.model.UserManager;
+import com.tm.tools.SendMail;
 
 @Controller
 @MultipartConfig
@@ -269,12 +272,17 @@ public class ProductController {
 					
 			}
 		}
-
+		
 		if(shouldReturn){
 			return "addSale";
 		}
 		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
+		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
+		String saleMessage = new String("We have a sale for: " + product.getName() + "\nCheck it out on our site");
+		for(String s : subscribedUsers.keySet()){
+			SendMail.sendMail(s, "Sale", saleMessage);
+		}
 		return "addSale";
 	}
 }

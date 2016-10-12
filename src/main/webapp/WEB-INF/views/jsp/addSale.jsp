@@ -1,4 +1,6 @@
 <!doctype html>
+<%@page import="com.tm.model.Product"%>
+<%@page import="com.tm.model.ProductManager"%>
 <%@page import="com.tm.dbModels.TypeModelDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.HashMap"%>
@@ -251,21 +253,24 @@
 	<div class="form-group">
 	    	
     </div>
+    		
         	<h2>Добави промоция</h2>
         	
-            <form action="/Technomarket/addNewProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
-                                       <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_pricture">
+        	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
+        	
+            <form action="/Technomarket/addNewPromotion"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
+                                       <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_new_price">
                     Нова цена
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="file" id="fos_user_registration_form_pricture" name="fos_user_registration_form[pricture]" required="required" class="form-control" accept="image/*"/><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_price">
-											</label><div class="col-sm-10 control-bar"><div class="control-group"></div><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required">
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_new_price" name="fos_user_registration_form[new_price]" required="required" class="form-control" /><span class="bar"></span></div></div>
+                                            <div class="form-group"><label  class="col-sm-6 control-label required">
                     Продукт
                                             <span class="required" title="This field is required">*</span>
 											</label><div class="col-sm-10 control-bar">
 											<div id="fos_user_registration_form_birthday" class="form-inline">
-											<select id="fos_user_registration_form_upper_type" name="fos_user_registration_form[upper_type]" required="required" class="form-control">
-											<option value="" selected="selected">надтип</option>
-                                            <% for(String s : map.keySet()){%>
-                                            	<option value="<%= s %>"><%= s %></option>
+											<select id="fos_user_registration_form_product" name="fos_user_registration_form[product]" required="required" class="form-control">
+											<option value="" selected="selected">продукт</option>
+                                            <% for(Integer i : products.keySet()){%>
+                                            	<option value="<%= i %>"><%= products.get(i).getName() %></option>
                                             <%} %>
 											</select></div><span class="bar">
 											</span></div></div>

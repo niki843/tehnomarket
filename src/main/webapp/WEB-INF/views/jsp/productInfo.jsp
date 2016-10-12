@@ -329,17 +329,18 @@
 
                         </div>      
                                                 
-                        <form action="/Technomarket/addProductInCart">
-
+                        <form  itemprop="potentialAction" itemscope
+								itemtype="http://schema.org/SearchAction" method="GET"
+								class="input-group">
+	
                                                         <div class="extra-warranty">
-                                                                    Стандартна гаранция - 24 месеца
+															Стандартна гаранция - 24 месеца
                             	                            </div>    
-                                                                                    <div class="buy-now">
-                                <input type="hidden" value="09141527" name="product">
-                                                                <button type="submit" class="btn btn-tm">
-                                    <i class="icon-basket"></i> Купи онлайн
+                        <div class="buy-now">
+                               <button type="submit" class="btn btn-tm">
+                                    <i class="icon-basket"></i><a href="/Technomarket/addProductInCart?id=${ productP.getProduct_id() }"> Купи онлайн</a>
                                 </button>
-                                                            </div>
+                         </div>
                         </form>                     
                         <div class="partials-info">
                                                                                 </div><!--/.partials-->                         

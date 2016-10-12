@@ -307,8 +307,9 @@ public class ProductDAO {
 			typesNames = new HashMap<>();
 			try {
 				st = DBManager.getInstance().getConnection().createStatement();
-				resultSet = st.executeQuery("SELECT type_id,type_name FROM product_type");
+				resultSet = st.executeQuery("SELECT type_id,type_name FROM product_type;");
 				while (resultSet.next()) {
+					System.out.println();
 					typesNames.put(resultSet.getInt("type_id"), resultSet.getString("type_name"));
 				}
 			} catch (SQLException e) {
@@ -342,7 +343,7 @@ public class ProductDAO {
 			uppertypesNames = new HashMap<>();
 			try {
 				st = DBManager.getInstance().getConnection().createStatement();
-				resultSet = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type");
+				resultSet = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type;");
 				while (resultSet.next()) {
 					uppertypesNames.put(resultSet.getInt("id_upper_type"), resultSet.getString("upper_type_name"));
 				}

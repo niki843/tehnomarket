@@ -295,7 +295,7 @@
                 <div class="product-thumb photoswipe">
                     <div class="product-heading">
                                                 <div class="product-category"><a href="../laptopi.html"><i class="icon-arrow-long-left"></i> Лаптопи</a></div>
-                                                <h1><a href="acer-aspire-e5-571g-35e2-09141527.html"><span itemprop="name">${ productP.getName() }</span></a></h1>
+                                                <h1><span itemprop="name">${ productP.getName() }</span></h1>
                         <div class="product-model">Арт.№: <span itemprop="productID">${ productP.getArt_number() }</span>, EAN: <span itemprop="gtin13">${ productP.getEan() }</span></div>
                     </div>                                
                     <a href="#" class="product-image"  data-photoswipe="//cdn.technomarket.bg/uploads/library/product/09141527/563a2030654cf.png">
@@ -328,20 +328,14 @@
                             </var>
 
                         </div>      
-                                                
-                        <form  itemprop="potentialAction" itemscope
-								itemtype="http://schema.org/SearchAction" method="GET"
-								class="input-group">
-	
-                                                        <div class="extra-warranty">
-															Стандартна гаранция - 24 месеца
-                            	                            </div>    
+                        <div class="extra-warranty">
+							Стандартна гаранция - 24 месеца
+                        </div>    
                         <div class="buy-now">
                                <button type="submit" class="btn btn-tm">
                                     <i class="icon-basket"></i><a href="/Technomarket/addProductInCart?id=${ productP.getProduct_id() }"> Купи онлайн</a>
                                 </button>
-                         </div>
-                        </form>                     
+                         </div>                   
                         <div class="partials-info">
                                                                                 </div><!--/.partials-->                         
                     </div><!--.product-price-->                   

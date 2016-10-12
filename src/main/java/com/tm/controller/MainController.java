@@ -1,6 +1,7 @@
 package com.tm.controller;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -71,7 +72,7 @@ public class MainController {
 	public String cart(Model mod, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		Cart shoppingCart = (Cart) session.getAttribute("cart");
-		HashMap<Product,Integer > cart= shoppingCart.getCartItems();
+		Map<Product,Integer > cart= shoppingCart.getCartItems();
 		mod.addAttribute("cart", cart);
 		return "cart";
 	}

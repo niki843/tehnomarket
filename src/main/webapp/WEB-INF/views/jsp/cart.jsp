@@ -262,6 +262,7 @@
          	</div>
             
         
+            <p><a href="/Technomarket/makeOrder" class="btn btn-tm"><i class="icon-arrow-long-left"></i> Поръчай</a></p>
             <p><a href="/Technomarket/index" class="btn btn-tm"><i class="icon-arrow-long-left"></i> Избери продукт</a></p>
             <hr>
             

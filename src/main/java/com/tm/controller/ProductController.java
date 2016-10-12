@@ -295,7 +295,7 @@ public class ProductController {
 		int id = Integer.parseInt(request.getParameter("id").trim());
 		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
 		session.setAttribute("cart", shoppingCart);
-
+	
 		return "index";
 	}
 }

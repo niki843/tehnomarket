@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tm.dbModels.TypeModelDAO;
+import com.tm.model.Cart;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
 import com.tm.model.User;
@@ -208,5 +210,25 @@ public class UserController {
 		request.getSession().invalidate();
 		return "index"; 
 	}
+	
+	@RequestMapping(value = "/makeOrder", method = RequestMethod.GET)
+	public String makeOrder(HttpServletRequest request){
+		synchronized (this) {
+			HttpSession ses = request.getSession();
+			Cart cart =(Cart) ses.getAttribute("cart");
+			Map<Product, Integer> products = cart.getCartItems();
+			for(Product p : products.keySet()){
+				if(p.getQuantity() < products.get(p)){
+					ses.setAttribute("hasTooManyItems", true);
+					return "cart";
+				}
+			}
+			
+			ProductManager.getInstance().sellProducts(products);
+			ses.invalidate();
+			return "index"; 
+		}
+	}
+	
 	
 }

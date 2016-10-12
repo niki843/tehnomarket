@@ -424,4 +424,29 @@ public class ProductDAO {
 		}
 		
 	}
+
+	public void sellProduct(Product p) {
+		PreparedStatement ps = null;
+		
+		try {
+			ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products SET quantity_in_stock=? WHERE product_id LIKE (?);");
+			ps.setInt(1, p.getQuantity());
+			ps.setInt(2, p.getProduct_id());
+			ps.executeUpdate();
+			System.out.println("PRODUCTS SET IN DB SUCCESSFULY");
+			if(p.isInSale()){
+				ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products_sales SET quantity_in_stock=? WHERE product_id LIKE (?);");
+				ps.setInt(1, p.getQuantity());
+				ps.setInt(2, p.getProduct_id());
+				ps.executeUpdate();
+				System.out.println("PRODUCT SET IN SALE SUCCESSFULY");
+			}
+		} catch (SQLException e) {
+			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 9");
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
 }

@@ -1,6 +1,8 @@
 package com.tm.model;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Cart {
 	HashMap<Product, Integer> cartItems;
@@ -10,8 +12,8 @@ public class Cart {
 
 	}
 
-	public HashMap getCartItems() {
-		return cartItems;
+	public Map<Product, Integer> getCartItems() {
+		return Collections.unmodifiableMap(cartItems);
 	}
 
 	public void addToCart(Product p) {

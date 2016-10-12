@@ -75,5 +75,14 @@ public class ProductManager {
 		ProductDAO.getInstance().setInSale(product);
 	}
 	
+	public void sellProducts(Map<Product, Integer> map){
+		
+		for(Product p : map.keySet()){
+			products.get(p.getProduct_id()).sell(map.get(p));
+			ProductDAO.getInstance().sellProduct(p);
+		}
+		
+	}
+	
 	
 }

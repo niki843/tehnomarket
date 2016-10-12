@@ -134,5 +134,9 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	public void sell(int amm){
+		this.quantity -= amm;
+	}
 
 }

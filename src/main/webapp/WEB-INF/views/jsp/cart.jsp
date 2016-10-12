@@ -207,10 +207,10 @@
 								<ul>
 							<%} %>
 							<% for(int i=0 ; i < map.get(s).get(ss).size(); i++){ %>
-													<li><a
-														href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
-														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
-													</li>
+                                <li><a
+ 													href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
+ 													class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
+ 													</li>
 							<%} %>
 							<% if(map.get(s).get(ss) != null){ %>
 								</ul>
@@ -233,9 +233,32 @@
                                         
             	<div class="container cart">
     	<div class="sh-heading">
-            <h2>Потребителска кошница</h2>
-        </div>
-                	<p>Потребителска кошница е празна.</p>
+    	<c:forEach var="cart" items="${cart}">
+    	<table id="box-table-a" border="solid">
+
+		<tr>
+			<th>Name :</th>
+			<td>${cart.key.getName()}</td>
+		</tr>
+		<tr>
+			<th>Model :</th>
+			<td>${cart.key.getModel()}</td>
+		</tr>
+		<tr>
+			<th>Price :</th>
+			<td>${cart.key.getPrice()}</td>
+		</tr>
+		
+		<tr>
+			<th>Count :</th>
+			<td>${cart.value}</td>
+		</tr>
+
+	</table>
+   		
+		</c:forEach>
+            
+        
             <p><a href="/Technomarket/index" class="btn btn-tm"><i class="icon-arrow-long-left"></i> Избери продукт</a></p>
             <hr>
             

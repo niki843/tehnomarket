@@ -231,32 +231,35 @@
     </nav><!-- /.navbar -->
 </header>
                                         
-            	<div class="container cart">
-    	<div class="sh-heading">
+        <div class="container cart">
+    	<div class="sh-heading">         		
+    	<div class="col-md-13">
+    	<table class="table table-striped">
+                	<thead>
+                    	<tr>
+	                        <th>Име</th>
+	                        <th>Модел</th>
+	                        <th>Цена</th>
+	                        <th>Бройки</th>
+	                        <th align="right" class="text-right"></th>
+                    	</tr>
+                	</thead>
     	<c:forEach var="cart" items="${cart}">
-    	<table id="box-table-a" border="solid">
 
-		<tr>
-			<th>Name :</th>
-			<td>${cart.key.getName()}</td>
-		</tr>
-		<tr>
-			<th>Model :</th>
-			<td>${cart.key.getModel()}</td>
-		</tr>
-		<tr>
-			<th>Price :</th>
-			<td>${cart.key.getPrice()}</td>
-		</tr>
-		
-		<tr>
-			<th>Count :</th>
-			<td>${cart.value}</td>
-		</tr>
-
-	</table>
-   		
+                	<tbody>
+                		<tr>
+                			<td>${cart.key.getName()}</td>
+                			<td>${cart.key.getModel()}</td>
+                			<td>${cart.key.getPrice()}</td>
+							<td>${cart.value}</td>
+                		</tr>
+               		</tbody>
 		</c:forEach>
+		
+		</table>
+			</div>
+            </div>
+         	</div>
             
         
             <p><a href="/Technomarket/index" class="btn btn-tm"><i class="icon-arrow-long-left"></i> Избери продукт</a></p>

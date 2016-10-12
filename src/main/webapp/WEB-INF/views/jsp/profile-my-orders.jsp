@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="com.tm.model.UserManager"%>
 <%@page import="com.tm.dbModels.TypeModelDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.HashMap"%>
@@ -83,6 +84,10 @@
 			RequestDispatcher rd = null;
 			if (username == null) {
 				rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}
+			if(UserManager.getInstance().getUser(username).isAdmin()){
+				rd = request.getRequestDispatcher("admin-profile.jsp");
 				rd.forward(request, response);
 			}
 		%>

@@ -265,6 +265,11 @@
             	<% session.removeAttribute("priceTooLarge"); %>
             	</br>
             </c:if>
+        	<c:if test="${ saleComplete }">
+            	<font color="red">Успешно пуснахте промоция!</font>
+            	<% session.removeAttribute("saleComplete"); %>
+            	</br>
+            </c:if>
         	
         	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
         	

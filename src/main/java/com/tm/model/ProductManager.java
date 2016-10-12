@@ -64,8 +64,10 @@ public class ProductManager {
 		return prodByModel;
 	}
 	
-	public void setProductInSale(Product product, Integer newPrice){
-		
+	public void setProductInSale(Product product, Double newPrice){
+		product.setInSale(true);
+		product.setPrice(newPrice);
+		ProductDAO.getInstance();
 	}
 	
 	

@@ -248,16 +248,20 @@ public class ProductController {
 		String productId = request.getParameter("fos_user_registration_form[product]");
 		boolean shouldReturn = false;
 		Integer productIdInt = Integer.parseInt(productId);
-		Integer productSalePriceInt = null;
+		Double productSalePriceDouble = null;
 		ProductManager prodMan = ProductManager.getInstance();
 		Product product = prodMan.getProductById(productIdInt);
-		if(!(productSalePrice.matches("[0-9]+"))){
-			request.getSession().setAttribute("newPriceInvalid", true);
-			shouldReturn = true;
+		if(productSalePrice.matches("[0-9]+")){
+			productSalePriceDouble = Double.parseDouble(productSalePrice);
 		}else{
-			productSalePriceInt = Integer.parseInt(productSalePrice);
-			if(product.getPrice() < productSalePriceInt){
-				request.getSession().setAttribute("priceTooLarge", true);
+			if(productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")){
+				productSalePriceDouble = Double.parseDouble(productSalePrice);
+				if(productSalePriceDouble <= product.getPrice()){
+					request.getSession().setAttribute("priceTooLarge", true);
+					shouldReturn = true;
+				}
+			}else{
+				request.getSession().setAttribute("newPriceInvalid", true);
 				shouldReturn = true;
 			}
 				
@@ -265,8 +269,9 @@ public class ProductController {
 		if(shouldReturn){
 			return "addSale";
 		}
-		prodMan.setProductInSale(product, productSalePriceInt);
 		
+		prodMan.setProductInSale(product, productSalePriceDouble);
+		request.getSession().setAttribute("saleComplete", true);
 		return "addSale";
 	}
 }

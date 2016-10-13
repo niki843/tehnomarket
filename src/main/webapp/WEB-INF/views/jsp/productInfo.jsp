@@ -15,8 +15,8 @@
 <meta property="og:title"
 	content="Телевизори - Технoмаркет - онлайн магазин" />
 <meta property="og:image"
-	content="http://cdn.technomarket.bg/bundles/taumediatechnomarketcms/img/product-thumb.svg" />
-<title>Продукти - Технoмаркет - онлайн магазин</title>
+	content="img/product-thumb.svg" />
+<title>Продукти - Електромаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Най-добрите цени на телевизори! Купи бързо и лесно онлайн или от магазин на Техномаркет. LG, SAMSUNG, PHILIPS, SONY, TOSHIBA и много други на страхотни цени. Купи бързо и лесно онлайн с безплатна доставака!">
 <meta name="google-site-verification"
@@ -153,9 +153,9 @@
 				<div class="row">
 					<div class="logo" itemscope
 						itemtype="http://schema.org/Organization">
-						<span itemprop="name" class="hidden">Техномаркет</span> <a
+						<span itemprop="name" class="hidden">Електромаркет</span> <a
 							itemprop="url" href="/Technomarket/index"> <img
-							itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
+							itemprop="logo" src="img/electromarket.png" alt="Technomarket" />
 						</a>
 					</div>
 					<!-- /.logo -->

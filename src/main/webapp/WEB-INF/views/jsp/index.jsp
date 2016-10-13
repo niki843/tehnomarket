@@ -11,7 +11,7 @@
 <!-- /Added by HTTrack -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-<title>Technomarket - Технoмаркет - онлайн магазин</title>
+<title>Technomarket - Електромаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification"
@@ -149,9 +149,9 @@
 				<div class="row">
 					<div class="logo" itemscope
 						itemtype="http://schema.org/Organization">
-						<span itemprop="name" class="hidden">Техномаркет</span> <a
+						<span itemprop="name" class="hidden">Електромаркет</span> <a
 							itemprop="url" href="/Technomarket/index"> <img
-							itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
+							itemprop="logo" src="img/electromarket.png" alt="Technomarket" />
 						</a>
 					</div>
 					<!-- /.logo -->

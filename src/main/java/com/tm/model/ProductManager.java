@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.tm.dbModels.ProductDAO;
 
 public class ProductManager {
-	public static ProductManager instance = null;
+	private static ProductManager instance = null;
 	private ConcurrentHashMap<Integer, Product> products;
 
 	private ProductManager() {

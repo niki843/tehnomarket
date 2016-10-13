@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
-	HashMap<Product, Integer> cartItems;
+	private HashMap<Product, Integer> cartItems;
 
 	public Cart() {
 		cartItems = new HashMap<>();

@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 public class TypeModelDAO {
 	
-	HashMap<String, HashMap<String,ArrayList<String>>> upperTypeTypeModel = new HashMap<>();
+	private HashMap<String, HashMap<String,ArrayList<String>>> upperTypeTypeModel = new HashMap<>();
 
 	private static TypeModelDAO instance = null;
 

@@ -275,21 +275,19 @@
         	<div class="container-cell">
                 <h3>Отдел електронна търговия</h3>
 
-<h1><strong class="color-tm">0700 10 800</strong></h1>
+<h1><strong class="color-tm">0888 372 407</strong></h1>
 
 <p><small>на цената на един градски разговор</small></p>
 
 <hr />
-<p><strong>Е-мейл:</strong> <a href="mailto:online@technomarket.bg">online@technomarket.bg</a></p>
+<p><strong>Е-мейл:</strong> online@electroamrket.bg</p>
 
-<p><small class="color-gray">Моля, за предявяване на рекламация за уреди закупени On-Line моля използвайте: <a href="mailto:onlinereklamacii@technomarket.bg">onlinereklamacii@technomarket.bg</a></small></p>
+<p><small class="color-gray">Моля, за предявяване на рекламация за уреди закупени On-Line моля използвайте: onlinereklamacii@electromarket.bg</small></p>
 
 
 <p><strong>За мобилни телефони сканирайте кода с Facebook приложението &bdquo;Messenger&ldquo;</strong></p>
 
 <p><a href="http://m.me/technomarket"><img alt="" src="img/messenger_code.png" /></a></p>
-
-<p><strong>За компютри натиснете <a href="http://m.me/technomarket">тук</a></strong></p>
 
 <p>&nbsp;</p>
             </div>
@@ -303,19 +301,19 @@
         	<div class="container-cell">
                 <h3>Отдел Корпоративни клиенти</h3>
 
-<h1><strong class="color-tm">0700 10 888</strong></h1>
+<h1><strong class="color-tm">0888 372 407</strong></h1>
 
 <p><small>на цената на един градски разговор</small></p>
 
 <hr />
-<address><strong>Е-мейл:</strong> <a href="mailto:corporate@technomarket.bg">corporate@technomarket.bg</a><br />
+<address><strong>Е-мейл:</strong> <a href="mailto:corporate@technomarket.bg">corporate@electromarket.bg</a><br />
 <strong><span class="title" style="height: 25px;">Адрес:</span></strong> гр.София п.к. 1138 бул.Цариградско шосе 361</address>
 
 <hr />
 <h3>Централен офис</h3>
 
 <address><strong><span class="title" style="height: 25px;">Адрес:</span></strong> гр.София п.к. 1138 бул.&nbsp;Цариградско шосе 361<br />
-<strong>Е-мейл:</strong> <a href="mailto:info@technomarket.bg">info@technomarket.bg</a><br />
+<strong>Е-мейл:</strong> info@electromarket.bg</a>
 Тел: 02&nbsp;9421 101</address>
             </div>
         </div>
@@ -353,7 +351,7 @@
                     <h4><a aria-controls="contacts" aria-expanded="true" href="/Technomarket/contacts" data-toggle="collapse" role="button" class="tm-collapse">Контакти</a></h4>
                     <div id="contacts" class="footer-menu collapse in">
                         <p><strong>Национален телефон на клиента</strong></p>
-                        <h3><strong>0700 10 800</strong></h3>
+                        <h3><strong>0888 372 407</strong></h3>
                         <p><small>на цената на един градски разговор</small></p>
                         <br>
                         <ul itemscope itemtype="http://schema.org/Organization" class="social-icons">

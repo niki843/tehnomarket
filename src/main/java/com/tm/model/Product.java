@@ -4,19 +4,19 @@ import java.io.File;
 
 public class Product {
 
-	int product_id;
-	String model;
-	String prodct_type;
-	String name;
-	String art_number;
-	String ean;
-	String info;
-	File picture;
-	String upperType;
-	String relativePath;
-	int quantity;
-	boolean inSale;
-	double price;
+	private int product_id;
+	private String model;
+	private String prodct_type;
+	private String name;
+	private String art_number;
+	private String ean;
+	private String info;
+	private File picture;
+	private String upperType;
+	private String relativePath;
+	private int quantity;
+	private boolean inSale;
+	private double price;
 
 	public Product(String model, String prodct_type, String upperType, String name, String art_number,
 			String ean, String info, File picture, int quantity, boolean inSale, double price) {

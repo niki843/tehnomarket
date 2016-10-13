@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.tm.dbModels.ProductDAO;
 
 public class ProductManager {
-	public static ProductManager instance = null;
+	private static ProductManager instance = null;
 	private ConcurrentHashMap<Integer, Product> products;
 
 	private ProductManager() {
@@ -73,6 +73,15 @@ public class ProductManager {
 		product.setPrice(newPrice);
 		System.out.println("PRODUCT SET !!!!");
 		ProductDAO.getInstance().setInSale(product);
+	}
+	
+	public void sellProducts(Map<Product, Integer> map){
+		
+		for(Product p : map.keySet()){
+			products.get(p.getProduct_id()).sell(map.get(p));
+			ProductDAO.getInstance().sellProduct(p);
+		}
+		
 	}
 	
 	

@@ -4,11 +4,11 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 public class Order {
-	int oreder_id;
-	int client_id;
-	double price;
-	Date date;
-	String status;
+	private int oreder_id;
+	private int client_id;
+	private double price;
+	private Date date;
+	private String status;
 
 	public Order(int oreder_id, int client_id, double price, Date date, String status) {
 		super();

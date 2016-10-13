@@ -38,7 +38,7 @@ import com.tm.tools.SendMail;
 public class ProductController {
 
 	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
-	private static final String FILE_LOCATIONIVAN = "C:/Users/Ivan/Desktop/Technomarket/src/main/webapp/static/img/";
+	private static final String FILE_LOCATIONIVAN = "D:/Eclipse/Technomarket/Technomarket/src/main/webapp/static/img/";
 
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
 	public String addNewProduct(@RequestParam("fos_user_registration_form[pricture]") MultipartFile multiPartFile,
@@ -178,7 +178,7 @@ public class ProductController {
 			return "admin-add-product";
 		}
 
-		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());
+		File picture = new File(FILE_LOCATIONIVAN + multiPartFile.getOriginalFilename());
 
 		try {
 			picture.createNewFile();
@@ -295,7 +295,7 @@ public class ProductController {
 		int id = Integer.parseInt(request.getParameter("id").trim());
 		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
 		session.setAttribute("cart", shoppingCart);
-
+	
 		return "index";
 	}
 }

@@ -15,8 +15,8 @@
 <meta property="og:title"
 	content="Телевизори - Технoмаркет - онлайн магазин" />
 <meta property="og:image"
-	content="http://cdn.technomarket.bg/bundles/taumediatechnomarketcms/img/product-thumb.svg" />
-<title>Продукти - Технoмаркет - онлайн магазин</title>
+	content="img/product-thumb.svg" />
+<title>Продукти - Електромаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Най-добрите цени на телевизори! Купи бързо и лесно онлайн или от магазин на Техномаркет. LG, SAMSUNG, PHILIPS, SONY, TOSHIBA и много други на страхотни цени. Купи бързо и лесно онлайн с безплатна доставака!">
 <meta name="google-site-verification"
@@ -153,9 +153,9 @@
 				<div class="row">
 					<div class="logo" itemscope
 						itemtype="http://schema.org/Organization">
-						<span itemprop="name" class="hidden">Техномаркет</span> <a
+						<span itemprop="name" class="hidden">Електромаркет</span> <a
 							itemprop="url" href="/Technomarket/index"> <img
-							itemprop="logo" src="img/tehnomarket.png" alt="Technomarket" />
+							itemprop="logo" src="img/electromarket.png" alt="Technomarket" />
 						</a>
 					</div>
 					<!-- /.logo -->
@@ -295,7 +295,7 @@
                 <div class="product-thumb photoswipe">
                     <div class="product-heading">
                                                 <div class="product-category"><a href="../laptopi.html"><i class="icon-arrow-long-left"></i> Лаптопи</a></div>
-                                                <h1><a href="acer-aspire-e5-571g-35e2-09141527.html"><span itemprop="name">${ productP.getName() }</span></a></h1>
+                                                <h1><span itemprop="name">${ productP.getName() }</span></h1>
                         <div class="product-model">Арт.№: <span itemprop="productID">${ productP.getArt_number() }</span>, EAN: <span itemprop="gtin13">${ productP.getEan() }</span></div>
                     </div>                                
                     <a href="#" class="product-image"  data-photoswipe="//cdn.technomarket.bg/uploads/library/product/09141527/563a2030654cf.png">
@@ -328,19 +328,14 @@
                             </var>
 
                         </div>      
-                                                
-                        <form action="/Technomarket/addProductInCart">
-
-                                                        <div class="extra-warranty">
-                                                                    Стандартна гаранция - 24 месеца
-                            	                            </div>    
-                                                                                    <div class="buy-now">
-                                <input type="hidden" value="09141527" name="product">
-                                                                <button type="submit" class="btn btn-tm">
-                                    <i class="icon-basket"></i> Купи онлайн
+                        <div class="extra-warranty">
+							Стандартна гаранция - 24 месеца
+                        </div>    
+                        <div class="buy-now">
+                               <button type="submit" class="btn btn-tm">
+                                    <i class="icon-basket"></i><a href="/Technomarket/addProductInCart?id=${ productP.getProduct_id() }"> Купи онлайн</a>
                                 </button>
-                                                            </div>
-                        </form>                     
+                         </div>                   
                         <div class="partials-info">
                                                                                 </div><!--/.partials-->                         
                     </div><!--.product-price-->                   

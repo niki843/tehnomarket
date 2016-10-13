@@ -307,8 +307,9 @@ public class ProductDAO {
 			typesNames = new HashMap<>();
 			try {
 				st = DBManager.getInstance().getConnection().createStatement();
-				resultSet = st.executeQuery("SELECT type_id,type_name FROM product_type");
+				resultSet = st.executeQuery("SELECT type_id,type_name FROM product_type;");
 				while (resultSet.next()) {
+					System.out.println();
 					typesNames.put(resultSet.getInt("type_id"), resultSet.getString("type_name"));
 				}
 			} catch (SQLException e) {
@@ -342,7 +343,7 @@ public class ProductDAO {
 			uppertypesNames = new HashMap<>();
 			try {
 				st = DBManager.getInstance().getConnection().createStatement();
-				resultSet = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type");
+				resultSet = st.executeQuery("SELECT id_upper_type,upper_type_name FROM product_upper_type;");
 				while (resultSet.next()) {
 					uppertypesNames.put(resultSet.getInt("id_upper_type"), resultSet.getString("upper_type_name"));
 				}
@@ -421,6 +422,31 @@ public class ProductDAO {
 			System.out.println("ERROR: WITH PREPARED STATEMENT IN PRODUCT DAO 8");
 			e.printStackTrace();
 		}
+		
+	}
+
+	public void sellProduct(Product p) {
+		PreparedStatement ps = null;
+		
+		try {
+			ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products SET quantity_in_stock=? WHERE product_id LIKE (?);");
+			ps.setInt(1, p.getQuantity());
+			ps.setInt(2, p.getProduct_id());
+			ps.executeUpdate();
+			System.out.println("PRODUCTS SET IN DB SUCCESSFULY");
+			if(p.isInSale()){
+				ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products_sales SET quantity_in_stock=? WHERE product_id LIKE (?);");
+				ps.setInt(1, p.getQuantity());
+				ps.setInt(2, p.getProduct_id());
+				ps.executeUpdate();
+				System.out.println("PRODUCT SET IN SALE SUCCESSFULY");
+			}
+		} catch (SQLException e) {
+			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 9");
+			e.printStackTrace();
+		}
+		
+		
 		
 	}
 }

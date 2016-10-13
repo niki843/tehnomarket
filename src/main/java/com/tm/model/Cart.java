@@ -1,25 +1,28 @@
 package com.tm.model;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Cart {
-	HashMap<Product, Integer> cartItems;
-	int count = 1;
+	private HashMap<Product, Integer> cartItems;
 
 	public Cart() {
 		cartItems = new HashMap<>();
 
 	}
 
-	public HashMap getCartItems() {
-		return cartItems;
+	public Map<Product, Integer> getCartItems() {
+		return Collections.unmodifiableMap(cartItems);
 	}
 
 	public void addToCart(Product p) {
+		Integer i = 1;
 		if (cartItems.containsKey(p)) {
-			count = cartItems.get(p) + 1;
+			i =  cartItems.get(p);
+			i++;
 		}
-		cartItems.put(p, count);
+		cartItems.put(p, i);
 	}
 
 	public void removeFromCart(Product p) {

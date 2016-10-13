@@ -14,7 +14,7 @@ import com.tm.dbModels.UserDAO;
 
 public class UserManager {
 
-	static UserManager instance = null;
+	private static UserManager instance = null;
 	private ConcurrentHashMap<String, User> registerredUsers;
 
 	private UserManager() {

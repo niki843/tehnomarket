@@ -10,6 +10,7 @@ import java.util.HashSet;
 import com.tm.model.Administrator;
 import com.tm.model.Customer;
 import com.tm.model.Order;
+import com.tm.model.OrderManager;
 import com.tm.model.User;
 
 public class UserDAO {
@@ -120,7 +121,7 @@ public class UserDAO {
 		for(User u : users){
 			System.out.println("USER IS SETTING ORDERS : " + ((User) u).getEmail());
 			if(!(u.isAdmin())){
-				((Customer) u).setOrders(OrderDAO.getInstance().getAllOrdersForUser(u));
+				((Customer) u).setOrders(OrderManager.getInstance().getAllOrdersForUser(u));
 			}
 		}
 		System.out.println("USERS LOADED SUCCESSFULY 5.");

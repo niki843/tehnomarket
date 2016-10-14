@@ -179,5 +179,14 @@ public class UserManager {
 		}
 		return users;
 	}
+	
+	public User getUserById(int id){
+		for( User user : registerredUsers.values()){
+			if(user.getUserId() == id){
+				return user;
+			}
+		}
+		return null;
+	}
 
 }

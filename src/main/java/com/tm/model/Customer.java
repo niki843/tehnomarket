@@ -16,6 +16,10 @@ public class Customer extends User {
 	public Customer() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void addOrder(Order order){
+		orders.add(order);
+	}
 
 	public ArrayList<Order> getOrders() {
 		return orders;

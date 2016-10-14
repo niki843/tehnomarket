@@ -4,7 +4,11 @@ package com.tm.controller;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.Cart;
 import com.tm.model.Customer;
+import com.tm.model.Order;
 import com.tm.model.OrderManager;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
@@ -225,18 +230,27 @@ public class UserController {
 	public String makeOrder(HttpServletRequest request){
 		synchronized (this) {
 			HttpSession ses = request.getSession();
+			String status = "Requested";
+			String email = (String)ses.getAttribute("email");
 			Cart cart =(Cart) ses.getAttribute("cart");
 			Map<Product, Integer> products = cart.getCartItems();
+			double totalPrice = 0;
 			for(Product p : products.keySet()){
-				if(p.getQuantity() < products.get(p)){
-					ses.setAttribute("hasTooManyItems", true);
-					return "cart";
+				for(int i = 0; i < products.get(p); i++){
+					totalPrice += p.getPrice();
 				}
 			}
-			
+			User user = UserManager.getInstance().getUser(email);
+			java.util.Date utilDate = new Date();
+			java.sql.Date date = new java.sql.Date(utilDate.getTime());
+			Order order = new Order(user.getUserId(), totalPrice, date, status);
+			for(Product p : products.keySet()){
+				order.addProduct(p, products.get(p));
+			}
+			OrderManager.getInstance().addOrder(order);
 			ProductManager.getInstance().sellProducts(products);
 			ses.invalidate();
-			return "index"; 
+			return "redirect:index"; 
 		}
 	}
 

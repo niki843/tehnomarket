@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.mail.Session;
 import javax.servlet.annotation.MultipartConfig;
@@ -283,12 +285,13 @@ public class ProductController {
 		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
 		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
 		saleMessage.append(product.getName());
+		ExecutorService executor = Executors.newFixedThreadPool(subscribedUsers.size());
 		saleMessage.append("\nCheck it out on our site");
 		for(String s : subscribedUsers.keySet()){
-			EmailSender sender = new EmailSender(s, SUB, saleMessage.toString());
-			Thread senderThread = new Thread(sender);
-			senderThread.start();
+			Runnable senderThread = new EmailSender(s, SUB, saleMessage.toString());
+			executor.execute(senderThread);
 		}
+		
 		return "addSale";
 	}
 	

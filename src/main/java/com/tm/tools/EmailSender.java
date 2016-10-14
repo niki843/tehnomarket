@@ -12,7 +12,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class EmailSender extends Thread{
+public class EmailSender implements Runnable{
 	
 	private String toEmail;
 	private String subMess;

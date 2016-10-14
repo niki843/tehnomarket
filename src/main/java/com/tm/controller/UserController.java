@@ -25,11 +25,13 @@ import com.tm.model.ProductManager;
 import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
-import com.tm.tools.SendMail;
+import com.tm.tools.EmailSender;
 
 
 @Controller
 public class UserController {
+	
+	private static final String SUB = "Registration";
 
 	private static boolean isFirst = true;
 	
@@ -48,6 +50,10 @@ public class UserController {
 		String year = request.getParameter("fos_user_registration_form[birthday][year]");
 		String subscribed = request.getParameter("fos_user_registration_form[subscribe]");
 		String acceptedTerms = request.getParameter("fos_user_registration_form[accept_terms]");
+		StringBuilder message = new StringBuilder(name);
+		message.append(" You have been successfully registered in our site! \n ");
+		message.append("You can now enter.");
+		System.out.println(request.getLocalAddr());
 		StringBuilder sb = new StringBuilder();
 		sb.append(year+"-"+month+"-"+day);
 		boolean isMale = false;
@@ -163,10 +169,9 @@ public class UserController {
 		
 		request.getSession().setAttribute("registered", true);
 		
-		SendMail mailSender = new SendMail();
-		String message = new String(name + "You have been successfully registered in our site! \n "
-				+ "If you want to enter our site you can do it on " + request.getRequestURL());
-		mailSender.sendMail(email, "Registration", "You have been successfully registered in our site! \n ");
+		EmailSender mailSender = new EmailSender(email,SUB,message.toString());
+		Thread t = new Thread(mailSender);
+		t.start();
 		
 		
 		return "login";

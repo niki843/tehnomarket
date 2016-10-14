@@ -31,7 +31,7 @@ import com.tm.model.Product;
 import com.tm.model.ProductManager;
 import com.tm.model.User;
 import com.tm.model.UserManager;
-import com.tm.tools.SendMail;
+import com.tm.tools.EmailSender;
 
 @Controller
 @MultipartConfig
@@ -39,6 +39,7 @@ public class ProductController {
 
 	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
 	private static final String FILE_LOCATIONIVAN = "C:/Users/Ivan/Desktop/Technomarket/src/main/webapp/static/img/";
+	private static final String SUB = "We have a new sale!";
 
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
 	public String addNewProduct(@RequestParam("fos_user_registration_form[pricture]") MultipartFile multiPartFile,
@@ -280,9 +281,13 @@ public class ProductController {
 		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
 		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
-		String saleMessage = new String("We have a sale for: " + product.getName() + "\nCheck it out on our site");
+		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
+		saleMessage.append(product.getName());
+		saleMessage.append("\nCheck it out on our site");
 		for(String s : subscribedUsers.keySet()){
-			SendMail.sendMail(s, "Sale", saleMessage);
+			EmailSender sender = new EmailSender(s, SUB, saleMessage.toString());
+			Thread senderThread = new Thread(sender);
+			senderThread.start();
 		}
 		return "addSale";
 	}

@@ -12,9 +12,24 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendMail {
+public class EmailSender extends Thread{
 	
-	public static void sendMail(String to,String sub ,String mess){
+	private String toEmail;
+	private String subMess;
+	private String message;
+	
+	public EmailSender(String toEmail, String subMess, String message){
+		this.toEmail = toEmail;
+		this.subMess = subMess;
+		this.message = message;
+	}
+	
+	@Override
+	public void run() {
+		sendMail(toEmail,subMess,message);
+	}
+	
+	private static void sendMail(String to,String sub ,String mess){
 		  final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
 		  // Get a Properties object
 		     Properties props = System.getProperties();

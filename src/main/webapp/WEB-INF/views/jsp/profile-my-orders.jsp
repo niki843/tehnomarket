@@ -204,8 +204,16 @@
                         <th align="right" class="text-right"></th>
                     </tr>
                 </thead>
-                <tbody>
-                                    </tbody>
+           		<c:forEach var="order" items="${customer.getOrders()}">
+                	<tbody>
+                		<tr>
+                			<td>${order.getOreder_id()}</td>
+                			<!--<td>${order.getDate()}</td>  -->
+                			<td>${order.getStatus()}</td>
+							<td>${order.getPrice()}</td>
+                		</tr>
+               		</tbody>
+				</c:forEach>
             </table>
             </div>
         </div>

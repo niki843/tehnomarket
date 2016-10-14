@@ -1,6 +1,8 @@
 
 package com.tm.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.Cart;
+import com.tm.model.Customer;
+import com.tm.model.OrderManager;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
 import com.tm.model.User;
@@ -233,6 +238,15 @@ public class UserController {
 			ses.invalidate();
 			return "index"; 
 		}
+	}
+
+	@RequestMapping(value = "/orders", method = RequestMethod.GET)
+	public String orderList(Model model, HttpServletRequest request) {
+		String email = (String) request.getSession().getAttribute("email");
+		System.out.println("email: " + email);
+		Customer customer = (Customer) UserManager.getInstance().getUser(email);
+		model.addAttribute("customer", customer);
+		return "profile-my-orders";
 	}
 	
 	

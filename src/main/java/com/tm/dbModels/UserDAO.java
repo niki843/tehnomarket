@@ -78,20 +78,23 @@ public class UserDAO {
 		try {
 			DBManager.getInstance();
 			st = DBManager.getInstance().getConnection().createStatement();
-			resultSet = st.executeQuery(
-					"SELECT first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM users;");
+			resultSet = st.executeQuery("SELECT user_id, first_name, last_name, email, password,male,birth_date ,is_admin,subscribed FROM users;");
 
 			while (resultSet.next()) {
 				boolean isAdmin = resultSet.getBoolean("is_admin");
 				if (isAdmin) {
-					users.add(new Administrator(resultSet.getString("first_name"), resultSet.getString("last_name"),
+					Administrator user = new Administrator(resultSet.getString("first_name"), resultSet.getString("last_name"),
 							resultSet.getString("email"), resultSet.getString("password"), resultSet.getBoolean("male"),
-							resultSet.getDate("birth_date"), resultSet.getBoolean("subscribed")));
+							resultSet.getDate("birth_date"), resultSet.getBoolean("subscribed"));
+					user.setUserId(resultSet.getInt("user_id"));
+					users.add(user);
+				
 				} else {
 					Customer user = new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"),
 							resultSet.getString("email"), resultSet.getString("password"), resultSet.getBoolean("male"),
 							resultSet.getDate("birth_date"), resultSet.getBoolean("subscribed"));
-					user.setOrders(getAllOrdersForUser(user));
+					System.out.println("FOR CUSTOMER " + user.getEmail() + " seting orders ");
+					user.setUserId(resultSet.getInt("user_id"));
 					users.add(user);
 				}
 
@@ -99,7 +102,7 @@ public class UserDAO {
 
 		} catch (SQLException e) {
 			System.out.println("Cannot create statement ");
-			return users;
+			e.printStackTrace();
 		} finally {
 			try {
 				if (st != null) {
@@ -113,44 +116,15 @@ public class UserDAO {
 				e.printStackTrace();
 			}
 
+		}
+		for(User u : users){
+			System.out.println("USER IS SETTING ORDERS : " + ((User) u).getEmail());
+			if(!(u.isAdmin())){
+				((Customer) u).setOrders(OrderDAO.getInstance().getAllOrdersForUser(u));
+			}
 		}
 		System.out.println("USERS LOADED SUCCESSFULY 5.");
 		return users;
-	}
-
-	private ArrayList<Order> getAllOrdersForUser(User user) {
-		ArrayList<Order> orders = new ArrayList<>();
-		Statement st = null;
-		ResultSet resultSet = null;
-		try {
-			DBManager.getInstance();
-			st = DBManager.getInstance().getConnection().createStatement();
-
-			resultSet = st.executeQuery(
-					"SELECT order_id, client_id, price, date,status FROM users where client_id = "
-							+ user.getUserId() + " ;");
-			while (resultSet.next()) {
-				orders.add(new Order(resultSet.getInt("order_id"), resultSet.getInt("client_id"),
-						resultSet.getDouble("price"), resultSet.getDate("date"), resultSet.getString("Status")));
-			}
-			return orders;
-		} catch (SQLException e) {
-			System.out.println("Cannot create statement ");
-		} finally {
-			try {
-				if (st != null) {
-					st.close();
-				}
-				if (resultSet != null) {
-					resultSet.close();
-				}
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
-		return orders;
-
 	}
 
 	public void updateUser(User user) {

@@ -35,6 +35,7 @@ import com.tm.model.ProductManager;
 import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
+
 import com.tm.tools.EmailSender;
 
 
@@ -233,6 +234,20 @@ public class UserController {
 			String status = "Requested";
 			String email = (String)ses.getAttribute("email");
 			Cart cart =(Cart) ses.getAttribute("cart");
+			if(email == null){
+				ses.setAttribute("notLogedIn", true);
+				return "login";
+			}
+			if(cart.checkCartIfEmpty()){
+				ses.setAttribute("cartIsEmpty", true);
+				return "cart";
+			}
+			User user = UserManager.getInstance().getUser(email);
+			if(user.isAdmin()){
+				ses.setAttribute("adminOrdered", true);
+				cart.removeAllItems();
+				return "cart";
+			}
 			Map<Product, Integer> products = cart.getCartItems();
 			double totalPrice = 0;
 			for(Product p : products.keySet()){
@@ -240,7 +255,6 @@ public class UserController {
 					totalPrice += p.getPrice();
 				}
 			}
-			User user = UserManager.getInstance().getUser(email);
 			java.util.Date utilDate = new Date();
 			java.sql.Date date = new java.sql.Date(utilDate.getTime());
 			Order order = new Order(user.getUserId(), totalPrice, date, status);
@@ -250,7 +264,7 @@ public class UserController {
 			}
 			OrderManager.getInstance().addOrder(order);
 			ProductManager.getInstance().sellProducts(products);
-			ses.invalidate();
+			cart.removeAllItems();
 			return "redirect:index"; 
 		}
 	}

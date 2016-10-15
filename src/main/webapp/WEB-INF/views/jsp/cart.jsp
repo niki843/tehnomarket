@@ -230,7 +230,17 @@
         </div>
     </nav><!-- /.navbar -->
 </header>
-                                        
+        
+            <c:if test="${ cartIsEmpty }">
+           	<font color="red">Количката ви е празна!</font>
+            	<% session.removeAttribute("cartIsEmpty"); %>
+            	</br>
+            </c:if>      
+            <c:if test="${ adminOrdered }">
+           	<font color="red">Администраторите не могат да поръчват!</font>
+            	<% session.removeAttribute("adminOrdered"); %>
+            	</br>
+            </c:if>                              
         <div class="container cart">
     	<div class="sh-heading">         		
     	<div class="col-md-13">
@@ -244,6 +254,7 @@
 	                        <th align="right" class="text-right"></th>
                     	</tr>
                 	</thead>
+                	
     	<c:forEach var="cart" items="${cart}">
 
                 	<tbody>

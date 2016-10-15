@@ -42,8 +42,8 @@ public class EmailSender implements Runnable{
 		     props.put("mail.debug", "true");
 		     props.put("mail.store.protocol", "pop3");
 		     props.put("mail.transport.protocol", "smtp");
-		     final String username = "tehnomarketmail@gmail.com";//
-		     final String password = "1234tehno";
+		     final String username = "mailelectromarket@gmail.com";//
+		     final String password = "electromarket1234";
 		     try{
 		     Session session = Session.getDefaultInstance(props, 
 		                          new Authenticator() {
@@ -55,7 +55,7 @@ public class EmailSender implements Runnable{
 		     Message msg = new MimeMessage(session);
 
 		  // -- Set the FROM and TO fields --
-		     msg.setFrom(new InternetAddress("tehnomarketmail@gmail.com"));
+		     msg.setFrom(new InternetAddress("mailelectromarket@gmail.com"));
 		     msg.setRecipients(Message.RecipientType.TO, 
 		                      InternetAddress.parse(to,false));
 		     msg.setSubject(sub);

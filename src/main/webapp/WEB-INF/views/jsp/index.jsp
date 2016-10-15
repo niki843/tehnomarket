@@ -11,7 +11,7 @@
 <!-- /Added by HTTrack -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-<title>Technomarket - Електромаркет - онлайн магазин</title>
+<title>Electromarket - Електромаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification"

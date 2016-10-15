@@ -113,7 +113,7 @@ public class OrderDAO {
 			ps.setDate(3, order.getDate());
 			ps.setString(4, order.getStatus());
 			ps.executeUpdate();
-			ps = DBManager.getInstance().getConnection().prepareStatement("SELECT order_id FROM orders_products WHERE client_id LIKE (?);");
+			ps = DBManager.getInstance().getConnection().prepareStatement("SELECT order_id FROM orders WHERE client_id LIKE (?);");
 			ps.setInt(1, order.getClient_id());
 			rs = ps.executeQuery();
 			while(rs.next()){
@@ -133,10 +133,12 @@ public class OrderDAO {
 		Map<Product,Integer> products = order.getProducts();
 		for(Product p : products.keySet())
 			try{
-				ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO products_orders(order_id, product_id, product_quantity) VALUES (?,?,?);");
+				ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO orders_products(order_id, product_id, product_quantity) VALUES (?,?,?);");
 				ps.setInt(1, order.getOreder_id());
 				ps.setInt(2, p.getProduct_id());
 				ps.setInt(3, products.get(p));
+				ps.executeUpdate();
+				System.out.println("ADDING PRODUCT " + p.getName() + " \nWITH QUANTITY " + products.get(p) + " IN DB" );
 			}catch(SQLException e){
 				System.out.println("ERROR: ADDING THE PRODUCTS FOR ORDER");
 				e.printStackTrace();

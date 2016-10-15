@@ -245,6 +245,7 @@ public class UserController {
 			java.sql.Date date = new java.sql.Date(utilDate.getTime());
 			Order order = new Order(user.getUserId(), totalPrice, date, status);
 			for(Product p : products.keySet()){
+				System.out.println("Adding product " + p.getName() + " \nWith quantity " +products.get(p));
 				order.addProduct(p, products.get(p));
 			}
 			OrderManager.getInstance().addOrder(order);

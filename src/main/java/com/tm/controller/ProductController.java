@@ -234,6 +234,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/productInfo", method = RequestMethod.GET)
 	public String productInfo(Model model, HttpServletRequest request){
+		setCategoriesAndCart(request);
 		System.out.println("GETING TO REDIRECT PART");
 		String id = request.getParameter("product");
 		if(!(id.matches("[0-9]+"))){
@@ -322,4 +323,18 @@ public class ProductController {
 		mod.addAttribute("foundProducts", foundProduct);
 		return "searchResults";
 	}
+	
+	public void setCategoriesAndCart(HttpServletRequest request){
+		ProductDAO.getInstance().getModelFromId(-1);
+		ProductDAO.getInstance().getTypeFromId(-1);
+		ProductDAO.getInstance().getUperTypeFromId(-1);
+		HttpSession session = request.getSession();
+		Cart shoppingCart = (Cart) session.getAttribute("cart");
+		if (shoppingCart == null) {
+			System.out.println("Adding Cart");
+			shoppingCart = new Cart();
+			session.setAttribute("cart", shoppingCart);
+		}
+	}
+	
 }

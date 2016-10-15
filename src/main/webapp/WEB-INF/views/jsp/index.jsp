@@ -142,11 +142,9 @@
 							<link itemprop="url" href="/Technomarket/index" />
 							<form itemprop="potentialAction" itemscope
 								itemtype="http://schema.org/SearchAction"
-								action="/Technomarket/searchProduct" method="get"
+								action="/Technomarket/searchProduct" method="GET"
 								class="input-group">
-								<meta itemprop="target"
-									content="http://www.technomarket.bg/search/?query={query}" />
-								<input itemprop="query-input" type="text" name="query"
+								<input itemprop="query-input" type="text" name="search"
 									placeholder="Търси..." class="form-control"> <span
 									class="search-bar"></span> <span class="input-group-btn">
 									<button class="btn btn-search" type="submit">

@@ -306,4 +306,20 @@ public class ProductController {
 	
 		return "index";
 	}
+	
+	@RequestMapping(value = "/searchProduct", method = RequestMethod.GET)
+	public String searchProduct(Model mod, HttpServletRequest request) {
+		
+		Map<Integer, Product> products = ProductManager.getInstance().getAllProducts();
+		HashSet<Product> foundProduct = new HashSet<Product>();
+		String search = request.getParameter("search").toLowerCase();
+		for(Product p : products.values()){
+			if(p.getName().toLowerCase().contains(search)){
+				foundProduct.add(p);
+			}
+		}
+		mod.addAttribute("searched",search);
+		mod.addAttribute("foundProducts", foundProduct);
+		return "searchResults";
+	}
 }

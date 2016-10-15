@@ -243,10 +243,22 @@
                                     </div><!-- /.section-heading -->
                                 <div class="row">
                                                             	<div class="col-third" >
-
+	
+     <c:if test="${ invalidEmail }">
+     	<font color="red">Емайл-ът който сте въвели е невалиде!</font>
+    	<% session.removeAttribute("invalidEmail"); %>
+     </c:if>
+	<c:if test="${ invalidPhone }">
+     	<font color="red">Телефонът който сте въвели е невалиден!</font>
+    	<% session.removeAttribute("invalidPhone"); %>
+     </c:if>
+	<c:if test="${ emailSent }">
+     	<font color="red">Успешно изпратихте запитване!</font>
+    	<% session.removeAttribute("emailSent"); %>
+     </c:if>
     <div class="container-inner">
         <div class="container-cell">
-                                    <form name="contact_form" method="post" action="#" class="form-horizontal"><div id="contact_form"><div class="form-group"><label  class="col-sm-6 control-label required" for="contact_form_name">
+                                    <form name="contact_form" method="post" action="/Technomarket/sendMessage" class="form-horizontal"><div id="contact_form"><div class="form-group"><label  class="col-sm-6 control-label required" for="contact_form_name">
                     Име
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="contact_form_name" name="contact_form[name]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="contact_form_email">
                     E-mail
@@ -254,9 +266,7 @@
                     Телефон
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="contact_form_tel" name="contact_form[tel]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="contact_form_message">
                     Съобщение
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><textarea id="contact_form_message" name="contact_form[message]" required="required" rows="5" class="form-control"></textarea><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="contact_form_captcha">
-                    Код за сигурност
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><img class="captcha" id="captcha_57f39bc55d4db" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2ODApLCBxdWFsaXR5ID0gMzAK/9sAQwAbEhQXFBEbFxYXHhwbIChCKyglJShROj0wQmBVZWRfVV1baniZgWpxkHNbXYW1hpCeo6utq2eAvMm6pseZqKuk/9sAQwEcHh4oIyhOKytOpG5dbqSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSk/8AAEQgAIAB4AwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A6ao513QSL6qRUlMeRExvdVz0ycZoAzLESTRmFXKKDuZh1+lOYPY3SfOWjbrmjTpEillVnUA9CT1p2qPHIkZR1Ygnoc0gNKsqymWGSZmyc8ADqeatrf2+0bpOcc/KapWMsMUzvK2P7vBNAFuO/RpRG8bRk9M1crJ1GeKYxmJskZzwRV0X9tjmT/x00AStPCjbWkUEdiacjo4yjKw9jmqDm3Ll5LWcsx7r/wDXqvMyROsluksR/wBocUAbNFZt2wuogRbzBx0OzimJqDJbmNgfMHAJouBq0VmWcc8RMv2YuzdCWAxVrzrn/n0/8iCmBZoqKF5Xz5kXl46fMDmigCWmvGkmN6K2OmRmnUUAZsUGNQcGLMfPVeB3qe7tFeHEUaB89gBVuigCK3Ro4ER8blGOKpaVnMxAyeP61pVFDbxwZ8tcbuvOaAKWq7sRbsDr0/CrN0XitmcOdwAAxxUk9vHPt8wE7enNPkRZEKMMqRg0CsZ9rYpPCJZGYlvQ1De26QMiI7MTzgnpVpbKaIkQ3BVT2IpkljJ58bAlxkF2J560hl4lYosscKo61jySGSc3Aj+QMO3H41oXkE1wQqsqxjrknJqZII0g8nblcYPvQAsMqzRh0PB/SpKpW1rNbTHaymI9ieau0wCiiigD/9k=" alt="" title="captcha" width="120" height="32" /><input type="text" id="contact_form_captcha" name="contact_form[captcha]" required="required" class="captcha form-control" /><span class="bar"></span></div></div>    <div class="form-group form-submit">
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><textarea id="contact_form_message" name="contact_form[message]" required="required" rows="5" class="form-control"></textarea><span class="bar"></span></div></div><div class="form-group">
     	<div class="col-sm-6"></div>
         <div class="col-sm-10">
             <button type="submit" id="contact_form_submit" name="contact_form[submit]" class="btn-default btn">Изпрати</button>
@@ -280,14 +290,11 @@
 <p><small>на цената на един градски разговор</small></p>
 
 <hr />
-<p><strong>Е-мейл:</strong> online@electroamrket.bg</p>
+<p><strong>Е-мейл:</strong> mailelectromarket@gmail.com</p>
 
-<p><small class="color-gray">Моля, за предявяване на рекламация за уреди закупени On-Line моля използвайте: onlinereklamacii@electromarket.bg</small></p>
+<p><small class="color-gray">Моля, за предявяване на рекламация за уреди закупени On-Line моля използвайте:  mailelectromarket@gmail.com</small></p>
 
-
-<p><strong>За мобилни телефони сканирайте кода с Facebook приложението &bdquo;Messenger&ldquo;</strong></p>
-
-<p><a href="http://m.me/technomarket"><img alt="" src="img/messenger_code.png" /></a></p>
+<p><img alt="" src="img/messenger_code.png" /></a></p>
 
 <p>&nbsp;</p>
             </div>
@@ -306,15 +313,15 @@
 <p><small>на цената на един градски разговор</small></p>
 
 <hr />
-<address><strong>Е-мейл:</strong> <a href="mailto:corporate@technomarket.bg">corporate@electromarket.bg</a><br />
-<strong><span class="title" style="height: 25px;">Адрес:</span></strong> гр.София п.к. 1138 бул.Цариградско шосе 361</address>
+<address><strong>Е-мейл:</strong> mailelectromarket@gmail.com<br />
+<strong><span class="title" style="height: 25px;">Адрес:</span></strong> гр.София бул. България 69</address>
 
 <hr />
 <h3>Централен офис</h3>
 
-<address><strong><span class="title" style="height: 25px;">Адрес:</span></strong> гр.София п.к. 1138 бул.&nbsp;Цариградско шосе 361<br />
-<strong>Е-мейл:</strong> info@electromarket.bg</a>
-Тел: 02&nbsp;9421 101</address>
+<address><strong><span class="title" style="height: 25px;">Адрес:</span></strong> гр.София бул.&nbsp;България 69<br />
+<strong>Е-мейл:</strong> 
+Тел: 0888 372 407</address>
             </div>
         </div>
     </div>

@@ -4,6 +4,8 @@ package com.tm.controller;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -275,6 +277,46 @@ public class UserController {
 		Customer customer = (Customer) UserManager.getInstance().getUser(email);
 		model.addAttribute("customer", customer);
 		return "profile-my-orders";
+	}
+
+	@RequestMapping(value = "/sendMessage", method = RequestMethod.POST)
+	public String sendMessage(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String name = request.getParameter("contact_form[name]");
+		String email = request.getParameter("contact_form[email]");
+		String telephone = request.getParameter("contact_form[tel]");
+		StringBuilder builder = new StringBuilder(request.getParameter("contact_form[message]"));
+		builder.append("\nОт: ");
+		builder.append(name);
+		builder.append("\nТелефон: ");
+		builder.append(telephone);
+		builder.append("\nЕмайл: ");
+		builder.append(email);
+		String message = builder.toString();
+		String subMessage = "Има допитване от клиент";
+		ExecutorService executor = Executors.newSingleThreadExecutor();
+		boolean shouldReturn = false;
+		if(!(new EmailValidator().validate(email))){
+			session.setAttribute("invalidEmail", true);
+			shouldReturn = true;
+		}
+		if(!(telephone.matches("[0-9]+") && telephone.length() >= 5)){
+			session.setAttribute("invalidPhone", true);
+			shouldReturn = true;
+		}
+		if(shouldReturn){
+			return "contacts";
+		}
+		Map<String, User> users = UserManager.getInstance().getAllUsers();
+		for(User u : users.values()){
+			if(u.isAdmin()){
+				Thread t = new Thread(new EmailSender(u.getEmail(), subMessage, message));
+				executor.execute(t);
+				session.setAttribute("emailSent", true);
+				return "contacts";
+			}
+		}
+		return "contacts";
 	}
 	
 	

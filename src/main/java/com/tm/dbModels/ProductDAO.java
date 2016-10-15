@@ -287,7 +287,10 @@ public class ProductDAO {
 				st.setInt(1, i);	
 				rs = st.executeQuery();
 				while(rs.next()){
-					productsInSale.get(i).setPrice(rs.getDouble("sale_price"));
+					Product product = productsInSale.get(i);
+					product.setOldPrice(product.getPrice());
+					System.out.println("Seting the old price " + product.getOldPrice());
+					product.setPrice(rs.getDouble("sale_price"));
 					System.out.println("SETING NEW PRICE TO: " + productsInSale.get(i).getName());
 				}
 			} catch (SQLException e) {

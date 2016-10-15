@@ -313,8 +313,21 @@
 								<var itemprop="offers" itemscope
 									itemtype="http://schema.org/Offer" class="price">
 									<meta itemprop="priceCurrency" content="BGN" />
-									<span itemprop="price" class="new">${ products.getPrice() }
-										лв.</span>
+									<c:choose>
+									    <c:when test="${ products.isInSale() }">
+											<span itemprop="price" class="new">
+												${ products.getPrice() }лв.
+											</span>
+											<span itemprop="price" class="old">
+												${ products.getOldPrice() }лв.
+											</span>
+									    </c:when>    
+									    <c:otherwise>
+											<span itemprop="price" class="new">
+												${ products.getPrice() }лв.
+											</span>
+									    </c:otherwise>
+									</c:choose>
 									<div>
 										<link itemprop="itemCondition"
 											href="http://schema.org/NewCondition" />

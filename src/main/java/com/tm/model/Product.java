@@ -17,10 +17,10 @@ public class Product {
 	private int quantity;
 	private boolean inSale;
 	private double price;
+	private double oldPrice;
 
 	public Product(String model, String prodct_type, String upperType, String name, String art_number,
 			String ean, String info, File picture, int quantity, boolean inSale, double price) {
-		this.product_id = product_id;
 		this.model = model;
 		this.prodct_type = prodct_type;
 		this.name = name;
@@ -33,6 +33,18 @@ public class Product {
 		this.price = price;
 		this.upperType = upperType;
 		this.relativePath = "img/"+picture.getName();
+	}
+	
+	public void setOldPrice(double oldPrice){
+		if(oldPrice <= this.oldPrice){
+			return;
+		}else{
+			this.oldPrice = oldPrice;
+		}
+	}
+	
+	public double getOldPrice(){
+		return oldPrice;
 	}
 	
 	public String getRealtivePath(){

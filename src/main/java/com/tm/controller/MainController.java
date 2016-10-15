@@ -72,8 +72,8 @@ public class MainController {
 	public String cart(Model mod, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		Cart shoppingCart = (Cart) session.getAttribute("cart");
-		Map<Product,Integer > cart= shoppingCart.getCartItems();
-		mod.addAttribute("cart", cart);
+		Map<Product,Integer > cartProducts= shoppingCart.getCartItems();
+		mod.addAttribute("cartProducts", cartProducts);
 		return "cart";
 	}
 

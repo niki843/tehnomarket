@@ -40,5 +40,9 @@ public class Cart {
 	public void removeAllItems(){
 		cartItems = new HashMap<>();
 	}
+	
+	public void removeProduct(Product p){
+		cartItems.remove(p);
+	}
 
 }

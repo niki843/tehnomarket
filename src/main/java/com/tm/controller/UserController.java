@@ -1,15 +1,8 @@
 
 package com.tm.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +11,12 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.Cart;
 import com.tm.model.Customer;
 import com.tm.model.Order;
@@ -233,11 +224,12 @@ public class UserController {
 			HttpSession ses = request.getSession();
 			String status = "Requested";
 			String email = (String)ses.getAttribute("email");
-			Cart cart =(Cart) ses.getAttribute("cart");
+			boolean shouldReturn = false;
 			if(email == null){
 				ses.setAttribute("notLogedIn", true);
 				return "login";
 			}
+			Cart cart =(Cart) ses.getAttribute("cart");
 			if(cart.checkCartIfEmpty()){
 				ses.setAttribute("cartIsEmpty", true);
 				return "cart";
@@ -249,6 +241,13 @@ public class UserController {
 				return "cart";
 			}
 			Map<Product, Integer> products = cart.getCartItems();
+			for(Product p : products.keySet()){
+				if(p.getQuantity() < products.get(p)){
+					ses.setAttribute("notEnoughProducts", true);
+					ses.setAttribute("nameForProduct", p.getName());
+					return "cart";
+				}
+			}
 			double totalPrice = 0;
 			for(Product p : products.keySet()){
 				for(int i = 0; i < products.get(p); i++){

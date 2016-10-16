@@ -225,6 +225,12 @@ public class MainController {
 	public String deleteProduct(Model model, HttpServletRequest request) {
 		setCategoriesAndCart(request);
 		return "admin-delete-product";
-	}
+	 }
+	
+	@RequestMapping(value = "/getChaneQuantity", method = RequestMethod.GET)
+	public String getChaneQuantity(Model model, HttpServletRequest request) {
+		setCategoriesAndCart(request);
+		return "admin-change-quantity";
+	 }
 
 }

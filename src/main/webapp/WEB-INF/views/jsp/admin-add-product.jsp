@@ -165,6 +165,8 @@
                                 											<li><a href="/Technomarket/adminProfile">Профил</a></li>
                 															<li><a href="/Technomarket/addProduct">Добави продук</a></li>
                 															<li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+                															<li><a href="/Technomarket/deleteProduct">Премахни продукт</a></li>
+                															<li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
                                 											<li><a href="/Technomarket/logOut">Изход</a></li>
 																	</c:otherwise>
 																</c:choose>
@@ -242,6 +244,8 @@
                 <li><a href="/Technomarket/adminProfile">Моят профил</a></li>
                 <li><a href="/Technomarket/addProduct">Добави продук</a></li>
                 <li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+                <li><a href="/Technomarket/deleteProduct">Премахни продукт</a></li>
+                <li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
                 <li><a href="/Technomarket/logOut">Изход</a></li>
             </ul>
         </div> 
@@ -443,7 +447,7 @@
 											<input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" class="form-control" value="Krjne80piNBsqAJqOJMu6HN5W9V7cPDmBpDmv2Am1k8" />
 				<div class="form-group">
                     <div class="col-sm-offset-6 col-sm-10">
-                         <input class="btn btn-tm" type="submit" value="Регистрация" />
+                         <input class="btn btn-tm" type="submit" value="Дабави" />
                     </div>
                </div>   
             </form>

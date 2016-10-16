@@ -247,7 +247,7 @@
                 <li><a href="/Technomarket/addProduct">Добави продук</a></li>
                 <li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
                 <li><a href="/Technomarket/deleteProduct">Премахни продукт</a></li>
-                <li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
+				<li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
                 <li><a href="/Technomarket/logOut">Изход</a></li>
             </ul>
         </div> 
@@ -258,19 +258,30 @@
 	    	
     </div>
     		
-        	<h2>Премахни продукт</h2>
-            <c:if test="${ noProduct }">
-            	<font color="red">Не сте избрали продукт!</font>
+        	<h2>Смени количество</h2>
+        	<c:if test="${ quantityContainsChars }">
+            	<font color="red">Количествотот може да съдържа само цифри!</font>
+            	<% session.removeAttribute("quantityContainsChars"); %>
+            	</br>
+            </c:if>
+        	<c:if test="${ quantityChangeComplete }">
+            	<font color="red">Успешно сменихте количеството!</font>
+            	<% session.removeAttribute("quantityChangeComplete"); %>
+            	</br>
+            </c:if>
+        	<c:if test="${ noProduct }">
+            	<font color="red">Трябва да изберете продукт!</font>
             	<% session.removeAttribute("noProduct"); %>
+            	</br>
             </c:if>
-            <c:if test="${ deleteComplete }">
-            	<font color="red">Успешно изтрихте продукта!</font>
-            	<% session.removeAttribute("deleteComplete"); %>
-            </c:if>
+            
         	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
         	
-            <form action="/Technomarket/removeProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
-                                       <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_product">
+            <form action="/Technomarket/changeQantity"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
+                                       <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_new_quantity">
+                    Нова количество
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_new_quantity" name="fos_user_registration_form[new_quantity]" required="required" class="form-control" /><span class="bar"></span></div></div>
+                                            <div class="form-group"><label  class="col-sm-6 control-label required">
                     Продукт
                                             <span class="required" title="This field is required">*</span>
 											</label><div class="col-sm-10 control-bar">
@@ -278,14 +289,14 @@
 											<select id="fos_user_registration_form_product" name="fos_user_registration_form[product]" required="required" class="form-control">
 											<option value="" selected="selected">продукт</option>
                                             <% for(Integer i : products.keySet()){%>
-                                            	<option value="<%= i %>"><%= products.get(i).getName() + " цена:" + products.get(i).getPrice() %></option>
+                                            	<option value="<%= i %>"><%= products.get(i).getName() + " цена:" + products.get(i).getPrice()%></option>
                                             <%} %>
 											</select></div><span class="bar">
 											</span></div></div>
 											<input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" class="form-control" value="Krjne80piNBsqAJqOJMu6HN5W9V7cPDmBpDmv2Am1k8" />
 				<div class="form-group">
                     <div class="col-sm-offset-6 col-sm-10">
-                         <input class="btn btn-tm" type="submit" value="Изтрий продукт" />
+                         <input class="btn btn-tm" type="submit" value="Смени" />
                     </div>
                </div>   
             </form>

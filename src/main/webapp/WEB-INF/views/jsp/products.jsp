@@ -207,7 +207,6 @@
 													<li><a href="/Technomarket/profile">Профил</a></li>
 													<li><a href="/Technomarket/addProduct">Добави
 															продук</a></li>
-													<li><a href="/Technomarket/deleteProduct">Премахни продук</a></li>
 													<li><a href="/Technomarket/addSale">Добави
 															промоция за продукт</a></li>
 													<li><a href="/Technomarket/logOut">Изход</a></li>

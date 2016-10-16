@@ -306,7 +306,7 @@ public class ProductDAO {
 				while(rs.next()){
 					Product product = productsInSale.get(i);
 					product.setOldPrice(product.getPrice());
-					System.out.println("Seting the old price " + product.getOldPrice());
+					System.out.println("Seting the old price " + product.getOldPrice() + " for product " + product.getName());
 					product.setPrice(rs.getDouble("sale_price"));
 					System.out.println("SETING NEW PRICE TO: " + productsInSale.get(i).getName());
 				}
@@ -468,17 +468,60 @@ public class ProductDAO {
 		}
 	}
 	
-	public void removeProduct(int id) {
+	public void removeProduct(Product p){
 		PreparedStatement ps = null;
+		System.out.println("IS PRODUCT IN SALE: " + p.isInSale());
+		if(p.isInSale()){
+			try {
+				ps = DBManager.getInstance().getConnection().prepareStatement("DELETE FROM products_sales WHERE product_id LIKE (?)");
+				ps.setInt(1, p.getProduct_id());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				System.out.println("ERROR: WITH PREPARED STATEMENT IN PRODUCT DAO 10");
+				e.printStackTrace();
+			}finally{
+				DBManager.getInstance().closeConnection();
+			}
+		}
 		try {
-			ps = DBManager.getInstance().getConnection()
-					.prepareStatement("DELETE  FROM products where product_id LIKE (?);");
-			ps.setInt(1, id);
+			ps = DBManager.getInstance().getConnection().prepareStatement("DELETE FROM products WHERE product_id LIKE (?);");
+			ps.setInt(1, p.getProduct_id());
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 10");
+			System.out.println("ERROR: WITH PREPARED STATEMENT IN PRODUCT DAO 11");
 			e.printStackTrace();
+		}finally{
+			DBManager.getInstance().closeConnection();
 		}
+	}
+	
+	public void changeQuantity(Product p,Integer quantity){
+		PreparedStatement ps = null;
+		if(p.isInSale()){
+			try {
+				ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products_sales SET quantity_in_stock=? WHERE product_id LIKE (?);");
+				ps.setInt(1, quantity);
+				ps.setInt(2, p.getProduct_id());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				System.out.println("ERROR: WITH PREPARED STATEMENT IN PRODUCT DAO 11");
+				e.printStackTrace();
+			}finally{
+				DBManager.getInstance().closeConnection();
+			}
+		}
+		try {
+			ps = DBManager.getInstance().getConnection().prepareStatement("UPDATE products SET quantity_in_stock=? WHERE product_id LIKE (?);");
+			ps.setInt(1, quantity);
+			ps.setInt(2, p.getProduct_id());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("ERROR: WITH PREPARED STATEMENT IN PRODUCT DAO 12");
+			e.printStackTrace();
+		}finally{
+			DBManager.getInstance().closeConnection();
+		}
+		
 	}
 	
 }

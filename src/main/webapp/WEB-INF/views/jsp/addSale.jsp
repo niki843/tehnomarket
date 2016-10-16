@@ -167,6 +167,8 @@
                                 											<li><a href="/Technomarket/adminProfile">Профил</a></li>
                 															<li><a href="/Technomarket/addProduct">Добави продук</a></li>
                 															<li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+                															<li><a href="/Technomarket/deleteProduct">Премахни продукт</a></li>
+                															<li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
                                 											<li><a href="/Technomarket/logOut">Изход</a></li>
 																	</c:otherwise>
 																</c:choose>
@@ -244,6 +246,8 @@
                 <li><a href="/Technomarket/adminProfile">Моят профил</a></li>
                 <li><a href="/Technomarket/addProduct">Добави продук</a></li>
                 <li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+                <li><a href="/Technomarket/deleteProduct">Премахни продукт</a></li>
+                <li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
                 <li><a href="/Technomarket/logOut">Изход</a></li>
             </ul>
         </div> 

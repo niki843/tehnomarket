@@ -85,9 +85,14 @@ public class ProductManager {
 		
 	}
 	
-	public void removeProduct(int id) {
-		products.remove(id);
-		ProductDAO.getInstance().removeProduct(id);
+	public void removeProduct(Product p){
+		ProductDAO.getInstance().removeProduct(p);
+		products.remove(p.getProduct_id());
+	}
+	
+	public void changeQuantity(Product p, Integer quantity){
+		ProductDAO.getInstance().changeQuantity(p,quantity);
+		products.get(p.getProduct_id()).setQuantity(quantity);
 	}
 	
 	

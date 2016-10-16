@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: Technomarket
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Ivan
+Built-By: niki
 Implementation-Vendor-Id: com.tm
 Build-Jdk: 1.8.0_101
 Created-By: Maven Integration for Eclipse

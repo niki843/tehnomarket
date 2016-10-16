@@ -4,6 +4,7 @@ encoding//src/main/java/com/tm/controller/UserController.java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/addSale.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/admin-add-product.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/jsp/admin-change-quantity.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/admin-delete-product.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/admin-profile.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/jsp/apple.jsp=UTF-8

@@ -41,9 +41,7 @@ import com.tm.tools.EmailSender;
 public class ProductController {
 
 	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
-
-	private static final String FILE_LOCATIONIVAN = "D:/Eclipse/Technomarket/Technomarket/src/main/webapp/static/img/";
-
+	private static final String FILE_LOCATIONIVAN = "C:/Users/Ivan/Desktop/Technomarket/src/main/webapp/static/img/";
 	private static final String SUB = "We have a new sale!";
 
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
@@ -98,6 +96,7 @@ public class ProductController {
 			}
 		}
 
+
 		if (secondDescription.isEmpty()) {
 			request.getSession().setAttribute("secondDescEmpty", true);
 			shouldReturn = true;
@@ -108,6 +107,7 @@ public class ProductController {
 			}
 		}
 
+
 		if (thirdDescription.isEmpty()) {
 			request.getSession().setAttribute("thirdDescEmpty", true);
 			shouldReturn = true;
@@ -117,6 +117,7 @@ public class ProductController {
 				shouldReturn = true;
 			}
 		}
+
 
 		if (fourthDescription.isEmpty()) {
 			request.getSession().setAttribute("fourthDescEmpty", true);
@@ -220,7 +221,7 @@ public class ProductController {
 			return "admin-add-product";
 		}
 
-		File picture = new File(FILE_LOCATIONIVAN + multiPartFile.getOriginalFilename());
+		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());
 
 		try {
 			picture.createNewFile();
@@ -245,10 +246,19 @@ public class ProductController {
 		descriptions.add(secondDescription);
 		descriptions.add(thirdDescription);
 		descriptions.add(fourthDescription);
-
-		Product product = new Product(model, type, upperType, name, artNumb, ean, descriptions, picture, quantity1,
-				false, price1);
-
+		System.out.println("model: " + model);
+		System.out.println("type: " + type);
+		System.out.println("upperType: " + upperType);
+		System.out.println("name: " + name);
+		System.out.println("artNumb: " + artNumb);
+		System.out.println("ean: " + ean);
+		System.out.println("descriptions1: " + descriptions.get(0));
+		System.out.println("picture: " + picture);
+		System.out.println("quantity1: " + quantity1);
+		System.out.println("price1: " + price1);
+		System.out.println("descriptions2: " + descriptions.get(1));
+		System.out.println("descriptions3: " + descriptions.get(2));
+		Product product = new Product(model, type, upperType, name, artNumb, ean, descriptions, picture, quantity1, false,price1);
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
 		System.out.println(product.getProduct_id());
@@ -278,25 +288,23 @@ public class ProductController {
 		mod.addAttribute("products", products);
 		return "products";
 	}
-
+	
 	@RequestMapping(value = "/productInfo", method = RequestMethod.GET)
-
-	public String productInfo(Model model, HttpServletRequest request) {
-
+	public String productInfo(Model model, HttpServletRequest request){
 		setCategoriesAndCart(request);
 		System.out.println("GETING TO REDIRECT PART");
 		String id = request.getParameter("product");
-		if (!(id.matches("[0-9]+"))) {
+		if(!(id.matches("[0-9]+"))){
 			return "index";
 		}
 		Integer productId = Integer.parseInt(id);
 		model.addAttribute("productP", ProductManager.getInstance().getProductById(productId));
-
+		
 		return "productInfo";
 	}
-
+	
 	@RequestMapping(value = "/addNewSale", method = RequestMethod.POST)
-	public String addNewSale(Model model, HttpServletRequest request) {
+	public String addNewSale(Model model, HttpServletRequest request){
 		String productSalePrice = request.getParameter("fos_user_registration_form[new_price]");
 		String productId = request.getParameter("fos_user_registration_form[product]");
 		boolean shouldReturn = false;
@@ -304,42 +312,41 @@ public class ProductController {
 		Double productSalePriceDouble = null;
 		ProductManager prodMan = ProductManager.getInstance();
 		Product product = null;
-		if (productId.isEmpty()) {
+		if(productId.isEmpty()){
 			request.getSession().setAttribute("productEmpty", true);
 			shouldReturn = true;
-		} else {
+		}else{
 			productIdInt = Integer.parseInt(productId);
 			product = prodMan.getProductById(productIdInt);
-			if (productSalePrice.matches("[0-9]+")) {
+			if(productSalePrice.matches("[0-9]+")){
 				productSalePriceDouble = Double.parseDouble(productSalePrice);
-			} else {
-				if (productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")) {
+			}else{
+				if(productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")){
 					productSalePriceDouble = Double.parseDouble(productSalePrice);
-					if (productSalePriceDouble <= product.getPrice()) {
+					if(productSalePriceDouble <= product.getPrice()){
 						request.getSession().setAttribute("priceTooLarge", true);
 						shouldReturn = true;
 					}
-				} else {
+				}else{
 					request.getSession().setAttribute("newPriceInvalid", true);
 					shouldReturn = true;
 				}
-
+					
 			}
 		}
-
-		if (shouldReturn) {
+		
+		if(shouldReturn){
 			return "addSale";
 		}
 		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
-
-		Map<String, User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
+		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
 		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
 		saleMessage.append(product.getName());
 		ExecutorService executor;
-		if (subscribedUsers != null) {
+		if(subscribedUsers != null){
 			saleMessage.append("\nCheck it out on our site");
-			for (String s : subscribedUsers.keySet()) {
+			for(String s : subscribedUsers.keySet()){
 				Runnable senderThread = new EmailSender(s, SUB, saleMessage.toString());
 				Thread t = new Thread(senderThread);
 				t.start();
@@ -347,6 +354,7 @@ public class ProductController {
 		}
 		return "addSale";
 	}
+	
 
 	@RequestMapping(value = "/addProductInCart", method = RequestMethod.GET)
 	public String addProductInCart(Model mod, HttpServletRequest request) {
@@ -355,27 +363,61 @@ public class ProductController {
 		int id = Integer.parseInt(request.getParameter("id").trim());
 		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
 		session.setAttribute("cart", shoppingCart);
-
+	
 		return "index";
 	}
-
+	
 	@RequestMapping(value = "/searchProduct", method = RequestMethod.GET)
 	public String searchProduct(Model mod, HttpServletRequest request) {
-
+		
 		Map<Integer, Product> products = ProductManager.getInstance().getAllProducts();
 		HashSet<Product> foundProduct = new HashSet<Product>();
 		String search = request.getParameter("search").toLowerCase();
-		for (Product p : products.values()) {
-			if (p.getName().toLowerCase().contains(search)) {
+		for(Product p : products.values()){
+			if(p.getName().toLowerCase().contains(search)){
 				foundProduct.add(p);
 			}
 		}
-		mod.addAttribute("searched", search);
+		mod.addAttribute("searched",search);
 		mod.addAttribute("foundProducts", foundProduct);
 		return "searchResults";
 	}
-
-	public void setCategoriesAndCart(HttpServletRequest request) {
+	
+	@RequestMapping(value = "/removeProduct", method = RequestMethod.POST)
+	public String removeProduct(Model mod, HttpServletRequest request) {
+		String productId = request.getParameter("fos_user_registration_form[product]");
+		if(productId.isEmpty()){
+			request.getSession().setAttribute("noProduct", true);
+			return "admin-delete-product";
+		}
+		Integer product = Integer.parseInt(productId);
+		Product p = ProductManager.getInstance().getProductById(product);
+		ProductManager.getInstance().removeProduct(p);
+		request.getSession().setAttribute("deleteComplete", true);
+		return "admin-delete-product";
+	}
+	
+	@RequestMapping(value = "/changeQantity", method = RequestMethod.POST)
+	public String changeQantity(Model mod, HttpServletRequest request) {
+		String newQuantity = request.getParameter("fos_user_registration_form[new_quantity]");
+		String productId = request.getParameter("fos_user_registration_form[product]");
+		if(!(newQuantity.matches("[0-9]+"))){
+			request.getSession().setAttribute("quantityContainsChars", true);
+			return "admin-change-quantity";
+		}
+		if(productId.isEmpty()){
+			request.getSession().setAttribute("noProduct", true);
+			return "admin-change-quantity";
+		}
+		Integer product = Integer.parseInt(productId);
+		Integer quantity = Integer.parseInt(newQuantity);
+		Product p = ProductManager.getInstance().getProductById(product);
+		ProductManager.getInstance().changeQuantity(p,quantity);
+		request.getSession().setAttribute("quantityChangeComplete", true);
+		return "admin-change-quantity";
+	}
+	
+	public void setCategoriesAndCart(HttpServletRequest request){
 		ProductDAO.getInstance().getModelFromId(-1);
 		ProductDAO.getInstance().getTypeFromId(-1);
 		ProductDAO.getInstance().getUperTypeFromId(-1);
@@ -387,16 +429,5 @@ public class ProductController {
 			session.setAttribute("cart", shoppingCart);
 		}
 	}
-
-	@RequestMapping(value = "/removeProduct", method = RequestMethod.POST)
-	public String removeProduct(Model mod, HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("fos_user_registration_form[product]"));
-		System.out.println(id);
-		if (id >= 0) {
-			ProductManager.getInstance().removeProduct(id);
-		}
-		return "index";
-
-	}
-
+	
 }

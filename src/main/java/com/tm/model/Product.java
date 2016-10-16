@@ -39,11 +39,7 @@ public class Product {
 	}
 	
 	public void setOldPrice(double oldPrice){
-		if(oldPrice <= this.oldPrice){
-			return;
-		}else{
 			this.oldPrice = oldPrice;
-		}
 	}
 	
 	public double getOldPrice(){

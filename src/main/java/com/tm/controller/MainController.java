@@ -224,7 +224,11 @@ public class MainController {
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
 	public String deleteProduct(Model model, HttpServletRequest request) {
 		setCategoriesAndCart(request);
+<<<<<<< HEAD
 		return "admin-delete-product";
+=======
+		return "deleteProduct";
+>>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 	}
 
 }

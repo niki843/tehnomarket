@@ -14,7 +14,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:title"
 	content="Телевизори - Технoмаркет - онлайн магазин" />
+<<<<<<< HEAD
 <meta property="og:image" content="img/product-thumb.svg" />
+=======
+<meta property="og:image"
+	content="img/product-thumb.svg" />
+>>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 <title>Продукти - Електромаркет - онлайн магазин</title>
 <meta name="Description"
 	CONTENT="Най-добрите цени на телевизори! Купи бързо и лесно онлайн или от магазин на Техномаркет. LG, SAMSUNG, PHILIPS, SONY, TOSHIBA и много други на страхотни цени. Купи бързо и лесно онлайн с безплатна доставака!">
@@ -282,6 +287,7 @@
 			</div>
 		</nav>
 		<!-- /.navbar -->
+<<<<<<< HEAD
 	</header>
 
 	<div class="">
@@ -388,6 +394,89 @@
 
 
 	</div>
+=======
+</header>
+                                        
+            <div class="">
+    
+    
+
+                    <section class="">
+            <div class="container">            	
+                    
+                	    
+    		<div class="row">
+            <figure itemscope itemtype="http://schema.org/Product" class="product product-details clearfix">
+                <div class="product-thumb photoswipe">
+                    <div class="product-heading">
+                                                <div class="product-category"><a href="../laptopi.html"><i class="icon-arrow-long-left"></i> Лаптопи</a></div>
+                                                <h1><span itemprop="name">${ productP.getName() }</span></h1>
+                        <div class="product-model">Арт.№: <span itemprop="productID">${ productP.getArt_number() }</span>, EAN: <span itemprop="gtin13">${ productP.getEan() }</span></div>
+                    </div>                                
+                    <a href="#" class="product-image"  data-photoswipe="//cdn.technomarket.bg/uploads/library/product/09141527/563a2030654cf.png">
+                    	                        <img itemprop="image" src="${ productP.getRealtivePath() }" alt="Technomarket" />
+                    	                    </a>  
+                    <div class="product-gallery">
+                                        </div><!--/.product-gallery-->
+
+                                    </div><!--.product-thumb-->
+                <figcaption>
+                    <div class="product-name">    
+                                                 
+                        
+                        
+												
+	                                            <ul itemprop="description" class="product-description moreLines">
+													<c:forEach items="${productP.getAllDescriptions()}" var="description">
+	                                                            <li>${ description }</li>
+                                                     </c:forEach>
+	                                            </ul>
+                                                <div class="fb-share-button" data-href="http://www.technomarket.bg/laptopi/acer-aspire-e5-571g-35e2-09141527" data-layout="button"></div>
+                        <div class="g-plus" data-width="150" data-action="share" data-href="http://www.technomarket.bg/laptopi/acer-aspire-e5-571g-35e2-09141527"></div>
+                    </div>
+                                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-price">
+                    	<meta itemprop="priceCurrency" content="BGN" />
+                    	<div class="price-row price-online clearfix">
+                        	<div class="price-title">Купи сега</div>
+                                                        <var class="price">
+
+                                <span itemprop="price" class="new">${ productP.getPrice() }лв.</span>
+                            </var>
+
+                        </div>      
+                        <div class="extra-warranty">
+							Стандартна гаранция - 24 месеца
+                        </div>    
+                        <div class="buy-now">
+                               <button type="submit" class="btn btn-tm">
+                                    <i class="icon-basket"></i><a href="/Technomarket/addProductInCart?id=${ productP.getProduct_id() }"> Купи онлайн</a>
+                                </button>
+                         </div>                   
+                        <div class="partials-info">
+                                                                                </div><!--/.partials-->                         
+                    </div><!--.product-price-->                   
+                                    </figcaption>
+                <div class="partials">
+                    <div class="col-md-12">
+                                                <div class="row">
+                                                    </div>
+                    </div>
+                </div>
+            </figure><!--.product-details-->          
+        </div>
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+
+
+    
+    <script type="text/javascript" src="css/media.flixfacts.com/js/loader.js" data-flix-distributor="8847" data-flix-language="bg" data-flix-brand="ACER" data-flix-mpn="" data-flix-ean="4713147793686" data-flix-sku="" data-flix-button="flix-minisite" data-flix-inpage="flix-inpage" data-flix-button-image="" data-flix-price=""></script>
+
+            </div>
+        </section>    
+        
+    
+    </div>
+>>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 
 	<footer>
 		<div class="inner">

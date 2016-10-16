@@ -384,4 +384,13 @@ public class ProductController {
 		}
 	}
 	
+	@RequestMapping(value = "/removeProduct", method = RequestMethod.POST)
+	public String removeProduct(Model mod, HttpServletRequest request) {
+		int id =Integer.parseInt(request.getParameter("id"));
+		ProductManager.getInstance().removeProduct(id);
+		
+		return "index";
+	
+	}
+	
 }

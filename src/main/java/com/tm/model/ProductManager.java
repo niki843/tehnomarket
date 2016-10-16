@@ -85,5 +85,10 @@ public class ProductManager {
 		
 	}
 	
+	public void removeProduct(int id) {
+		products.remove(id);
+		ProductDAO.getInstance().removeProduct(id);
+	}
+	
 	
 }

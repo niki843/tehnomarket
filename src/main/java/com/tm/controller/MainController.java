@@ -220,5 +220,11 @@ public class MainController {
 			session.setAttribute("cart", shoppingCart);
 		}
 	}
+	
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
+	public String deleteProduct(Model model, HttpServletRequest request) {
+		setCategoriesAndCart(request);
+		return "deleteProduct";
+	}
 
 }

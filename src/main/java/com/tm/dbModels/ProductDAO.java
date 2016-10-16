@@ -466,8 +466,19 @@ public class ProductDAO {
 			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 9");
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
+	
+	public void removeProduct(int id) {
+		PreparedStatement ps = null;
+		try {
+			ps = DBManager.getInstance().getConnection()
+					.prepareStatement("DELETE  FROM products where product_id LIKE (?);");
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 10");
+			e.printStackTrace();
+		}
+	}
+	
 }

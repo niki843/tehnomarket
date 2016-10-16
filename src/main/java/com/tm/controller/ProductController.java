@@ -41,11 +41,9 @@ import com.tm.tools.EmailSender;
 public class ProductController {
 
 	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
-<<<<<<< HEAD
+
 	private static final String FILE_LOCATIONIVAN = "D:/Eclipse/Technomarket/Technomarket/src/main/webapp/static/img/";
-=======
-	private static final String FILE_LOCATIONIVAN = "C:/Users/Ivan/Desktop/Technomarket/src/main/webapp/static/img/";
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
+
 	private static final String SUB = "We have a new sale!";
 
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
@@ -100,10 +98,6 @@ public class ProductController {
 			}
 		}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 		if (secondDescription.isEmpty()) {
 			request.getSession().setAttribute("secondDescEmpty", true);
 			shouldReturn = true;
@@ -114,10 +108,6 @@ public class ProductController {
 			}
 		}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 		if (thirdDescription.isEmpty()) {
 			request.getSession().setAttribute("thirdDescEmpty", true);
 			shouldReturn = true;
@@ -128,10 +118,6 @@ public class ProductController {
 			}
 		}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 		if (fourthDescription.isEmpty()) {
 			request.getSession().setAttribute("fourthDescEmpty", true);
 			shouldReturn = true;
@@ -259,12 +245,10 @@ public class ProductController {
 		descriptions.add(secondDescription);
 		descriptions.add(thirdDescription);
 		descriptions.add(fourthDescription);
-<<<<<<< HEAD
+
 		Product product = new Product(model, type, upperType, name, artNumb, ean, descriptions, picture, quantity1,
 				false, price1);
-=======
-		Product product = new Product(model, type, upperType, name, artNumb, ean, descriptions, picture, quantity1, false,price1);
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
+
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
 		System.out.println(product.getProduct_id());
@@ -296,11 +280,9 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/productInfo", method = RequestMethod.GET)
-<<<<<<< HEAD
+
 	public String productInfo(Model model, HttpServletRequest request) {
-=======
-	public String productInfo(Model model, HttpServletRequest request){
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
+
 		setCategoriesAndCart(request);
 		System.out.println("GETING TO REDIRECT PART");
 		String id = request.getParameter("product");
@@ -350,7 +332,7 @@ public class ProductController {
 		}
 		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
-<<<<<<< HEAD
+
 		Map<String, User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
 		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
 		saleMessage.append(product.getName());
@@ -358,15 +340,6 @@ public class ProductController {
 		if (subscribedUsers != null) {
 			saleMessage.append("\nCheck it out on our site");
 			for (String s : subscribedUsers.keySet()) {
-=======
-		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
-		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
-		saleMessage.append(product.getName());
-		ExecutorService executor;
-		if(subscribedUsers != null){
-			saleMessage.append("\nCheck it out on our site");
-			for(String s : subscribedUsers.keySet()){
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 				Runnable senderThread = new EmailSender(s, SUB, saleMessage.toString());
 				Thread t = new Thread(senderThread);
 				t.start();
@@ -382,48 +355,9 @@ public class ProductController {
 		int id = Integer.parseInt(request.getParameter("id").trim());
 		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
 		session.setAttribute("cart", shoppingCart);
-	
+
 		return "index";
 	}
-	
-	@RequestMapping(value = "/searchProduct", method = RequestMethod.GET)
-	public String searchProduct(Model mod, HttpServletRequest request) {
-		
-		Map<Integer, Product> products = ProductManager.getInstance().getAllProducts();
-		HashSet<Product> foundProduct = new HashSet<Product>();
-		String search = request.getParameter("search").toLowerCase();
-		for(Product p : products.values()){
-			if(p.getName().toLowerCase().contains(search)){
-				foundProduct.add(p);
-			}
-		}
-		mod.addAttribute("searched",search);
-		mod.addAttribute("foundProducts", foundProduct);
-		return "searchResults";
-	}
-	
-	public void setCategoriesAndCart(HttpServletRequest request){
-		ProductDAO.getInstance().getModelFromId(-1);
-		ProductDAO.getInstance().getTypeFromId(-1);
-		ProductDAO.getInstance().getUperTypeFromId(-1);
-		HttpSession session = request.getSession();
-		Cart shoppingCart = (Cart) session.getAttribute("cart");
-		if (shoppingCart == null) {
-			System.out.println("Adding Cart");
-			shoppingCart = new Cart();
-			session.setAttribute("cart", shoppingCart);
-		}
-	}
-	
-	@RequestMapping(value = "/removeProduct", method = RequestMethod.POST)
-	public String removeProduct(Model mod, HttpServletRequest request) {
-		int id =Integer.parseInt(request.getParameter("id"));
-		ProductManager.getInstance().removeProduct(id);
-		
-		return "index";
-	
-	}
-<<<<<<< HEAD
 
 	@RequestMapping(value = "/searchProduct", method = RequestMethod.GET)
 	public String searchProduct(Model mod, HttpServletRequest request) {
@@ -465,7 +399,4 @@ public class ProductController {
 
 	}
 
-=======
-	
->>>>>>> e1312da68e55d925f2046ba80405dcccb36c2586
 }

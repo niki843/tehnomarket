@@ -2,11 +2,11 @@ package com.tm.dbModels;
 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
-
-import static org.hamcrest.CoreMatchers.nullValue;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,7 +48,7 @@ public class ProductDAO {
 		Integer quantity = product.getQuantity();
 		Boolean inSale = product.isInSale();
 		Double price = product.getPrice();
-		String info = product.getInfo();
+		List<String> descriptions = product.getAllDescriptions();
 		FileInputStream fis = null;
 		System.out.println("inserting picture with path: " + filePicture.getAbsolutePath());
 		try {
@@ -59,19 +59,21 @@ public class ProductDAO {
 		}
 		try {
 			PreparedStatement st = DBManager.getInstance().getConnection().prepareStatement(
-					"INSERT INTO products (model_id,product_type_type_id, id_upper_type, name, art_num,ean, info,pic_url, pic_name, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);");
+					"INSERT INTO products (model_id,product_type_id, id_upper_type, name, art_num,ean, description_first, description_second, description_third, description_fourth, pic_url, pic_name, quantity_in_stock, in_sale,  price) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 			st.setInt(1, modelId);
 			st.setInt(2, typeId);
 			st.setInt(3, upperTypeId);
 			st.setString(4, name);
 			st.setString(5, artNumb);
 			st.setString(6, ean);
-			st.setString(7, info);
-			st.setBinaryStream(8, fis, (int) filePicture.length());
-			st.setString(9, filePicture.getAbsolutePath());
-			st.setInt(10, quantity);
-			st.setBoolean(11, inSale);
-			st.setDouble(12, price);
+			for(int i = 0 ; i < descriptions.size() ; i++){
+				st.setString(i+7, descriptions.get(i));
+			}
+			st.setBinaryStream(11, fis, (int) filePicture.length());
+			st.setString(12, filePicture.getAbsolutePath());
+			st.setInt(13, quantity);
+			st.setBoolean(14, inSale);
+			st.setDouble(15, price);
 			st.executeUpdate();
 			setProductId(product);
 			return true;
@@ -189,7 +191,10 @@ public class ProductDAO {
 		String name;
 		String artNum;
 		String ean;
-		String info;
+		String firstDescription;
+		String secondDescription;
+		String thirdDescription;
+		String fourthDescription;
 		String pic;
 		Integer quantity;
 		Boolean inSale;
@@ -197,16 +202,20 @@ public class ProductDAO {
 		InputStream is;
 		try {
 			st = DBManager.getInstance().getConnection().createStatement();
-			set = st.executeQuery("SELECT product_id,model_id,product_type_type_id,id_upper_type,name,art_num,art_num,ean,info,pic_url,pic_name,quantity_in_stock,in_sale,price FROM products;");
+			set = st.executeQuery("SELECT product_id, model_id, product_type_id, id_upper_type, name, art_num, ean, description_first, description_second, description_third, description_fourth, pic_url, pic_name, quantity_in_stock, in_sale, price FROM products;");
 			while(set.next()){
+				ArrayList<String> discriptions = new ArrayList<>();
 				model = set.getInt("model_id");
-				type = set.getInt("product_type_type_id");
+				type = set.getInt("product_type_id");
 				upperType = set.getInt("id_upper_type");
 				productId = set.getInt("product_id");
 				name = set.getString("name");
 				artNum = set.getString("art_num");
 				ean = set.getString("ean");
-				info = set.getString("info");
+				firstDescription = set.getString("description_first");
+				secondDescription = set.getString("description_second");
+				thirdDescription = set.getString("description_third");
+				fourthDescription = set.getString("description_fourth");
 				pic = set.getString("pic_name");
 				quantity = set.getInt("quantity_in_stock");
 				inSale = set.getBoolean("in_sale");
@@ -214,12 +223,15 @@ public class ProductDAO {
 				is = set.getBinaryStream("pic_url");
 				File image = new File(pic);
 			    FileOutputStream fos = null;
-			    
+			    discriptions.add(firstDescription);
+			    discriptions.add(secondDescription);
+			    discriptions.add(thirdDescription);
+			    discriptions.add(fourthDescription);
 			    if(image.exists()){
 			    	System.out.println("PICTURE IS FOUND IN THE DIRECTORY");
 					Product product = new Product(
 							getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,
-							artNum, ean, info, image, quantity, inSale, price);
+							artNum, ean, discriptions, image, quantity, inSale, price);
 					products.add(product);
 					product.setProduct_id(productId);
 			    }else{
@@ -252,13 +264,16 @@ public class ProductDAO {
 				System.out.println("----------------" + name + "--------------------");
 				System.out.println("----------------" + artNum + "--------------------");
 				System.out.println("----------------" + ean + "--------------------");
-				System.out.println("----------------" + info + "--------------------");
+				System.out.println("----------------" + firstDescription + "--------------------");
+				System.out.println("----------------" + secondDescription + "--------------------");
+				System.out.println("----------------" + thirdDescription + "--------------------");
+				System.out.println("----------------" + fourthDescription + "--------------------");
 				System.out.println("----------------" + pic + "--------------------");
 				System.out.println("----------------" + quantity + "--------------------");
 				System.out.println("----------------" + inSale + "--------------------");
 				System.out.println("----------------" + price + "--------------------");
 				System.out.println("----------------" + productId + "----------------");
-				Product product = new Product(getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,artNum, ean, info, image, quantity, inSale, price);
+				Product product = new Product(getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,artNum, ean, discriptions, image, quantity, inSale, price);
 			    if(inSale){
 			    	productsInSale.put(productId, product);
 			    }
@@ -289,7 +304,10 @@ public class ProductDAO {
 				st.setInt(1, i);	
 				rs = st.executeQuery();
 				while(rs.next()){
-					productsInSale.get(i).setPrice(rs.getDouble("sale_price"));
+					Product product = productsInSale.get(i);
+					product.setOldPrice(product.getPrice());
+					System.out.println("Seting the old price " + product.getOldPrice());
+					product.setPrice(rs.getDouble("sale_price"));
 					System.out.println("SETING NEW PRICE TO: " + productsInSale.get(i).getName());
 				}
 			} catch (SQLException e) {
@@ -394,6 +412,7 @@ public class ProductDAO {
 	public void setInSale(Product product){
 		PreparedStatement ps = null;
 		FileInputStream fis = null;
+		List<String> descriptions = product.getAllDescriptions();
 		try {
 			fis = new FileInputStream(product.getPicture());
 		} catch (FileNotFoundException e1) {
@@ -405,16 +424,18 @@ public class ProductDAO {
 			ps.setBoolean(1, true);
 			ps.setInt(2, product.getProduct_id());
 			ps.executeUpdate();
-			ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO products_sales(sale_price, name, art_num, ean, info,pic_url, pic_name, quantity_in_stock, product_id)  VALUES (?,?,?,?,?,?,?,?,?)");
+			ps = DBManager.getInstance().getConnection().prepareStatement("INSERT INTO products_sales(sale_price, name, art_num, ean, description_first, description_second, description_third, description_fourth,pic_url, pic_name, quantity_in_stock, product_id)  VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setDouble(1, product.getPrice());
 			ps.setString(2, product.getName());
 			ps.setString(3, product.getArt_number());
 			ps.setString(4, product.getEan());
-			ps.setString(5, product.getInfo());
-			ps.setBinaryStream(6, fis,(int) product.getPicture().length());
-			ps.setString(7, product.getPicture().getAbsolutePath());
-			ps.setInt(8, product.getQuantity());
-			ps.setInt(9, product.getProduct_id());
+			for(int i = 0; i < descriptions.size(); i++){
+				ps.setString(i+5, descriptions.get(i));
+			}
+			ps.setBinaryStream(9, fis,(int) product.getPicture().length());
+			ps.setString(10, product.getPicture().getAbsolutePath());
+			ps.setInt(11, product.getQuantity());
+			ps.setInt(12, product.getProduct_id());
 			ps.executeUpdate();
 			System.out.println("UPDATE SUCCESSFULL FOR SALE");
 			
@@ -445,8 +466,19 @@ public class ProductDAO {
 			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 9");
 			e.printStackTrace();
 		}
-		
-		
-		
 	}
+	
+	public void removeProduct(int id) {
+		PreparedStatement ps = null;
+		try {
+			ps = DBManager.getInstance().getConnection()
+					.prepareStatement("DELETE  FROM products where product_id LIKE (?);");
+			ps.setInt(1, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("ERROR: WITH PREAPARED STATEMENT IN PRODUCT DAO 10");
+			e.printStackTrace();
+		}
+	}
+	
 }

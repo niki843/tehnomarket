@@ -5,15 +5,14 @@
 <%@page import="java.util.Map"%>
 <html class="no-js" lang=""><%@ taglib prefix="c"
 	uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- Mirrored from www.technomarket.bg/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:08:36 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <!-- /Added by HTTrack -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-<title>Technomarket - Електромаркет - онлайн магазин</title>
+<title>Electromarket - Електромаркет - онлайн магазин</title>
 <meta name="Description"
-	CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
+	CONTENT="Електромаркет верига за продажба на електроника.">
 <meta name="google-site-verification"
 	content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />
 <meta charset="utf-8">
@@ -24,7 +23,7 @@
 <script type="text/javascript"
 	src="css/cdn.technomarket.bg/assets/vendor/requirejs/require.js"></script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
     require.config({
         map: {
             '*': {
@@ -75,15 +74,7 @@
             }
         }
     });
-</script>
-<!--[if lt IE 9]>
-        <script src="//cdn.technomarket.bg/assets/vendor/html5shiv/dist/html5shiv.min.js"></script>
-        <link rel="stylesheet" href="//cdn.technomarket.bg/css/ie.css" />
-        <script src="//cdn.technomarket.bg/assets/vendor/respond/dest/respond.min.js"></script>
-        <link href="/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-        <link href="//cdn.technomarket.bg/assets/vendor/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-        <script src="//cdn.technomarket.bg/assets/vendor/respond/cross-domain/respond.proxy.js"></script>
-        <![endif]-->
+	</script>
 
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" id="top" class="">
@@ -104,39 +95,30 @@
 						<meta itemprop="contactType" content="Customer service">
 						<li><a href="/Technomarket/contacts"><strong><i
 									class="icon-phone"></i> <span itemprop='telephone'
-									class="hidden">+359-02-9421-103</span> 0700 10 800</strong></a></li>
-						<li class="nav-at-home"><a href="/Technomarket/home"> <img
-								src="img/home.svg" alt="@Home" class="hidden-xs" /> <span
-								class="visible-xs">@Home</span>
-						</a></li>
-						<li class="nav-apple-shop"><a href="/Technomarket/apple">
-								<img src="img/apple.jpg" alt="Apple Shop" class="hidden-xs" />
-								<span class="visible-xs">Apple Shop</span>
-						</a></li>
+									class="hidden">+359888372407</span> 0888 372 407</strong></a></li>
 						<li class="nav-promo"><a href="/Technomarket/sales"><i
-								class="icon-gift"></i> Промоции</a></li>
-						<li><a href="/Technomarket/stores"><i
-								class="icon-location"></i> Магазини</a></li>
+								class="icon-gift"></i> Промоции</a>
+						</li>
 					</ul>
 					<ul itemscope itemtype="http://schema.org/Organization"
 						class="nav navbar-nav nav-right">
 						<link itemprop="url" href="/Technomarket/index">
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://www.facebook.com/technomarket/" target="_blank"><i
+							href="https://www.facebook.com/profile.php?id=100013962152373" target="_blank"><i
 								class="icon-facebook"></i> <span class="visible-xs">Facebook</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://plus.google.com/+technomarket/" target="_blank"><i
+							href="https://plus.google.com/100014758101449735523" target="_blank"><i
 								class="icon-google"></i> <span class="visible-xs">Google
 									+</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://twitter.com/technomarketbg/" target="_blank"><i
+							href="https://twitter.com/mailelectromar1" target="_blank"><i
 								class="icon-twitter"></i> <span class="visible-xs">Twitter</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://www.youtube.com/technomarket/" target="_blank"><i
+							href="https://www.youtube.com/channel/UCgLn2t-ykM98m4oY0Dgo3tg" target="_blank"><i
 								class="icon-youtube"></i> <span class="visible-xs">You
 									Tube</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://www.linkedin.com/company/technomarket/"
+							href="https://www.linkedin.com/in/electro-market-057b9212b?trk=nav_responsive_tab_profile_pic"
 							target="_blank"><i class="icon-linkedin"></i> <span
 								class="visible-xs">Linked In</span></a></li>
 					</ul>
@@ -151,7 +133,7 @@
 						itemtype="http://schema.org/Organization">
 						<span itemprop="name" class="hidden">Електромаркет</span> <a
 							itemprop="url" href="/Technomarket/index"> <img
-							itemprop="logo" src="img/electromarket.png" alt="Technomarket" />
+							itemprop="logo" src="img/electromarket.png" alt="Electromarket" />
 						</a>
 					</div>
 					<!-- /.logo -->
@@ -160,11 +142,9 @@
 							<link itemprop="url" href="/Technomarket/index" />
 							<form itemprop="potentialAction" itemscope
 								itemtype="http://schema.org/SearchAction"
-								action="http://www.technomarket.bg/search/" method="get"
+								action="/Technomarket/searchProduct" method="GET"
 								class="input-group">
-								<meta itemprop="target"
-									content="http://www.technomarket.bg/search/?query={query}" />
-								<input itemprop="query-input" type="text" name="query"
+								<input itemprop="query-input" type="text" name="search"
 									placeholder="Търси..." class="form-control"> <span
 									class="search-bar"></span> <span class="input-group-btn">
 									<button class="btn btn-search" type="submit">
@@ -200,8 +180,8 @@
 											<c:choose>
 												<c:when test="${ isAdmin }">
 													<li><a href="/Technomarket/profile">Профил</a></li>
-													<li><a href="/Technomarket/addProduct">Добави
-															продук</a></li>
+													<li><a href="/Technomarket/addProduct">Добави продук</a></li>
+													<li><a href="/Technomarket/deleteProduct">Премахни продук</a></li>
 													<li><a href="/Technomarket/addSale">Добави
 															промоция за продукт</a></li>
 													<li><a href="/Technomarket/logOut">Изход</a></li>
@@ -1772,7 +1752,6 @@
 								class="tm-collapse">Техномаркет</a>
 						</h4>
 						<ul id="technomarket" class="footer-menu collapse in">
-							<li><a href="/Technomarket/stores">Магазини</a></li>
 							<li><a href="/Technomarket/contacts">Контакти</a></li>
 						</ul>
 					</div>
@@ -1806,7 +1785,7 @@
 								<strong>Национален телефон на клиента</strong>
 							</p>
 							<h3>
-								<strong>0700 10 800</strong>
+								<strong>0888 372 407</strong>
 							</h3>
 							<p>
 								<small>на цената на един градски разговор</small>
@@ -1816,26 +1795,26 @@
 								class="social-icons">
 								<link itemprop="url" href="/Technomarket/index">
 								<li><a itemprop="sameAs"
-									href="https://www.facebook.com/technomarket/" target="_blank"
+									href="https://www.facebook.com/profile.php?id=100013962152373" target="_blank"
 									title="Facebook"><i class="icon-facebook"></i></a></li>
 								<li><a itemprop="sameAs"
-									href="https://plus.google.com/+technomarket/" target="_blank"
+									href="https://plus.google.com/100014758101449735523" target="_blank"
 									title="Google +"><i class="icon-google"></i></a></li>
 								<li><a itemprop="sameAs"
-									href="https://twitter.com/technomarketbg/" target="_blank"
+									href="https://twitter.com/mailelectromar1" target="_blank"
 									title="Twitter"><i class="icon-twitter"></i></a></li>
 								<li><a itemprop="sameAs"
-									href="https://www.youtube.com/technomarket/" target="_blank"
+									href="https://www.youtube.com/channel/UCgLn2t-ykM98m4oY0Dgo3tg" target="_blank"
 									title="YouTube"><i class="icon-youtube"></i></a></li>
 								<li><a itemprop="sameAs"
-									href="https://www.linkedin.com/company/technomarket/"
+									href="https://www.linkedin.com/in/electro-market-057b9212b?trk=nav_responsive_tab_profile_pic"
 									target="_blank" title="Linked In"><i class="icon-linkedin"></i></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="online-info">
-					Уважаеми клиенти, цените на technomarket.bg се обновяват на всеки
+					Уважаеми клиенти, цените на electromaket.bg се обновяват на всеки
 					един час. Възможно е несъответствие с цените в магазините. Всички
 					цени са за покупки онлайн.<br> При възникване на спор, свързан
 					с покупка онлайн можете да ползвате сайта <a
@@ -1847,9 +1826,9 @@
 		<!-- /.inner -->
 		<div class="copyrights">
 			<div class="container">
-				<span class="copy">Copyright &reg; 2016 Техномаркет. Всички
+				<span class="copy">Copyright &reg; 2016 Електромаркет. Всички
 					права запазени.</span> <span class="mc-logos"> <img
-					src="img/cards.png" alt="Technomarket" />
+					src="img/cards.png" alt="Electromarket" />
 				</span>
 			</div>
 		</div>
@@ -1865,21 +1844,6 @@
                     $(this).parent().toggleClass('open');
                 });
 
-                var $countDowns = $('div.countdown-widget');
-
-                if ($countDowns.length)
-                {
-                    require(['jquery', 'jquery.countdown'], function ($) {
-                        $.countdown.regionalOptions.bg={labels:["Години","Месеца","Седмица","Дни","Часа","Минути","Секунди"],labels1:["Година","Месец","Седмица","Ден","Час","Минута","Секунда"],compactLabels:["l","m","n","d"],compactLabels1:["g","m","n","d"],whichLabels:null,digits:["0","1","2","3","4","5","6","7","8","9"],timeSeparator:":",isRTL:false};
-                        $.countdown.setDefaults($.countdown.regionalOptions.bg)
-                        $countDowns.each(function () {
-
-                            $(this).countdown({until: new Date($(this).attr('data-date'))});
-                        });
-
-                    });
-                }
-
                 $('.update-widget').each(function () {
                     $(this).load($(this).attr('data-url'));
 
@@ -1890,42 +1854,10 @@
 
 	<a href="#top" class="scroll-top"><i class="icon-arrow-long-up"></i></a>
 
-	<script>
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-8418537-1', 'auto');
-                ga('send', 'pageview');
-
-            </script>
-	<!-- Facebook Pixel Code -->
-	<script>
-                !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-                    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-                    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-                                document,'script','../connect.facebook.net/en_US/fbevents.js');
-
-                fbq('init', '376584362536011');
-                fbq('track', "PageView");</script>
 	<noscript>
 		<img height="1" width="1" style="display: none"
 			src="https://www.facebook.com/tr?id=376584362536011&amp;ev=PageView&amp;noscript=1" />
 	</noscript>
-	<!-- End Facebook Pixel Code -->
 
-	<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-	<script type="text/javascript">
-            window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
-        </script>
-
-	<script type="text/javascript"
-		src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-	<!-- End Cookie Consent plugin -->
-
-</body>
-
-<!-- Mirrored from www.technomarket.bg/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:12:20 GMT -->
+	</body>
 </html>

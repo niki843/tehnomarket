@@ -1,15 +1,18 @@
 <!doctype html>
+<%@page import="com.tm.model.Product"%>
+<%@page import="com.tm.model.ProductManager"%>
 <%@page import="com.tm.dbModels.TypeModelDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
+<%@page import="com.tm.model.UserManager"%>
 <html class="no-js" lang="">
     
-<!-- Mirrored from www.technomarket.bg/kupi-online-vzemi-ot-magazin by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:10 GMT -->
+<!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:15 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
-                                            <title>Купи онлайн, Вземи от магазин Техномаркет! - Технoмаркет - онлайн магазин</title>
+        <title>Електромаркет - онлайн магазин</title>
 <meta name="Description" CONTENT="Техномаркет най-голямата верига за бяла, черна и офис техника в България. Купи лесно и бързо онлайн с безплатна доставка. Удължаване на гаранцията с програма Гаранция плюс.">
 <meta name="google-site-verification" content="4GUfQ24-SB-8p2dO6_vCnz-rDTs7NGJm_rr2pfXBAl4" />        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -78,6 +81,18 @@
         <link href="//cdn.technomarket.bg/assets/vendor/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
         <script src="//cdn.technomarket.bg/assets/vendor/respond/cross-domain/respond.proxy.js"></script>
         <![endif]-->
+        <%
+			String username = (String) request.getSession().getAttribute("email");
+			RequestDispatcher rd = null;
+			if (username == null) {
+				rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}
+			if(!(UserManager.getInstance().getUser(username).isAdmin())){
+				rd = request.getRequestDispatcher("profile.jsp");
+				rd.forward(request, response);
+			}
+		%>
     </head>
     <body itemscope itemtype="http://schema.org/WebPage" id="top" class="">
     <div id="fb-root"></div>
@@ -116,7 +131,59 @@
             </div>
         </div>
     </div><!-- /.header-top -->
-     <nav class="navbar">
+    <div class="heading">
+        <div class="container">
+            <div class="row">
+                <div class="logo" itemscope itemtype="http://schema.org/Organization">
+                	<span itemprop="name" class="hidden">Електромаркет</span>
+                    <a itemprop="url" href="/Technomarket/index">
+                         <img itemprop="logo" src="img/electromarket.png" alt="Technomarket" />
+                    </a>
+                </div><!-- /.logo -->
+                <div class="heading-collapse">
+                    <div itemscope itemtype="http://schema.org/WebSite" class="search">
+                    	<link itemprop="url" href="/Technomarket/index"/>
+                        <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" action="http://www.technomarket.bg/search/" method="get" class="input-group">
+                            <meta itemprop="target" content="http://www.technomarket.bg/search/?query={query}"/>	
+                            <input itemprop="query-input" type="text" name="query" placeholder="Търси..." class="form-control">
+                            <span class="search-bar"></span>
+                            <span class="input-group-btn">
+                                <button class="btn btn-search" type="submit"><i class="icon-search"></i></button>
+                            </span>                        
+                        </form><!-- /.input-group -->                        
+                    </div><!-- /.search -->
+                    <div class="user-bar">
+                                                <div class="user-account dropdown">
+                            <button class="btn btn-tm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            	<i class="icon-profile"></i> <span class="hidden-xs"><c:out value="${ name }"/></span>
+                            </button>
+                            								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">	
+                                								<c:choose>
+																	<c:when test="${ name == null }">																		
+                                											<li><a href="/Technomarket/login">Вход</a></li>
+                                											<li><a href="/Technomarket/register">Регистрация</a></li>
+																	</c:when>    
+																	<c:otherwise>													
+                                											<li><a href="/Technomarket/adminProfile">Профил</a></li>
+                															<li><a href="/Technomarket/addProduct">Добави продук</a></li>
+                															<li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+                                											<li><a href="/Technomarket/logOut">Изход</a></li>
+																	</c:otherwise>
+																</c:choose>
+															
+                            											</ul>
+                        </div><!-- /.user-account -->
+                                                <div class="basket">
+                            <a href="/Technomarket/cart" class="btn btn-tm">
+                                <i class="icon-basket"></i> -
+                            </a>
+                        </div><!-- /.basket -->
+                    </div><!-- /.user-bar -->
+                </div><!-- /.heading-collapse -->
+            </div>
+        </div>
+    </div><!-- /.heading -->
+    <nav class="navbar">
         <a href="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="hidden-xs">Категории</span></a>
         <div class="container">
             <div id="navbar" class="navbar-collapse collapse">
@@ -161,184 +228,66 @@
         </div>
     </nav><!-- /.navbar -->
 </header>
-                                        
-            <div class="">
-    
-    
-
                     
-                                	             
-        <section class=" section section-odd" >
-            <div class="container">
-            	                <div class="section-heading">
-                    <h2>Вземи от магазин</h2>
-                                        <span class="subtitle">Поръчай онлайн, вземи от магазин</span>
-                                    </div><!-- /.section-heading -->
-                                <div class="row">
-                                                                <div class="col-md-16 text-center" >
-
-        	    	<figure>
-        	<div class="figure-image">
-                                <picture>                	
-                    <source srcset="img/header_takefromshop_3.jpg" media="(max-width: 990px)" />
-                    <img src="img/header_takefromshop_3.jpg" alt="" title="">
-                </picture>
-                            </div>
-        </figure>        
+        <section>
+    <div class="container">
+        <div class="page-title sh-heading">
+     <h2>Профил</h2>
+</div>
+<div class="row">
+    <div class="col-md-3">
+       <div class="filter-box page-menu">
+            <header>
+                <h3><i class="icon-profile"></i> Профил</h3>
+            </header>         
+            <ul>
+                <li><a href="/Technomarket/adminProfile">Моят профил</a></li>
+                <li><a href="/Technomarket/addProduct">Добави продук</a></li>
+                <li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
+                <li><a href="/Technomarket/logOut">Изход</a></li>
+            </ul>
+        </div> 
     </div>
-
-
-                                                    </div>
-            </div>
-        </section>
+    <div class="col-md-6">
+        <div class="fos_user_user_show form-horizontal">
+	<div class="form-group">
+	    	
+    </div>
+    		
+        	
+        	<c:if test="${ productEmpty }">
+            	<font color="red">Трябва да изберете продукт!</font>
+            	<% session.removeAttribute("productEmpty"); %>
+            	</br>
+            </c:if>
             
-    
-
+        	<% Map<Integer, Product> products =	ProductManager.getInstance().getAllProducts(); %>
+        	
+            <form action="/Technomarket/removeProduct"  method="POST" class="fos_user_registration_register form-horizontal" enctype="multipart/form-data">
                     
-                                	             
-        <section class=" section section-odd" >
-            <div class="container">
-            	                <div class="section-heading">
-                    <h2>Магазини Техномаркет</h2>
-                                    </div><!-- /.section-heading -->
-                                <div class="row">
-                                                            	<div class="col-full" >
-
-    <div class="container-inner">
-        <div class="container-cell">
-                                    <ul class="tm-list tm-cols-x4">
-        <li>
-        <a href="asenovgrad/tehnomarket-asenovgrad.html"><strong>АСЕНОВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="bansko/tehnomarket-bansko.html"><strong>БАНСКО</strong></a>
-    </li>
-        <li>
-        <a href="blagoevgrad/tehnomarket-blagoevgrad.html"><strong>БЛАГОЕВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="botevgrad/tehnomarket-botevgrad.html"><strong>БОТЕВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="burgas.html"><strong>БУРГАС</strong></a>
-    </li>
-        <li>
-        <a href="varna.html"><strong>ВАРНА</strong></a>
-    </li>
-        <li>
-        <a href="veliko-tyrnovo/tehnomarket-veliko-tyrnovo.html"><strong>ВЕЛИКО ТЪРНОВО</strong></a>
-    </li>
-        <li>
-        <a href="vidin/tehnomarket-vidin.html"><strong>ВИДИН</strong></a>
-    </li>
-        <li>
-        <a href="vraca/tehnomarket-vraca.html"><strong>ВРАЦА</strong></a>
-    </li>
-        <li>
-        <a href="gabrovo/tehnomarket-gabrovo.html"><strong>ГАБРОВО</strong></a>
-    </li>
-        <li>
-        <a href="goce-delchev/tehnomarket-goce-delchev.html"><strong>ГОЦЕ ДЕЛЧЕВ</strong></a>
-    </li>
-        <li>
-        <a href="dimitrovgrad/tehnomarket-dimitrovgrad.html"><strong>ДИМИТРОВГРАД</strong></a>
-    </li>
-        <li>
-        <a href="dobrich/tehnomarket-dobrich.html"><strong>ДОБРИЧ</strong></a>
-    </li>
-        <li>
-        <a href="dupnica/tehnomarket-dupnica.html"><strong>ДУПНИЦА</strong></a>
-    </li>
-        <li>
-        <a href="ihtiman/tehnomarket-ihtiman.html"><strong>ИХТИМАН</strong></a>
-    </li>
-        <li>
-        <a href="kazanlyk/tehnomarket-kazanlyk.html"><strong>КАЗАНЛЪК</strong></a>
-    </li>
-        <li>
-        <a href="karlovo/tehnomarket-karlovo.html"><strong>КАРЛОВО</strong></a>
-    </li>
-        <li>
-        <a href="kyrdzhali/tehnomarket-kyrdzhali.html"><strong>КЪРДЖАЛИ</strong></a>
-    </li>
-        <li>
-        <a href="lovech/tehnomarket-lovech.html"><strong>ЛОВЕЧ</strong></a>
-    </li>
-        <li>
-        <a href="montana/tehnomarket-montana.html"><strong>МОНТАНА</strong></a>
-    </li>
-        <li>
-        <a href="pazardzhik/tehnomarket-pazardzhik-2.html"><strong>ПАЗАРДЖИК</strong></a>
-    </li>
-        <li>
-        <a href="pernik/tehnomarket-pernik.html"><strong>ПЕРНИК</strong></a>
-    </li>
-        <li>
-        <a href="pleven/tehnomarket-pleven.html"><strong>ПЛЕВЕН</strong></a>
-    </li>
-        <li>
-        <a href="plovdiv.html"><strong>ПЛОВДИВ</strong></a>
-    </li>
-        <li>
-        <a href="pyrvomaj/tehnomarket-pyrvomaj.html"><strong>ПЪРВОМАЙ</strong></a>
-    </li>
-        <li>
-        <a href="ruse.html"><strong>РУСЕ</strong></a>
-    </li>
-        <li>
-        <a href="samokov/tehnomarket-samokov.html"><strong>САМОКОВ</strong></a>
-    </li>
-        <li>
-        <a href="sandanski/tehnomarket-sandanski.html"><strong>САНДАНСКИ</strong></a>
-    </li>
-        <li>
-        <a href="svilengrad/tehnomarket-svilengrad.html"><strong>СВИЛЕНГРАД</strong></a>
-    </li>
-        <li>
-        <a href="svishtov/tehnomarket-svishtov.html"><strong>СВИЩОВ</strong></a>
-    </li>
-        <li>
-        <a href="sevlievo/tehnomarket-sevlievo.html"><strong>СЕВЛИЕВО</strong></a>
-    </li>
-        <li>
-        <a href="silistra/tehnomarket-silistra.html"><strong>СИЛИСТРА</strong></a>
-    </li>
-        <li>
-        <a href="sliven/tehnomarket-sliven.html"><strong>СЛИВЕН</strong></a>
-    </li>
-        <li>
-        <a href="smolqn/tehnomarket-smolqn.html"><strong>СМОЛЯН</strong></a>
-    </li>
-        <li>
-        <a href="sofiq.html"><strong>СОФИЯ</strong></a>
-    </li>
-        <li>
-        <a href="stara-zagora.html"><strong>СТАРА ЗАГОРА</strong></a>
-    </li>
-        <li>
-        <a href="tyrgovishte/tehnomarket-tyrgovishte.html"><strong>ТЪРГОВИЩЕ</strong></a>
-    </li>
-        <li>
-        <a href="haskovo/tehnomarket-haskovo.html"><strong>ХАСКОВО</strong></a>
-    </li>
-        <li>
-        <a href="shumen/tehnomarket-shumen.html"><strong>ШУМЕН</strong></a>
-    </li>
-        <li>
-        <a href="qmbol/tehnomarket-qmbol.html"><strong>ЯМБОЛ</strong></a>
-    </li>
-    </ul>
-
+                    Продукт
+                                            <span class="required" title="This field is required">*</span>
+											</label><div class="col-sm-10 control-bar">
+											<div id="fos_user_registration_form_birthday" class="form-inline">
+											<select id="fos_user_registration_form_product" name="fos_user_registration_form[product]" required="required" class="form-control">
+											<option value="" selected="selected">продукт</option>
+                                            <% for(Integer i : products.keySet()){%>
+                                            	<option value="<%= i %>"><%= products.get(i).getName() + " цена:" + products.get(i).getPrice() %></option>
+                                            <%} %>
+											</select></div><span class="bar">
+											</span></div></div>
+											<input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" class="form-control" value="Krjne80piNBsqAJqOJMu6HN5W9V7cPDmBpDmv2Am1k8" />
+				<div class="form-group">
+                    <div class="col-sm-offset-6 col-sm-10">
+                         <input class="btn btn-tm" type="submit" value="Изтрии" />
                     </div>
+               </div>   
+            </form>
+</div>
     </div>
+</div>
     </div>
-
-
-                                                    </div>
-            </div>
-        </section>
-            
-    </div>
+</section>    
 
         <footer>
     <div class="inner">
@@ -457,10 +406,10 @@
             window.cookieconsent_options = {"message":'Technomarket.bg използва &quot;бисквитки&quot;.',"dismiss":'Ок',"learnMore":'Виж повече',"link":'/cookie',"theme":false};
         </script>
 
-        <script type="text/javascript" src="css/cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+        <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
         <!-- End Cookie Consent plugin -->
         
     </body>
 
-<!-- Mirrored from www.technomarket.bg/kupi-online-vzemi-ot-magazin by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 13:08:10 GMT -->
+<!-- Mirrored from www.technomarket.bg/login by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Oct 2016 12:13:16 GMT -->
 </html>

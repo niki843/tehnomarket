@@ -32,5 +32,17 @@ public class Cart {
 			cartItems.put(p, cartItems.get(p) - 1);
 		}
 	}
+	
+	public boolean checkCartIfEmpty(){
+		return cartItems.isEmpty();
+	}
+	
+	public void removeAllItems(){
+		cartItems = new HashMap<>();
+	}
+	
+	public void removeProduct(Product p){
+		cartItems.remove(p);
+	}
 
 }

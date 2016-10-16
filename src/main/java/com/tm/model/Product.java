@@ -1,38 +1,53 @@
 package com.tm.model;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Product {
-
+	
+	private ArrayList<String> descriptions;
 	private int product_id;
 	private String model;
 	private String prodct_type;
 	private String name;
 	private String art_number;
 	private String ean;
-	private String info;
 	private File picture;
 	private String upperType;
 	private String relativePath;
 	private int quantity;
 	private boolean inSale;
 	private double price;
+	private double oldPrice;
 
 	public Product(String model, String prodct_type, String upperType, String name, String art_number,
-			String ean, String info, File picture, int quantity, boolean inSale, double price) {
-		this.product_id = product_id;
+			String ean, ArrayList<String> descriptions, File picture, int quantity, boolean inSale, double price) {
+		this.descriptions = descriptions;
 		this.model = model;
 		this.prodct_type = prodct_type;
 		this.name = name;
 		this.art_number = art_number;
 		this.ean = ean;
-		this.info = info;
 		this.picture = picture;
 		this.quantity = quantity;
 		this.inSale = inSale;
 		this.price = price;
 		this.upperType = upperType;
 		this.relativePath = "img/"+picture.getName();
+	}
+	
+	public void setOldPrice(double oldPrice){
+		if(oldPrice <= this.oldPrice){
+			return;
+		}else{
+			this.oldPrice = oldPrice;
+		}
+	}
+	
+	public double getOldPrice(){
+		return oldPrice;
 	}
 	
 	public String getRealtivePath(){
@@ -95,12 +110,12 @@ public class Product {
 		this.ean = ean;
 	}
 
-	public String getInfo() {
-		return info;
+	public void setDescriptions(ArrayList<String> descriptions){
+		this.descriptions = descriptions;
 	}
-
-	public void setInfo(String info) {
-		this.info = info;
+	
+	public List<String> getAllDescriptions(){
+		return Collections.unmodifiableList(descriptions);
 	}
 
 	public File getPicture() {

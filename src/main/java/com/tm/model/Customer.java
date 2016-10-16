@@ -10,11 +10,15 @@ public class Customer extends User {
 			boolean subscribed) {
 		super(firstName, lastName, email, password, isMale, birthDate, false, subscribed);
 		this.orders = orders;
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Customer() {
-		// TODO Auto-generated constructor stub
+
+	}
+	
+	public void addOrder(Order order){
+		orders.add(order);
 	}
 
 	public ArrayList<Order> getOrders() {

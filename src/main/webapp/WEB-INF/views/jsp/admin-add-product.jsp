@@ -258,18 +258,48 @@
             	</br>
             </c:if>
             <c:if test="${ tooLongName }">
-            	<font color="red">Името на продуктът може да е до 45 символа!</font>
+            	<font color="red">Името на продуктът може да бъде до 45 символа!</font>
             	<% session.removeAttribute("tooLongName"); %>
             	</br>
             </c:if>
-            <c:if test="${ infoEmpty }">
-            	<font color="red">Информацията е празна!</font>
-            	<% session.removeAttribute("infoEmpty"); %>
+            <c:if test="${ firstDescEmpty }">
+            	<font color="red">Първото описание е празно!</font>
+            	<% session.removeAttribute("firstDescEmpty"); %>
             	</br>
             </c:if>
-            <c:if test="${ infoTooLong }">
-            	<font color="red">Информацията е не може да бъде по голяма от 100 символа!</font>
-            	<% session.removeAttribute("infoTooLong"); %>
+            <c:if test="${ firstDescTooLong }">
+            	<font color="red">Първото описание е твърде дълго може да бъде до 45 символа!</font>
+            	<% session.removeAttribute("firstDescTooLong"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ secondDescEmpty }">
+            	<font color="red">Второто описание е празно!</font>
+            	<% session.removeAttribute("secondDescEmpty"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ secondDescTooLong }">
+            	<font color="red">Второто описание е твърде дълго може да бъде до 45 символа!</font>
+            	<% session.removeAttribute("secondDescTooLong"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ thirdDescEmpty }">
+            	<font color="red">Третото описание е празно!</font>
+            	<% session.removeAttribute("thirdDescEmpty"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ thirdDescTooLong }">
+            	<font color="red">Третото описание е твърде дълго може да бъде до 45 символа!</font>
+            	<% session.removeAttribute("thirdDescTooLong"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ fourthDescEmpty }">
+            	<font color="red">Четвъртото описание е празно!</font>
+            	<% session.removeAttribute("fourthDescEmpty"); %>
+            	</br>
+            </c:if>
+            <c:if test="${ fourthDescTooLong }">
+            	<font color="red">Четвъртото описание е твърде дълго може да бъде до 45 символа!</font>
+            	<% session.removeAttribute("fourthDescTooLong"); %>
             	</br>
             </c:if>
 			<c:if test="${ invalidTypeForUpper }">
@@ -355,9 +385,15 @@
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_art_num" name="fos_user_registration_form[art_num]" required="required" pattern=".{2,}" class="form-control" /><span class="bar"></span></div></div>
                 <div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_art_ean">
                     ЕАН
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_art_ean" name="fos_user_registration_form[art_ean]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_info">
-                    Информация за продукта
-                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_info" name="fos_user_registration_form[info]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_in_stock">
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_art_ean" name="fos_user_registration_form[art_ean]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_first_description">
+                    Първо описание
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_first_description" name="fos_user_registration_form[first_description]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_second_description">
+                    Второ описание
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_second_description" name="fos_user_registration_form[second_description]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_third_description">
+                    Трето описание
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_third_description" name="fos_user_registration_form[third_description]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_fourth_description">
+                    Четвърто описание
+                                            <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_fourth_description" name="fos_user_registration_form[fourth_description]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_in_stock">
                     Налично количество
                                             <span class="required" title="This field is required">*</span></label><div class="col-sm-10 control-bar"><input type="text" id="fos_user_registration_form_in_stock" name="fos_user_registration_form[in_stock]" required="required" class="form-control" /><span class="bar"></span></div></div><div class="form-group"><label  class="col-sm-6 control-label required" for="fos_user_registration_form_price">
                     Цена

@@ -19,8 +19,8 @@ public abstract class User {
 	private boolean isAdmin = false;
 	private boolean subscribed;
 
-	// TODO validations
 	public User(){};
+	
 	public User(String firstName, String lastName, String email, String password, boolean isMale, Date birthDate,
 			boolean isAdmin, boolean subscribed) {
 		this.firstName = firstName;

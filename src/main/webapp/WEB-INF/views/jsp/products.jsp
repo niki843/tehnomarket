@@ -207,6 +207,7 @@
 													<li><a href="/Technomarket/profile">Профил</a></li>
 													<li><a href="/Technomarket/addProduct">Добави
 															продук</a></li>
+													<li><a href="/Technomarket/deleteProduct">Премахни продук</a></li>
 													<li><a href="/Technomarket/addSale">Добави
 															промоция за продукт</a></li>
 													<li><a href="/Technomarket/logOut">Изход</a></li>
@@ -306,15 +307,28 @@
 									<span itemprop="productID">${ products.getArt_number() }</span>
 								</small>
 								<ul itemprop="description" class="product-description">
-									<li>- ${ products.getInfo() }</li>
+									<li>- </li>
 								</ul>
 							</div>
 							<div class="product-price">
 								<var itemprop="offers" itemscope
 									itemtype="http://schema.org/Offer" class="price">
 									<meta itemprop="priceCurrency" content="BGN" />
-									<span itemprop="price" class="new">${ products.getPrice() }
-										лв.</span>
+									<c:choose>
+									    <c:when test="${ products.isInSale() }">
+											<span itemprop="price" class="new">
+												${ products.getPrice() }лв.
+											</span>
+											<span itemprop="price" class="old">
+												${ products.getOldPrice() }лв.
+											</span>
+									    </c:when>    
+									    <c:otherwise>
+											<span itemprop="price" class="new">
+												${ products.getPrice() }лв.
+											</span>
+									    </c:otherwise>
+									</c:choose>
 									<div>
 										<link itemprop="itemCondition"
 											href="http://schema.org/NewCondition" />

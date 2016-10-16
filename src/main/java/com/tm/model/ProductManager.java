@@ -70,6 +70,7 @@ public class ProductManager {
 			System.out.println("ERROR: DIDN'T FIND PRODUCT");
 		}
 		product.setInSale(true);
+		product.setOldPrice(product.getPrice());
 		product.setPrice(newPrice);
 		System.out.println("PRODUCT SET !!!!");
 		ProductDAO.getInstance().setInSale(product);
@@ -82,6 +83,11 @@ public class ProductManager {
 			ProductDAO.getInstance().sellProduct(p);
 		}
 		
+	}
+	
+	public void removeProduct(int id) {
+		products.remove(id);
+		ProductDAO.getInstance().removeProduct(id);
 	}
 	
 	

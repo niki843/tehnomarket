@@ -249,6 +249,10 @@
             	<font color="red">Невалиден емайл или парола!</font>
             	<% session.removeAttribute("failedLog"); %>
             </c:if>
+            <c:if test="${ notLogedIn }">
+            	<font color="red">Моля впишете се за да поръчате!</font>
+            	<% session.removeAttribute("notLogedIn"); %>
+            </c:if>
             <c:if test="${ registered }">
             	<font color="red">Бяхте успешно регистриран!</font>
             	<% session.removeAttribute("registered"); %>

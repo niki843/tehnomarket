@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.mail.Session;
 import javax.servlet.annotation.MultipartConfig;
@@ -31,7 +34,7 @@ import com.tm.model.Product;
 import com.tm.model.ProductManager;
 import com.tm.model.User;
 import com.tm.model.UserManager;
-import com.tm.tools.SendMail;
+import com.tm.tools.EmailSender;
 
 @Controller
 @MultipartConfig
@@ -39,6 +42,7 @@ public class ProductController {
 
 	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
 	private static final String FILE_LOCATIONIVAN = "D:/Eclipse/Technomarket/Technomarket/src/main/webapp/static/img/";
+	private static final String SUB = "We have a new sale!";
 
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
 	public String addNewProduct(@RequestParam("fos_user_registration_form[pricture]") MultipartFile multiPartFile,
@@ -46,7 +50,10 @@ public class ProductController {
 		String name = request.getParameter("fos_user_registration_form[art_name]");
 		String artNumb = request.getParameter("fos_user_registration_form[art_num]");
 		String ean = request.getParameter("fos_user_registration_form[art_ean]");
-		String info = request.getParameter("fos_user_registration_form[info]");
+		String firstDescription = request.getParameter("fos_user_registration_form[first_description]");
+		String secondDescription = request.getParameter("fos_user_registration_form[second_description]");
+		String thirdDescription = request.getParameter("fos_user_registration_form[third_description]");
+		String fourthDescription = request.getParameter("fos_user_registration_form[fourth_description]");
 		String quantity = request.getParameter("fos_user_registration_form[in_stock]");
 		String price = request.getParameter("fos_user_registration_form[price]");
 		String upperType = request.getParameter("fos_user_registration_form[upper_type]");
@@ -57,7 +64,10 @@ public class ProductController {
 		System.out.println("----------------------" + name + "---------------------------");
 		System.out.println("----------------------" + artNumb + "---------------------------");
 		System.out.println("----------------------" + ean + "---------------------------");
-		System.out.println("----------------------" + info + "---------------------------");
+		System.out.println("----------------------" + firstDescription + "---------------------------");
+		System.out.println("----------------------" + secondDescription + "---------------------------");
+		System.out.println("----------------------" + thirdDescription + "---------------------------");
+		System.out.println("----------------------" + fourthDescription + "---------------------------");
 		System.out.println("----------------------" + quantity + "---------------------------");
 		System.out.println("----------------------" + price + "---------------------------");
 		System.out.println("----------------------" + upperType + "---------------------------");
@@ -76,12 +86,42 @@ public class ProductController {
 			}
 		}
 
-		if (info.isEmpty()) {
-			request.getSession().setAttribute("infoEmpty", true);
+		if (firstDescription.isEmpty()) {
+			request.getSession().setAttribute("firstDescEmpty", true);
 			shouldReturn = true;
 		} else {
-			if (info.length() > 100) {
-				request.getSession().setAttribute("infoTooLong", true);
+			if (firstDescription.length() > 45) {
+				request.getSession().setAttribute("firstDescTooLong", true);
+				shouldReturn = true;
+			}
+		}
+
+		if (secondDescription.isEmpty()) {
+			request.getSession().setAttribute("secondDescEmpty", true);
+			shouldReturn = true;
+		} else {
+			if (secondDescription.length() > 45) {
+				request.getSession().setAttribute("secondDescTooLong", true);
+				shouldReturn = true;
+			}
+		}
+
+		if (thirdDescription.isEmpty()) {
+			request.getSession().setAttribute("thirdDescEmpty", true);
+			shouldReturn = true;
+		} else {
+			if (thirdDescription.length() > 45) {
+				request.getSession().setAttribute("thirdDescTooLong", true);
+				shouldReturn = true;
+			}
+		}
+
+		if (fourthDescription.isEmpty()) {
+			request.getSession().setAttribute("fourthDescEmpty", true);
+			shouldReturn = true;
+		} else {
+			if (fourthDescription.length() > 45) {
+				request.getSession().setAttribute("fourthDescTooLong", true);
 				shouldReturn = true;
 			}
 		}
@@ -198,7 +238,13 @@ public class ProductController {
 		}
 
 		System.out.println("CREATING PRODUCT");
-		Product product = new Product(model, type, upperType, name, artNumb, ean, info, picture, quantity1, false,price1);
+		ArrayList<String> descriptions = new ArrayList();
+		descriptions.add(firstDescription);
+		descriptions.add(secondDescription);
+		descriptions.add(thirdDescription);
+		descriptions.add(fourthDescription);
+		Product product = new Product(model, type, upperType, name, artNumb, ean, descriptions, picture, quantity1,
+				false, price1);
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
 		System.out.println(product.getProduct_id());
@@ -228,22 +274,23 @@ public class ProductController {
 		mod.addAttribute("products", products);
 		return "products";
 	}
-	
+
 	@RequestMapping(value = "/productInfo", method = RequestMethod.GET)
-	public String productInfo(Model model, HttpServletRequest request){
+	public String productInfo(Model model, HttpServletRequest request) {
+		setCategoriesAndCart(request);
 		System.out.println("GETING TO REDIRECT PART");
 		String id = request.getParameter("product");
-		if(!(id.matches("[0-9]+"))){
+		if (!(id.matches("[0-9]+"))) {
 			return "index";
 		}
 		Integer productId = Integer.parseInt(id);
 		model.addAttribute("productP", ProductManager.getInstance().getProductById(productId));
-		
+
 		return "productInfo";
 	}
-	
+
 	@RequestMapping(value = "/addNewSale", method = RequestMethod.POST)
-	public String addNewSale(Model model, HttpServletRequest request){
+	public String addNewSale(Model model, HttpServletRequest request) {
 		String productSalePrice = request.getParameter("fos_user_registration_form[new_price]");
 		String productId = request.getParameter("fos_user_registration_form[product]");
 		boolean shouldReturn = false;
@@ -251,42 +298,48 @@ public class ProductController {
 		Double productSalePriceDouble = null;
 		ProductManager prodMan = ProductManager.getInstance();
 		Product product = null;
-		if(productId.isEmpty()){
+		if (productId.isEmpty()) {
 			request.getSession().setAttribute("productEmpty", true);
 			shouldReturn = true;
-		}else{
+		} else {
 			productIdInt = Integer.parseInt(productId);
 			product = prodMan.getProductById(productIdInt);
-			if(productSalePrice.matches("[0-9]+")){
+			if (productSalePrice.matches("[0-9]+")) {
 				productSalePriceDouble = Double.parseDouble(productSalePrice);
-			}else{
-				if(productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")){
+			} else {
+				if (productSalePrice.matches("/^[0-9]+(\\.[0-9]+)?$")) {
 					productSalePriceDouble = Double.parseDouble(productSalePrice);
-					if(productSalePriceDouble <= product.getPrice()){
+					if (productSalePriceDouble <= product.getPrice()) {
 						request.getSession().setAttribute("priceTooLarge", true);
 						shouldReturn = true;
 					}
-				}else{
+				} else {
 					request.getSession().setAttribute("newPriceInvalid", true);
 					shouldReturn = true;
 				}
-					
+
 			}
 		}
-		
-		if(shouldReturn){
+
+		if (shouldReturn) {
 			return "addSale";
 		}
 		prodMan.setProductInSale(product.getProduct_id(), productSalePriceDouble);
 		request.getSession().setAttribute("saleComplete", true);
-		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
-		String saleMessage = new String("We have a sale for: " + product.getName() + "\nCheck it out on our site");
-		for(String s : subscribedUsers.keySet()){
-			SendMail.sendMail(s, "Sale", saleMessage);
+		Map<String, User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
+		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
+		saleMessage.append(product.getName());
+		ExecutorService executor;
+		if (subscribedUsers != null) {
+			saleMessage.append("\nCheck it out on our site");
+			for (String s : subscribedUsers.keySet()) {
+				Runnable senderThread = new EmailSender(s, SUB, saleMessage.toString());
+				Thread t = new Thread(senderThread);
+				t.start();
+			}
 		}
 		return "addSale";
 	}
-	
 
 	@RequestMapping(value = "/addProductInCart", method = RequestMethod.GET)
 	public String addProductInCart(Model mod, HttpServletRequest request) {
@@ -295,7 +348,48 @@ public class ProductController {
 		int id = Integer.parseInt(request.getParameter("id").trim());
 		shoppingCart.addToCart(ProductManager.getInstance().getProductById(id));
 		session.setAttribute("cart", shoppingCart);
-	
+
 		return "index";
 	}
+
+	@RequestMapping(value = "/searchProduct", method = RequestMethod.GET)
+	public String searchProduct(Model mod, HttpServletRequest request) {
+
+		Map<Integer, Product> products = ProductManager.getInstance().getAllProducts();
+		HashSet<Product> foundProduct = new HashSet<Product>();
+		String search = request.getParameter("search").toLowerCase();
+		for (Product p : products.values()) {
+			if (p.getName().toLowerCase().contains(search)) {
+				foundProduct.add(p);
+			}
+		}
+		mod.addAttribute("searched", search);
+		mod.addAttribute("foundProducts", foundProduct);
+		return "searchResults";
+	}
+
+	public void setCategoriesAndCart(HttpServletRequest request) {
+		ProductDAO.getInstance().getModelFromId(-1);
+		ProductDAO.getInstance().getTypeFromId(-1);
+		ProductDAO.getInstance().getUperTypeFromId(-1);
+		HttpSession session = request.getSession();
+		Cart shoppingCart = (Cart) session.getAttribute("cart");
+		if (shoppingCart == null) {
+			System.out.println("Adding Cart");
+			shoppingCart = new Cart();
+			session.setAttribute("cart", shoppingCart);
+		}
+	}
+
+	@RequestMapping(value = "/removeProduct", method = RequestMethod.POST)
+	public String removeProduct(Model mod, HttpServletRequest request) {
+		int id = Integer.parseInt(request.getParameter("fos_user_registration_form[product]"));
+		System.out.println(id);
+		if (id >= 0) {
+			ProductManager.getInstance().removeProduct(id);
+		}
+		return "index";
+
+	}
+
 }

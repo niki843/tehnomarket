@@ -12,9 +12,24 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendMail {
+public class EmailSender implements Runnable{
 	
-	public static void sendMail(String to,String sub ,String mess){
+	private String toEmail;
+	private String subMess;
+	private String message;
+	
+	public EmailSender(String toEmail, String subMess, String message){
+		this.toEmail = toEmail;
+		this.subMess = subMess;
+		this.message = message;
+	}
+	
+	@Override
+	public void run() {
+		sendMail(toEmail,subMess,message);
+	}
+	
+	private static void sendMail(String to,String sub ,String mess){
 		  final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
 		  // Get a Properties object
 		     Properties props = System.getProperties();
@@ -27,8 +42,8 @@ public class SendMail {
 		     props.put("mail.debug", "true");
 		     props.put("mail.store.protocol", "pop3");
 		     props.put("mail.transport.protocol", "smtp");
-		     final String username = "tehnomarketmail@gmail.com";//
-		     final String password = "1234tehno";
+		     final String username = "mailelectromarket@gmail.com";//
+		     final String password = "electromarket1234";
 		     try{
 		     Session session = Session.getDefaultInstance(props, 
 		                          new Authenticator() {
@@ -40,7 +55,7 @@ public class SendMail {
 		     Message msg = new MimeMessage(session);
 
 		  // -- Set the FROM and TO fields --
-		     msg.setFrom(new InternetAddress("tehnomarketmail@gmail.com"));
+		     msg.setFrom(new InternetAddress("mailelectromarket@gmail.com"));
 		     msg.setRecipients(Message.RecipientType.TO, 
 		                      InternetAddress.parse(to,false));
 		     msg.setSubject(sub);

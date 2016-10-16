@@ -230,7 +230,23 @@
         </div>
     </nav><!-- /.navbar -->
 </header>
-                                        
+        
+            <c:if test="${ cartIsEmpty }">
+           	<font color="red">Количката ви е празна!</font>
+            	<% session.removeAttribute("cartIsEmpty"); %>
+            	</br>
+            </c:if>      
+            <c:if test="${ adminOrdered }">
+           	<font color="red">Администраторите не могат да поръчват!</font>
+            	<% session.removeAttribute("adminOrdered"); %>
+            	</br>
+            </c:if>         
+            <c:if test="${ notEnoughProducts }">
+           	<font color="red">Съжаляваме но не разполагаме с толкова бройки от <%= session.getAttribute("nameForProduct") %>!
+           	</br>За допълнителна информация звъннете на 0888 372 407.</font>
+            	<% session.removeAttribute("notEnoughProducts"); %>
+            	</br>
+            </c:if>                            
         <div class="container cart">
     	<div class="sh-heading">         		
     	<div class="col-md-13">
@@ -244,14 +260,15 @@
 	                        <th align="right" class="text-right"></th>
                     	</tr>
                 	</thead>
-    	<c:forEach var="cart" items="${cart}">
+                	
+    	<c:forEach var="product" items="${cartProducts}">
 
                 	<tbody>
                 		<tr>
-                			<td>${cart.key.getName()}</td>
-                			<td>${cart.key.getModel()}</td>
-                			<td>${cart.key.getPrice()}</td>
-							<td>${cart.value}</td>
+                			<td>${product.key.getName()}</td>
+                			<td>${product.key.getModel()}</td>
+                			<td>${product.key.getPrice()}</td>
+							<td>${product.value}</td>
                 		</tr>
                		</tbody>
 		</c:forEach>
@@ -265,9 +282,6 @@
             <p><a href="/Technomarket/makeOrder" class="btn btn-tm"><i class="icon-arrow-long-left"></i> Поръчай</a></p>
             <p><a href="/Technomarket/index" class="btn btn-tm"><i class="icon-arrow-long-left"></i> Избери продукт</a></p>
             <hr>
-            
-            </div>
-
         <footer>
     <div class="inner">
         <div class="container">

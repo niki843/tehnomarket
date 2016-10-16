@@ -2,6 +2,9 @@ package com.tm.model;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Order {
 	private int oreder_id;
@@ -9,14 +12,31 @@ public class Order {
 	private double price;
 	private Date date;
 	private String status;
-
+	private HashMap<Product, Integer> products;
+	
+	public Order(int client_id, double price, Date date, String status){
+		products = new HashMap<>();
+		this.client_id = client_id;
+		this.price = price;
+		this.date = date;
+		this.status = status;
+	}
+	
 	public Order(int oreder_id, int client_id, double price, Date date, String status) {
-		super();
+		products = new HashMap<>();
 		this.oreder_id = oreder_id;
 		this.client_id = client_id;
 		this.price = price;
 		this.date = date;
 		this.status = status;
+	}
+	
+	public Map<Product,Integer> getProducts(){
+		return Collections.unmodifiableMap(products);
+	}
+	
+	public void addProduct(Product product,Integer quantity){
+		products.put(product, quantity);
 	}
 
 	public int getOreder_id() {

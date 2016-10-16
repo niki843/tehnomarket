@@ -2,9 +2,10 @@
 package com.tm.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,18 +19,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tm.dbModels.TypeModelDAO;
 import com.tm.model.Cart;
+import com.tm.model.Customer;
+import com.tm.model.Order;
+import com.tm.model.OrderManager;
 import com.tm.model.Product;
 import com.tm.model.ProductManager;
 import com.tm.model.User;
 import com.tm.model.UserManager;
 import com.tm.tools.EmailValidator;
-import com.tm.tools.SendMail;
+
+import com.tm.tools.EmailSender;
 
 
 @Controller
 public class UserController {
+	
+	private static final String SUB = "Registration";
 
 	private static boolean isFirst = true;
 	
@@ -48,6 +54,10 @@ public class UserController {
 		String year = request.getParameter("fos_user_registration_form[birthday][year]");
 		String subscribed = request.getParameter("fos_user_registration_form[subscribe]");
 		String acceptedTerms = request.getParameter("fos_user_registration_form[accept_terms]");
+		StringBuilder message = new StringBuilder(name);
+		message.append(" You have been successfully registered in our site! \n ");
+		message.append("You can now enter.");
+		System.out.println(request.getLocalAddr());
 		StringBuilder sb = new StringBuilder();
 		sb.append(year+"-"+month+"-"+day);
 		boolean isMale = false;
@@ -163,10 +173,9 @@ public class UserController {
 		
 		request.getSession().setAttribute("registered", true);
 		
-		SendMail mailSender = new SendMail();
-		String message = new String(name + "You have been successfully registered in our site! \n "
-				+ "If you want to enter our site you can do it on " + request.getRequestURL());
-		mailSender.sendMail(email, "Registration", "You have been successfully registered in our site! \n ");
+		EmailSender mailSender = new EmailSender(email,SUB,message.toString());
+		Thread t = new Thread(mailSender);
+		t.start();
 		
 		
 		return "login";
@@ -215,19 +224,99 @@ public class UserController {
 	public String makeOrder(HttpServletRequest request){
 		synchronized (this) {
 			HttpSession ses = request.getSession();
+			String status = "Requested";
+			String email = (String)ses.getAttribute("email");
+			boolean shouldReturn = false;
+			if(email == null){
+				ses.setAttribute("notLogedIn", true);
+				return "login";
+			}
 			Cart cart =(Cart) ses.getAttribute("cart");
+			if(cart.checkCartIfEmpty()){
+				ses.setAttribute("cartIsEmpty", true);
+				return "cart";
+			}
+			User user = UserManager.getInstance().getUser(email);
+			if(user.isAdmin()){
+				ses.setAttribute("adminOrdered", true);
+				cart.removeAllItems();
+				return "cart";
+			}
 			Map<Product, Integer> products = cart.getCartItems();
 			for(Product p : products.keySet()){
 				if(p.getQuantity() < products.get(p)){
-					ses.setAttribute("hasTooManyItems", true);
+					ses.setAttribute("notEnoughProducts", true);
+					ses.setAttribute("nameForProduct", p.getName());
 					return "cart";
 				}
 			}
-			
+			double totalPrice = 0;
+			for(Product p : products.keySet()){
+				for(int i = 0; i < products.get(p); i++){
+					totalPrice += p.getPrice();
+				}
+			}
+			java.util.Date utilDate = new Date();
+			java.sql.Date date = new java.sql.Date(utilDate.getTime());
+			Order order = new Order(user.getUserId(), totalPrice, date, status);
+			for(Product p : products.keySet()){
+				System.out.println("Adding product " + p.getName() + " \nWith quantity " +products.get(p));
+				order.addProduct(p, products.get(p));
+			}
+			OrderManager.getInstance().addOrder(order);
 			ProductManager.getInstance().sellProducts(products);
-			ses.invalidate();
-			return "index"; 
+			cart.removeAllItems();
+			return "redirect:index"; 
 		}
+	}
+
+	@RequestMapping(value = "/orders", method = RequestMethod.GET)
+	public String orderList(Model model, HttpServletRequest request) {
+		String email = (String) request.getSession().getAttribute("email");
+		System.out.println("email: " + email);
+		Customer customer = (Customer) UserManager.getInstance().getUser(email);
+		model.addAttribute("customer", customer);
+		return "profile-my-orders";
+	}
+
+	@RequestMapping(value = "/sendMessage", method = RequestMethod.POST)
+	public String sendMessage(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String name = request.getParameter("contact_form[name]");
+		String email = request.getParameter("contact_form[email]");
+		String telephone = request.getParameter("contact_form[tel]");
+		StringBuilder builder = new StringBuilder(request.getParameter("contact_form[message]"));
+		builder.append("\nОт: ");
+		builder.append(name);
+		builder.append("\nТелефон: ");
+		builder.append(telephone);
+		builder.append("\nЕмайл: ");
+		builder.append(email);
+		String message = builder.toString();
+		String subMessage = "Има допитване от клиент";
+		ExecutorService executor = Executors.newSingleThreadExecutor();
+		boolean shouldReturn = false;
+		if(!(new EmailValidator().validate(email))){
+			session.setAttribute("invalidEmail", true);
+			shouldReturn = true;
+		}
+		if(!(telephone.matches("[0-9]+") && telephone.length() >= 5)){
+			session.setAttribute("invalidPhone", true);
+			shouldReturn = true;
+		}
+		if(shouldReturn){
+			return "contacts";
+		}
+		Map<String, User> users = UserManager.getInstance().getAllUsers();
+		for(User u : users.values()){
+			if(u.isAdmin()){
+				Thread t = new Thread(new EmailSender(u.getEmail(), subMessage, message));
+				executor.execute(t);
+				session.setAttribute("emailSent", true);
+				return "contacts";
+			}
+		}
+		return "contacts";
 	}
 	
 	

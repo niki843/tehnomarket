@@ -310,11 +310,12 @@
                                                  
                         
                         
-
-
-                                                       <ul itemprop="description" class="product-description moreLines">
-                                                            <li>${ productP.getInfo() }</li>
-                                                     </ul>
+												
+	                                            <ul itemprop="description" class="product-description moreLines">
+													<c:forEach items="${productP.getAllDescriptions()}" var="description">
+	                                                            <li>${ description }</li>
+                                                     </c:forEach>
+	                                            </ul>
                                                 <div class="fb-share-button" data-href="http://www.technomarket.bg/laptopi/acer-aspire-e5-571g-35e2-09141527" data-layout="button"></div>
                         <div class="g-plus" data-width="150" data-action="share" data-href="http://www.technomarket.bg/laptopi/acer-aspire-e5-571g-35e2-09141527"></div>
                     </div>

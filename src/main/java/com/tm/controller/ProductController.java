@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -49,7 +50,10 @@ public class ProductController {
 		String name = request.getParameter("fos_user_registration_form[art_name]");
 		String artNumb = request.getParameter("fos_user_registration_form[art_num]");
 		String ean = request.getParameter("fos_user_registration_form[art_ean]");
-		String info = request.getParameter("fos_user_registration_form[info]");
+		String firstDescription = request.getParameter("fos_user_registration_form[first_description]");
+		String secondDescription = request.getParameter("fos_user_registration_form[second_description]");
+		String thirdDescription = request.getParameter("fos_user_registration_form[third_description]");
+		String fourthDescription = request.getParameter("fos_user_registration_form[fourth_description]");
 		String quantity = request.getParameter("fos_user_registration_form[in_stock]");
 		String price = request.getParameter("fos_user_registration_form[price]");
 		String upperType = request.getParameter("fos_user_registration_form[upper_type]");
@@ -60,7 +64,10 @@ public class ProductController {
 		System.out.println("----------------------" + name + "---------------------------");
 		System.out.println("----------------------" + artNumb + "---------------------------");
 		System.out.println("----------------------" + ean + "---------------------------");
-		System.out.println("----------------------" + info + "---------------------------");
+		System.out.println("----------------------" + firstDescription + "---------------------------");
+		System.out.println("----------------------" + secondDescription + "---------------------------");
+		System.out.println("----------------------" + thirdDescription + "---------------------------");
+		System.out.println("----------------------" + fourthDescription + "---------------------------");
 		System.out.println("----------------------" + quantity + "---------------------------");
 		System.out.println("----------------------" + price + "---------------------------");
 		System.out.println("----------------------" + upperType + "---------------------------");
@@ -79,12 +86,45 @@ public class ProductController {
 			}
 		}
 
-		if (info.isEmpty()) {
-			request.getSession().setAttribute("infoEmpty", true);
+		if (firstDescription.isEmpty()) {
+			request.getSession().setAttribute("firstDescEmpty", true);
 			shouldReturn = true;
 		} else {
-			if (info.length() > 100) {
-				request.getSession().setAttribute("infoTooLong", true);
+			if (firstDescription.length() > 45) {
+				request.getSession().setAttribute("firstDescTooLong", true);
+				shouldReturn = true;
+			}
+		}
+
+
+		if (secondDescription.isEmpty()) {
+			request.getSession().setAttribute("secondDescEmpty", true);
+			shouldReturn = true;
+		} else {
+			if (secondDescription.length() > 45) {
+				request.getSession().setAttribute("secondDescTooLong", true);
+				shouldReturn = true;
+			}
+		}
+
+
+		if (thirdDescription.isEmpty()) {
+			request.getSession().setAttribute("thirdDescEmpty", true);
+			shouldReturn = true;
+		} else {
+			if (thirdDescription.length() > 45) {
+				request.getSession().setAttribute("thirdDescTooLong", true);
+				shouldReturn = true;
+			}
+		}
+
+
+		if (fourthDescription.isEmpty()) {
+			request.getSession().setAttribute("fourthDescEmpty", true);
+			shouldReturn = true;
+		} else {
+			if (fourthDescription.length() > 45) {
+				request.getSession().setAttribute("fourthDescTooLong", true);
 				shouldReturn = true;
 			}
 		}
@@ -201,7 +241,12 @@ public class ProductController {
 		}
 
 		System.out.println("CREATING PRODUCT");
-		Product product = new Product(model, type, upperType, name, artNumb, ean, info, picture, quantity1, false,price1);
+		ArrayList<String> descriptions = new ArrayList();
+		descriptions.add(firstDescription);
+		descriptions.add(secondDescription);
+		descriptions.add(thirdDescription);
+		descriptions.add(fourthDescription);
+		Product product = new Product(model, type, upperType, name, artNumb, ean, descriptions, picture, quantity1, false,price1);
 		System.out.println("PRODUCT CREATED");
 		ProductManager.getInstance().addProduct(product);
 		System.out.println(product.getProduct_id());
@@ -286,13 +331,15 @@ public class ProductController {
 		Map<String,User> subscribedUsers = UserManager.getInstance().getAllSubscribedUsers();
 		StringBuilder saleMessage = new StringBuilder("We have a sale for: ");
 		saleMessage.append(product.getName());
-		ExecutorService executor = Executors.newFixedThreadPool(subscribedUsers.size());
-		saleMessage.append("\nCheck it out on our site");
-		for(String s : subscribedUsers.keySet()){
-			Runnable senderThread = new EmailSender(s, SUB, saleMessage.toString());
-			executor.execute(senderThread);
+		ExecutorService executor;
+		if(subscribedUsers != null){
+			saleMessage.append("\nCheck it out on our site");
+			for(String s : subscribedUsers.keySet()){
+				Runnable senderThread = new EmailSender(s, SUB, saleMessage.toString());
+				Thread t = new Thread(senderThread);
+				t.start();
+			}
 		}
-		
 		return "addSale";
 	}
 	

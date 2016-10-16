@@ -306,7 +306,7 @@
 									<span itemprop="productID">${ products.getArt_number() }</span>
 								</small>
 								<ul itemprop="description" class="product-description">
-									<li>- ${ products.getInfo() }</li>
+									<li>- </li>
 								</ul>
 							</div>
 							<div class="product-price">

@@ -298,14 +298,6 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-6 col-md-10">
-                        <div class="checkbox">            
-                            <label for="remember_me"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Запомни ме</label>
-                            <a href="resetting/request.html" class="pull-right">Забравена парола?</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-6 col-md-10">
                         <input class="btn btn-tm" type="submit" id="_submit" name="_submit" value="Вход" />
                     </div>
                 </div>    

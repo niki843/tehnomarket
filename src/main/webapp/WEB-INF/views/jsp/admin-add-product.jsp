@@ -407,7 +407,7 @@
             	</br>
             </c:if>
             <c:if test="${ invalidPrice }">
-            	<font color="red">Цената не може да е празна!</font>
+            	<font color="red">Цената не да съдържа специални символи!</font>
             	<% session.removeAttribute("invalidPrice"); %>
             	</br>
             </c:if>

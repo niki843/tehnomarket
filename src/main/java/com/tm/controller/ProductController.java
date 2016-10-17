@@ -192,9 +192,13 @@ public class ProductController {
 		}
 
 		if (price.matches("[0-9]+")) {
+			if (price1 <= 0) {
+				request.getSession().setAttribute("negativePrice", true);
+				shouldReturn = true;
+			}
 			price1 = Double.parseDouble(price);
 		} else {
-			if (price.matches("/^[0-9]+(\\.[0-9]+)?$")) {
+			if (price.matches("[0-9]{1,13}(\\.[0-9]*)?")) {
 				price1 = Double.parseDouble(price);
 				if (price1 <= 0) {
 					request.getSession().setAttribute("negativePrice", true);

@@ -17,9 +17,9 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="img/favicon.ico">
-<link rel="stylesheet" href="css/cdn.technomarket.bg/css/f38a55a.css" />
+<link rel="stylesheet" href="css/cdn.electromarket.bg/css/f38a55a.css" />
 <script type="text/javascript"
-	src="css/cdn.technomarket.bg/assets/vendor/requirejs/require.js"></script>
+	src="css/cdn.electromarket.bg/assets/vendor/requirejs/require.js"></script>
 
 	<script type="text/javascript">
     require.config({

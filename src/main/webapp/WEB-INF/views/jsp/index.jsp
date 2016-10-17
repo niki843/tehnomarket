@@ -88,21 +88,21 @@
 					class="icon-dot"></span> <span class="icon-dot"></span></a>
 				<div itemscope itemtype="http://schema.org/Organization"
 					id="extranav" class="navbar-collapse collapse">
-					<link itemprop="url" href="/Technomarket/index">
+					<link itemprop="url" href="/Electromarket/index">
 					<ul itemprop='contactPoint' itemscope
 						itemtype='http://schema.org/ContactPoint'
 						class="nav navbar-nav nav-left">
 						<meta itemprop="contactType" content="Customer service">
-						<li><a href="/Technomarket/contacts"><strong><i
+						<li><a href="/Electromarket/contacts"><strong><i
 									class="icon-phone"></i> <span itemprop='telephone'
 									class="hidden">+359888372407</span> 0888 372 407</strong></a></li>
-						<li class="nav-promo"><a href="/Technomarket/sales"><i
+						<li class="nav-promo"><a href="/Electromarket/sales"><i
 								class="icon-gift"></i> Промоции</a>
 						</li>
 					</ul>
 					<ul itemscope itemtype="http://schema.org/Organization"
 						class="nav navbar-nav nav-right">
-						<link itemprop="url" href="/Technomarket/index">
+						<link itemprop="url" href="/Electromarket/index">
 						<li class="icon-social"><a itemprop="sameAs"
 							href="https://www.facebook.com/profile.php?id=100013962152373" target="_blank"><i
 								class="icon-facebook"></i> <span class="visible-xs">Facebook</span></a></li>
@@ -132,17 +132,17 @@
 					<div class="logo" itemscope
 						itemtype="http://schema.org/Organization">
 						<span itemprop="name" class="hidden">Електромаркет</span> <a
-							itemprop="url" href="/Technomarket/index"> <img
+							itemprop="url" href="/Electromarket/index"> <img
 							itemprop="logo" src="img/electromarket.png" alt="Electromarket" />
 						</a>
 					</div>
 					<!-- /.logo -->
 					<div class="heading-collapse">
 						<div itemscope itemtype="http://schema.org/WebSite" class="search">
-							<link itemprop="url" href="/Technomarket/index" />
+							<link itemprop="url" href="/Electromarket/index" />
 							<form itemprop="potentialAction" itemscope
 								itemtype="http://schema.org/SearchAction"
-								action="/Technomarket/searchProduct" method="GET"
+								action="/Electromarket/searchProduct" method="GET"
 								class="input-group">
 								<input itemprop="query-input" type="text" name="search"
 									placeholder="Търси..." class="form-control"> <span
@@ -173,23 +173,23 @@
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 									<c:choose>
 										<c:when test="${ name == null }">
-											<li><a href="/Technomarket/login">Вход</a></li>
-											<li><a href="/Technomarket/register">Регистрация</a></li>
+											<li><a href="/Electromarket/login">Вход</a></li>
+											<li><a href="/Electromarket/register">Регистрация</a></li>
 										</c:when>
 										<c:otherwise>
 											<c:choose>
 												<c:when test="${ isAdmin }">
-													<li><a href="/Technomarket/profile">Профил</a></li>
-													<li><a href="/Technomarket/addProduct">Добави продук</a></li>
-													<li><a href="/Technomarket/addSale">Добави промоция за продукт</a></li>
-               										<li><a href="/Technomarket/deleteProduct">Премахни продукт</a></li>
-                									<li><a href="/Technomarket/getChaneQuantity">Смени количеството от продукт</a></li>
-													<li><a href="/Technomarket/logOut">Изход</a></li>
+													<li><a href="/Electromarket/profile">Профил</a></li>
+													<li><a href="/Electromarket/addProduct">Добави продук</a></li>
+													<li><a href="/Electromarket/addSale">Добави промоция за продукт</a></li>
+               										<li><a href="/Electromarket/deleteProduct">Премахни продукт</a></li>
+                									<li><a href="/Electromarket/getChaneQuantity">Смени количеството от продукт</a></li>
+													<li><a href="/Electromarket/logOut">Изход</a></li>
 												</c:when>
 												<c:otherwise>
-													<li><a href="/Technomarket/profile">Профил</a></li>
-													<li><a href="/Technomarket/orders">Поръчки</a></li>
-													<li><a href="/Technomarket/logOut">Изход</a></li>
+													<li><a href="/Electromarket/profile">Профил</a></li>
+													<li><a href="/Electromarket/orders">Поръчки</a></li>
+													<li><a href="/Electromarket/logOut">Изход</a></li>
 												</c:otherwise>
 											</c:choose>
 										</c:otherwise>
@@ -198,7 +198,7 @@
 							</div>
 							<!-- /.user-account -->
 							<div class="basket">
-								<a href="/Technomarket/cart" class="btn btn-tm"> <i
+								<a href="/Electromarket/cart" class="btn btn-tm"> <i
 									class="icon-basket"></i> -
 								</a>
 							</div>
@@ -238,7 +238,7 @@
 													<%} %>
 													<% for(int i=0 ; i < map.get(s).get(ss).size(); i++){ %>
 													<li><a
-														href="/Technomarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
+														href="/Electromarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
 														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
 													</li>
 													<%} %>
@@ -270,7 +270,7 @@
 				<div class="col-md-16 text-center">
 					<figure>
 						<div class="figure-image">
-							<a href="/Technomarket/hotpointPromo"> <picture>
+							<a href="/Electromarket/hotpointPromo"> <picture>
 								<source srcset="img/1440x500-hotpoint2.jpg"
 									media="(max-width: 990px)" />
 								<img src="img/1440x500-hotpoint2.jpg" alt="HOTPOINT ARISTON"
@@ -296,7 +296,7 @@
 
 							<figure>
 								<div class="figure-image">
-									<a href="/Technomarket/brochure"> <picture>
+									<a href="/Electromarket/brochure"> <picture>
 										<source srcset="img/promo.jpg" media="(max-width: 990px)" />
 										<img src="img/promo.jpg" alt="Промоционална брошура"
 											title="Промоционална брошура"> </picture>
@@ -325,7 +325,7 @@
 									href="side-by-side-hladilnitzi/lg-gsp-325pvcv-09136130.html"
 									class="product-thumb"> <img itemprop="image"
 									src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09136130/560b021d04604.jpeg"
-									alt="Technomarket" />
+									alt="Electromarket" />
 								</a>
 								<figcaption>
 									<div class="product-name">
@@ -386,7 +386,7 @@
 									href="absorbatori/elikor-integra-wood-60-white-oak-09147683.html"
 									class="product-thumb"> <img itemprop="image"
 									src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09147683/56715fb1a70ef.jpg"
-									alt="Technomarket" />
+									alt="Electromarket" />
 								</a>
 								<figcaption>
 									<div class="product-name">
@@ -446,7 +446,7 @@
 									href="absorbatori/turboair-tt-26-st-grx-a-60-09134707.html"
 									class="product-thumb"> <img itemprop="image"
 									src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09134707/560af9ef3c8de.jpeg"
-									alt="Technomarket" />
+									alt="Electromarket" />
 								</a>
 								<figcaption>
 									<div class="product-name">
@@ -505,7 +505,7 @@
 								<a itemprop="url" href="absorbatori/amica-okc624s-09149829.html"
 									class="product-thumb"> <img itemprop="image"
 									src="http://cdn.technomarket.bg/media/cache/resolve/my_thumb/uploads/library/product/09149829/570247ea87312.jpg"
-									alt="Technomarket" />
+									alt="Electromarket" />
 								</a>
 								<figcaption>
 									<div class="product-name">
@@ -1549,7 +1549,7 @@
 						<div class="container-inner">
 							<div class="container-cell">
 								<p>
-									<a href="/Technomarket/warranty"><img alt=""
+									<a href="/Electromarket/warranty"><img alt=""
 										src="img/warranty.jpg" /></a>
 								</p>
 							</div>
@@ -1575,7 +1575,7 @@
 
 							<figure>
 								<div class="figure-image">
-									<a href="/Technomarket/lgWarranty"> <picture>
+									<a href="/Electromarket/lgWarranty"> <picture>
 										<source srcset="img/lg-5-460x300.jpg"
 											media="(max-width: 990px)" />
 										<img src="img/lg-5-460x300.jpg" alt="" title=""> </picture>
@@ -1589,7 +1589,7 @@
 
 							<figure>
 								<div class="figure-image">
-									<a href="/Technomarket/logitechPromo"> <picture>
+									<a href="/Electromarket/logitechPromo"> <picture>
 										<source srcset="img/logitech.jpg" media="(max-width: 990px)" />
 										<img src="img/logitech.jpg" alt="" title=""> </picture>
 									</a>
@@ -1615,7 +1615,7 @@
 						<div class="container-inner">
 							<div class="container-cell">
 								<p>
-									<a href="/Technomarket/OnlineToShop"><img alt=""
+									<a href="/Electromarket/OnlineToShop"><img alt=""
 										src="img/banner_takefroms.jpg" /></a>
 								</p>
 							</div>
@@ -1641,7 +1641,7 @@
 
 							<figure>
 								<div class="figure-image">
-									<a href="/Technomarket/canonCashBack"> <picture>
+									<a href="/Electromarket/canonCashBack"> <picture>
 										<source srcset="img/TM_ALEX_460x300.jpg"
 											media="(max-width: 990px)" />
 										<img src="img/TM_ALEX_460x300.jpg" alt="" title=""> </picture>
@@ -1655,7 +1655,7 @@
 
 							<figure>
 								<div class="figure-image">
-									<a href="/Technomarket/vaucher"> <picture>
+									<a href="/Electromarket/vaucher"> <picture>
 										<source srcset="img/vauchers_460x300.jpg"
 											media="(max-width: 990px)" />
 										<img src="img/vauchers_460x300.jpg" alt="" title=""> </picture>
@@ -1681,7 +1681,7 @@
 						<div class="container-inner">
 							<div class="container-cell">
 								<p>
-									<a href="/Technomarket/home"><img alt=""
+									<a href="/Electromarket/home"><img alt=""
 										src="img/athome.jpg" /></a>
 								</p>
 							</div>
@@ -1700,7 +1700,7 @@
 
 						<figure>
 							<div class="figure-image">
-								<a href="/Technomarket/lgClima"> <picture>
+								<a href="/Electromarket/lgClima"> <picture>
 									<source srcset="img/1420x3005godini-garanciq-3.png"
 										media="(max-width: 990px)" />
 									<img src="img/1420x3005godini-garanciq-3.png" alt="" title="">
@@ -1728,7 +1728,7 @@
 						<div class="container-inner">
 							<div class="container-cell">
 								<h2 class="as-heading-dark text-center">
-									<a href="/Technomarket/iphone7">Той е 7. iPhone 7.</a>
+									<a href="/Electromarket/iphone7">Той е 7. iPhone 7.</a>
 								</h2>
 							</div>
 						</div>
@@ -1747,12 +1747,12 @@
 				<div class="row">
 					<div class="col-md-2">
 						<h4>
-							<a aria-controls="technomarket" aria-expanded="true"
-								href="#technomarket" data-toggle="collapse" role="button"
+							<a aria-controls="electromarket" aria-expanded="true"
+								href="#electromarket" data-toggle="collapse" role="button"
 								class="tm-collapse">Техномаркет</a>
 						</h4>
-						<ul id="technomarket" class="footer-menu collapse in">
-							<li><a href="/Technomarket/contacts">Контакти</a></li>
+						<ul id="electromarket" class="footer-menu collapse in">
+							<li><a href="/Electromarket/contacts">Контакти</a></li>
 						</ul>
 					</div>
 					<div class="col-md-5">
@@ -1762,22 +1762,22 @@
 								class="tm-collapse">Лесно пазаруване</a>
 						</h4>
 						<ul id="easy-shopping" class="footer-menu collapse in">
-							<li><a href="/Technomarket/conditionsForMarketing">Условия
+							<li><a href="/Electromarket/conditionsForMarketing">Условия
 									за Online пазаруване</a></li>
-							<li><a href="/Technomarket/delivery">Бърза и безплатна
+							<li><a href="/Electromarket/delivery">Бърза и безплатна
 									доставка до дома Ви</a></li>
-							<li><a href="/Technomarket/onlinePay">Сигурно Online
+							<li><a href="/Electromarket/onlinePay">Сигурно Online
 									разплащане</a></li>
-							<li><a href="/Technomarket/tbiConditions">Условия за TBI
+							<li><a href="/Electromarket/tbiConditions">Условия за TBI
 									Credit кредитиране</a></li>
-							<li><a href="/Technomarket/uniConditions">Условия за
+							<li><a href="/Electromarket/uniConditions">Условия за
 									UniCredit кредитиране</a></li>
 						</ul>
 					</div>
 					<div class="col-md-4">
 						<h4>
 							<a aria-controls="contacts" aria-expanded="true"
-								href="/Technomarket/contacts" data-toggle="collapse"
+								href="/Electromarket/contacts" data-toggle="collapse"
 								role="button" class="tm-collapse">Контакти</a>
 						</h4>
 						<div id="contacts" class="footer-menu collapse in">
@@ -1793,7 +1793,7 @@
 							<br>
 							<ul itemscope itemtype="http://schema.org/Organization"
 								class="social-icons">
-								<link itemprop="url" href="/Technomarket/index">
+								<link itemprop="url" href="/Electromarket/index">
 								<li><a itemprop="sameAs"
 									href="https://www.facebook.com/profile.php?id=100013962152373" target="_blank"
 									title="Facebook"><i class="icon-facebook"></i></a></li>

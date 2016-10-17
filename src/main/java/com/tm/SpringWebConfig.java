@@ -2,9 +2,6 @@ package com.tm;
 
 import java.util.Locale;
 
-import javax.servlet.MultipartConfigElement;
-
-import org.springframework.boot.context.embedded.MultipartConfigFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

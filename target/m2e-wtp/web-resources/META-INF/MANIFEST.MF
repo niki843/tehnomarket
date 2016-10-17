@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: Technomarket
+Implementation-Title: Electromarket
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: niki
 Implementation-Vendor-Id: com.tm

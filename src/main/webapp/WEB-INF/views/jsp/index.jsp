@@ -23,58 +23,59 @@
 <script type="text/javascript"
 	src="css/cdn.electromarket.bg/assets/vendor/requirejs/require.js"></script>
 
-	<script type="text/javascript">
-    require.config({
-        map: {
-            '*': {
-                'css': 'css' // or whatever the path to require-css is
-            }
-        },
-        paths: {
-            'facebook': '//connect.facebook.net/en_US/all.js#xfbml=1',
-            'google': "//apis.google.com/js/platform",
-            'admin': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/admin',
-            'app': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/app',
-            'bootstrap': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/bootstrap',
-            'framework': '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/framework',
-            'jquery.jstree': '//cdn.technomarket.bg/assets/vendor/jstree/dist/jstree',
-            'jquery.plugin': '//cdn.technomarket.bg/assets/vendor/countdown/jquery.plugin.min',
-            'jquery.countdown': '//cdn.technomarket.bg/assets/vendor/countdown/jquery.countdown.min',
-            'jquery.jstree-css': '//cdn.technomarket.bg/assets/vendor/jstree/dist/themes/default/style',
-            'jquery': '//cdn.technomarket.bg/assets/vendor/jquery/dist/jquery',
-            'jquery.ui': '//cdn.technomarket.bg/assets/vendor/jquery-ui/jquery-ui.min',
-            'typeahead': '//cdn.technomarket.bg/assets/vendor/jquery-typeahead/dist/jquery.typeahead.min',
-            'css': '//cdn.technomarket.bg/assets/vendor/require-css/css',
-            'routing': '//cdn.technomarket.bg/bundles/fosjsrouting/js/router',
-            'routes': '/js/routing?callback=fos.Router.setData',
-            'slick': '//cdn.technomarket.bg/assets/vendor/slick-carousel/slick/slick.min'
+<script type="text/javascript">
+	require
+			.config({
+				map : {
+					'*' : {
+						'css' : 'css' // or whatever the path to require-css is
+					}
+				},
+				paths : {
+					'facebook' : '//connect.facebook.net/en_US/all.js#xfbml=1',
+					'google' : "//apis.google.com/js/platform",
+					'admin' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/admin',
+					'app' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/app',
+					'bootstrap' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/bootstrap',
+					'framework' : '//cdn.technomarket.bg/bundles/taumediatechnomarketcms/js/framework',
+					'jquery.jstree' : '//cdn.technomarket.bg/assets/vendor/jstree/dist/jstree',
+					'jquery.plugin' : '//cdn.technomarket.bg/assets/vendor/countdown/jquery.plugin.min',
+					'jquery.countdown' : '//cdn.technomarket.bg/assets/vendor/countdown/jquery.countdown.min',
+					'jquery.jstree-css' : '//cdn.technomarket.bg/assets/vendor/jstree/dist/themes/default/style',
+					'jquery' : '//cdn.technomarket.bg/assets/vendor/jquery/dist/jquery',
+					'jquery.ui' : '//cdn.technomarket.bg/assets/vendor/jquery-ui/jquery-ui.min',
+					'typeahead' : '//cdn.technomarket.bg/assets/vendor/jquery-typeahead/dist/jquery.typeahead.min',
+					'css' : '//cdn.technomarket.bg/assets/vendor/require-css/css',
+					'routing' : '//cdn.technomarket.bg/bundles/fosjsrouting/js/router',
+					'routes' : '/js/routing?callback=fos.Router.setData',
+					'slick' : '//cdn.technomarket.bg/assets/vendor/slick-carousel/slick/slick.min'
 
-        },
-        shim: {
-            'jquery.jstree': ['jquery', 'css!jquery.jstree-css'],
-            'routing': {
-                'exports': 'Routing'
-            },
-            'jquery': {
-                'exports': '$'
-            },
-            'jquery.countdown': {
-                'deps': ['jquery', 'jquery.plugin']
-            },
-            'slick': {
-                deps: ['jquery'],
-                exports: 'jQuery.fn.slick'
-            },
-            'routes': ['routing'],
-            'admin': ['framework'],
-            'framework': ['jquery'],
-            'bootstrap': ['jquery'],
-            'facebook' : {
-                exports: 'FB'
-            }
-        }
-    });
-	</script>
+				},
+				shim : {
+					'jquery.jstree' : [ 'jquery', 'css!jquery.jstree-css' ],
+					'routing' : {
+						'exports' : 'Routing'
+					},
+					'jquery' : {
+						'exports' : '$'
+					},
+					'jquery.countdown' : {
+						'deps' : [ 'jquery', 'jquery.plugin' ]
+					},
+					'slick' : {
+						deps : [ 'jquery' ],
+						exports : 'jQuery.fn.slick'
+					},
+					'routes' : [ 'routing' ],
+					'admin' : [ 'framework' ],
+					'framework' : [ 'jquery' ],
+					'bootstrap' : [ 'jquery' ],
+					'facebook' : {
+						exports : 'FB'
+					}
+				}
+			});
+</script>
 
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" id="top" class="">
@@ -97,26 +98,26 @@
 									class="icon-phone"></i> <span itemprop='telephone'
 									class="hidden">+359888372407</span> 0888 372 407</strong></a></li>
 						<li class="nav-promo"><a href="/Electromarket/index"><i
-								class="icon-gift"></i> Промоции</a>
-						</li>
+								class="icon-gift"></i> Промоции</a></li>
 					</ul>
 					<ul itemscope itemtype="http://schema.org/Organization"
 						class="nav navbar-nav nav-right">
 						<link itemprop="url" href="/Electromarket/index">
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://www.facebook.com/profile.php?id=100013962152373" target="_blank"><i
-								class="icon-facebook"></i> <span class="visible-xs">Facebook</span></a></li>
+							href="https://www.facebook.com/profile.php?id=100013962152373"
+							target="_blank"><i class="icon-facebook"></i> <span
+								class="visible-xs">Facebook</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://plus.google.com/100014758101449735523" target="_blank"><i
-								class="icon-google"></i> <span class="visible-xs">Google
-									+</span></a></li>
+							href="https://plus.google.com/100014758101449735523"
+							target="_blank"><i class="icon-google"></i> <span
+								class="visible-xs">Google +</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
 							href="https://twitter.com/mailelectromar1" target="_blank"><i
 								class="icon-twitter"></i> <span class="visible-xs">Twitter</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
-							href="https://www.youtube.com/channel/UCgLn2t-ykM98m4oY0Dgo3tg" target="_blank"><i
-								class="icon-youtube"></i> <span class="visible-xs">You
-									Tube</span></a></li>
+							href="https://www.youtube.com/channel/UCgLn2t-ykM98m4oY0Dgo3tg"
+							target="_blank"><i class="icon-youtube"></i> <span
+								class="visible-xs">You Tube</span></a></li>
 						<li class="icon-social"><a itemprop="sameAs"
 							href="https://www.linkedin.com/in/electro-market-057b9212b?trk=nav_responsive_tab_profile_pic"
 							target="_blank"><i class="icon-linkedin"></i> <span
@@ -180,10 +181,14 @@
 											<c:choose>
 												<c:when test="${ isAdmin }">
 													<li><a href="/Electromarket/profile">Профил</a></li>
-													<li><a href="/Electromarket/addProduct">Добави продук</a></li>
-													<li><a href="/Electromarket/addSale">Добави промоция за продукт</a></li>
-               										<li><a href="/Electromarket/deleteProduct">Премахни продукт</a></li>
-                									<li><a href="/Electromarket/getChaneQuantity">Смени количеството от продукт</a></li>
+													<li><a href="/Electromarket/addProduct">Добави
+															продук</a></li>
+													<li><a href="/Electromarket/addSale">Добави
+															промоция за продукт</a></li>
+													<li><a href="/Electromarket/deleteProduct">Премахни
+															продукт</a></li>
+													<li><a href="/Electromarket/getChaneQuantity">Смени
+															количеството от продукт</a></li>
 													<li><a href="/Electromarket/logOut">Изход</a></li>
 												</c:when>
 												<c:otherwise>
@@ -219,39 +224,69 @@
 			<div class="container">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav nav-main">
-						<% Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType(); %>
-						<%for(String s : map.keySet()){ %>
+						<%
+							Map<String, HashMap<String,ArrayList<String>>> map = TypeModelDAO.getInstance().getModelType();
+						%>
+						<%
+							for(String s : map.keySet()){
+						%>
 						<li class=" dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false"><%= s %></a>
+							aria-expanded="false"><%=s%></a>
 							<div class="dropdown-menu">
 								<div class="container">
 									<div class="row">
-										<%for(String ss : map.get(s).keySet()){ %>
+										<%
+											for(String ss : map.get(s).keySet()){
+										%>
 										<ul>
-											<% if(map.get(s).get(ss) != null){ %>
+											<%
+												if(map.get(s).get(ss) != null){
+											%>
 											<li class="has-children">
-												<%} %> <a class="dropdown-toggle" data-toggle="dropdown"
-												role="button" aria-haspopup="true" aria-expanded="false"><%= ss %></a>
-												<% if(map.get(s).get(ss) != null){ %>
+												<%
+													}
+												%> <a class="dropdown-toggle" data-toggle="dropdown"
+												role="button" aria-haspopup="true" aria-expanded="false"><%=ss%></a>
+												<%
+													if(map.get(s).get(ss) != null){
+												%>
 												<ul>
-													<%} %>
-													<% for(int i=0 ; i < map.get(s).get(ss).size(); i++){ %>
+													<%
+														}
+													%>
+													<%
+														for(int i=0 ; i < map.get(s).get(ss).size(); i++){
+													%>
 													<li><a
-														href="/Electromarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%= map.get(s).get(ss).get(i) %>"
-														class="ui-link ui-link-all"><%= map.get(s).get(ss).get(i) %></a>
+														href="/Electromarket/getProducts?nadtype=<%=s%>&type=<%=ss%>&model=<%=map.get(s).get(ss).get(i)%>"
+														class="ui-link ui-link-all"><%=map.get(s).get(ss).get(i)%></a>
 													</li>
-													<%} %>
-													<% if(map.get(s).get(ss) != null){ %>
-												</ul> <%} %> <% if(map.get(s).get(ss) != null){ %>
+													<%
+														}
+													%>
+													<%
+														if(map.get(s).get(ss) != null){
+													%>
+												</ul> <%
+ 	}
+ %> <%
+ 	if(map.get(s).get(ss) != null){
+ %>
 											</li>
-											<%} %>
+											<%
+												}
+											%>
 										</ul>
-										<%} %>
+										<%
+											}
+										%>
 									</div>
 								</div>
 							</div></li>
-						<%} %>
+						<%
+							}
+						%>
 					</ul>
 				</div>
 			</div>
@@ -262,119 +297,66 @@
 	<div class="">
 
 
-
-
-		<section class="tabPanel  section"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="tabPanel-item" style="">
-				<div class="col-md-16 text-center">
-					<figure>
-						<div class="figure-image">
-							<a href="/Electromarket/hotpointPromo"> <picture>
-								<source srcset="img/1440x500-hotpoint2.jpg"
-									media="(max-width: 990px)" />
-								<img src="img/1440x500-hotpoint2.jpg" alt="HOTPOINT ARISTON"
-									title="HOTPOINT ARISTON"> </picture>
-							</a>
-						</div>
-					</figure>
-				</div>
-			</div>
-		</section>
-
-
-
-
 		<section class=" section"
 			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-						<c:forEach items="${productsInSale}" var="productInSale">
-				<div class="col-md-3">
-					<figure itemscope itemtype="http://schema.org/Product"
-						class="product">
-						<a itemprop="url" href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }" class="product-thumb"> 
-						<img itemprop="image" src="${ productInSale.getRealtivePath()}" alt="Electromarket" />
-						</a>
-						<figcaption>
-							<div class="product-name">
-								<h3>
-									<a itemprop="url" href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }"> 
-										<span itemprop="name">${ productInSale.getName() }</span>
-									</a>
-								</h3>
-								<small class="product-model">Арт.№: 
-									<span itemprop="productID">${ productInSale.getArt_number() }</span>
-								</small>
-								<ul itemprop="description" class="product-description">
-									<li>- </li>
-								</ul>
-							</div>
-							<div class="product-price">
-								<var itemprop="offers" itemscope
-									itemtype="http://schema.org/Offer" class="price">
-									<meta itemprop="priceCurrency" content="BGN" />
-									<c:choose>
-									    <c:when test="${ productInSale.isInSale() }">
-											<span itemprop="price" class="new">
-												${ productInSale.getPrice() }лв.
-											</span>
-											<span itemprop="price" class="old">
-												${ productInSale.getOldPrice() }лв.
-											</span>
-									    </c:when>    
-									    <c:otherwise>
-											<span itemprop="price" class="new">
-												${ productInSale.getPrice() }лв.
-											</span>
-									    </c:otherwise>
-									</c:choose>
-									<div>
-										<link itemprop="itemCondition"
-											href="http://schema.org/NewCondition" />
-										<span class="hidden">New</span>
-									</div>
-								</var>
-								<form action="/Electromarket/addToCart">
-									<input type="hidden" value="${ productInSale.getProduct_id() }"
-										name="product">
-									<button type="submit" class="btn btn-tm">
-										<i class="icon-basket"></i> Купи онлайн
-									</button>
-								</form>
-							</div>
-						</figcaption>
-					</figure>
-					<!--.product-->
+			<ul>
+				<c:forEach items="${productsInSale}" var="productInSale">
 
-				</div>
-			</c:forEach>
-		</section>
+					<div class="col-md-4">
+						<figure itemscope itemtype="http://schema.org/Product"
+							class="product">
+							<a itemprop="url"
+								href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }"
+								class="product-thumb"> <img itemprop="image"
+								src="${ productInSale.getRealtivePath()}" alt="Electromarket" />
+							</a>
+							<figcaption>
+								<div class="product-name">
+									<h3>
+										<a itemprop="url"
+											href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }">
+											<span itemprop="name">${ productInSale.getName() }</span>
+										</a>
+									</h3>
+									<small class="product-model">Арт.№: <span
+										itemprop="productID">${ productInSale.getArt_number() }</span>
+									</small>
+									<ul itemprop="description" class="product-description">
+										<li>-</li>
+									</ul>
+								</div>
+								<div class="product-price">
+									<var itemprop="offers" itemscope
+										itemtype="http://schema.org/Offer" class="price">
+										<meta itemprop="priceCurrency" content="BGN" />
+										<c:choose>
+											<c:when test="${ productInSale.isInSale() }">
+												<span itemprop="price" class="new"> ${ productInSale.getPrice() }лв.
+												</span>
+												<span itemprop="price" class="old"> ${ productInSale.getOldPrice() }лв.
+												</span>
+											</c:when>
+											<c:otherwise>
+												<span itemprop="price" class="new"> ${ productInSale.getPrice() }лв.
+												</span>
+											</c:otherwise>
+										</c:choose>
+										<div>
+											<link itemprop="itemCondition"
+												href="http://schema.org/NewCondition" />
+											<span class="hidden">New</span>
+										</div>
+									</var>
 
+								</div>
+							</figcaption>
+						</figure>
+						<!--.product-->
 
-
-
-
-		<section class=" section section-odd"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-16 text-center">
-
-						<div class="container-inner">
-							<div class="container-cell">
-								<p>
-									<a href="/Electromarket/warranty"><img alt=""
-										src="img/warranty.jpg" /></a>
-								</p>
-							</div>
-						</div>
 					</div>
-
-
-				</div>
-			</div>
+				</c:forEach>
+			</ul>
 		</section>
-
-
 
 
 		<section class=" section"
@@ -396,60 +378,6 @@
 								</div>
 							</figure>
 						</div>
-
-
-						<div class="col-third">
-
-							<figure>
-								<div class="figure-image">
-									<a href="/Electromarket/logitechPromo"> <picture>
-										<source srcset="img/logitech.jpg" media="(max-width: 990px)" />
-										<img src="img/logitech.jpg" alt="" title=""> </picture>
-									</a>
-								</div>
-							</figure>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-
-
-
-		<section class=" section section-odd"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-16 text-center">
-
-						<div class="container-inner">
-							<div class="container-cell">
-								<p>
-									<a href="/Electromarket/OnlineToShop"><img alt=""
-										src="img/banner_takefroms.jpg" /></a>
-								</p>
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</section>
-
-
-
-
-		<section class=" section"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-
-				<div class="slider-row">
-					<div class="slider"
-						data-slick='{"infinite":false,"dots":true,"speed":300,"slidesToShow":3,"slidesToScroll":1,"swipeToSlide":true,"variableWidth":false,"arrows":false,"responsive":[{"breakpoint":1400,"settings":{"slidesToShow":3,"arrows":true,"slidesToScroll":4,"infinite":true}},{"breakpoint":1200,"settings":{"slidesToShow":3,"arrows":true,"slidesToScroll":3,"infinite":true}},{"breakpoint":768,"settings":{"slidesToShow":2,"arrows":true,"slidesToScroll":2}},{"breakpoint":480,"settings":{"slidesToShow":1,"arrows":true,"slidesToScroll":1}}]}'>
 						<div class="col-third">
 
 							<figure>
@@ -464,18 +392,7 @@
 						</div>
 
 
-						<div class="col-third text-center">
 
-							<figure>
-								<div class="figure-image">
-									<a href="/Electromarket/vaucher"> <picture>
-										<source srcset="img/vauchers_460x300.jpg"
-											media="(max-width: 990px)" />
-										<img src="img/vauchers_460x300.jpg" alt="" title=""> </picture>
-									</a>
-								</div>
-							</figure>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -485,72 +402,9 @@
 
 
 
-		<section class=" section section-odd"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-16 text-center">
-
-						<div class="container-inner">
-							<div class="container-cell">
-								<p>
-									<a href="/Electromarket/home"><img alt=""
-										src="img/athome.jpg" /></a>
-								</p>
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</section>
-		<section class=" section section-odd"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-16 text-center">
-
-						<figure>
-							<div class="figure-image">
-								<a href="/Electromarket/lgClima"> <picture>
-									<source srcset="img/1420x3005godini-garanciq-3.png"
-										media="(max-width: 990px)" />
-									<img src="img/1420x3005godini-garanciq-3.png" alt="" title="">
-									</picture>
-								</a>
-							</div>
-						</figure>
-					</div>
-
-
-				</div>
-			</div>
-		</section>
 
 
 
-
-
-		<section class=" section section-odd"
-			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-16 text-center">
-
-						<div class="container-inner">
-							<div class="container-cell">
-								<h2 class="as-heading-dark text-center">
-									<a href="/Electromarket/iphone7">Той е 7. iPhone 7.</a>
-								</h2>
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-		</section>
 
 	</div>
 
@@ -581,8 +435,8 @@
 									доставка до дома Ви</a></li>
 							<li><a href="/Electromarket/onlinePay">Сигурно Online
 									разплащане</a></li>
-							<li><a href="/Electromarket/tbiConditions">Условия за TBI
-									Credit кредитиране</a></li>
+							<li><a href="/Electromarket/tbiConditions">Условия за
+									TBI Credit кредитиране</a></li>
 							<li><a href="/Electromarket/uniConditions">Условия за
 									UniCredit кредитиране</a></li>
 						</ul>
@@ -608,17 +462,17 @@
 								class="social-icons">
 								<link itemprop="url" href="/Electromarket/index">
 								<li><a itemprop="sameAs"
-									href="https://www.facebook.com/profile.php?id=100013962152373" target="_blank"
-									title="Facebook"><i class="icon-facebook"></i></a></li>
+									href="https://www.facebook.com/profile.php?id=100013962152373"
+									target="_blank" title="Facebook"><i class="icon-facebook"></i></a></li>
 								<li><a itemprop="sameAs"
-									href="https://plus.google.com/100014758101449735523" target="_blank"
-									title="Google +"><i class="icon-google"></i></a></li>
+									href="https://plus.google.com/100014758101449735523"
+									target="_blank" title="Google +"><i class="icon-google"></i></a></li>
 								<li><a itemprop="sameAs"
 									href="https://twitter.com/mailelectromar1" target="_blank"
 									title="Twitter"><i class="icon-twitter"></i></a></li>
 								<li><a itemprop="sameAs"
-									href="https://www.youtube.com/channel/UCgLn2t-ykM98m4oY0Dgo3tg" target="_blank"
-									title="YouTube"><i class="icon-youtube"></i></a></li>
+									href="https://www.youtube.com/channel/UCgLn2t-ykM98m4oY0Dgo3tg"
+									target="_blank" title="YouTube"><i class="icon-youtube"></i></a></li>
 								<li><a itemprop="sameAs"
 									href="https://www.linkedin.com/in/electro-market-057b9212b?trk=nav_responsive_tab_profile_pic"
 									target="_blank" title="Linked In"><i class="icon-linkedin"></i></a></li>
@@ -648,22 +502,24 @@
 		<!-- /.copyrights -->
 	</footer>
 	<script type="text/javascript">
-            require(['app', 'jquery'], function(app, $){
+		require([ 'app', 'jquery' ], function(app, $) {
 
-                $('div.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    $(this).parent().siblings().removeClass('open');
-                    $(this).parent().toggleClass('open');
-                });
+			$('div.dropdown-menu [data-toggle=dropdown]').on('click',
+					function(event) {
+						event.preventDefault();
+						event.stopPropagation();
+						$(this).parent().siblings().removeClass('open');
+						$(this).parent().toggleClass('open');
+					});
 
-                $('.update-widget').each(function () {
-                    $(this).load($(this).attr('data-url'));
+			$('.update-widget').each(function() {
+				$(this).load($(this).attr('data-url'));
 
-                });
-            });
-			for(var f=document.forms,i=f.length;i--;)f[i].setAttribute("novalidate",i)
-        </script>
+			});
+		});
+		for (var f = document.forms, i = f.length; i--;)
+			f[i].setAttribute("novalidate", i)
+	</script>
 
 	<a href="#top" class="scroll-top"><i class="icon-arrow-long-up"></i></a>
 
@@ -672,5 +528,5 @@
 			src="https://www.facebook.com/tr?id=376584362536011&amp;ev=PageView&amp;noscript=1" />
 	</noscript>
 
-	</body>
+</body>
 </html>

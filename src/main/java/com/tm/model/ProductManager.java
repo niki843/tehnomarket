@@ -1,8 +1,10 @@
 package com.tm.model;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.tm.dbModels.ProductDAO;
@@ -35,6 +37,16 @@ public class ProductManager {
 	
 	public Map<Integer, Product> getAllProducts(){
 		return Collections.unmodifiableMap(products);
+	}
+	
+	public Set<Product> getAllProductsInSale(){
+		HashSet<Product> productsInSale = new HashSet<>();
+		for(Product p : products.values()){
+			if(p.isInSale()){
+				productsInSale.add(p);
+			}
+		}
+		return productsInSale;
 	}
 	
 	public Product getProductById(int id) {

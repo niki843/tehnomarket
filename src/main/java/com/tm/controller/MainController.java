@@ -1,7 +1,7 @@
 package com.tm.controller;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,6 +21,8 @@ public class MainController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model mod, HttpServletRequest request) {
 		setCategoriesAndCart(request);
+		Set<Product> products = ProductManager.getInstance().getAllProductsInSale();
+		mod.addAttribute("productsInSale", products);
 		return "index";
 	}
 

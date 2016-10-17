@@ -62,12 +62,6 @@ public class MainController {
 		return "stores";
 	}
 
-	@RequestMapping(value = "/sales", method = RequestMethod.GET)
-	public String sales(Model mod, HttpServletRequest request) {
-		setCategoriesAndCart(request);
-		return "sales";
-	}
-
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String cart(Model mod, HttpServletRequest request) {
 		setCategoriesAndCart(request);

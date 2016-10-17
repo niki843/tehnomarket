@@ -108,7 +108,7 @@
 						<li><a href="/Electromarket/contacts"><strong><i
 									class="icon-phone"></i> <span itemprop='telephone'
 									class="hidden">+359888372407</span> 0888 372 407</strong></a></li>
-						<li class="nav-promo"><a href="/Electromarket/sales"><i
+						<li class="nav-promo"><a href="/Electromarket/index"><i
 								class="icon-gift"></i> Промоции</a>
 						</li>
 					</ul>

@@ -41,7 +41,7 @@ import com.tm.tools.EmailSender;
 public class ProductController {
 
 	private static final String FILE_LOCATION = "D:/ittalents/tehnomarket/src/main/webapp/static/img/";
-	private static final String FILE_LOCATIONIVAN = "C:/Users/Ivan/Desktop/Technomarket/src/main/webapp/static/img/";
+	private static final String FILE_LOCATIONIVAN = "C:/Users/USER/Desktop/tehnomarket-master/src/main/webapp/static/img/";
 	private static final String SUB = "We have a new sale!";
 
 	@RequestMapping(value = "/addNewProduct", method = RequestMethod.POST)
@@ -225,7 +225,7 @@ public class ProductController {
 			return "admin-add-product";
 		}
 
-		File picture = new File(FILE_LOCATION + multiPartFile.getOriginalFilename());
+		File picture = new File(FILE_LOCATIONIVAN + multiPartFile.getOriginalFilename());
 
 		try {
 			picture.createNewFile();

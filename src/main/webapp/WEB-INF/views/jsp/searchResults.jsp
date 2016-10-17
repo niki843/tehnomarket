@@ -286,9 +286,7 @@
 								<small class="product-model">Арт.№: 
 									<span itemprop="productID">${ product.getArt_number() }</span>
 								</small>
-								<ul itemprop="description" class="product-description">
-									<li>- ${ product.getInfo() }</li>
-								</ul>
+								
 							</div>
 							<div class="product-price">
 								<var itemprop="offers" itemscope

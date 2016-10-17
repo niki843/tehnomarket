@@ -281,7 +281,7 @@
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <h2><strong>Топ оферта в Техномаркет до 21.10.2016!</strong></h2>
+                <h2><strong>Топ оферта в Електромаркет до 21.10.2016!</strong></h2>
 
 <h3>Вземи пералня <strong>HOTPOINT ARISTON</strong> с енергиен клас А+++, капацитет 8 кг. и функция пара <strong>само за 539 лв</strong>.,&nbsp;</h3>
 
@@ -323,7 +323,7 @@
 						<h4>
 							<a aria-controls="electromarket" aria-expanded="true"
 								href="#electromarket" data-toggle="collapse" role="button"
-								class="tm-collapse">Техномаркет</a>
+								class="tm-collapse">Електромаркет</a>
 						</h4>
 						<ul id="electromarket" class="footer-menu collapse in">
 							<li><a href="/Electromarket/contacts">Контакти</a></li>

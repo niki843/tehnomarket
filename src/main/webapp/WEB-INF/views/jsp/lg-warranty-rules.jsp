@@ -358,7 +358,7 @@
 						<h4>
 							<a aria-controls="electromarket" aria-expanded="true"
 								href="#electromarket" data-toggle="collapse" role="button"
-								class="tm-collapse">Техномаркет</a>
+								class="tm-collapse">Електромаркет</a>
 						</h4>
 						<ul id="electromarket" class="footer-menu collapse in">
 							<li><a href="/Electromarket/contacts">Контакти</a></li>

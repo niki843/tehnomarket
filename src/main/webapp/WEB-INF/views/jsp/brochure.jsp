@@ -268,7 +268,7 @@
 
 	    	<div class="container-inner">
         	<div class="container-cell">
-                <h2>Промоционална брошура на Техномаркет</h2>
+                <h2>Промоционална брошура на Електромаркет</h2>
 				<p>от 1.10.&nbsp;2016 до 21. 10.&nbsp;2016</p>
             </div>
         </div>
@@ -294,7 +294,7 @@
 						<h4>
 							<a aria-controls="electromarket" aria-expanded="true"
 								href="#electromarket" data-toggle="collapse" role="button"
-								class="tm-collapse">Техномаркет</a>
+								class="tm-collapse">Електромаркет</a>
 						</h4>
 						<ul id="electromarket" class="footer-menu collapse in">
 							<li><a href="/Electromarket/contacts">Контакти</a></li>

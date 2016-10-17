@@ -291,7 +291,7 @@
 
 <p><font color="#333333" face="tahoma">&bull; Обезщетява при кражба или грабеж</font></p>
 
-<p><font color="#333333" face="tahoma">&bull; Гарантира добрите цени в Техномаркет чрез покритието &bdquo;Гарантирана цена на стоката&rdquo;</font></p>
+<p><font color="#333333" face="tahoma">&bull; Гарантира добрите цени в Електромаркет чрез покритието &bdquo;Гарантирана цена на стоката&rdquo;</font></p>
 
 <p>&nbsp;</p>
 
@@ -382,7 +382,7 @@
 						<h4>
 							<a aria-controls="electromarket" aria-expanded="true"
 								href="#electromarket" data-toggle="collapse" role="button"
-								class="tm-collapse">Техномаркет</a>
+								class="tm-collapse">Електромаркет</a>
 						</h4>
 						<ul id="electromarket" class="footer-menu collapse in">
 							<li><a href="/Electromarket/contacts">Контакти</a></li>

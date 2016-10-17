@@ -298,8 +298,9 @@ public class ProductController {
 			return "index";
 		}
 		Integer productId = Integer.parseInt(id);
-		model.addAttribute("productP", ProductManager.getInstance().getProductById(productId));
-		
+		Product p = ProductManager.getInstance().getProductById(productId);
+		model.addAttribute("productP", p);
+		System.out.println("Product old price is: " + p.getOldPrice());
 		return "productInfo";
 	}
 	

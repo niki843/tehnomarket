@@ -232,9 +232,22 @@ public class ProductDAO {
 					Product product = new Product(
 							getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,
 							artNum, ean, discriptions, image, quantity, inSale, price);
+				    if(inSale){
+				    	productsInSale.put(productId, product);
+				    	System.out.println("WATCH HERE THE PRICE IS: " + price + " ------------------------------------------------------->");
+				    	product.setOldPrice(price);
+				    }
 					products.add(product);
 					product.setProduct_id(productId);
 			    }else{
+					Product product = new Product(getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,artNum, ean, discriptions, image, quantity, inSale, price);
+				    if(inSale){
+				    	productsInSale.put(productId, product);
+				    	System.out.println("WATCH HERE THE PRICE IS: " + price + " ------------------------------------------------------->");
+				    	product.setOldPrice(price);
+				    }
+					products.add(product);
+					product.setProduct_id(productId);
 				    System.out.println("DIDN'T FIND IMAGE TAKING IT FROM DB");
 					try {
 						fos = new FileOutputStream(image);
@@ -273,12 +286,7 @@ public class ProductDAO {
 				System.out.println("----------------" + inSale + "--------------------");
 				System.out.println("----------------" + price + "--------------------");
 				System.out.println("----------------" + productId + "----------------");
-				Product product = new Product(getModelFromId(model), getTypeFromId(type), getUperTypeFromId(upperType), name,artNum, ean, discriptions, image, quantity, inSale, price);
-			    if(inSale){
-			    	productsInSale.put(productId, product);
-			    }
-				products.add(product);
-				product.setProduct_id(productId);
+
 
 			}
 
@@ -305,8 +313,6 @@ public class ProductDAO {
 				rs = st.executeQuery();
 				while(rs.next()){
 					Product product = productsInSale.get(i);
-					product.setOldPrice(product.getPrice());
-					System.out.println("Seting the old price " + product.getOldPrice() + " for product " + product.getName());
 					product.setPrice(rs.getDouble("sale_price"));
 					System.out.println("SETING NEW PRICE TO: " + productsInSale.get(i).getName());
 				}

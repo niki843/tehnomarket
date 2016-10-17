@@ -287,83 +287,66 @@
 
 		<section class=" section"
 			style="background: url(_http_/cdn.technomarket.bg/uploads/BG/slides/Back%20to%20school/bg3.html) no-repeat center; background-size: cover; background-attachment: fixed; color: #000;">
-			<div class="container">
-
-				<div class="slider-row">
-					<div class="slider" data-slick='{"infinite":false,"dots":true,"speed":300,"slidesToShow":5,"slidesToScroll":1,"swipeToSlide":true,"variableWidth":false,"arrows":false,"responsive":[{"breakpoint":1400,"settings":{"slidesToShow":4,"arrows":true,"slidesToScroll":4,"infinite":true}},{"breakpoint":1200,"settings":{"slidesToShow":3,"arrows":true,"slidesToScroll":3,"infinite":true}},{"breakpoint":768,"settings":{"slidesToShow":2,"arrows":true,"slidesToScroll":2}},{"breakpoint":480,"settings":{"slidesToShow":1,"arrows":true,"slidesToScroll":1}}]}'>
-						<div class="col-fourth">
-
-							<figure>
-								<div class="figure-image">
-									<a href="/Electromarket/brochure"> <picture>
-										<source srcset="img/promo.jpg" media="(max-width: 990px)" />
-										<img src="img/promo.jpg" alt="Промоционална брошура"
-											title="Промоционална брошура"> </picture>
+						<c:forEach items="${productsInSale}" var="productInSale">
+				<div class="col-md-3">
+					<figure itemscope itemtype="http://schema.org/Product"
+						class="product">
+						<a itemprop="url" href="/Electromarket/productInfo?product=${ products.getProduct_id() }" class="product-thumb"> 
+						<img itemprop="image" src="${ productInSale.getRealtivePath()}" alt="Electromarket" />
+						</a>
+						<figcaption>
+							<div class="product-name">
+								<h3>
+									<a itemprop="url" href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }"> 
+										<span itemprop="name">${ productInSale.getName() }</span>
 									</a>
-								</div>
-							</figure>
-						</div>
-						<div class="col-md-3">
-								<figure itemscope itemtype="http://schema.org/Product" class="product">
-								
-								<c:forEach items="${ productsInSale }" var="productInSale">
-								
-								<div class="badges">
-									<div class="badge-label badge-red badge-promo"
-										title="Промо цена">Промо цена</div>
-
-
-									<div class="badge-label badge-blue badge-free_install"
-										title="Безплатен монтаж">
-										<i class="icon-tools"></i> <em>+<br>монтаж
-										</em>
+								</h3>
+								<small class="product-model">Арт.№: 
+									<span itemprop="productID">${ productInSale.getArt_number() }</span>
+								</small>
+								<ul itemprop="description" class="product-description">
+									<li>- </li>
+								</ul>
+							</div>
+							<div class="product-price">
+								<var itemprop="offers" itemscope
+									itemtype="http://schema.org/Offer" class="price">
+									<meta itemprop="priceCurrency" content="BGN" />
+									<c:choose>
+									    <c:when test="${ productInSale.isInSale() }">
+											<span itemprop="price" class="new">
+												${ productInSale.getPrice() }лв.
+											</span>
+											<span itemprop="price" class="old">
+												${ productInSale.getOldPrice() }лв.
+											</span>
+									    </c:when>    
+									    <c:otherwise>
+											<span itemprop="price" class="new">
+												${ productInSale.getPrice() }лв.
+											</span>
+									    </c:otherwise>
+									</c:choose>
+									<div>
+										<link itemprop="itemCondition"
+											href="http://schema.org/NewCondition" />
+										<span class="hidden">New</span>
 									</div>
+								</var>
+								<form action="/Electromarket/addToCart">
+									<input type="hidden" value="${ productInSale.getProduct_id() }"
+										name="product">
+									<button type="submit" class="btn btn-tm">
+										<i class="icon-basket"></i> Купи онлайн
+									</button>
+								</form>
+							</div>
+						</figcaption>
+					</figure>
+					<!--.product-->
 
-
-								</div>
-								<a itemprop="url"
-									href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }"
-									class="product-thumb"> <img itemprop="image"
-									src="${ productInSale.getRealtivePath() }"
-									alt="Electromarket" />
-								</a>
-								<figcaption>
-									<div class="product-name">
-										<h3>
-											<a itemprop="url"
-												href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }"><span
-												itemprop="name">${ productInSale.getName() }</span></a>
-										</h3>
-										<small class="product-model">Арт.№: <span
-											itemprop="productID">${ productInSale.getArt_number() }</span></small>
-									</div>
-									<div class="product-price">
-										<var itemprop="offers" itemscope
-											itemtype="http://schema.org/Offer" class="price">
-											<meta itemprop="priceCurrency" content="BGN" />
-											<span itemprop="price" class="new">${ productInSale.getPrice() }лв.</span> 
-											<span itemprop="price" class="old">${ productInSale.getOldPrice() }лв.</span>
-											<div>
-												<link itemprop="itemCondition"
-													href="http://schema.org/NewCondition" />
-												<span class="hidden">New</span>
-											</div>
-										</var>
-									</div>
-								</figcaption>
-								
-								</c:forEach>
-								
-							</figure>
-							<!--.product-->
-
-						</div>
-
-
-
-					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</section>
 
 

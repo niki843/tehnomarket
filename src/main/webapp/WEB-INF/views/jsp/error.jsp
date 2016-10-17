@@ -3,12 +3,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-
+<title>Error 404</title>
 </head>
 <body>
-<h1>YOU FAILED TO SIGN IN</h1>
-              
-      
+	<h1> ERROR 404</h1></br>
+	<img src="img/simpsonsError.jpg" alt="The simpsons error" title="Homer with an message for 404 in the background" /></br>
 </body>
 </html>

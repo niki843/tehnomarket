@@ -291,7 +291,7 @@
 				<div class="col-md-3">
 					<figure itemscope itemtype="http://schema.org/Product"
 						class="product">
-						<a itemprop="url" href="/Electromarket/productInfo?product=${ products.getProduct_id() }" class="product-thumb"> 
+						<a itemprop="url" href="/Electromarket/productInfo?product=${ productInSale.getProduct_id() }" class="product-thumb"> 
 						<img itemprop="image" src="${ productInSale.getRealtivePath()}" alt="Electromarket" />
 						</a>
 						<figcaption>
